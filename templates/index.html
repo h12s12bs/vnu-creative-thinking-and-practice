@@ -458,23 +458,23 @@
 
       </div>
 
-      <!-- TAB 3.5: Vibe Coding ✕ Agentic AI 創意實踐新手操作手冊 -->
+      <!-- TAB 3.5: Vibe Coding ✕ Agentic AI 學生操作手冊（工具安裝、註冊與作品上線指南） -->
       <div class="tab-pane fade" id="tab-manual" role="tabpanel">
 
         <!-- 手冊大標題橫幅 -->
         <div class="card-custom p-4 mb-4" style="background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%); color: #FFFFFF;">
-          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
             <div>
-              <span class="badge bg-warning text-dark fw-bold mb-2">零程式門檻 ✕ 企管系專屬實踐指南</span>
-              <h3 class="fw-bold mb-1"><i class="fas fa-book-reader text-warning me-2"></i>Vibe Coding ✕ Agentic AI 創意實踐操作手冊</h3>
-              <p class="text-light opacity-90 small mb-0">不用手寫代碼！用自然語言意圖（Vibe）指揮 AI 智能體，將商業創意轉化為可點擊運行的真實數位原型</p>
+              <span class="badge bg-warning text-dark fw-bold mb-2"><i class="fas fa-graduation-cap me-1"></i>萬能科大 企管四系1甲 ｜ 學生課後自學專用手冊</span>
+              <h3 class="fw-bold mb-1"><i class="fas fa-book-reader text-warning me-2"></i>Vibe Coding ✕ Agentic AI 學生操作手冊</h3>
+              <p class="text-light opacity-90 small mb-0">零程式基礎！下課後依照本手冊完成工具註冊、CLEAR 提示詞發想，並免費發布至 GitHub Pages 線上繳交作品！</p>
             </div>
-            <div class="d-flex gap-2">
-              <button class="btn btn-warning btn-sm fw-bold text-dark" onclick="scrollToElement('section-teacher-demo')">
-                <i class="fas fa-chalkboard-teacher me-1"></i>教師上課示範
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-warning btn-sm fw-bold text-dark shadow-sm" onclick="window.print()">
+                <i class="fas fa-print me-1"></i>列印 / 另存 PDF 手冊
               </button>
-              <button class="btn btn-outline-light btn-sm fw-bold" onclick="scrollToElement('section-student-homework')">
-                <i class="fas fa-laptop-house me-1"></i>學生課後自學
+              <button class="btn btn-outline-light btn-sm fw-bold" onclick="copyClearTemplatePrompt()">
+                <i class="fas fa-clipboard me-1"></i>複製 CLEAR 提問模板
               </button>
             </div>
           </div>
@@ -486,142 +486,222 @@
             <div class="card-custom p-3 h-100 border-start border-primary border-4">
               <div class="d-flex align-items-center mb-2">
                 <span class="badge bg-primary rounded-pill me-2">Step 1</span>
-                <h6 class="fw-bold mb-0 text-dark">大白話寫出痛點與受眾</h6>
+                <h6 class="fw-bold mb-0 text-dark">準備免費 AI 工具與帳號</h6>
               </div>
-              <p class="small text-muted mb-0">不談高深技術，用 3 句話講清楚：『誰？在什麼場景下？遇到什麼痛苦？』確立創意出發點。</p>
+              <p class="small text-muted mb-0">使用學校 Google 帳號登入 Gemini / ChatGPT，並免費註冊 GitHub 帳號，0 元免安裝複雜環境！</p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card-custom p-3 h-100 border-start border-success border-4">
               <div class="d-flex align-items-center mb-2">
                 <span class="badge bg-success rounded-pill me-2">Step 2</span>
-                <h6 class="fw-bold mb-0 text-dark">召喚 Agentic AI 多特工協同</h6>
+                <h6 class="fw-bold mb-0 text-dark">CLEAR 提示詞驅動 AI 生成</h6>
               </div>
-              <p class="small text-muted mb-0">呼叫痛點雷達 Agent、商業模式 Agent 與一頁式原型 Agent，分工自主推理並產出規格書。</p>
+              <p class="small text-muted mb-0">運用 CLEAR 框架（背景、限制、期望、行動、角色），以自然語言指揮 AI 生成單檔案 HTML 網頁原型。</p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card-custom p-3 h-100 border-start border-warning border-4">
               <div class="d-flex align-items-center mb-2">
                 <span class="badge bg-warning text-dark rounded-pill me-2">Step 3</span>
-                <h6 class="fw-bold mb-0 text-dark">一鍵生成網頁並上傳作品</h6>
+                <h6 class="fw-bold mb-0 text-dark">GitHub Pages 免費上線與繳交</h6>
               </div>
-              <p class="small text-muted mb-0">點擊生成單檔案 HTML (index.html)，直接點開驗收，並上傳到本平台【學生作品展示中心】！</p>
+              <p class="small text-muted mb-0">將網頁命名為 index.html 上傳 GitHub Pages，取得全球公開網址，貼至【學生作品展示中心】完成繳交！</p>
             </div>
           </div>
         </div>
 
-        <!-- 教師課堂 Live Demo 示範區 -->
-        <div class="card-custom p-4 mb-4" id="section-teacher-demo" style="border-top: 4px solid #4F46E5;">
+        <!-- 第一章：工具準備與帳號免費註冊（學生回家第一步） -->
+        <div class="card-custom p-4 mb-4" id="section-tools-setup" style="border-top: 4px solid #0D9488;">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="fw-bold text-dark mb-0"><i class="fas fa-chalkboard-teacher text-primary me-2"></i>【教師上課示範專區】5 分鐘 Live Demo 示範劇本</h5>
-            <span class="badge bg-light text-secondary border">課堂實務示範操作</span>
+            <h5 class="fw-bold text-dark mb-0"><i class="fas fa-tools text-success me-2"></i>【第一章】學生課後工具準備與帳號註冊指南（100% 免費）</h5>
+            <span class="badge bg-success">回家第一步必看</span>
           </div>
-          <div class="alert alert-info py-2 px-3 small mb-3">
-            <strong>示範情境：</strong>萬能校園「健康輕食便當 10 分鐘秒速外帶預約」微型創業 MVP 登陸頁
-          </div>
+          <p class="small text-muted mb-3">同學完全不需要購買付費軟體，依照以下指引即可完成所有工具與環境準備：</p>
           <div class="row g-3">
-            <div class="col-lg-7">
-              <label class="form-label small fw-bold text-dark">老師上課複製此黃金 Prompt 演示給學生看：</label>
-              <div class="position-relative">
-                <pre class="bg-dark text-light p-3 rounded-3 small mb-2" id="teacher-demo-prompt" style="max-height: 180px; overflow-y: auto; font-family: monospace;">假設你是資深商業設計師兼前端工程師。我們正在為萬能科大校園打造一個【健康輕食 10 分鐘外帶預約】微型創業 MVP。
-請生成一個單檔案 HTML（使用 Tailwind CSS CDN 與 FontAwesome），包含：
-1. 吸睛的 Hero 標題：「下課不再排隊！下單 10 分鐘現做健康低卡餐」
-2. 三大賣點：校內現做、大卡數標示、下課準時自取
-3. 菜單展示區：舒肥雞胸餐 ($85)、低脂牛腱餐 ($95)、烤鯖魚餐 ($90)
-4. 預約登記彈窗 (Modal)：輸入學號、姓名、預計取餐時間
-請確保代碼完整，能在瀏覽器直接點開運行！</pre>
-                <button class="btn btn-sm btn-outline-light position-absolute top-0 end-0 m-2" onclick="copyTeacherDemoPrompt()">
-                  <i class="fas fa-copy me-1"></i>複製 Prompt
-                </button>
-              </div>
-              <div class="d-flex gap-2">
-                <button class="btn btn-primary btn-sm fw-bold" onclick="applyDemoToAgentWorkspace()">
-                  <i class="fas fa-external-link-alt me-1"></i>帶入到【AI 創業工坊】現場跑一次
-                </button>
+            <div class="col-lg-6">
+              <div class="p-3 bg-light rounded-3 border h-100">
+                <h6 class="fw-bold text-primary mb-2"><i class="fas fa-robot me-1"></i>1. 推薦免費生成式 AI 工具（瀏覽器直接開啟）</h6>
+                <p class="small text-secondary mb-2">無需安裝任何程式，使用瀏覽器點擊即可開始與 AI 協同：</p>
+                <div class="list-group list-group-flush small">
+                  <a href="https://gemini.google.com" target="_blank" class="list-group-item list-group-item-action py-2 px-1 d-flex justify-content-between align-items-center">
+                    <span><i class="fab fa-google text-danger me-2"></i><strong>Google Gemini</strong>（使用學校 Gmail 直接登入）</span>
+                    <span class="badge bg-primary">推薦首選</span>
+                  </a>
+                  <a href="https://chatgpt.com" target="_blank" class="list-group-item list-group-item-action py-2 px-1 d-flex justify-content-between align-items-center">
+                    <span><i class="fas fa-comment-dots text-success me-2"></i><strong>ChatGPT (GPT-4o mini)</strong>（免費註冊）</span>
+                    <span class="badge bg-secondary">功能完整</span>
+                  </a>
+                  <a href="https://claude.ai" target="_blank" class="list-group-item list-group-item-action py-2 px-1 d-flex justify-content-between align-items-center">
+                    <span><i class="fas fa-feather-alt text-warning me-2"></i><strong>Claude</strong>（介面簡潔、排版美感極佳）</span>
+                    <span class="badge bg-info text-dark">前端美感強</span>
+                  </a>
+                </div>
               </div>
             </div>
-            <div class="col-lg-5">
-              <div class="bg-light p-3 rounded-3 border h-100 small">
-                <h6 class="fw-bold text-dark mb-2"><i class="fas fa-lightbulb text-warning me-1"></i>老師上課教學要點：</h6>
-                <ul class="text-muted ps-3 mb-0">
-                  <li class="mb-2">讓學生看到：<strong>不需要寫任何程式碼</strong>，只要像跟 PM 開會一樣下達清晰指令。</li>
-                  <li class="mb-2">示範點開產出的 HTML，展示按鈕彈窗與手機版自適應效果。</li>
-                  <li class="mb-0">示範<strong>迭代對話</strong>：「請把舒肥雞胸價格改成 80 元，加上即時倒數計時器」，展示 Vibe Coding 的即時回饋感。</li>
-                </ul>
+            <div class="col-lg-6">
+              <div class="p-3 bg-light rounded-3 border h-100">
+                <h6 class="fw-bold text-dark mb-2"><i class="fab fa-github text-dark me-1"></i>2. GitHub 帳號免費註冊（作品全球上線必備）</h6>
+                <ol class="small text-secondary ps-3 mb-2">
+                  <li class="mb-1">前往 <a href="https://github.com" target="_blank" class="fw-bold text-primary">github.com</a> 點擊右上角 <strong>Sign up</strong>。</li>
+                  <li class="mb-1">輸入您的常用 Email、密碼與使用者名稱（如 <code>vnu-student-11209001</code>）。</li>
+                  <li class="mb-1">到信箱收驗證碼並輸入，即可完成免費註冊！</li>
+                  <li class="mb-0">此帳號全學期可用於免費建立 GitHub Pages 作品展示網址。</li>
+                </ol>
+                <div class="alert alert-warning py-1 px-2 small mb-0 mt-2">
+                  <i class="fas fa-info-circle me-1"></i><strong>選用工具：</strong>若想在本機電腦直接預覽與編輯 HTML，可免費下載 <a href="https://code.visualstudio.com/" target="_blank" class="fw-bold">VS Code</a> 並安裝 <code>Live Server</code> 擴充套件（非強制，純用瀏覽器雙擊 HTML 亦可！）。
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 商務提問 CLEAR 黃金五要素表格 -->
-        <div class="card-custom p-4 mb-4">
-          <h5 class="fw-bold text-dark mb-2"><i class="fas fa-key text-warning me-2"></i>商務提問黃金法則：CLEAR 框架五要素</h5>
-          <p class="small text-muted mb-3">想要 AI 產出高品質的商業規格書或網頁？遵循 CLEAR 提問法，保證產出直接達標：</p>
+        <!-- 第二章：CLEAR 提示詞框架 -->
+        <div class="card-custom p-4 mb-4" id="section-clear-framework">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="fw-bold text-dark mb-0"><i class="fas fa-key text-warning me-2"></i>【第二章】商務提問黃金法則：CLEAR 框架五要素</h5>
+            <span class="badge bg-warning text-dark">提問句型公式</span>
+          </div>
+          <p class="small text-muted mb-3">想要 AI 產出高品質的商業規格書或一頁式網頁？請永遠遵循 CLEAR 提問五要素：</p>
           <div class="table-responsive">
             <table class="table table-bordered align-middle small mb-0">
               <thead class="table-light">
                 <tr>
                   <th style="width: 15%;">要素</th>
                   <th style="width: 25%;">英文含意與重點</th>
-                  <th>企管系實戰提問範例</th>
+                  <th>萬能企管專案實戰範例</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td class="fw-bold text-primary">C - Context</td>
-                  <td><strong>背景情境：</strong>說明企業產業、目標受眾</td>
-                  <td>「我們是萬能科大企管系大四團隊，正為預算有限的大一新生規劃校園二手原文書媒合服務。」</td>
+                  <td><strong>背景情境：</strong>交代商業背景與目標受眾</td>
+                  <td>「我們是萬能科大企管系學生，正在規劃『健康低卡便當預約自取』微型創業專案，受眾為下課時間緊迫的學生與教職員。」</td>
                 </tr>
                 <tr>
                   <td class="fw-bold text-success">L - Limits</td>
-                  <td><strong>限制條件：</strong>指定字數、格式、排除項目</td>
-                  <td>「繁體中文，單一 HTML 檔案，不要使用複雜後端框架，顏色以深藍與活力橘為主，包含手機適應性。」</td>
+                  <td><strong>限制條件：</strong>指定字數、格式、樣式與排除條件</td>
+                  <td>「繁體中文；單一 HTML 檔案；使用 Tailwind CSS CDN 與 FontAwesome；主色調採用活力草莓紅 (#BE123C) 與米白；自適應手機瀏覽。」</td>
                 </tr>
                 <tr>
                   <td class="fw-bold text-warning">E - Expectation</td>
-                  <td><strong>期望產出：</strong>具體成果清單與欄位</td>
-                  <td>「需要有 Hero 主視覺、三大推薦書單卡片、Google 表單預訂彈窗、以及頁尾版權宣告。」</td>
+                  <td><strong>期望產出：</strong>具體成果清單與區塊規劃</td>
+                  <td>「需要包含：1. 吸睛的 Hero 主標題與預購按鈕；2. 三大核心賣點卡片；3. 菜單方案與價格；4. 線上預約自取彈窗 (Modal)。」</td>
                 </tr>
                 <tr>
                   <td class="fw-bold text-info">A - Action</td>
-                  <td><strong>具體動作：</strong>清晰的動詞（設計、生成、除錯）</td>
-                  <td>「請為我【撰寫】完整且可直接運行的單檔案 HTML 原始碼。」</td>
+                  <td><strong>具體動作：</strong>清晰強烈的動詞（撰寫、設計、生成）</td>
+                  <td>「請為我【撰寫並設計】一個完整、排版專業且可直接在瀏覽器雙擊運行的單檔案一頁式行銷網頁程式碼。」</td>
                 </tr>
                 <tr>
                   <td class="fw-bold text-danger">R - Role</td>
-                  <td><strong>角色扮演：</strong>指定 AI 的專家身份</td>
-                  <td>「假設你是兼具新創公司經驗與商業設計思考的資深產品經理 (PM)。」</td>
+                  <td><strong>角色扮演：</strong>指定 AI 扮演的專家身份</td>
+                  <td>「假設你是兼具 10 年品牌企劃實戰經驗與前端產品設計背景的資深產品經理 (PM)。」</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 學生課後自學與常見避坑 FAQ -->
+        <!-- 第三章：GitHub Pages 30 秒免費全球上線指引 -->
+        <div class="card-custom p-4 mb-4" id="section-github-guide" style="border-top: 4px solid #2563EB;">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-dark mb-0"><i class="fab fa-github text-primary me-2"></i>【第三章】GitHub Pages 30 秒免費全球上線指引（取得作品公開網址）</h5>
+            <span class="badge bg-primary">期中期末繳交必備</span>
+          </div>
+          <p class="small text-muted mb-3">全學期 100% 零花費！無須購買任何主機或網域，依照 4 個步驟即可取得你的專屬網址：</p>
+          <div class="row g-3">
+            <div class="col-md-3">
+              <div class="p-3 bg-light rounded-3 border h-100">
+                <span class="badge bg-primary mb-2">步驟 1</span>
+                <h6 class="fw-bold text-dark">建立 Public 儲存庫</h6>
+                <p class="small text-muted mb-0">登入 GitHub 點右上角 <strong>+</strong> ➔ <strong>New repository</strong>，輸入專案名稱（如 <code>vnu-project</code>），設為 <strong>Public</strong>，點擊 Create。</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="p-3 bg-light rounded-3 border h-100">
+                <span class="badge bg-success mb-2">步驟 2</span>
+                <h6 class="fw-bold text-dark">上傳 index.html</h6>
+                <p class="small text-muted mb-0">點擊 <strong>Add file</strong> ➔ <strong>Upload files</strong>，將生成的網頁檔案命名為 <code>index.html</code>（⚠️ 全部小寫）並拖曳上傳，點擊 Commit。</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="p-3 bg-light rounded-3 border h-100">
+                <span class="badge bg-warning text-dark mb-2">步驟 3</span>
+                <h6 class="fw-bold text-dark">開啟 Pages 功能</h6>
+                <p class="small text-muted mb-0">進入儲存庫 <strong>Settings</strong> ➔ 左側點 <strong>Pages</strong> ➔ Branch 選擇 <strong>main</strong>、資料夾選擇 <strong>/ (root)</strong> ➔ 點擊 <strong>Save</strong>。</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="p-3 bg-light rounded-3 border h-100">
+                <span class="badge bg-info text-dark mb-2">步驟 4</span>
+                <h6 class="fw-bold text-dark">複製網址並繳交</h6>
+                <p class="small text-muted mb-0">等待 30~60 秒，頁面會產生專屬網址：<code>https://帳號.github.io/專案名/</code>，複製貼至本平台【學生作品展示中心】！</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第四章：教師 5 分鐘 Live Demo 示範劇本 -->
+        <div class="card-custom p-4 mb-4" id="section-teacher-demo">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-dark mb-0"><i class="fas fa-desktop text-primary me-2"></i>【第四章】課堂示範案例劇本（大園有機草莓手工果醬微型品牌）</h5>
+            <span class="badge bg-light text-secondary border">實務範例參考</span>
+          </div>
+          <div class="row g-3">
+            <div class="col-lg-7">
+              <label class="form-label small fw-bold text-dark">學生回家可直接參考或改寫的黃金 Prompt：</label>
+              <div class="position-relative">
+                <pre class="bg-dark text-light p-3 rounded-3 small mb-2" id="teacher-demo-prompt" style="max-height: 180px; overflow-y: auto; font-family: monospace;">假設你是資深產品經理兼前端設計師。我們正在為萬能科技大學校園打造一個【大園有機草莓手工果醬微型品牌】一頁式 MVP。
+請生成一個排版現代美觀的單檔案 HTML（使用 Tailwind CSS CDN 與 FontAwesome），包含：
+1. 吸睛的 Hero 標題：「大園在地手工無添加！限量草莓果醬線上預約」
+2. 三大核心賣點：在地小農契作、減糖 30% 手工慢熬、玻璃罐回收折抵 20 元
+3. 人氣規格展示區：經典原味草莓醬 (250g/$220)、玫瑰草莓醬 (250g/$260)
+4. 預購彈窗 (Modal)：輸入學號、姓名、取貨時段與預訂瓶數
+5. 行動呼籲按鈕 (CTA)：點擊直接開啟預購彈窗
+請確保代碼完整、能在瀏覽器雙擊直接運行且自適應手機瀏覽！</pre>
+                <button class="btn btn-sm btn-outline-light position-absolute top-0 end-0 m-2" onclick="copyTeacherDemoPrompt()">
+                  <i class="fas fa-copy me-1"></i>複製 Prompt
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="bg-light p-3 rounded-3 border h-100 small">
+                <h6 class="fw-bold text-dark mb-2"><i class="fas fa-lightbulb text-warning me-1"></i>Vibe Coding 核心思維：</h6>
+                <ul class="text-muted ps-3 mb-0">
+                  <li class="mb-2"><strong>不需要手寫程式碼：</strong>只要清晰表達商業意圖，AI 會負責寫出美觀的網頁。</li>
+                  <li class="mb-2"><strong>直接雙擊驗收：</strong>生成的 HTML 檔案直接用 Chrome 瀏覽器打開即可測試彈窗與按鈕。</li>
+                  <li class="mb-0"><strong>持續自然語言微調：</strong>例如「請把玫瑰草莓的價格改成 250 元，加上限量 50 罐倒數標籤」，立即完成疊代！</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第五章：學生課後作業與常見避坑 FAQ -->
         <div class="row g-4" id="section-student-homework">
           <div class="col-lg-6">
             <div class="card-custom p-4 h-100">
-              <h5 class="fw-bold text-dark mb-3"><i class="fas fa-home text-success me-2"></i>學生課後自學與作業繳交指南</h5>
+              <h5 class="fw-bold text-dark mb-3"><i class="fas fa-home text-success me-2"></i>【第五章】學生課後自學與作業繳交指南</h5>
               <div class="d-flex flex-column gap-3 small">
                 <div class="p-3 bg-light rounded-3 border">
                   <h6 class="fw-bold text-primary mb-1">1. 零費用！使用免費 AI 工具即可完成</h6>
-                  <p class="text-muted mb-0">同學完全不用花錢購買每月付費 AI。使用學校 Google 帳號搭配本教學平台的 8 大 Agent，或免費版 Google Gemini、Claude、ChatGPT，均能輕鬆完成作業。</p>
+                  <p class="text-muted mb-0">同學完全不用花錢購買付費 AI。使用學校 Google 帳號搭配本教學平台的 8 大 Agent，或免費版 Google Gemini、ChatGPT、Claude，均能輕鬆完成作業。</p>
                 </div>
                 <div class="p-3 bg-light rounded-3 border">
                   <h6 class="fw-bold text-success mb-1">2. 作業三件套，評分標準清晰</h6>
-                  <p class="text-muted mb-0">作業只需繳交：① 200 字創意痛點描述 ＋ ② 使用的 AI Prompt 提示詞歷程 ＋ ③ 生成的 HTML 網頁檔案或企劃草案。</p>
+                  <p class="text-muted mb-0">作業繳交：① 200 字創意痛點描述 ＋ ② 使用的 AI Prompt 提示詞歷程 ＋ ③ 生成的 HTML 網頁檔案或 GitHub Pages 網址。</p>
                 </div>
                 <div class="p-3 bg-light rounded-3 border">
-                  <h6 class="fw-bold text-warning mb-1">3. 到「學生作品上傳中心」一鍵繳交</h6>
-                  <p class="text-muted mb-0">完成作品後，切換到本平台下一分頁【學生作品上傳與展示】，輸入學號並上傳檔案，系統會即時登錄並展示在成果牆！</p>
+                  <h6 class="fw-bold text-warning mb-1">3. 到「學生作品上傳與展示」一鍵繳交</h6>
+                  <p class="text-muted mb-0">完成作品後，切換到本平台【學生作品上傳與展示】，輸入學號與姓名並上傳檔案或貼上網址，老師將直接在線上給予評分與評語！</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="card-custom p-4 h-100">
-              <h5 class="fw-bold text-dark mb-3"><i class="fas fa-shield-alt text-danger me-2"></i>新手避坑指南與常見問題 (FAQ)</h5>
+              <h5 class="fw-bold text-dark mb-3"><i class="fas fa-shield-alt text-danger me-2"></i>【第六章】新手避坑指南與常見問題 (FAQ)</h5>
               <div class="accordion" id="faqAccordion">
                 <div class="accordion-item mb-2 border rounded">
                   <h2 class="accordion-header">
@@ -631,31 +711,43 @@
                   </h2>
                   <div id="faq-1" class="accordion-collapse collapse" style="display: none;">
                     <div class="accordion-body small bg-light text-muted">
-                      只要把代碼貼回給 AI，並說：『請幫我加強手機版自適應 (Responsive)，讓圖片在小螢幕時自動縮小為單欄排列，按鈕高度設定為至少 44px。』AI 幾秒內就會為你調整完畢！
+                      只要把代碼貼回給 AI，並附上一句簡單指令：『請幫我加強手機版自適應 (Mobile Responsive RWD)，在手機寬度下自動變為單欄排列，圖片寬度設為 w-full，文字字級調整為 16px。』AI 會立即為你調整完畢！
                     </div>
                   </div>
                 </div>
                 <div class="accordion-item mb-2 border rounded">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed py-2 px-3 small fw-bold" type="button" onclick="toggleAccordion('faq-2')">
-                      Q2: 遇到 AI 胡說八道（幻覺）或數字算錯？
+                      Q2: 遇到 AI 算錯成本、價格或胡說八道（幻覺）？
                     </button>
                   </h2>
                   <div id="faq-2" class="accordion-collapse collapse" style="display: none;">
                     <div class="accordion-body small bg-light text-muted">
-                      大型語言模型本質是文字機率預測，不是計算機！計算財務成本與利潤時，請要求 AI『提供 Excel 計算公式（如 SUMIFS 或毛利率公式）』，並在真實 Excel 中試算驗證。
+                      大型語言模型本質是文字機率預測，不是計算機！計算財務成本與利潤時，請要求 AI『提供 Excel 計算公式（如 SUMIFS 或毛利率公式）』，並在真實 Excel 中試算驗證，切勿全盲相信隨機生成之數字。
                     </div>
                   </div>
                 </div>
                 <div class="accordion-item mb-2 border rounded">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed py-2 px-3 small fw-bold" type="button" onclick="toggleAccordion('faq-3')">
-                      Q3: 如何把做好的網頁免費發布給朋友看？
+                      Q3: GitHub Pages 發布後出現 404 錯誤？
                     </button>
                   </h2>
                   <div id="faq-3" class="accordion-collapse collapse" style="display: none;">
                     <div class="accordion-body small bg-light text-muted">
-                      超簡單兩種方式：① 繳交至本平台的【作品上傳中心】，直接點擊即可線上預覽；② 前往免費的 netlify.com/drop，將你的 index.html 拖曳進去，10 秒內獲得專屬網址！
+                      請檢查兩點：1. 檔案名稱必須全部小寫為 <code>index.html</code>（大小寫錯誤如 Index.html 會無法辨識）；2. 儲存 Pages 設定後需約 30~60 秒進行全球 CDN 發布，請稍候 1 分鐘後強制重新整理 (Ctrl + F5)。
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item mb-2 border rounded">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed py-2 px-3 small fw-bold" type="button" onclick="toggleAccordion('faq-4')">
+                      Q4: 回家沒有電腦只有手機，能操作嗎？
+                    </button>
+                  </h2>
+                  <div id="faq-4" class="accordion-collapse collapse" style="display: none;">
+                    <div class="accordion-body small bg-light text-muted">
+                      本教學平台 100% 自適應手機！在手機瀏覽器中即可使用 AI 企劃工坊對話、練習 IPAS 證照題庫與填寫數位工作表，作品上傳亦可直接在手機端完成！
                     </div>
                   </div>
                 </div>

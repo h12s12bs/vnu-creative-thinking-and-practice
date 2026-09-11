@@ -2344,3 +2344,39 @@ ${work.prompt_summary}
   a.click();
 }
 
+function copyTeacherDemoPrompt() {
+  const el = document.getElementById('teacher-demo-prompt');
+  if (!el) return;
+  const text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    alert('✅ 已複製教師示範黃金 Prompt！可直接貼至 Gemini 或 ChatGPT 生成網頁。');
+  }).catch(() => {
+    alert('請手動選取並複製 Prompt 內容。');
+  });
+}
+
+function copyClearTemplatePrompt() {
+  const template = `【C - 背景情境】我們是萬能科大企管系學生，正在為【填寫您的專案主題】規劃微型創業專案，目標客群為【填寫目標受眾】。
+【L - 限制條件】請使用繁體中文，生成單一 HTML 檔案，使用 Tailwind CSS CDN 與 FontAwesome 圖標，排版自適應手機瀏覽，主色調為【填寫品牌顏色】。
+【E - 期望產出】包含：1. 吸睛的 Hero 主標題與行動呼籲按鈕；2. 三大核心痛點賣點卡片；3. 產品/服務方案與價格；4. 線上預約/訂購彈窗 (Modal)。
+【A - 具體動作】請為我【撰寫並設計】一個完整、排版專業且可直接在瀏覽器雙擊執行的單檔案一頁式行銷網頁程式碼。
+【R - 角色設定】假設你是兼具 10 年品牌企劃實戰經驗與前端產品設計背景的資深產品經理 (PM)。`;
+
+  navigator.clipboard.writeText(template).then(() => {
+    alert('✅ 已複製 CLEAR 提示詞提問萬用公式！填寫括號內容即可向 AI 提問。');
+  }).catch(() => {
+    alert('請至手冊表格中複製 CLEAR 提問範例。');
+  });
+}
+
+function toggleAccordion(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (el.style.display === 'none' || !el.style.display) {
+    el.style.display = 'block';
+  } else {
+    el.style.display = 'none';
+  }
+}
+
+
