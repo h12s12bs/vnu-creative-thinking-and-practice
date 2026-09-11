@@ -1,0 +1,116 @@
+[
+  {
+    "id": "work-01",
+    "title": "大園在地有機草莓手作果醬 預約訂購網",
+    "team_name": "第 1 組 - 莓好時光創生隊",
+    "group_num": 1,
+    "type": "期末網路服務實踐 (Web App)",
+    "author": "企管四系1甲 第 1 組（組長：陳品蓉 等 4 人）",
+    "desc": "針對大園小農無力負擔高額電商月費的痛點，以自然語言生成的響應式單頁訂購服務，整合表單預約與行動支付意向，獲選為期末特優作品！",
+    "tags": [
+      "地方創生",
+      "單頁預約",
+      "客群 Persona 定位",
+      "MVP 驗證"
+    ],
+    "score": "96 分 (特優)",
+    "thumbnail": "linear-gradient(135deg, #be123c 0%, #fb7185 100%)",
+    "thumbnail_icon": "fas fa-lemon",
+    "demo_html": "<!DOCTYPE html><html><head><meta charset='utf-8'><title>莓好時光</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-rose-50 p-6'><div class='max-w-md mx-auto bg-white rounded-2xl shadow p-6 text-center'><h1 class='text-2xl font-bold text-rose-600'>大園有機草莓手工果醬</h1><p class='text-slate-600 text-sm mt-2'>無農藥手工熬煮，限量預約中！</p><div class='mt-6 border-t pt-4'><button class='bg-rose-600 text-white px-6 py-2 rounded-xl font-bold w-full'>立即填單預購 (已預約 120 罐)</button></div></div></body></html>"
+  },
+  {
+    "id": "work-02",
+    "title": "萬能校園二手教科書即時媒合快查站",
+    "team_name": "第 2 組 - 萬能書友會",
+    "group_num": 2,
+    "type": "期末網路服務實踐 (Web App)",
+    "author": "企管四系1甲 第 2 組（組長：林郁翔 等 5 人）",
+    "desc": "解決原文書昂貴且臉書社團貼文雜亂的痛點，建立依系所課程分類的卡片快查站，買賣雙方一鍵跳轉私訊媒合，開學首週即撮合逾百本。",
+    "tags": [
+      "校園二手",
+      "分類快查",
+      "痛點 POV 突破",
+      "商業模式 BMC"
+    ],
+    "score": "94 分 (優等)",
+    "thumbnail": "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)",
+    "thumbnail_icon": "fas fa-book-reader",
+    "demo_html": "<!DOCTYPE html><html><head><meta charset='utf-8'><title>萬能二手書快查站</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-slate-50 p-6'><div class='max-w-md mx-auto bg-white rounded-2xl shadow p-6'><h2 class='text-xl font-bold text-blue-800'>企管系教科書即時清單</h2><div class='mt-4 space-y-2'><div class='p-3 bg-blue-50 rounded-lg flex justify-between'><span>行銷管理 (第16版)</span><span class='text-blue-600 font-bold'>$350</span></div><div class='p-3 bg-blue-50 rounded-lg flex justify-between'><span>統計學實務</span><span class='text-blue-600 font-bold'>$400</span></div></div></div></body></html>"
+  },
+  {
+    "id": "work-03",
+    "title": "外食族健康便當熱量赤字極簡計算器",
+    "team_name": "第 3 組 - 健人食光研發組",
+    "group_num": 3,
+    "type": "期末網路服務實踐 (Web App)",
+    "author": "企管四系1甲 第 3 組（組長：黃怡婷 等 4 人）",
+    "desc": "為中壢與校園周邊外食學生設計，輸入常見便當菜色即可 3 秒估算卡路里與蛋白質，並串接健康減脂自煮餐盒早鳥預約表單。",
+    "tags": [
+      "健康生活",
+      "極簡計算器",
+      "顧客 Persona",
+      "早鳥表單驗證"
+    ],
+    "score": "95 分 (特優)",
+    "thumbnail": "linear-gradient(135deg, #065f46 0%, #10b981 100%)",
+    "thumbnail_icon": "fas fa-utensils",
+    "demo_html": "<!DOCTYPE html><html><head><meta charset='utf-8'><title>外食熱量計算器</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-emerald-50 p-6'><div class='max-w-md mx-auto bg-white rounded-2xl shadow p-6'><h2 class='text-xl font-bold text-emerald-800'>外食熱量赤字估算</h2><div class='mt-4 space-y-2'><div class='p-3 bg-emerald-50 rounded-lg flex justify-between font-bold'><span>今日累積攝取：</span><span class='text-emerald-700'>1450 kcal</span></div></div><button class='mt-4 bg-emerald-600 text-white w-full py-2 rounded-xl font-bold'>預約客製化健康餐盒</button></div></body></html>"
+  },
+  {
+    "id": "work-04",
+    "title": "毛孩安親到府散步家教預約單頁",
+    "team_name": "第 4 組 - 汪喵隊長專案組",
+    "group_num": 4,
+    "type": "期末網路服務實踐 (Web App)",
+    "author": "企管四系1甲 第 4 組（組長：張宏瑋 等 4 人）",
+    "desc": "針對上班族無法及時遛狗的痛點，建立專業認證到府陪伴預約服務，具備服務項目時數選擇與即時報價試算，已累積 30+ 穩定客源。",
+    "tags": [
+      "寵物經濟",
+      "線上即時預約",
+      "痛點 POV 聚焦",
+      "商業模式九宮格"
+    ],
+    "score": "93 分 (優等)",
+    "thumbnail": "linear-gradient(135deg, #b45309 0%, #f59e0b 100%)",
+    "thumbnail_icon": "fas fa-paw",
+    "demo_html": "<!DOCTYPE html><html><head><meta charset='utf-8'><title>毛孩散步家教</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-amber-50 p-6'><div class='max-w-md mx-auto bg-white rounded-2xl shadow p-6 text-center'><h2 class='text-xl font-bold text-amber-800'>專業寵物到府散步家教</h2><p class='text-sm text-slate-600 mt-2'>受訓認證保母，隨時回報毛孩定位！</p><div class='mt-4 p-4 bg-amber-100/60 rounded-xl text-amber-900 font-bold'>基礎散步 45 分鐘：$350</div><button class='mt-4 bg-amber-600 text-white w-full py-2 rounded-xl font-bold'>線上登記空檔預約</button></div></body></html>"
+  },
+  {
+    "id": "work-05",
+    "title": "青埔高鐵特區特色甜點探店地圖指南",
+    "team_name": "第 5 組 - 甜點偵探隊",
+    "group_num": 5,
+    "type": "期末網路服務實踐 (Web App)",
+    "author": "企管四系1甲 第 5 組（組長：郭子齊 等 5 人）",
+    "desc": "整合青埔特區 15 間不限時、附插座手作甜點咖啡廳，提供氛圍標籤篩選與 Google 地圖導航跳轉，期末上線三週累積超過 2,000 次造訪。",
+    "tags": [
+      "探店地圖",
+      "標籤篩選",
+      "顧客旅程 CJM",
+      "社群導流"
+    ],
+    "score": "92 分 (優等)",
+    "thumbnail": "linear-gradient(135deg, #6b21a8 0%, #a855f7 100%)",
+    "thumbnail_icon": "fas fa-map-marked-alt",
+    "demo_html": "<!DOCTYPE html><html><head><meta charset='utf-8'><title>青埔甜點探店地圖</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-purple-50 p-6'><div class='max-w-md mx-auto bg-white rounded-2xl shadow p-6'><h2 class='text-xl font-bold text-purple-800'>青埔不限時咖啡甜點</h2><div class='mt-3 space-y-2 text-sm'><div class='p-2.5 bg-purple-50 rounded-lg flex justify-between'><span>焙香工作室 (附插座/WiFi)</span><span class='text-purple-600 font-bold'>4.9★</span></div><div class='p-2.5 bg-purple-50 rounded-lg flex justify-between'><span>木佐珈琲手沖館</span><span class='text-purple-600 font-bold'>4.8★</span></div></div></div></body></html>"
+  },
+  {
+    "id": "work-06",
+    "title": "手作香氛大豆蠟燭客製化調香意向書",
+    "team_name": "第 6 組 - 拾光香氛工作室",
+    "group_num": 6,
+    "type": "期中商業企劃案 (Lean Pitch)",
+    "author": "企管四系1甲 第 6 組（組長：謝宛芸 等 4 人）",
+    "desc": "運用 Agentic AI 工具完成的期中商業發想企劃書，涵蓋顧客痛點 POV、Persona 輪廓、商業模式九宮格 (BMC) 與初版 MVP 冒煙測試結果。",
+    "tags": [
+      "期中企劃書",
+      "痛點 POV",
+      "顧客 Persona",
+      "BMC 九宮格"
+    ],
+    "score": "91 分 (良好)",
+    "thumbnail": "linear-gradient(135deg, #0e7490 0%, #06b6d4 100%)",
+    "thumbnail_icon": "fas fa-file-alt",
+    "demo_html": "<!DOCTYPE html><html><head><meta charset='utf-8'><title>拾光香氛期中企劃</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-cyan-50 p-6'><div class='max-w-md mx-auto bg-white rounded-2xl shadow p-6'><span class='bg-cyan-600 text-white text-xs font-bold px-2 py-1 rounded'>期中提案發表</span><h2 class='text-xl font-bold text-cyan-900 mt-2'>手作天然香氛大豆蠟燭</h2><p class='text-xs text-slate-600 mt-2'>【痛點 POV】：現代上班族長工時高壓，需要睡前安全、不刺鼻的放鬆氣味儀式。</p><div class='mt-3 p-3 bg-cyan-50 text-xs rounded'>BMC 核心價值：100% 大豆蠟、木質調客製配方、環保玻璃罐回收折抵。</div></div></body></html>"
+  }
+]

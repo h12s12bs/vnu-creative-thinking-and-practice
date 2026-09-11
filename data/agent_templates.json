@@ -1,0 +1,521 @@
+[
+  {
+    "id": "agent-01",
+    "name": "痛點雷達與 POV 問題定義 Agent",
+    "english_name": "Pain Radar & POV Agent",
+    "icon": "fa-bullseye",
+    "color": "#4F46E5",
+    "badge": "痛點發掘與問題定義",
+    "role": "設計思考教練 ✕ 青年市場洞察專家",
+    "goal": "穿透表面抱怨，挖掘深層未被滿足需求，收斂出具備商業價值的標準 POV 問題陳述句。",
+    "description": "幫助同學從日常生活或校園雜亂的體驗缺口中，透過情緒分群與痛點分級，產出『[特定使用者] 需要 [真實需求]，因為 [意外的深層洞察]』之經典問題定義。",
+    "inputs": [
+      {
+        "field": "user_group",
+        "label": "目標使用者族群",
+        "placeholder": "例：萬能科大大一外宿新鮮人、半工半讀進修部同學、通勤族學生"
+      },
+      {
+        "field": "raw_complaint",
+        "label": "生活觀察或真實抱怨",
+        "placeholder": "例：月底沒錢常吃泡麵覺得很自卑、教科書太貴買了又只用一學期、宿舍洗烘衣機永遠在排隊"
+      },
+      {
+        "field": "context",
+        "label": "特定場景與限制",
+        "placeholder": "例：零啟動資金、只有課餘零碎時間、只能在校園生活圈內營運"
+      }
+    ],
+    "react_trace": [
+      {
+        "step": "Thought 1",
+        "desc": "解析使用者輸入之雜亂抱怨，辨識核心衝突點（例如金錢匱乏、時間衝突、社交壓力或尊嚴受挫）。"
+      },
+      {
+        "step": "Action 1",
+        "tool": "PainClusterAnalyzer(raw_complaint)",
+        "desc": "調用痛點分群演算法，將抱怨分類為『機能痛點』、『情感痛點』與『社交痛點』三層次。"
+      },
+      {
+        "step": "Observation 1",
+        "desc": "發現最深層痛點並非表面上的『價格貴』，而是背後的『不確定性帶來的焦慮』與『渴望被平等尊重的社交心理』。"
+      },
+      {
+        "step": "Thought 2",
+        "desc": "依據實用設計思考架構，構思 3 種不同破局切角之 POV 陳述句，並設定客觀驗證門檻。"
+      },
+      {
+        "step": "Decision",
+        "desc": "輸出 3 款 POV 規格書、痛點嚴重度評級 (1~5星) 與建議啟動切入點。"
+      }
+    ],
+    "output_template": {
+      "title": "市場痛點洞察與 POV 問題陳述規格書",
+      "pov_statements": [
+        "POV 1 (主打便利)：[大一外宿學生] 需要 [在 10 分鐘內取得乾淨體面的生活換洗衣物]，因為 [排隊搶烘衣機失敗會引發隔天無衣可穿的強烈社交焦慮]。",
+        "POV 2 (主打經濟)：[半工半讀學生] 需要 [每餐 50 元以內兼顧熱量與尊嚴的溫飽解法]，因為 [長期吃泡麵不僅傷身更會侵蝕個人自信心]。",
+        "POV 3 (主打永續)：[企管系修課同學] 需要 [零成本循環二手教科書管道]，因為 [花上千元買新書在期末丟棄帶來極大罪惡感與資源浪費]。"
+      ],
+      "pain_level": "⭐⭐⭐⭐⭐ (極高痛感，屬於高頻剛需場景)",
+      "next_milestone": "立即進入第二階段：使用 Agent 2 繪製同理心地圖以深化人物誌。"
+    },
+    "external_prompt": "【身分】你是一位專精於青年微型創業與實用設計思考的資深導師。\n【脈絡】我們是一群正在尋找創業題目的大學企管系學生。\n【輸入資訊】\n- 目標族群：{user_group}\n- 觀察到的真實抱怨：{raw_complaint}\n- 場景限制：{context}\n【任務】請穿透表面抱怨，進行痛點三層次分析（機能/情感/社交），並輸出 3 個不同切角的標準 POV 陳述句：『[使用者] 需要 [需求]，因為 [意外洞察]』，並附帶市場急迫性評估。\n【格式】Markdown 結構化清晰條列。"
+  },
+  {
+    "id": "agent-02",
+    "name": "目標受眾同理心與 Persona 畫像 Agent",
+    "english_name": "Empathy Map & Persona Agent",
+    "icon": "fa-user-astronaut",
+    "color": "#059669",
+    "badge": "心理模型探勘",
+    "role": "深度使用者研究專家 ✕ 心理學人物誌架構師",
+    "goal": "構建具備靈魂的具象化受眾人物誌，完整還原 Says / Thinks / Does / Feels 四象限與深層 Pains / Gains。",
+    "description": "避免團隊陷入『自嗨』與主觀臆測，為團隊塑造一位有血有肉的虛擬核心代表人物，作為後續所有定價、文案與功能設計的指南針。",
+    "inputs": [
+      {
+        "field": "persona_name",
+        "label": "虛擬代表姓名與身分",
+        "placeholder": "例：半工半讀的大一新生小安 (19歲)、通勤大叔 (40歲)"
+      },
+      {
+        "field": "daily_routine",
+        "label": "日常生活動線與作息",
+        "placeholder": "例：早上 8 點上課、下午 5 點去便利商店打工到 10 點、每月零用錢 4000 元"
+      },
+      {
+        "field": "core_dilemma",
+        "label": "最痛苦抓狂的瞬間",
+        "placeholder": "例：看著存摺只剩幾百元，但明天必須交系費與買原文書"
+      }
+    ],
+    "react_trace": [
+      {
+        "step": "Thought 1",
+        "desc": "將虛擬人物小安的生活動線映射至情緒曲線，辨識出每日能量最低谷的疲憊時刻。"
+      },
+      {
+        "step": "Action 1",
+        "tool": "SimulateUserInterview(persona_name, core_dilemma)",
+        "desc": "模擬極端情境深度訪談，挖掘小安外在對朋友說的客套話，與內心深處不願示人的真實焦慮。"
+      },
+      {
+        "step": "Observation 1",
+        "desc": "發現小安外表裝作樂觀瀟灑 (Says: 沒事我習慣打工了)，內心卻極度害怕被朋友看出經濟窘迫 (Thinks: 拜託大家不要提議去吃吃到飽)。"
+      },
+      {
+        "step": "Thought 2",
+        "desc": "結構化整理同理心地圖四象限，並提煉其最迫切渴望獲得的 2 項 Gains。"
+      },
+      {
+        "step": "Decision",
+        "desc": "生成完整 Persona 人物檔案卡與同理心四象限，包含決策心理模型與最容易打動他的觸發語彙。"
+      }
+    ],
+    "output_template": {
+      "title": "目標顧客人物誌（Persona）與同理心地圖檔案卡",
+      "profile": "姓名：陳小安 ｜ 年齡：19 歲 ｜ 背景：萬能企管大一新鮮人，外縣市租屋，白天上課晚上兼職",
+      "empathy_map": {
+        "says": "『沒關係啦，我今天吃得很飽不用管我』、『期末考隨便啦歐趴就好』",
+        "thinks": "『月底房租還差一千元怎麼辦？』、『不想讓同學覺得我很窮酸』",
+        "does": "下課後狂滑特價群組、每天算零錢記帳、週末把打工排滿",
+        "feels": "長期被時間追著跑的慢性焦慮、對未來迷惘但又渴望自立自強的自尊心"
+      },
+      "pains": "1. 突發性的非預期開銷（如原文書、系服）；2. 缺乏兼顧打工與學業的高效工具",
+      "gains": "1. 能體面省下金錢且不被同學側目；2. 擁有能利用零碎時間創造微型收益的機會"
+    },
+    "external_prompt": "【身分】你是一位頂級 UX 顧客心理學研究員。\n【任務】根據以下輸入，為我們的微型創業專案繪製一份精密的《目標顧客人物誌 Persona ✕ 同理心地圖》。\n- 代表人物：{persona_name}\n- 生活作息：{daily_routine}\n- 關鍵掙扎：{core_dilemma}\n【請產出】\n1. 人物檔案（年齡、背景、可支配所得、生活座右銘）\n2. 同理心地圖四大象限（Says / Thinks / Does / Feels）\n3. 核心 Pains（痛點與恐懼）與 Gains（渴望與期待）\n4. 能夠打動該人物的『黃金觸發句 (Golden Hook)』。"
+  },
+  {
+    "id": "agent-03",
+    "name": "Crazy 8s 顛覆發想與 HMW 破局 Agent",
+    "english_name": "Crazy 8s & HMW Ideation Agent",
+    "icon": "fa-brain",
+    "color": "#D97706",
+    "badge": "打破慣性思維",
+    "role": "創意衝刺引導師 ✕ 商業點子顧問",
+    "goal": "將沉重的痛點轉化為開放的 HMW 提問，並在 8 分鐘內跨界發散 8 個大膽創新的微型商業解法。",
+    "description": "以量求質、打破傳統『只能開餐廳或擺攤』的平庸思維，導入共享經濟、遊戲化、零成本協同等跨界視角，產出最具破局點的旗艦方案。",
+    "inputs": [
+      {
+        "field": "hmw_question",
+        "label": "How Might We (HMW) 提問",
+        "placeholder": "例：我們如何能夠讓大學生在不花一毛錢的情況下，取得期末歐趴必備的複習資源？"
+      },
+      {
+        "field": "cross_industry",
+        "label": "跨界參考領域",
+        "placeholder": "例：手遊抽卡抽獎機制、盲盒文化、健身打卡對賭機制、UBike 共享站點"
+      },
+      {
+        "field": "budget_limit",
+        "label": "啟動成本上限",
+        "placeholder": "例：零元啟動、每位組員最多掏出 500 元"
+      }
+    ],
+    "react_trace": [
+      {
+        "step": "Thought 1",
+        "desc": "檢視 HMW 提問是否具備適當範疇，排除過於宏大或過於狹隘的解題方向。"
+      },
+      {
+        "step": "Action 1",
+        "tool": "DivergentIdeaGenerator(hmw_question, cross_industry)",
+        "desc": "強制以 8 種不同的極端約束維度進行發散（包含反向法、倍增法、遊戲化、實物共享等）。"
+      },
+      {
+        "step": "Observation 1",
+        "desc": "前 3 個想法偏向常規（如成立 LINE 群傳檔案），第 6、第 7 個想法結合了手遊對賭與盲盒機制，具備極高爆發力。"
+      },
+      {
+        "step": "Thought 2",
+        "desc": "運用可行性矩陣 (Feasibility vs Impact) 進行快速收斂，挑選出最具冠軍潛力的 Champion Idea。"
+      },
+      {
+        "step": "Decision",
+        "desc": "列出 8 個 Crazy 8s 概念草案，並精選出 1 個落地可行且充滿亮點的推薦旗艦方案。"
+      }
+    ],
+    "output_template": {
+      "title": "Crazy 8s 概念發散矩陣與 Champion 旗艦方案",
+      "eight_ideas": [
+        "概念 1 (對賭機制)：期末歐趴保證金契約（過關退費並瓜分未過關者獎池）",
+        "概念 2 (盲盒交換)：校園二手筆記驚喜盲盒（隨機抽到學霸滿分講義）",
+        "概念 3 (技能交換)：以工換學（幫修電腦換取微積分 1 小時輔導）",
+        "概念 4 (贊助模式)：校園周邊早餐店贊助印製（筆記底部置放奶茶折價券）",
+        "概念 5 (微型訂閱)：每週 10 元解鎖每堂課 3 分鐘 AI 語音重點精華",
+        "概念 6 (社群敲碗)：懸賞點歌台模式（學生投票決定學長姐優先拆解哪一章）",
+        "概念 7 (共享櫃模式)：無人筆記自取站（在走廊設置免開鎖借還櫃）",
+        "概念 8 (NFT/勳章)：萬能歐趴榮譽虛擬勳章（期末認證排行榜）"
+      ],
+      "champion_idea": "【推薦旗艦方案】概念 2 ✕ 概念 4：『校園考前救火筆記盲盒 ✕ 早餐店折價券聯盟』—— 零開發成本，兼具神秘感、剛需解決與商業獲利！"
+    },
+    "external_prompt": "【身分】你是一位擅長突破盲點的創意思考與商業點子顧問。\n【任務】請針對以下 HMW 提問進行『Crazy 8s 瘋狂八分鐘』概念發散，產出 8 個跳脫框架、低成本但震撼的微型創業點子，並最後收斂出 1 個最值得落地的 Champion 方案。\n- HMW 提問：{hmw_question}\n- 跨界借鑑：{cross_industry}\n- 資源約束：{budget_limit}\n【輸出要求】8 個創意點子（請依序編號並附上趣味亮點），最後以『Champion 方案評析』作結。"
+  },
+  {
+    "id": "agent-04",
+    "name": "商業模式九宮格 (BMC) 診斷 Agent",
+    "english_name": "Business Model Canvas Agent",
+    "icon": "fa-th-large",
+    "color": "#2563EB",
+    "badge": "商業閉環檢驗",
+    "role": "商業模式分析師 ✕ 創業收支顧問",
+    "goal": "完整構建商業模式 9 大模組，嚴格檢視價值主張與收益流之閉環，指出最脆弱的成本漏洞。",
+    "description": "將空泛的創意轉化為可持續獲利的商業全景圖，自動盤點客戶關係、關鍵活動與合作夥伴，並試算損益兩平點。",
+    "inputs": [
+      {
+        "field": "startup_concept",
+        "label": "微型創業核心產品/服務",
+        "placeholder": "例：考前重點筆記盲盒 ✕ 校園周邊商家優惠券聯名包"
+      },
+      {
+        "field": "target_customer",
+        "label": "主要付費客群",
+        "placeholder": "例：萬能科大大一、大二平時半工半讀、考前極需惡補重點的學生"
+      },
+      {
+        "field": "pricing_plan",
+        "label": "預計定價與收費方式",
+        "placeholder": "例：每包盲盒售價 49 元，或期末全科通行證 149 元"
+      }
+    ],
+    "react_trace": [
+      {
+        "step": "Thought 1",
+        "desc": "檢視輸入的定價模式是否能覆蓋固定成本與單件耗材支出。"
+      },
+      {
+        "step": "Action 1",
+        "tool": "BMCMappingEngine(startup_concept, target_customer)",
+        "desc": "自動對應 9 大模組並檢驗『價值主張 (VP)』是否能精準匹配『顧客區隔 (CS)』。"
+      },
+      {
+        "step": "Observation 1",
+        "desc": "發現左側『關鍵夥伴 (KP)』若缺乏優質筆記提供者（學霸）的持續誘因，右側『價值主張』將瞬間瓦解。"
+      },
+      {
+        "step": "Thought 2",
+        "desc": "為關鍵夥伴模組加入分潤激勵機制（每售出一份給予筆記作者 30% 分潤），補齊閉環。"
+      },
+      {
+        "step": "Decision",
+        "desc": "輸出完整的 BMC 九宮格標準表格，並附上損益平衡試算與 2 點關鍵風險警訊。"
+      }
+    ],
+    "output_template": {
+      "title": "商業模式九宮格全景架構書",
+      "canvas": {
+        "KP": "校園周邊餐飲商家、成績頂尖之學霸筆記作者、學校社團幹部",
+        "KA": "筆記審核與去個資化處理、商家折扣券談判、線上 Landing Page 營運",
+        "KR": "數位提示詞庫、筆記版權授權協定、GitHub Pages 展示平台",
+        "VP": "在考前 48 小時以銅板價快速掌握必考精華，同時獲得 100 元餐飲折價，花小錢買心安與省時間",
+        "CR": "LINE 官方帳號小幫手、期末互助歐趴社群、會員回購折扣",
+        "CH": "Dcard 校園板、班級群組推薦、實體走廊海報 QR Code、GitHub Pages 官方站",
+        "CS": "平時工作繁重、考前時間極度緊迫但不想被當的在職專班與大一大學生",
+        "C_Structure": "固定成本：LINE 官方帳號進階費、工具訂閱費；變動成本：筆記作者分潤 (30%)、印刷耗材費",
+        "R_Streams": "單包盲盒銷售收入 (49元/份)、店家廣告聯名置底費 (每檔期500元)、全科 VIP 預購包"
+      },
+      "break_even_point": "單包毛利 34 元，每月固定成本 680 元，每月只需售出 20 份即可達成損益平衡！"
+    },
+    "external_prompt": "【身分】你是一位專業的微型創業與商業模式顧問。\n【任務】請針對以下微型創業構想，產出標準的《商業模式九宮格 Business Model Canvas》診斷報告：\n- 專案產品：{startup_concept}\n- 目標客群：{target_customer}\n- 定價構想：{pricing_plan}\n【輸出要求】\n1. 繪製完整的 Markdown 九宮格矩陣（包含 KP, KA, KR, VP, CR, CH, CS, Cost, Revenue）\n2. 損益平衡試算推演（假設固定成本與變動成本）\n3. 點出本模式最脆弱的 2 個致命風險假設並給予防範解法。"
+  },
+  {
+    "id": "agent-05",
+    "name": "精實創業 MVP 驗證路徑 Agent",
+    "english_name": "Lean MVP Validation Agent",
+    "icon": "fa-flask",
+    "color": "#0D9488",
+    "badge": "Build-Measure-Learn",
+    "role": "精實創業敏捷教練 ✕ 假門冒煙測試設計師",
+    "goal": "設計零成本、3 天內可發布的最小可行性產品 (MVP) 驗證實驗，取得客觀點擊或預購數據。",
+    "description": "拒絕花幾個月寫出沒人買的 App！引導同學運用冒煙測試 (Smoke Test)、登陸頁 (Landing Page) 或綠野仙蹤法，用最低代價驗證市場真實渴求。",
+    "inputs": [
+      {
+        "field": "riskiest_assumption",
+        "label": "最想驗證的致命假設",
+        "placeholder": "例：學生真的願意花 49 元購買考前重點筆記嗎？還是只想要免費白嫖？"
+      },
+      {
+        "field": "test_channel",
+        "label": "第一波測試通路",
+        "placeholder": "例：班級 LINE 大群、系學會 IG 限動、學校附近影印店門口"
+      },
+      {
+        "field": "success_kpi",
+        "label": "預期驗證達標指標 (KPI)",
+        "placeholder": "例：72 小時內吸引 30 個人點擊『立即搶先預購』或留下 Email"
+      }
+    ],
+    "react_trace": [
+      {
+        "step": "Thought 1",
+        "desc": "檢視該假設是否為真正的價值假設 (Value Hypothesis)，排除非核心技術假設。"
+      },
+      {
+        "step": "Action 1",
+        "tool": "DesignSmokeTest(riskiest_assumption, test_channel)",
+        "desc": "設計一頁式 Landing Page 假門實驗（Fake Door Experiment），搭配無風險預購按鈕。"
+      },
+      {
+        "step": "Observation 1",
+        "desc": "如果直接收錢會有信任阻力，因此將 CTA 設計為『早鳥預約享 5 折，名額剩 15 位』以衡量購買意圖。"
+      },
+      {
+        "step": "Thought 2",
+        "desc": "制定詳細的 3 階段 Build-Measure-Learn 時間表（Day 1 架站 ➔ Day 2 導流 ➔ Day 3 衡量）。"
+      },
+      {
+        "step": "Decision",
+        "desc": "產出包含文案、表單埋點、倫理防呆與軸轉 (Pivot) 判定標準的完整 MVP 實驗計畫手冊。"
+      }
+    ],
+    "output_template": {
+      "title": "精實創業 MVP 冒煙測試（Smoke Test）實驗設計書",
+      "experiment_name": "【48小時考前救火包】早鳥購買意願假門測試",
+      "mvp_type": "Landing Page 登陸頁 ✕ 假按鈕冒煙測試 (0 成本實踐)",
+      "action_steps": [
+        "Step 1 (Build)：使用 Antigravity 在 30 分鐘內生成單頁展示網站，放上封面視覺、三大重點章節預覽與定價 49 元。",
+        "Step 2 (Deploy)：將網頁部署至 GitHub Pages，取得公開專屬 HTTPS 網址，並製成高解析度 QR Code。",
+        "Step 3 (Measure)：在班級社群分享『考前大作戰預購調查』，當用戶點擊『立即預購』按鈕時，彈窗顯示：『感謝熱情支持！首批 50 份正由學長姊最後校對中，請留下 Email，上線第一時間享 0 元優先試讀！』",
+        "Step 4 (Learn)：計算實質留單率（留單人數 ÷ 造訪總人數）。"
+      ],
+      "pivot_criteria": "若留單率 > 15%，證明痛點極度強烈，立即正式產出筆記；若留單率 < 5%，表示定價過高或痛點不痛，啟動題目軸轉 (Pivot)。"
+    },
+    "external_prompt": "【身分】你是一位推崇 Eric Ries 精實創業心法的矽谷敏捷導師。\n【任務】請針對以下最關鍵假設，為我們的微型創業專案設計一份零成本、3 天內可完成的《MVP 冒煙測試方案》：\n- 致命假設：{riskiest_assumption}\n- 預定測試場域：{test_channel}\n- 成功門檻 (KPI)：{success_kpi}\n【輸出要求】\n1. MVP 實驗形式選擇（為何選此形式）\n2. 具體三步執行 SOP（包含假門點擊後友善的防呆彈窗說明，不欺騙用戶）\n3. 數據衡量指標（計算公式與轉換率門檻）\n4. 判定成功（前進）或失敗（軸轉 Pivot）之量化標準。"
+  },
+  {
+    "id": "agent-06",
+    "name": "品牌 12 原型與視覺語義風格 Agent",
+    "english_name": "Brand Archetype & Visual Agent",
+    "icon": "fa-palette",
+    "color": "#9333EA",
+    "badge": "品牌個性 ✕ 視覺定位",
+    "role": "品牌形象顧問 ✕ 視覺風格設計師",
+    "goal": "定錨 12 種經典品牌個性原型，產出扣人心弦的 Slogan、HEX 色彩情緒板與全套 UI 提示詞視覺規格。",
+    "description": "將團隊模糊的美感喜好轉化為客觀的品牌個性標準，確保從海報、投影片到 Antigravity 生成的網頁擁有高度統一的高級感。",
+    "inputs": [
+      {
+        "field": "selected_archetype",
+        "label": "選定之品牌個性原型",
+        "placeholder": "例：照顧者 (Caregiver)、叛逆者 (Rebel)、智者 (Sage)、探險家 (Explorer)"
+      },
+      {
+        "field": "brand_vibe",
+        "label": "期望傳遞的情感氛圍",
+        "placeholder": "例：溫暖安心、打破體制的熱血、極簡現代科技感、幽默接地氣"
+      },
+      {
+        "field": "core_promise",
+        "label": "品牌對顧客的核心承諾",
+        "placeholder": "例：再絕望的期末考，我們都陪你笑著歐趴！"
+      }
+    ],
+    "react_trace": [
+      {
+        "step": "Thought 1",
+        "desc": "分析所選品牌原型與目標客群心理防線的共振頻率。"
+      },
+      {
+        "step": "Action 1",
+        "tool": "ColorPsychologyMapper(selected_archetype, brand_vibe)",
+        "desc": "計算符合該原型的光學色彩數值（主色 Primary、輔助色 Neutral、重音點綴色 Accent）。"
+      },
+      {
+        "step": "Observation 1",
+        "desc": "若選擇『照顧者』原型，應避免高飽和度的警示紅，選用代表信任的鼠尾草綠 (`#10B981`) 與溫暖米白 (`#F8FAFC`)。"
+      },
+      {
+        "step": "Thought 2",
+        "desc": "擬定 3 款不同韻律感的品牌 Slogan，並撰寫適合直接丟給 Antigravity 的 Tailwind 配色規格。"
+      },
+      {
+        "step": "Decision",
+        "desc": "產出《品牌核心規格書》，包含色彩代碼 (HEX)、字體建議、語氣指引與網頁視覺生成指令。"
+      }
+    ],
+    "output_template": {
+      "title": "品牌識別核心規格書（Brand Guidelines）",
+      "archetype_summary": "選定原型：【照顧者 Caregiver】—— 核心特質：利他、同理、可靠、守護溫暖",
+      "brand_slogans": [
+        "Slogan 1 (感性共鳴)：『黑夜裡的微光，陪你在期末考笑著過關。』",
+        "Slogan 2 (俐落行動)：『告別泡麵焦慮，用一杯奶茶的錢換一學期的安心。』",
+        "Slogan 3 (極簡主張)：『救火筆記，只留重點。』"
+      ],
+      "color_palette": {
+        "primary": "#0D9488 (深青翠綠，象徵生命力與安全感)",
+        "secondary": "#0F172A (極夜深藍，建立專業穩重背景)",
+        "accent_cta": "#F59E0B (活力琥珀金，專用於引導點擊按鈕)",
+        "background": "#0B1120 (深邃科技黑，提升介面高級感)"
+      },
+      "tone_of_voice": "親切如鄰座同桌學長姐，不說教、不賣弄名詞，始終站在學弟妹的立場給予溫柔而堅定的支持。"
+    },
+    "external_prompt": "【身分】你是一位資深品牌形象與視覺風格顧問。\n【任務】請根據以下品牌要素，為我們的微型創業專案量身訂製一份《品牌視覺與語氣規格書》：\n- 品牌原型：{selected_archetype}\n- 氛圍感受：{brand_vibe}\n- 核心承諾：{core_promise}\n【產出內容】\n1. 品牌個性關鍵字 3 個與性格剖析\n2. 3 款朗朗上口的品牌 Slogan（情感型、行動型、極簡型）\n3. 專屬色彩情緒板（包含 Primary, Secondary, Accent, Background 之具體 HEX 色碼與寓意）\n4. 品牌語氣指引 (Tone of Voice) 正反範例對照表。"
+  },
+  {
+    "id": "agent-07",
+    "name": "AIDA 全通路數位行銷矩陣 Agent",
+    "english_name": "AIDA Multi-Channel Marketing Agent",
+    "icon": "fa-bullhorn",
+    "color": "#EA580C",
+    "badge": "轉化漏斗 ✕ 爆款文案",
+    "role": "社群行銷顧問 ✕ 爆款文案高手",
+    "goal": "解構 AIDA 漏斗，生成配備黃金 3 秒開頭 Hook、痛點共鳴與無阻力 CTA 的跨平台傳播矩陣。",
+    "description": "告別無聊的官方宣傳！針對 Instagram 限動、Threads 爆款短文與 LINE 推播，產出高說服力的傳播腳本，大幅提高期末專案曝光與互動率。",
+    "inputs": [
+      {
+        "field": "campaign_topic",
+        "label": "推廣活動主題",
+        "placeholder": "例：期末考倒數 72 小時！【救火筆記盲盒】萬能校園首發限量預購"
+      },
+      {
+        "field": "core_incentive",
+        "label": "核心誘因與福利",
+        "placeholder": "例：早鳥預約享 5 折，再送學餐紅茶一杯兌換券"
+      },
+      {
+        "field": "landing_url",
+        "label": "導流網站網址",
+        "placeholder": "例：https://username.github.io/pass-notes/"
+      }
+    ],
+    "react_trace": [
+      {
+        "step": "Thought 1",
+        "desc": "解析不同社群受眾注意力習慣：Threads 重真實個人心聲、IG 重視覺衝突、LINE 重即時專屬福利。"
+      },
+      {
+        "step": "Action 1",
+        "tool": "AIDACopywriter(campaign_topic, core_incentive)",
+        "desc": "分別撰寫 Attention 鉤子、Interest 痛點喚醒、Desire 見證對比與 Action 點擊按鈕。"
+      },
+      {
+        "step": "Observation 1",
+        "desc": "Threads 開頭如果像廣告會被瞬間略過，應改寫為『半夜兩點在圖書館崩潰』的真實第一人稱敘事。"
+      },
+      {
+        "step": "Thought 2",
+        "desc": "為每則文案設計低摩擦力的 CTA 結尾，強化限時限量緊迫感。"
+      },
+      {
+        "step": "Decision",
+        "desc": "輸出涵蓋 IG 限動分鏡、Threads 爆發貼文與 LINE 官方群推播之全通路傳播矩陣。"
+      }
+    ],
+    "output_template": {
+      "title": "AIDA 全通路數位行銷傳播矩陣",
+      "threads_post": {
+        "hook_attention": "剛才在育英樓走廊，看見一個學弟對著微積分原文書發呆到眼眶泛紅...",
+        "interest_body": "真的懂那種感覺：平時每天下課狂衝去打工，回到家已經累癱，明明很努力想兼顧，但打開厚得像磚頭的原文書根本不知道考題在哪裡。",
+        "desire_proof": "所以我們這群企管系的學長姐，花了兩週把近 3 年考古題與筆記濃縮成 10 頁【救火盲盒】。昨晚測試班上 5 個人看完，微積分小考全班前 30%！",
+        "action_cta": "不想讓辛苦打工的心血在期末被當掉？👉 留言『救火』或點個人檔案 GitHub 網址，限量 50 份早鳥 0 元登記中！"
+      },
+      "ig_story": "視覺：倒數 72 小時時鐘特寫 ✕ 劃滿紅線的課本 ➔ 貼紙投票：『你今晚想通宵 (哭) / 想要救火包 (笑)』",
+      "line_push": "【考前緊急救火】同學別慌！你預約的期末必勝錦囊已上線 ➔ 點此一鍵解鎖領取 100 元餐券！"
+    },
+    "external_prompt": "【身分】你是一位擅長青年社群行銷與爆款文案的行銷顧問。\n【任務】請依循 AIDA 轉換漏斗架構（Attention ➔ Interest ➔ Desire ➔ Action），為我們的微型創業活動撰寫一組跨平台行銷傳播矩陣：\n- 行銷主題：{campaign_topic}\n- 核心誘因：{core_incentive}\n- 目標連結：{landing_url}\n【請產出】\n1. Threads 病毒式第一人稱爆款長文（含黃金 3 秒情緒 Hook、共鳴主體、對比見證與強烈 CTA）\n2. Instagram 3 頁動態限動（Story）分鏡腳本\n3. LINE 官方帳號 100 字精準推播廣播詞。"
+  },
+  {
+    "id": "agent-08",
+    "name": "Antigravity Vibe Coding 一頁式網站生成 Agent",
+    "english_name": "Vibe Coding Landing Page Agent",
+    "icon": "fa-code",
+    "color": "#6366F1",
+    "badge": "GitHub Pages 數位實踐",
+    "role": "首席前端 Vibe Coding 架構師 ✕ 單檔案極簡技術先鋒",
+    "goal": "將整學期商業企劃書一鍵轉譯為具備 Tailwind CSS CDN、Lucide Icons 與響應式設計的完整 index.html 原始碼。",
+    "description": "完全零建置、零安裝！直接產出乾淨優雅的單一 HTML 檔案，包含導航列、Hero 痛點區、特色卡片、定價表、互動表單與頁尾，上傳即可於 GitHub Pages 免費發布。",
+    "inputs": [
+      {
+        "field": "project_title",
+        "label": "專案名稱與品牌 Slogan",
+        "placeholder": "例：萬能歐趴救火包 ｜ 專為大學生設計的考前精華互助平台"
+      },
+      {
+        "field": "three_features",
+        "label": "三大核心特色功能",
+        "placeholder": "例：1. 考前重點精煉摘要；2. 合作商家百元優惠券聯名；3. 匿名互助提問答客問"
+      },
+      {
+        "field": "theme_colors",
+        "label": "品牌配色 (Primary / Accent)",
+        "placeholder": "例：深靛藍 (#4F46E5) 搭配 琥珀金 (#F59E0B)"
+      }
+    ],
+    "react_trace": [
+      {
+        "step": "Thought 1",
+        "desc": "規劃單檔案無建置架構：引入 Tailwind CSS CDN、Noto Sans TC Google Fonts 與 Lucide Icons CDN。"
+      },
+      {
+        "step": "Action 1",
+        "tool": "VibeCodingSynthesizer(project_title, three_features, theme_colors)",
+        "desc": "組裝 5 大現代網頁區塊：Navbar, Hero, Features Grid, Pricing Table, Interactive Modal CTA。"
+      },
+      {
+        "step": "Observation 1",
+        "desc": "為確保手機端與 G104 教室大螢幕完美相容，加入 `viewport meta`、`backdrop-blur` 毛玻璃卡片與純前端原生 JS 互動表單。"
+      },
+      {
+        "step": "Thought 2",
+        "desc": "撰寫乾淨、免編譯且具備詳細中文註解的單一 HTML5 代碼，並備妥 GitHub Pages 3 分鐘部署指引。"
+      },
+      {
+        "step": "Decision",
+        "desc": "產出完整可立即運行的 index.html 程式碼，支援一鍵複製與下載！"
+      }
+    ],
+    "output_template": {
+      "title": "單檔案一頁式專案網站原型（index.html）規格",
+      "features_included": [
+        "全響應式排版（Mobile-First，手機/平板/電腦自動適配）",
+        "Tailwind CSS CDN 即時渲染（無需任何 node.js 或 npm 環境）",
+        "毛玻璃質感導航列與 Hero 抓人視覺",
+        "三大亮點特色卡片（hover 浮起微動效）",
+        "階梯式定價卡片（含推薦高亮標籤）",
+        "互動式預約表單彈窗（純原生 JavaScript，提交即時反饋）",
+        "頁尾版權與全組成員介紹"
+      ],
+      "github_pages_sop": "1. 登入 GitHub ➔ 2. 新增公開 Repository ➔ 3. 拖曳上傳此 index.html ➔ 4. Settings ➔ Pages 選擇 main 分支儲存 ➔ 5. 取得全世界公開網址！"
+    },
+    "external_prompt": "【身分】你是頂級的前端 Vibe Coding 專家，精通以極簡無建置架構產出世界級水準的原型網頁。\n【任務】請根據以下商業企劃資訊，產出一個『單一 HTML 檔案』的完整可運行網頁代碼：\n- 專案名稱與標語：{project_title}\n- 三大特色：{three_features}\n- 品牌配色：{theme_colors}\n【技術規格要求】\n1. 必須是單一 index.html 檔案，不得引用外部本地 CSS/JS 檔案。\n2. 樣式必須採用 `<script src=\"https://cdn.tailwindcss.com\"><\\/script>` CDN。\n3. 圖標採用 FontAwesome 或純 SVG。\n4. 包含 5 大標準區塊：現代導航列 (Navbar)、強烈視覺 Hero 區、3 列特色卡片 (Features)、定價方案 (Pricing)、預購表單與 Footer。\n5. 點擊按鈕時請以原生 JavaScript 彈出友善的『預約成功』互動通知！"
+  }
+]

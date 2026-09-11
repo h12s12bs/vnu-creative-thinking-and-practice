@@ -1,0 +1,3962 @@
+[
+  {
+    "id": "Q001",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "前特斯拉 AI 總監 Andrej Karpathy 提出的『Vibe Coding』概念，在企業數位轉型與軟體工程中的核心意涵為何？",
+    "options": [
+      "全面停止程式邏輯思考，完全依賴運氣生成程式碼",
+      "開發者專注於業務需求意圖、架構氛圍與邊界條件，底層程式碼交由 AI 生成，人類扮演架構師與品質驗收者",
+      "僅能用於產生純文字，無法建構具有互動功能的 Web 應用原型",
+      "必須使用組合語言輸入指令才能正確驅動大型語言模型"
+    ],
+    "answer": 1,
+    "explanation": "Vibe Coding 代表軟體建構從『語法記憶導向』躍遷為『意圖與規格導向』，人類扮演高階 PM 與驗收者角色。"
+  },
+  {
+    "id": "Q002",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "依據 iPAS『AI 應用規劃師』能力指標，企管領域人才導入生成式 AI 輔助開發時，最關鍵的專業職能為何？",
+    "options": [
+      "底層神經網路反向傳播演算法推導能力",
+      "商業問題定義、需求規格模組化拆解與成果驗收準則 (Acceptance Criteria) 制定能力",
+      "手動輸入各類 CSS 樣式屬性的速度",
+      "記憶主流作業系統核心驅動程式代碼"
+    ],
+    "answer": 1,
+    "explanation": "在自然語言生成時代，『精準定義商業需求、設定邊界與設計驗收標準』的產品經理 (PM) 思維是最核心能力。"
+  },
+  {
+    "id": "Q003",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "相較於傳統軟體專案開發流程，採用自然語言意圖驅動 (Vibe Coding) 的最大競爭優勢在於：",
+    "options": [
+      "完全省略所有的軟體測試與安全檢驗環節",
+      "能夠零成本聘請百位資深全端工程師",
+      "極大幅度降低原型開發門檻，以極低時間成本實現微型創業概念的敏捷驗證 (PoC)",
+      "生成之代碼保證永遠不會出現任何邏輯錯誤或漏洞"
+    ],
+    "answer": 2,
+    "explanation": "Vibe Coding 使非技術創業者能在數小時內產出具備可用性的互動原型，極速推進商業驗證。"
+  },
+  {
+    "id": "Q004",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "在引導生成式 AI 建構企業前端網頁時，下列何種提示詞策略最能產出結構嚴謹的成果？",
+    "options": [
+      "僅輸入『做一個科技感的網站』並交由 AI 自行發揮",
+      "明確定義目標客群 (Persona)、頁面架構 (Hero/特點/表單)、色彩規範 (Hex Code) 與行動呼籲 (CTA)",
+      "直接貼上整部行銷學教科書內容作為提示詞",
+      "要求 AI 只能使用純文字輸出，不可引用任何樣式庫"
+    ],
+    "answer": 1,
+    "explanation": "結構化的提示詞具備清楚的資訊架構、視覺調性約束與具體功能，能顯著收斂 AI 產出品質。"
+  },
+  {
+    "id": "Q005",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "下列關於大型語言模型 (LLM) 生成程式碼之敘述，何者符合 iPAS『生成式 AI 應用』之正確觀念？",
+    "options": [
+      "LLM 具備百分之百的事實正確性，產出之代碼不需任何人工審查",
+      "LLM 產出代碼可能存在『幻覺 (Hallucination)』引用不存在之套件或函式，必須落實人工治理 (Human-in-the-Loop)",
+      "LLM 只能生成英文註解，無法理解繁體中文商業需求",
+      "LLM 生成之網頁無法在現代主流瀏覽器上執行"
+    ],
+    "answer": 1,
+    "explanation": "LLM 代碼生成存在幻覺風險，必須透過AI Agent 協同治理（HITL）進行瀏覽器實測與點擊驗收。"
+  },
+  {
+    "id": "Q006",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "企業評估導入生成式 AI 開發工具時，『No-Code / Low-Code』平台的主要定位為何？",
+    "options": [
+      "徹底取代企業內所有的資料庫與網路架構",
+      "透過視覺化拖曳或自然語言介面加速應用交付，縮短業務端與技術端之溝通落差",
+      "強制要求所有員工考取資訊工程博士學位",
+      "僅能用於設計靜態海報，無法開發商業應用"
+    ],
+    "answer": 1,
+    "explanation": "No-Code / Low-Code 工具旨在加速跨領域人員的數位原型建置，促進敏捷創新。"
+  },
+  {
+    "id": "Q007",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "在意圖驅動程式開發中，若 AI 產出之介面排版跑版，最佳的修正指令策略為：",
+    "options": [
+      "從頭到尾完全重新發問，祈禱下次會更好",
+      "具體指出錯誤位置、當前問題現象（如按鈕被遮蔽）以及期望之目標排版規則（如 flex 排列置中）",
+      "直接放棄使用 AI 工具",
+      "隨機複製一段未知的網路代碼貼上"
+    ],
+    "answer": 1,
+    "explanation": "精準指出問題上下文、具體缺失與期待的修正目標，能引導模型迅速定位並解決缺陷。"
+  },
+  {
+    "id": "Q008",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "大專生運用生成式 AI 進行微型創業原型建置，下列何者屬於『最小可行性產品 (MVP)』之核心原則？",
+    "options": [
+      "一開始就投入百萬資金建構大型跨國雲端伺服器機房",
+      "以最簡潔之單頁式介面聚焦核心價值主張，驗證使用者點擊意願與市場真實需求",
+      "必須完整開發具備複雜權限與多幣別後台之完整電商系統才准上線",
+      "只重視後端架構，介面完全不提供任何操作按鈕"
+    ],
+    "answer": 1,
+    "explanation": "MVP 強調以最低成本構建核心功能，快速進入市場收集顧客真實回饋。"
+  },
+  {
+    "id": "Q009",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "Antigravity 等進階 AI 代理人工作台相較於一般單純對話式 AI，其主要進化特徵在於：",
+    "options": [
+      "只支援純文字輸入與輸出",
+      "具備專案級上下文感知、本地檔案系統讀寫、工具調用 (Tool Calling) 與自主除錯能力",
+      "不需要任何提示詞即可自動猜測創辦人想法",
+      "無法與任何現代 Web 框架整合"
+    ],
+    "answer": 1,
+    "explanation": "Agent 平台具備自主操作檔案、調度工具與執行完整工作流的端到端能力。"
+  },
+  {
+    "id": "Q010",
+    "weeks": [
+      1
+    ],
+    "chapter": 1,
+    "chapter_title": "AI Agent 協同新典範：Vibe Coding 理念與自然語言互動思維",
+    "module": "【iPAS AI】自然語言意圖驅動與 Vibe Coding",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "企業經理人看待 AI 時代軟體開發平權化，最適當之戰略態度為：",
+    "options": [
+      "排斥任何 AI 工具，堅持純手動刻碼才具備商業價值",
+      "深刻體認技術實作門檻大幅降低，商業策略、顧客痛點洞察與商業模式設計躍居核心勝負關鍵",
+      "認為企管專業已毫無用處，應全數轉向演算法理論研究",
+      "完全放任 AI 自主營運，管理階層不需承擔任何商業決策責任"
+    ],
+    "answer": 1,
+    "explanation": "AI 工具平權化讓企管人才回歸商業本質，洞察市場真實需求與設計可持續商業模式成為關鍵。"
+  },
+  {
+    "id": "Q011",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "自主智能體 (AI Agent) 與傳統對話式聊天機器人 (Chatbot) 最本質之差異在於：",
+    "options": [
+      "Agent 模型運算參數量一定比聊天機器人大十倍以上",
+      "Agent 具備自主任務分解、環境感知、工具調用 (Tool Calling) 與目標驅動決策行動之閉環能力",
+      "Agent 不具備自然語言理解能力，只能解析 SQL 語法",
+      "Agent 僅能在本機離線執行，無法連接網際網路"
+    ],
+    "answer": 1,
+    "explanation": "AI Agent 具備目標規劃、動態調用外部工具與自主修正執行的智慧代理人特質。"
+  },
+  {
+    "id": "Q012",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "普林斯頓大學與 Google 提出的『ReAct』智能體架構，其核心推論循環步驟為：",
+    "options": [
+      "Read ➔ Act ➔ Close",
+      "Thought (思考推理) ➔ Action (工具行動) ➔ Observation (環境觀察反思)",
+      "Report ➔ Analyze ➔ Terminate",
+      "Train ➔ Validate ➔ Test"
+    ],
+    "answer": 1,
+    "explanation": "ReAct 巧妙結合了推理思考 (Reasoning) 與外部行動 (Acting)，並藉由觀察回饋達成自我修正。"
+  },
+  {
+    "id": "Q013",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "在 AI Agent 系統中，所謂『工具調用 (Tool Calling / Function Calling)』的主要目的為何？",
+    "options": [
+      "增加模型回覆時的打字動畫特效",
+      "讓大型語言模型突破自身知識截止日與封閉性，即時讀取外部資料庫、API 或搜尋引擎最新資訊",
+      "完全取代人類工程師的日常溝通",
+      "降低伺服器的網路頻寬消耗"
+    ],
+    "answer": 1,
+    "explanation": "工具調用讓 AI 代理人能夠與現實環境系統介接，大幅克服幻覺並擴展實用能力。"
+  },
+  {
+    "id": "Q014",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "為什麼在企業導入 AI Agent 工作流時，必須建立『Human-in-the-Loop (AI Agent 協同治理)』機制？",
+    "options": [
+      "因為電腦運算速度比不上人類手算",
+      "針對涉及合約簽署、金流扣款、重大客戶溝通等高風險行為，必須由人類專業人員進行最終授權把關",
+      "為了增加員工的加班工時",
+      "所有國際法規皆強制規定 AI 系統不得獨立運作超過 5 分鐘"
+    ],
+    "answer": 1,
+    "explanation": "人機治理 (HITL) 是防範 AI 越權失控與重大法律財務風險的必備防禦機制。"
+  },
+  {
+    "id": "Q015",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "在微型創業市場情資蒐集中，若配置一個『競品情資雷達 Agent』，下列何者為其最佳任務 SOP？",
+    "options": [
+      "隨機向競爭同業發送惡意攻擊封包",
+      "定期自動調用搜尋 API 檢索同業官網新上架商品與定價策略，整理為結構化分析報表供團隊決策",
+      "自動在社群平台上偽造不實假新聞抹黑競品",
+      "刪除本地專案中的所有財務資料"
+    ],
+    "answer": 1,
+    "explanation": "合法的競品情資雷達運用公開資訊檢索工具，提供客觀數據輔助企業進行定價與策略調整。"
+  },
+  {
+    "id": "Q016",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "當 AI Agent 在執行 Action 時遭遇『HTTP 404 找不到資源』錯誤，在 ReAct 機制中 Agent 應如何應對？",
+    "options": [
+      "立即系統崩潰並終止整個專案運作",
+      "在 Observation 階段記錄該錯誤，並在下一次 Thought 中更換搜尋關鍵字或嘗試其他備援端點",
+      "假裝該網頁存在並隨意捏造虛假數據繳交",
+      "強制刪除本地電腦之作業系統檔案"
+    ],
+    "answer": 1,
+    "explanation": "Observation 讓 Agent 能具備錯誤感知能力，進而在思考循環中實施自適應修正。"
+  },
+  {
+    "id": "Q017",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "企業建構具備『長期記憶 (Long-Term Memory)』能力的 AI 智能體時，通常搭配何種關鍵架構？",
+    "options": [
+      "手動將每日對話記錄列印並存入檔案夾",
+      "檢索增強生成 (RAG) 結合向量資料庫 (Vector Database)，依據語義相似度動態檢索歷史上下文",
+      "加大伺服器的硬碟容量即可自動具備語意記憶",
+      "要求使用者每次發問前必須先重述過去所有對話"
+    ],
+    "answer": 1,
+    "explanation": "向量資料庫與 RAG 技術讓 Agent 能夠跨對話視窗精準檢索企業專屬長期知識庫。"
+  },
+  {
+    "id": "Q018",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "為確保企業 AI Agent 不會洩漏敏感客戶資料，團隊設置『安全護欄 (Guardrails)』時，下列何者屬於『負向約束』？",
+    "options": [
+      "請使用專業親切的語調回覆客戶",
+      "嚴禁輸出任何客戶之身分證字號、信用卡號及內部通訊錄明細，違者立即中斷輸出",
+      "回答時請優先引用官方常見問答庫",
+      "所有金額計算請標明新台幣 (NTD)"
+    ],
+    "answer": 1,
+    "explanation": "明文限制、禁止特定高敏感資料輸出與越權行為，屬於標準的安全防護護欄。"
+  },
+  {
+    "id": "Q019",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "依據 iPAS 能力鑑定標準，企管顧問在規劃企業多 Agent 協同系統時，首要考量為：",
+    "options": [
+      "購置最昂貴的專案管理軟體",
+      "將複雜業務流程 (SOP) 進行模組化拆解，明確界定各 Agent 的職責角色 (Role) 與交接標準 (Interface)",
+      "確保每個 Agent 都擁有相同的使用者介面",
+      "讓所有 Agent 同時爭奪同一個系統權限"
+    ],
+    "answer": 1,
+    "explanation": "明確的組織職能分工與資料交接介面標準，是多智能體系統順暢協同運作的基石。"
+  },
+  {
+    "id": "Q020",
+    "weeks": [
+      2
+    ],
+    "chapter": 2,
+    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "在 AI Agent 決策評估中，若模型產生不可預期的偏離目標行為，最根本的排查切入點應為：",
+    "options": [
+      "更換電腦螢幕以改善色彩顯示",
+      "審視 System Prompt 角色設定是否模糊、任務邊界約束是否不足，以及少樣本範例是否具備誘導性",
+      "直接重灌整台伺服器",
+      "向原廠提出求償訴訟"
+    ],
+    "answer": 1,
+    "explanation": "系統提示詞 (System Prompt) 與情境約束是規範 Agent 行為邏輯的最核心源頭。"
+  },
+  {
+    "id": "Q021",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "在 iPAS 提示工程方法學中，經典結構化提示詞『P-C-G-C-F』架構中的『P』代表：",
+    "options": [
+      "Product (產品定價)",
+      "Persona (角色定義 / 專家身分設定)",
+      "Process (處理程序代碼)",
+      "Promotion (促銷宣傳方案)"
+    ],
+    "answer": 1,
+    "explanation": "Persona 設定明確的專家身分背景，能精準定錨大語言模型的專業知識庫視野與語調。"
+  },
+  {
+    "id": "Q022",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "在提示工程中導入『Few-Shot Prompting (少樣本提示)』技巧，其主要目的與效益為：",
+    "options": [
+      "增加文字長度以消耗模型額度",
+      "提供數個高品質的『輸入 ➔ 理想輸出』示範樣本，引導 AI 領會期望的輸出格式、語調與邏輯結構",
+      "完全取代後續所有微調訓練",
+      "強迫模型輸出完全與範例一模一樣的字句"
+    ],
+    "answer": 1,
+    "explanation": "少樣本提示透過上下文示範（In-Context Learning），顯著提升輸出的準確度與格式一致性。"
+  },
+  {
+    "id": "Q023",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "所謂『Chain-of-Thought (CoT, 思維鏈)』提示技巧，對解決複雜商業推論問題的關鍵價值在於：",
+    "options": [
+      "要求模型在給出最終答案前，必須逐步列出推理的中間邏輯步驟，大幅降低邏輯跳躍與計算錯誤",
+      "將文字逐字翻譯成多國語言",
+      "把提示詞轉為電腦底層機器碼",
+      "縮短模型的運算時間至 1 毫秒"
+    ],
+    "answer": 1,
+    "explanation": "CoT 藉由『Step-by-Step』的分步推演，大幅提升大語言模型在複雜邏輯與算術上的準確性。"
+  },
+  {
+    "id": "Q024",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "下列提示詞範例中，何者最具備『結構化、邊界清晰與格式嚴謹』之高品質水準？",
+    "options": [
+      "幫我隨便寫個咖啡店的商業計畫書，越厲害越好。",
+      "【角色】資深微型創業顧問【情境】大園區校園手作甜點店【任務】提 3 個低成本獲客方案【約束】零廣告預算、限用社群【格式】Markdown 表格包含方案名、實施步驟、預期效果",
+      "咖啡店要怎麼賺大錢？請回答我。",
+      "請列印 1000 字的咖啡介紹。"
+    ],
+    "answer": 1,
+    "explanation": "具備完整角色、情境脈絡、具體任務、邊界約束與輸出格式的結構化指令，能獲得最精準之結果。"
+  },
+  {
+    "id": "Q025",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "在撰寫提示詞時，設定『負向約束 (Negative Constraints)』的主要作用為：",
+    "options": [
+      "批評 AI 過去回答表現不佳",
+      "明文規定『不可使用』之元素（如：嚴禁提及競品名稱、不得超過 200 字、禁止使用簡體字），收斂輸出邊界",
+      "要求模型以悲觀負面的語氣回覆客戶",
+      "強制模型產生報錯訊息"
+    ],
+    "answer": 1,
+    "explanation": "明確排除不想要的內容與風格，能有效避免 AI 產生偏離主題或不合規的冗長廢話。"
+  },
+  {
+    "id": "Q026",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "當要求 AI 輸出供前端程式直接渲染的數據時，最適當之格式規範為：",
+    "options": [
+      "長篇小說散文形式",
+      "標準且可直接驗證的 JSON 或 Markdown 表格格式，並約束不要附帶多餘的寒暄廢話",
+      "手寫草稿拍拍照的掃描檔",
+      "純語音廣播錄音檔"
+    ],
+    "answer": 1,
+    "explanation": "純淨的 JSON 或結構化 Markdown 能讓下游程式或網頁直接解析，實現自動化流程串接。"
+  },
+  {
+    "id": "Q027",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "在長文本提示詞中，將最關鍵的核心指令置於提示詞的『開頭』或『結尾』，主要是為了防範何種現象？",
+    "options": [
+      "Lost in the Middle (迷失在中間效應：模型容易忽略長文本中間區段的細節指令)",
+      "電腦硬碟壞軌現象",
+      "網路封包碰撞延遲",
+      "文字亂碼轉換失敗"
+    ],
+    "answer": 1,
+    "explanation": "LLM 在長上下文中存在注意力分散效應，首尾關鍵位置能提供最強的語義注意力權重。"
+  },
+  {
+    "id": "Q028",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "提示詞中若要求『請以 SWOT 架構分析該品牌』，此種方法在認知科學上屬於何種引導？",
+    "options": [
+      "無效的框架限制",
+      "認知腳手架 (Cognitive Scaffolding)，藉由既有成熟之管理學結構框架輔助 AI 進行結構化思考",
+      "純粹為了增加版面美感",
+      "強迫 AI 學習企管系大一必修課"
+    ],
+    "answer": 1,
+    "explanation": "導入標準管理學框架作為認知腳手架，能激發模型以嚴密且具層次感的維度展開全面剖析。"
+  },
+  {
+    "id": "Q029",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "針對目標受眾為企管系大一新生的教材產出，提示詞應如何設定『Tone & Voice (文案語調)』約束？",
+    "options": [
+      "大量使用冷僻生澀之醫學統計專有名詞與高階數學符號",
+      "採用親切、鼓勵探索、白話平易且結合校園生活情境的引導口吻，避免過度學術行話",
+      "通篇使用全英文古英語文法",
+      "使用極端嚴肅且充滿威嚇性的語句"
+    ],
+    "answer": 1,
+    "explanation": "適配受眾理解門檻之語氣約束，能顯著提升閱讀滿意度與實務學習成效。"
+  },
+  {
+    "id": "Q030",
+    "weeks": [
+      3
+    ],
+    "chapter": 3,
+    "chapter_title": "結構化提示詞工程（Prompt Engineering）：多維指令架構",
+    "module": "【iPAS AI】結構化提示工程與多維指令架構",
+    "competency": "生成式 AI 與提示工程",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "依據 iPAS 規範，防止提示詞被惡意使用者進行『提示注入 (Prompt Injection)』的第一道基本防線為：",
+    "options": [
+      "完全關閉所有 AI 系統的使用權限",
+      "嚴格區隔『系統指令 (System Instruction)』與『外部使用者輸入 (User Input)』，並對使用者輸入實施過濾審查",
+      "祈禱使用者都是誠信善良的",
+      "將提示詞刻在伺服器機殼上"
+    ],
+    "answer": 1,
+    "explanation": "在架構層面嚴格分離系統控制提示與未信任的使用者輸入，是防範注入攻擊的核心原則。"
+  },
+  {
+    "id": "Q031",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在 iPAS 品牌規劃師能力架構中，進行總體宏觀環境分析最常運用的『PESTEL』分析法，不包含下列何項維度？",
+    "options": [
+      "政治環境 (Political)",
+      "個人薪資隱私 (Personal Salary)",
+      "經濟環境 (Economic)",
+      "社會文化 (Sociocultural)"
+    ],
+    "answer": 1,
+    "explanation": "PESTEL 涵蓋政治、經濟、社會、科技、環境與法律六大宏觀面向，不包含個人薪資隱私。"
+  },
+  {
+    "id": "Q032",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "麥可波特 (Michael Porter) 提出的『五力分析 (Five Forces Analysis)』主要用於評估：",
+    "options": [
+      "員工個人的身體健康指數",
+      "產業的整體吸引力、長期獲利潛力與競爭結構強度",
+      "電腦主機板的散熱效能",
+      "社群媒體的每日發文量"
+    ],
+    "answer": 1,
+    "explanation": "五力分析用於診斷產業競爭激烈程度與潛在進入者、替代品等關鍵威脅。"
+  },
+  {
+    "id": "Q033",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在進行微型創業選題時，所謂的『真痛點 (Real Pain Point)』通常具備何種特質？",
+    "options": [
+      "使用者偶爾想到但完全不願意花錢解決的假議題",
+      "具備『高頻次』、『高急迫性』或『顧客強烈渴望且願意支付代價尋求替代解方』之特徵",
+      "所有競爭同業都早已完美解決的成熟問題",
+      "完全憑創辦人主觀幻想但現實不存在的情境"
+    ],
+    "answer": 1,
+    "explanation": "真痛點必須具備切膚之痛與付費意願，避免落入無人買單之『偽需求』陷阱。"
+  },
+  {
+    "id": "Q034",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在設計思考選題中，『POV (Point of View, 觀點陳述)』的標準結構公式通常為：",
+    "options": [
+      "產品名稱 ＋ 廣告預算 ＋ 上市日期",
+      "【使用者 (User)】需要【深層需求 (Need)】，因為【獨特洞察 (Insight)】",
+      "成本結構 ＋ 收益流向 ＝ 淨利潤",
+      "期中考分數 ＋ 出缺勤次數 ＝ 總成績"
+    ],
+    "answer": 1,
+    "explanation": "POV 公式將特定受眾、核心需求與背後深層原因嚴密扣合，確立聚焦之問題焦點。"
+  },
+  {
+    "id": "Q035",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "運用 AI 進行產業痛點擴散發想時，下列何者能協助團隊跳脫常規同質化競爭？",
+    "options": [
+      "要求 AI 直接複製產業界龍頭老大的商業模式",
+      "請 AI 針對『極端使用者 (Extreme Users)』或『跨界產業成功案例』進行痛點與解方映射",
+      "直接抄襲維基百科第一段簡介",
+      "輸入『請給我一個一定能賺大錢的點子』"
+    ],
+    "answer": 1,
+    "explanation": "探討邊界極端使用者與跨界典範轉移，能激發出具備破壞性創新的差異化痛點。"
+  },
+  {
+    "id": "Q036",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "SWOT 分析中，將企業內部『劣勢 (Weakness)』轉化為外部『機會 (Opportunity)』的策略配對屬於：",
+    "options": [
+      "SO 策略 (增長型)",
+      "WO 策略 (扭轉型 / 借力策略)",
+      "ST 策略 (防禦型)",
+      "WT 策略 (撤退型)"
+    ],
+    "answer": 1,
+    "explanation": "WO 策略旨在克服內部劣勢以把握外部市場浮現之契機。"
+  },
+  {
+    "id": "Q037",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "在微型創業選題評估矩陣中，若一個點子『市場痛點極強』但『團隊現階段執行可行性極低』，適當之策略為：",
+    "options": [
+      "盲目貸款億萬資金強行硬幹",
+      "重新縮小問題邊界，切割出團隊能以現有資源驗證之核心切入點 (Sub-problem) 進行 MVP 嘗試",
+      "直接宣告創業失敗放棄任何商業構想",
+      "轉向完全沒有市場痛點的無聊題目"
+    ],
+    "answer": 1,
+    "explanation": "將宏大問題拆解為可被驗證的微型切入點，是精實創業之核心靈活性。"
+  },
+  {
+    "id": "Q038",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "下列何者是『偽需求 (Fake Demand)』的典型警訊現象？",
+    "options": [
+      "訪談時受訪者皆口頭表示『好棒好酷』，但當要求預付 50 元定金時全員藉故拒絕",
+      "市場上存在眾多同業且價格透明",
+      "顧客主動詢問何時可以正式購買",
+      "使用者抱怨現有產品操作繁瑣且昂貴"
+    ],
+    "answer": 1,
+    "explanation": "口頭稱讚往往出於社交禮貌，唯有實際承諾時間、資料或定金才是驗證真需求的試金石。"
+  },
+  {
+    "id": "Q039",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "在企管專案團隊組建時，最理想的團隊結構通常追求：",
+    "options": [
+      "全體成員專長完全一模一樣",
+      "成員專長互補（如包含商業策略、行銷美感、系統架構與流程管理等多元視角）",
+      "團隊人數越多越好，動輒 50 人以上",
+      "完全不需要設立負責推進進度之負責人"
+    ],
+    "answer": 1,
+    "explanation": "跨專長互補之精實小組能兼顧商業邏輯、使用者體驗與落地可行性。"
+  },
+  {
+    "id": "Q040",
+    "weeks": [
+      4
+    ],
+    "chapter": 4,
+    "chapter_title": "市場需求洞察與團隊組建：痛點分析與專案選題",
+    "module": "【iPAS 品牌】市場環境洞察與痛點定義",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "優質的創業題目陳述 (Problem Statement) 應當避免下列何種錯誤傾向？",
+    "options": [
+      "陳述過於冗長且混雜了未經證實的解決方案假設（如『問題是學生沒有我們的 App』）",
+      "清楚描述受眾在特定情境下遭遇之挫折",
+      "具備具體客觀的場景細節描繪",
+      "邏輯清楚且能被客觀度量"
+    ],
+    "answer": 0,
+    "explanation": "切忌將『缺乏自己的產品』直接當作痛點陳述，應聚焦於使用者本身的真實困擾。"
+  },
+  {
+    "id": "Q041",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "iPAS 行銷企劃實務中，『同理心地圖 (Empathy Map)』經典架構的四個主要象限為：",
+    "options": [
+      "食、衣、住、行",
+      "Says (說出的言論)、Thinks (內心的想法)、Does (外在的行為)、Feels (真實的情緒感受)",
+      "Input (輸入)、Output (輸出)、Process (處理)、Storage (儲存)",
+      "Who (人物)、When (時間)、Where (地點)、Why (原因)"
+    ],
+    "answer": 1,
+    "explanation": "同理心地圖藉由四象限深入探勘目標客群之言行外顯與心理內隱世界。"
+  },
+  {
+    "id": "Q042",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在同理心訪談時，當發現受訪者『Says (說)』與『Thinks (想)』產生顯著矛盾時，專業企劃師應解讀為：",
+    "options": [
+      "問卷完全無效，應立刻撕毀作廢",
+      "可能存在社會期待偏誤 (Social Desirability Bias) 或深層隱藏恐懼，往往是極具突破性的商業洞察切入點",
+      "受訪者故意說謊惡作劇",
+      "AI 語意分析模型發生故障"
+    ],
+    "answer": 1,
+    "explanation": "言語與內心矛盾處常蘊藏未被滿足的潛意識痛點，是創造差異化價值主張之黃金契機。"
+  },
+  {
+    "id": "Q043",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "建構目標顧客人物誌 (Customer Persona) 時，下列何項資訊最能指導行銷企劃與產品設計？",
+    "options": [
+      "虛擬人物的身份證字號與血型",
+      "在特定生活場景下的核心焦慮、決策挫折點、激勵因素 (Motivations) 與未滿足的渴望",
+      "虛擬人物的每日步行步數",
+      "虛擬人物手機使用的電信公司"
+    ],
+    "answer": 1,
+    "explanation": "心理模型 (Mental Model)、挫折場景與決策動機才能為文案與產品功能提供靈魂導引。"
+  },
+  {
+    "id": "Q044",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "同理心地圖底部的兩大收斂輸出欄位通常為：",
+    "options": [
+      "營業額 (Revenue) 與 淨利 (Profit)",
+      "Pains (使用者的痛點、障礙、風險與恐懼) 與 Gains (渴望、收益、成效評估標準)",
+      "主機費 (Server Cost) 與 人事費 (Labor Cost)",
+      "期中考成績 與 期末考成績"
+    ],
+    "answer": 1,
+    "explanation": "Pains 與 Gains 是將同理心田野觀察無縫串接至價值主張畫布 (VPC) 的關鍵樞紐。"
+  },
+  {
+    "id": "Q045",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "行銷學上所謂的『極端使用者 (Extreme Users)』訪談，其策略價值在於：",
+    "options": [
+      "極端使用者的痛點往往更為放大、敏銳且具前瞻性，能啟發團隊發現一般主流客群隱而未顯之需求",
+      "極端使用者是唯一會付費的客群",
+      "可以直接取代大規模量化問卷抽樣調查",
+      "極端使用者通常不需任何服務費用"
+    ],
+    "answer": 1,
+    "explanation": "極端環境與習慣的使用者能放大系統缺陷與深層渴望，激發更具包容力的解方。"
+  },
+  {
+    "id": "Q046",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "進行深入質化同理心訪談時，下列何種提問方式屬於『開放且非誘導性』之最佳示範？",
+    "options": [
+      "『我們這款 AI 創業工具非常強大對不對？』",
+      "『請您跟我聊聊，上次您在選課系統遇到卡關時，當下的具體情境與感受是如何？』",
+      "『如果定價 100 元你一定會買吧？』",
+      "『你是不是也覺得傳統教學方式非常落伍？』"
+    ],
+    "answer": 1,
+    "explanation": "邀請對方還原真實經歷情境（Storytelling），不給予價值預設，能收集到最純粹的真實細節。"
+  },
+  {
+    "id": "Q047",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "在 Persona 設定中，賦予具體名字（如『半工半讀的大一新生阿豪』）與生活場景照片的主要目的為：",
+    "options": [
+      "單純為了美化企劃書版面",
+      "建立團隊成員間統一的共情對象，避免在討論時陷入每個人各說各話的主觀臆測",
+      "向內政部戶政司申請登記",
+      "防止商業計畫被其他團隊冒名頂替"
+    ],
+    "answer": 1,
+    "explanation": "具象化的人物誌能讓團隊在決策時持續對齊『阿豪在此刻會感到滿意還是困惑』。"
+  },
+  {
+    "id": "Q048",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "當同理心調研發現：學生抱怨『學校周邊午餐常常排隊超過 20 分鐘』，其背後更深層的心理 Pain 可能是：",
+    "options": [
+      "學生特別討厭看見排隊的人潮",
+      "排隊壓縮了午休時間，導致下午第一節課精神渙散昏睡，產生學業落後的焦慮與自責感",
+      "學生想要在校園內開設連鎖速食店",
+      "學生的手機網路連線速度太慢"
+    ],
+    "answer": 1,
+    "explanation": "探討痛點必須向下鑽研『深層心理後果』，才能提供真正觸動人心的解法。"
+  },
+  {
+    "id": "Q049",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "行銷調研中運用 AI 模擬虛擬受眾進行前導訪談，其正確的使用定位為：",
+    "options": [
+      "100% 取代真實世界中所有真實顧客訪談",
+      "作為正式田野調查前的『快速情境沙盤推演』，輔助團隊預判問題盲點與打磨訪談大綱",
+      "完全沒有任何參考價值",
+      "用來偽造問卷調查數據回報學校主管"
+    ],
+    "answer": 1,
+    "explanation": "AI 角色扮演模擬適合作為前期問題打磨與極端情境沙盤，但仍需真實場域驗證。"
+  },
+  {
+    "id": "Q050",
+    "weeks": [
+      5
+    ],
+    "chapter": 5,
+    "chapter_title": "使用者同理與需求挖掘：同理心地圖與痛點優先級",
+    "module": "【iPAS 品牌】消費者行為洞察與同理心工程",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "完成同理心地圖與 Persona 後，最關鍵的下一步行動銜接為：",
+    "options": [
+      "直接宣布專案完工並解散團隊",
+      "依據整理出的 Pains & Gains，對應至第 6~7 週的價值主張畫布 (VPC) 與商業模式規劃",
+      "向銀行申請百萬創業無擔保貸款",
+      "在社群平台購買大量無效粉絲"
+    ],
+    "answer": 1,
+    "explanation": "同理心洞察必須無縫轉譯為產品價值主張與商業模式，方能形成商業閉環。"
+  },
+  {
+    "id": "Q051",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "Google Design Sprint 與設計思考中經典的『HMW』提問法，其全名為：",
+    "options": [
+      "Help Me Win (幫我贏得競賽)",
+      "How Might We (我們如何能夠...)",
+      "Hold My Word (遵守承諾)",
+      "Here Makes World (創造世界)"
+    ],
+    "answer": 1,
+    "explanation": "HMW 提問法將沉重的痛點障礙，轉化為樂觀、開放且具探索導向的創新挑戰。"
+  },
+  {
+    "id": "Q052",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "將痛點『大一新生初來乍到，在校園周邊缺乏生活指引容易感到孤立迷茫』改寫為優質 HMW，何者最佳？",
+    "options": [
+      "新生為什麼這麼不獨立？",
+      "我們如何能夠讓新生在入學第一週內，以遊戲化互動自然結識學長姐並解鎖生活秘笈？",
+      "學校應該發放紙本校園手冊給每個人",
+      "新生應該自己上網搜尋資訊"
+    ],
+    "answer": 1,
+    "explanation": "設定具體的正向行動範疇與激勵機制，能激發出豐富多元的解方可能性。"
+  },
+  {
+    "id": "Q053",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "創新思維訓練工具『Crazy 8s (瘋狂八分鐘)』的核心精神與操作規則為：",
+    "options": [
+      "花費 8 個月時間寫一本商業企劃書",
+      "在嚴格的 8 分鐘內，每人必須快速繪製或寫出 8 個不同的構想概念，強制突破思維慣性",
+      "將團隊成員隨機分成 8 個互不相干的小組",
+      "連續靜坐冥想 8 分鐘不准有任何動作"
+    ],
+    "answer": 1,
+    "explanation": "Crazy 8s 利用極限時間壓力逼迫大腦穿透表層常規想法，追求創意的廣度與多樣性。"
+  },
+  {
+    "id": "Q054",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在創意發想的『發散 (Divergence)』階段，團隊必須嚴格恪守的最重要原則為：",
+    "options": [
+      "當場對每個構想進行嚴厲批判與可行性否決 (Killer Phrases)",
+      "暫緩批判 (Defer Judgment)，鼓勵天馬行空的跨界奇想，追求想法數量大於初始品質",
+      "只能提出符合現行法律完全保證賺錢的想法",
+      "只允許小組長一人發言"
+    ],
+    "answer": 1,
+    "explanation": "發散階段過早進行理性批判會摧毀心理安全感，扼殺潛在顛覆性創意的誕生。"
+  },
+  {
+    "id": "Q055",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "在概念『收斂 (Convergence)』階段，熱力點投票法 (Dot Voting / Zen Voting) 的關鍵優勢在於：",
+    "options": [
+      "避免『權威偏誤 (HiPPO)』與強勢發言者主導，讓全員在安靜閱讀後客觀票選最具潛力的點子",
+      "讓會議時間無限期延長",
+      "保證每個點子都能獲得相同票數",
+      "完全不需要閱讀點子內容即可投票"
+    ],
+    "answer": 1,
+    "explanation": "無聲投票機制能確保組織平等，讓優秀創意依據本質潛力脫穎而出。"
+  },
+  {
+    "id": "Q056",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "SCAMPER (奔馳法) 創新思維檢核清單中，字母『E』代表的思考方向為：",
+    "options": [
+      "Emotion (情緒宣洩)",
+      "Eliminate (消除 / 精簡特定冗餘步驟或功能)",
+      "Entertain (娛樂化表現)",
+      "Expand (無限擴張伺服器)"
+    ],
+    "answer": 1,
+    "explanation": "Eliminate 探討如何消除傳統流程中的繁瑣環節，達成極簡體驗創新。"
+  },
+  {
+    "id": "Q057",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "SCAMPER 中字母『C』代表的創新思考方向為：",
+    "options": [
+      "Combine (結合 / 跨界混搭不同功能或服務)",
+      "Cancel (取消整個商業專案)",
+      "Copy (原封不動照抄同業代碼)",
+      "Complain (向主管投訴市場困難)"
+    ],
+    "answer": 1,
+    "explanation": "Combine 思考如何將兩種不相干的服務優勢合而為一，創造新穎價值。"
+  },
+  {
+    "id": "Q058",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "利用 AI 協同進行 Crazy 8s 擴散時，為了避免產出千篇一律的平庸解方，最佳策略為：",
+    "options": [
+      "要求 AI『請給我很正常的解法』",
+      "指定 AI 分別從『零預算極簡』、『社群病毒分享』、『反向逆思維』等 8 種對立視角提出跨界提案",
+      "禁止輸入任何背景提示",
+      "直接複製維基百科的詞條定義"
+    ],
+    "answer": 1,
+    "explanation": "給予具備強烈反差與多元角色視角的約束，能激勵生成模型產出驚艷的跨界構想。"
+  },
+  {
+    "id": "Q059",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "在創新評估矩陣中，通常以哪兩個關鍵軸度作為概念篩選的收斂標準？",
+    "options": [
+      "字數多寡 與 投影片張數",
+      "市場吸引力 / 顧客價值 (Desirability) ✕ 技術與資源可行性 (Feasibility)",
+      "創辦人年齡 與 團隊成員身高",
+      "天氣晴雨 與 辦公室租金"
+    ],
+    "answer": 1,
+    "explanation": "Desirability (顧客想要) 與 Feasibility (能做得到) 構成概念收斂的黃金評估座標。"
+  },
+  {
+    "id": "Q060",
+    "weeks": [
+      6
+    ],
+    "chapter": 6,
+    "chapter_title": "創意發想與概念收斂：Crazy 8s 與 HMW 提問法",
+    "module": "【iPAS 品牌】創新概念發想與解方收斂",
+    "competency": "消費者洞察與需求分析",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "完成創新概念收斂後，小組應當取得的關鍵里程碑產出為：",
+    "options": [
+      "一本尚未經過驗證的 300 頁長篇報告",
+      "一個獲得全體共識、具備鮮明差異化切角的『核心解決方案假說 (Champion Concept)』",
+      "全體成員退出專案之切結書",
+      "一張沒有任何內容的空白畫布"
+    ],
+    "answer": 1,
+    "explanation": "收斂確立旗艦解方假說，方能精準投入下一階段之商業模式架構建置。"
+  },
+  {
+    "id": "Q061",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "Strategyzer 商業模式畫布 (Business Model Canvas, BMC) 總共涵蓋幾個相互關聯的核心模組？",
+    "options": [
+      "4 個",
+      "9 個",
+      "12 個",
+      "16 個"
+    ],
+    "answer": 1,
+    "explanation": "BMC 涵蓋價值主張、客群、通路、顧客關係、收益流、關鍵資源、關鍵活動、關鍵夥伴與成本結構 9 大模組。"
+  },
+  {
+    "id": "Q062",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在商業模式畫布正中心，也是連結企業能力與市場需求的靈魂模組是：",
+    "options": [
+      "成本結構 (Cost Structure)",
+      "價值主張 (Value Propositions)",
+      "關鍵夥伴 (Key Partnerships)",
+      "關鍵活動 (Key Activities)"
+    ],
+    "answer": 1,
+    "explanation": "價值主張是整個商業模式的心臟，闡明企業為特定客群解決什麼痛點與創造何種獨特獲益。"
+  },
+  {
+    "id": "Q063",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "商業模式畫布的『右半部』四大模組（客群、關係、通路、收益流）主要代表企業的：",
+    "options": [
+      "內部生產與工廠製造效能",
+      "市場端吸引力與營收創造能力 (Desirability & Viability)",
+      "法律訴訟與合規防禦能力",
+      "電腦硬體設備折舊年限"
+    ],
+    "answer": 1,
+    "explanation": "畫布右側專注於市場顧客端價值交付與營收變現機制。"
+  },
+  {
+    "id": "Q064",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "商業模式畫布的『左半部』四大模組（資源、活動、夥伴、成本）主要代表企業的：",
+    "options": [
+      "營運可行性、效率與資源成本結構 (Feasibility & Efficiency)",
+      "社群媒體發文的按讚數",
+      "顧客滿意度評分",
+      "公司商標外觀設計專利"
+    ],
+    "answer": 1,
+    "explanation": "畫布左側聚焦於支撐價值主張所需的內部運作體系與成本支出結構。"
+  },
+  {
+    "id": "Q065",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "在『通路 (Channels)』模組中，顧客全生命週期通常依序涵蓋哪五大階段？",
+    "options": [
+      "購買 ➔ 退貨 ➔ 投訴 ➔ 調解 ➔ 訴訟",
+      "知曉 (Awareness) ➔ 評估 (Evaluation) ➔ 購買 (Purchase) ➔ 傳遞 (Delivery) ➔ 售後 (After-sales)",
+      "註冊 ➔ 忘記密碼 ➔ 重設 ➔ 刪除帳號 ➔ 封鎖",
+      "點擊 ➔ 關閉 ➔ 清除快取 ➔ 重新整理 ➔ 離線"
+    ],
+    "answer": 1,
+    "explanation": "五大通路階段完整勾勒出顧客從認知品牌到最終售後服務的完整接觸路徑。"
+  },
+  {
+    "id": "Q066",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "現代輕資產微型創業在規劃『關鍵資源 (Key Resources)』時，下列何者通常為最高槓桿之核心資源？",
+    "options": [
+      "購置大型重型工業機械設備",
+      "專屬提示詞資產、AI 自動化工作流、使用者信任數據與核心團隊跨域敏捷能力",
+      "租賃整座商辦大樓的實體辦公桌",
+      "購買大量實體紙本百科全書"
+    ],
+    "answer": 1,
+    "explanation": "數位時代的智力資產、專有流程與敏捷AI Agent 協同能力是最具可延展性之關鍵資源。"
+  },
+  {
+    "id": "Q067",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "關於『收益流 (Revenue Streams)』的設計，下列何者屬於『訂閱制 (Subscription)』的典型特徵？",
+    "options": [
+      "顧客僅支付一次性買斷費用，後續不再產生任何金流互動",
+      "顧客定期支付固定費用以持續獲取服務更新、特權或加值內容，為企業帶來可預測的經常性收入 (MRR)",
+      "完全免費且企業永遠不獲取任何商業回報",
+      "按造訪網頁的字數逐字收費"
+    ],
+    "answer": 1,
+    "explanation": "訂閱模式能創造穩定的現金流與提高顧客終身價值 (LTV)。"
+  },
+  {
+    "id": "Q068",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "微型創業初期檢視『成本結構 (Cost Structure)』時，首要劃分的兩大核心範疇為：",
+    "options": [
+      "固定成本 (Fixed Costs) 與 變動成本 (Variable Costs)",
+      "國內匯款手續費 與 國外匯款手續費",
+      "彩色印刷費 與 黑白影印費",
+      "老闆的餐費 與 員工的飲料費"
+    ],
+    "answer": 1,
+    "explanation": "清晰釐清固定成本（不隨產量變動）與變動成本（隨銷量等比增加），是計算損益兩平的前提。"
+  },
+  {
+    "id": "Q069",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "為什麼商業模式畫布被稱作『動態假說檢驗清單』而非『僵化計畫書』？",
+    "options": [
+      "因為它是用鉛筆寫在紙上的",
+      "畫布上的每一項填寫內容都只是創辦人的未經證實之假設，必須依據真實市場回饋持續迭代修正 (Pivot)",
+      "因為學校規定每學期必須更換一次格式",
+      "因為彩色便利貼容易脫落失去效用"
+    ],
+    "answer": 1,
+    "explanation": "精實架構下的 BMC 是動態演進的假設地圖，需伴隨顧客驗證數據持續優化。"
+  },
+  {
+    "id": "Q070",
+    "weeks": [
+      7
+    ],
+    "chapter": 7,
+    "chapter_title": "商業模式畫布（BMC）：九大模組架構與價值主張",
+    "module": "【iPAS 品牌】商業模式九宮格與價值主張",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "利用 AI 輔助填寫商業模式畫布時，最容易產生的盲點與陷阱為：",
+    "options": [
+      "AI 輸出的文字格式太整齊",
+      "容易產出『看似邏輯通順但缺乏真實產業數據支撐、過於樂觀空泛』的罐頭模板，團隊必須主動實施壓力測試",
+      "AI 無法理解繁體中文的商業九宮格",
+      "畫布會自動扣除創辦人信用卡的金額"
+    ],
+    "answer": 1,
+    "explanation": "避免對 AI 產出的泛化商業模型照單全收，必須結合真實訪談與在地資源進行可行性檢核。"
+  },
+  {
+    "id": "Q071",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "Eric Ries《精實創業 (The Lean Startup)》所揭櫫之核心驅動循環為：",
+    "options": [
+      "Plan ➔ Do ➔ Check ➔ Act",
+      "Build (建構) ➔ Measure (衡量) ➔ Learn (學習) 循環",
+      "Think ➔ Dream ➔ Wait ➔ Hope",
+      "Design ➔ Pitch ➔ Borrow ➔ Spend"
+    ],
+    "answer": 1,
+    "explanation": "建構-衡量-學習循環旨在以最高運轉頻率將假設投入市場，快速累積經驗學習。"
+  },
+  {
+    "id": "Q072",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "iPAS 行銷企劃檢定中，關於『最小可行性產品 (Minimum Viable Product, MVP)』的正確定義為：",
+    "options": [
+      "品質極其低劣、充滿嚴重漏洞且完全無法使用的殘缺半成品",
+      "能以最少的時間與資源投入，完整驗證核心商業價值假說的最小產品版本",
+      "必須具備市面上所有競爭同業功能的旗艦豪華版",
+      "僅存在於研發部門內部、絕對不向任何外界顧客展示的神秘專案"
+    ],
+    "answer": 1,
+    "explanation": "MVP 的核心在於『以最低資源實現學習閉環』，而非盲目堆砌次要功能。"
+  },
+  {
+    "id": "Q073",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "精實創業中所指的『躍升假說 (Leap-of-Faith Assumptions)』通常包含哪兩大根本假設？",
+    "options": [
+      "價格假設 與 匯率假設",
+      "價值假說 (Value Hypothesis: 顧客是否真正感受到價值) 與 成長假說 (Growth Hypothesis: 新顧客如何發現產品)",
+      "硬體假設 與 網路頻寬假設",
+      "期中假設 與 期末假設"
+    ],
+    "answer": 1,
+    "explanation": "價值假說與成長假說構成商業模式能否立足與規模化的兩大支柱。"
+  },
+  {
+    "id": "Q074",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "MVP 原型手法中的『冒煙測試 (Smoke Test / Fake Door)』之典型實踐方式為：",
+    "options": [
+      "在辦公室點燃煙霧測試警報器",
+      "架設具備產品特色與行動呼籲 (CTA) 按鈕之單頁 Landing Page，衡量實際點擊『立即預購』的比例以驗證市場真實興趣",
+      "未經測試直接大量量產實體商品鋪貨至超商",
+      "在網路上散布虛假的優惠券代碼"
+    ],
+    "answer": 1,
+    "explanation": "冒煙測試以極低成本驗證潛在客群對新價值主張的真實購買意向，避免盲目量產。"
+  },
+  {
+    "id": "Q075",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "『綠野仙蹤 (Wizard of Oz)』MVP 測試手法的核心特徵在於：",
+    "options": [
+      "前端給予使用者完全自動化、高度智慧的順暢體驗，後端暫時由真人團隊手動完成所有繁瑣業務處理",
+      "產品外觀必須塗成綠色以響應環保",
+      "強制要求使用者背誦童話故事台詞",
+      "完全不處理任何訂單直接退款"
+    ],
+    "answer": 1,
+    "explanation": "在尚未投入昂貴演算法或後端系統開發前，先以人工模擬後台以驗證端到端服務需求。"
+  },
+  {
+    "id": "Q076",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "精實創業中所謂的『軸轉 (Pivot)』，其正確意義為：",
+    "options": [
+      "徹底承認創業失敗並宣布公司破產清算",
+      "在保有願景核心不變的前提下，依據市場驗證數據，敏捷改變產品策略、客群定位或成長路徑",
+      "將辦公室座椅旋轉 180 度以改善風水",
+      "全盤否定過去的所有學習累積重頭再來"
+    ],
+    "answer": 1,
+    "explanation": "軸轉是以驗證學習為基礎的策略轉向，確保資源始終對齊真實市場機會。"
+  },
+  {
+    "id": "Q077",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "下列何者屬於評估 MVP 成效時的『虛榮指標 (Vanity Metrics)』？",
+    "options": [
+      "總頁面瀏覽量 (Page Views) 與 免費註冊但從未回訪的幽靈帳號數",
+      "付費轉換率 (Paid Conversion Rate)",
+      "第 30 天顧客留存率 (Day 30 Retention Rate)",
+      "淨推薦值 (Net Promoter Score, NPS)"
+    ],
+    "answer": 1,
+    "explanation": "虛榮指標看似數字亮眼，卻無法真實反映商業價值閉環與長期存活率。"
+  },
+  {
+    "id": "Q078",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "相較於虛榮指標，下列何者屬於具備實質商業診斷意義的『可行動指標 (Actionable Metrics)』？",
+    "options": [
+      "累積造訪人次達到 10 萬人",
+      "完整瀏覽產品介紹後，點擊『預約自取表單』並實際提交電話的真實轉換率 (Conversion Rate)",
+      "社群貼文獲得許多陌生路人的愛心按讚",
+      "創辦人個人臉書的追蹤者人數"
+    ],
+    "answer": 1,
+    "explanation": "可行動指標能清楚揭示因果關係，直接指導團隊進行功能或策略調整。"
+  },
+  {
+    "id": "Q079",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "在微型創業驗證過程中，面對顧客提出的反饋，團隊應優先採取的態度為：",
+    "options": [
+      "爭辯並指責顧客缺乏鑑賞眼光",
+      "將抱怨與棄單環節視為珍貴的洞察線索，分析其流失原因並轉化為具體的產品優化行動",
+      "刪除所有留下負評的使用者帳號",
+      "立刻將產品定價提高三倍以驅逐低端顧客"
+    ],
+    "answer": 1,
+    "explanation": "顧客摩擦力與負面反饋是打磨價值主張最真實且無可替代的指路明燈。"
+  },
+  {
+    "id": "Q080",
+    "weeks": [
+      8
+    ],
+    "chapter": 8,
+    "chapter_title": "精實創業與最小可行性產品（MVP）：低成本驗證策略",
+    "module": "【iPAS 品牌】精實創業方法與 MVP 驗證策略",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "完成 MVP 測試並取得第一波真實數據後，精實創業循環要求團隊立即進行的步驟為：",
+    "options": [
+      "開香檳慶祝並停止所有後續開發",
+      "將衡量結果對比最初之數值假設，萃取經驗學習 (Learn)，決定繼續深化推進或是果斷實施軸轉 (Pivot)",
+      "把伺服器代碼上傳至拍賣網站拋售",
+      "要求全體成員不得再查看任何數據報表"
+    ],
+    "answer": 1,
+    "explanation": "將數據轉譯為策略認知，達成建構-衡量-學習循環之閉環演進。"
+  },
+  {
+    "id": "Q081",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在 iPAS 行銷企劃規範中，高說服力之『精實商業提案 (Lean Pitch Deck)』首要頁面應當清晰闡述：",
+    "options": [
+      "創辦人小學時期的得獎紀錄",
+      "目標市場遭遇之核心痛點 (Pain) 與 現有替代方案之嚴重缺陷 (Why Now)",
+      "公司未來 20 年的宏大併購藍圖",
+      "伺服器機房的散熱空調規格"
+    ],
+    "answer": 1,
+    "explanation": "開門見山點出急迫且真實的痛點，是抓住投資人與評審注意力的黃金關鍵。"
+  },
+  {
+    "id": "Q082",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "標準 5 分鐘創業 Pitch 中，配置在『價值主張與解決方案 (Solution)』的最佳展示方式為：",
+    "options": [
+      "朗讀 5000 字的枯燥純文字規格",
+      "以直觀之介面原型截圖、操作流程或短影片，清晰呈現如何一針見血解決前述痛點",
+      "展示極其艱深的數學偏微分方程式",
+      "播放一段與專案完全無關的流行音樂"
+    ],
+    "answer": 1,
+    "explanation": "視覺化且直覺的成果展示，能瞬間證明團隊具備將抽象概念落地的實踐能力。"
+  },
+  {
+    "id": "Q083",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在商業企劃審查中，評估一個商業模式是否具備『可行性 (Viability)』的核心財務指標為：",
+    "options": [
+      "辦公室裝潢是否奢華體面",
+      "顧客獲取成本 (CAC) 是否顯著低於 顧客終身價值 (LTV)，且損益平衡點具備合理性",
+      "團隊成員的每日平均睡眠時數",
+      "每位員工是否均配發最新款筆記型電腦"
+    ],
+    "answer": 1,
+    "explanation": "LTV > 3×CAC 是衡量新創商業模式具備單元經濟性 (Unit Economics) 的經典指標。"
+  },
+  {
+    "id": "Q084",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "面對評審針對『市場若有強大同業抄襲，你們有何防禦壁壘 (Moat)？』之提問，最適當之回答視角為：",
+    "options": [
+      "宣稱這世界上絕對沒有任何人能抄襲我們",
+      "闡述團隊的專屬在地社群信任度、敏捷迭代反饋週期、專利工作流或網絡效應等獨特競爭優勢",
+      "直接離場抗議評審不公",
+      "保證會向所有潛在抄襲者寄發存證信函"
+    ],
+    "answer": 1,
+    "explanation": "理性分析自身動態競爭優勢與轉換成本，展現成熟商業經理人的防禦思維。"
+  },
+  {
+    "id": "Q085",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "在同儕互評與企劃審查機制中，下列何項評估維度最能反映專案的『市場吸引力 (Desirability)』？",
+    "options": [
+      "企劃書排版使用了幾種特殊字型",
+      "目標客群定位是否清晰、痛點是否真實急迫且價值主張是否具備差異化亮點",
+      "口頭簡報同學的講話語速是否極快",
+      "簡報投影片是否使用了大量昂貴特效動畫"
+    ],
+    "answer": 1,
+    "explanation": "受眾痛點的真實性與解方的吸引力，是衡量市場端需求強度的根本基礎。"
+  },
+  {
+    "id": "Q086",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "微型創業簡報中，『市場規模評估 (Market Size)』通常採用的 TAM-SAM-SOM 架構，其中『SOM』代表：",
+    "options": [
+      "Total Addressable Market (潛在市場總額)",
+      "Serviceable Obtainable Market (團隊現階段資源可實質獲取之目標市場規模)",
+      "Some Other Money (某些其他資金)",
+      "Service Only Model (純服務營運模式)"
+    ],
+    "answer": 1,
+    "explanation": "SOM 代表團隊在初期以有限資源能實際穿透並獲取的現實市場規模份額。"
+  },
+  {
+    "id": "Q087",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "企劃提案中若宣稱『我們的產品適合全世界所有人』，在 iPAS 專業審查中通常會被判定為：",
+    "options": [
+      "無比宏大且值得高度讚許的優秀企劃",
+      "客群定位過於發散模糊、缺乏焦點且行銷資源勢必嚴重稀釋之典型重大缺陷",
+      "具備極高的投資回報率",
+      "符合聯合國永續發展目標的最佳範例"
+    ],
+    "answer": 1,
+    "explanation": "企劃大忌是『想討好所有人』，精準切中特定利基客群才是初創成功關鍵。"
+  },
+  {
+    "id": "Q088",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "在 Pitch 的『團隊介紹 (Team)』簡報頁中，最應突出的亮點資訊為：",
+    "options": [
+      "全員的身高體重與興趣喜好",
+      "成員專長與該創業選題之深度契合度 (Founder-Market Fit) 與互補執行力",
+      "全員皆擁有百萬社群帳號",
+      "團隊全數由相同專長背景人員組成"
+    ],
+    "answer": 1,
+    "explanation": "展示團隊成員具備駕馭該商業難題的獨特能力與執行底蘊。"
+  },
+  {
+    "id": "Q089",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "口頭提案時，控制時間在規定之內（如精準 3~5 分鐘內完結）所代表的專業素養為：",
+    "options": [
+      "講話速度太慢以至於內容不足",
+      "具備高度結構化思維、能在有限時間內去蕪存菁提煉核心價值之專業經理人能力",
+      "缺乏對產品的熱情",
+      "完全被動應付差事"
+    ],
+    "answer": 1,
+    "explanation": "守時與精煉表達展現對核心資訊的掌控力與對評審時間的尊重。"
+  },
+  {
+    "id": "Q090",
+    "weeks": [
+      9
+    ],
+    "chapter": 9,
+    "chapter_title": "【期中報告】精實商業提案發表（Lean Pitch）與同儕互評",
+    "module": "【iPAS 品牌】精實商業提案架構與可行性審查",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "完成期中提案發表後，評審與同儕反饋的最大價值在於：",
+    "options": [
+      "作為互相攻擊與批鬥的工具",
+      "客觀照見團隊內部的邏輯盲區與資源漏洞，指引下半學期進入品牌塑造與數位原型的優化方向",
+      "決定期末成績是否立即不及格",
+      "強制要求全班同學必須購買該提案產品"
+    ],
+    "answer": 1,
+    "explanation": "期中檢核是照亮盲點、校準航向的最佳契機，為後續成果落地築牢地基。"
+  },
+  {
+    "id": "Q091",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "基礎核心",
+    "question": "在 iPAS 品牌管理概論中，『品牌權益 / 品牌資產 (Brand Equity)』的核心內涵是指：",
+    "options": [
+      "公司名下擁有的電腦硬體與不動產總市值",
+      "品牌名稱與標誌帶給消費者心中的獨特感知價值，使得產品能獲取超越同等無品牌產品的溢價與忠誠度",
+      "向經濟部智慧財產局繳納的規費總額",
+      "公司資本額的大小"
+    ],
+    "answer": 1,
+    "explanation": "品牌資產是消費者基於信任與情感連結，賦予品牌之高溢價與強黏著度價值。"
+  },
+  {
+    "id": "Q092",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "基礎核心",
+    "question": "大衛·艾克 (David Aaker) 提出的品牌資產四維模型不包含下列何者？",
+    "options": [
+      "品牌知名度 (Brand Awareness)",
+      "品牌伺服器運算力 (Brand Computing Power)",
+      "品牌聯想 (Brand Associations)",
+      "知覺品質 (Perceived Quality)"
+    ],
+    "answer": 1,
+    "explanation": "艾克品牌資產模型包含知名度、知覺品質、品牌聯想與品牌忠誠度，不包含伺服器算力。"
+  },
+  {
+    "id": "Q093",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "基礎核心",
+    "question": "心理學家榮格 (Carl Jung) 原型理論應用於品牌定位時，共有幾種經典的『品牌原型 (Brand Archetypes)』？",
+    "options": [
+      "4 種",
+      "8 種",
+      "12 種",
+      "18 種"
+    ],
+    "answer": 1,
+    "explanation": "榮格 12 品牌原型（如英雄、造物者、探險家、照顧者）是品牌人格化定位的經典工具。"
+  },
+  {
+    "id": "Q094",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "基礎核心",
+    "question": "品牌原型中，『探險家 (Explorer)』型品牌的典型核心渴望與精神象徵為：",
+    "options": [
+      "追求絕對的安全感與守護家庭溫暖",
+      "渴望自由、探索未知新邊界、追求獨立與自我突破 (如 The North Face, Patagonia)",
+      "掌控秩序、制定嚴密法規與彰顯極致權威",
+      "製造歡笑與純粹的惡作劇娛樂"
+    ],
+    "answer": 1,
+    "explanation": "探險家原型喚起受眾對自由冒險、探索自然與跳脫體制束縛的強烈共鳴。"
+  },
+  {
+    "id": "Q095",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "進階應用",
+    "question": "蘋果公司 (Apple) 早期最經典的品牌原型通常被歸類為：",
+    "options": [
+      "照顧者 (Caregiver: 慈愛且無微不至的呵護)",
+      "叛逆者 / 革命家 (Outlaw: 挑戰權威常規、打破平庸思維 Think Different)",
+      "統治者 (Ruler: 僵化官僚與壟斷市場控制)",
+      "小丑 (Jester: 搞笑滑稽"
+    ],
+    "answer": 1,
+    "explanation": "Apple 早期以挑戰 IBM 官僚巨頭之反叛創新形象深植人心。"
+  },
+  {
+    "id": "Q096",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "進階應用",
+    "question": "在品牌識別設計中，確立『品牌語調 (Tone of Voice)』的主要目的為：",
+    "options": [
+      "限制所有員工在工作時必須使用廣播員腔調講話",
+      "確保品牌在社群文案、官網溝通、客服應答與公關聲明中，維持一致的個性性格與情緒頻率",
+      "強迫全體成員背誦繞口令",
+      "要求所有貼文一律只能使用單一驚嘆號"
+    ],
+    "answer": 1,
+    "explanation": "語調一致性讓顧客在任何接觸點都能感受到鮮明、統一且具人格魅力的品牌靈魂。"
+  },
+  {
+    "id": "Q097",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "進階應用",
+    "question": "在品牌心智定位中，傑克·屈特 (Jack Trout) 提出的『定位 (Positioning)』精髓在於：",
+    "options": [
+      "把產品實體擺放在超商最底層貨架上",
+      "不是去改變產品本身，而是在潛在顧客的『心智 (Mind)』中佔據一個獨一無二的專屬字眼或概念",
+      "大幅降低產品質量以壓低成本",
+      "每年隨機更換三次公司名稱"
+    ],
+    "answer": 1,
+    "explanation": "定位是在顧客心智階梯上佔據第一位置的認知作戰。"
+  },
+  {
+    "id": "Q098",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "進階應用",
+    "question": "以大學校園健康蔬食微型品牌為例，若選擇『照顧者 (Caregiver)』原型，其主視覺色彩通常適宜採用：",
+    "options": [
+      "刺眼且充滿侵略性的螢光桃紅配純黑",
+      "溫暖的大地綠、柔和米白或柔和淺棕，傳達天然、溫暖、包容與無負擔感",
+      "極度冷酷的金屬銀灰配冰藍",
+      "金碧輝煌的土豪金配深紫"
+    ],
+    "answer": 1,
+    "explanation": "色彩心理學需與品牌原型人格緊密契合，綠與米白色系能強化健康守護的溫潤意象。"
+  },
+  {
+    "id": "Q099",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "高階實戰",
+    "question": "品牌架構 (Brand Architecture) 策略中，『主從品牌 / 背書品牌 (Endorsed Brand)』模式之代表特徵為：",
+    "options": [
+      "完全隱藏母公司的存在",
+      "子品牌擁有獨立個性與市場切角，但享有知名母品牌之聲譽背書 (如 Courtyard by Marriott)",
+      "所有產品完全使用一模一樣的名字",
+      "每年隨意更換母子關係"
+    ],
+    "answer": 1,
+    "explanation": "背書品牌既能給予子品牌探索新市場的自由度，又能轉移母品牌的信任資產。"
+  },
+  {
+    "id": "Q100",
+    "weeks": [
+      10
+    ],
+    "chapter": 10,
+    "chapter_title": "品牌定位與視覺語義：品牌原型與情感共鳴",
+    "module": "【iPAS 品牌】品牌心智定位與榮格 12 原型",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "品牌管理概論",
+    "difficulty": "高階實戰",
+    "question": "企業若在品牌定位上搖擺不定，忽而走高冷奢華路線，忽而殺價競逐低價地攤市場，最嚴重的後果是：",
+    "options": [
+      "能通吃全台灣所有的消費市場",
+      "造成消費者心智認知模糊 (Brand Dilution)，喪失核心客群信任與溢價能力，淪為平庸",
+      "股票立即被強制停止交易",
+      "品牌知名度必然大幅上升"
+    ],
+    "answer": 1,
+    "explanation": "定位混亂會破壞品牌聯想與溢價能力，是品牌資產流失的致命原因。"
+  },
+  {
+    "id": "Q101",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "Nielsen Norman Group (NN/g) 定義之顧客旅程五大經典階段依序為：",
+    "options": [
+      "誕生 ➔ 成長 ➔ 衰老 ➔ 病痛 ➔ 離世",
+      "Awareness (知曉) ➔ Consideration (考慮) ➔ Purchase (購買) ➔ Retention (使用/留存) ➔ Advocacy (擁護/推薦)",
+      "登入 ➔ 點擊 ➔ 關閉 ➔ 卸載 ➔ 負評",
+      "期初 ➔ 期中 ➔ 期末 ➔ 暑假 ➔ 畢業"
+    ],
+    "answer": 1,
+    "explanation": "涵蓋顧客從首次接觸品牌，至深入體驗、長期留存並成為自發性推薦者的完整週期。"
+  },
+  {
+    "id": "Q102",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在顧客旅程地圖 (CJM) 中，所謂的『服務接觸點 (Touchpoints)』是指：",
+    "options": [
+      "手機觸控螢幕受損的接觸點",
+      "顧客在與品牌互動的全程中，任何產生訊息傳遞、情感感知或實質操作的具體情境、媒介或介面",
+      "店員與顧客之間的物理距離",
+      "電信基地台與手機的連線天線"
+    ],
+    "answer": 1,
+    "explanation": "舉凡社群貼文、廣告標題、官網首頁、付款流程、包裝盒小卡皆為關鍵接觸點。"
+  },
+  {
+    "id": "Q103",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "行為經濟學中的『峰終定律 (Peak-End Rule)』對服務體驗設計的指導意義為：",
+    "options": [
+      "顧客會以極致理性的數學公式平均計算每一秒的感受分數",
+      "人們對一段體驗的記憶與評價，主要由『最高峰時刻 (極好或極差)』與『結束結尾時刻』的感受決定",
+      "只要開頭做得漂亮，結尾隨便草率處理沒有關係",
+      "所有服務環節都必須投入相同等額的預算投資"
+    ],
+    "answer": 1,
+    "explanation": "集中有限資源打造震撼驚艷時刻 (Wow Moment) 與美好的收尾，能以最低成本獲取最高回購口碑。"
+  },
+  {
+    "id": "Q104",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "顧客在進行線上預約結帳時，若發現『必須手動填寫 25 個必填欄位且不支援手機自動填入』，在情緒曲線中會產生：",
+    "options": [
+      "情緒最高峰 (Peak Moment)",
+      "極深之痛點谷底 (Pain Valley)，伴隨極高的即時棄單流失率 (Drop-off Rate)",
+      "顧客感到無比踏實與信任",
+      "轉換率提升五成"
+    ],
+    "answer": 1,
+    "explanation": "過度的認知摩擦力與操作阻礙，是摧毀購買意願與形成體驗谷底的主因。"
+  },
+  {
+    "id": "Q105",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "微型創業團隊在顧客旅程中追求的『Aha! Moment (驚艷頓悟時刻)』是指：",
+    "options": [
+      "顧客發現自己買貴被騙的瞬間",
+      "使用者初次直觀感受到產品核心價值，內心發出『哇！這真正解決了我的大麻煩』之深層滿足時刻",
+      "創辦人收到第一筆天使投資的時刻",
+      "伺服器遭遇駭客攻擊的警報時刻"
+    ],
+    "answer": 1,
+    "explanation": "引導新使用者以最短路徑抵達 Aha! Moment，是大幅提高產品留存率的關鍵。"
+  },
+  {
+    "id": "Q106",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "相較於顧客旅程地圖，『服務藍圖 (Service Blueprint)』最重要的獨特延伸在於：",
+    "options": [
+      "增加了許多文藝手繪插圖",
+      "向上串聯前台顧客接觸點，向下垂直揭露後台支援人員 (Backstage) 與 系統流程 (Support Processes) 的協同邏輯",
+      "把商品的所有進貨價格全部公開",
+      "強制規範員工每天的打卡時間"
+    ],
+    "answer": 1,
+    "explanation": "服務藍圖將前台體驗與後台營運支撐體系垂直打通，確保商業落地的組織可行性。"
+  },
+  {
+    "id": "Q107",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "在顧客旅程地圖中繪製『情緒曲線 (Emotional Curve)』，其核心分析價值在於：",
+    "options": [
+      "純粹為了讓簡報看起來色彩斑斕",
+      "視覺化識別整個體驗鏈條中最脆弱的痛點斷點，精準定位優先改善資源配置之所在",
+      "用來預測明天的股票走勢",
+      "評量美編人員的色彩搭配功力"
+    ],
+    "answer": 1,
+    "explanation": "情緒曲線能一眼揪出顧客體驗旅程中的谷底缺口，避免散彈打鳥式的無效優化。"
+  },
+  {
+    "id": "Q108",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "為校園外送早餐服務設計『結尾時刻 (End Rule)』體驗時，下列何者最適當？",
+    "options": [
+      "外送員送達後立刻封鎖訂購同學的 LINE",
+      "餐盒外附上一張由 AI 自動生成的小卡，印有專屬該位同學當日運勢激勵金句與暖心祝福",
+      "向同學強索 50 元現金小費",
+      "強制同學必須站在走廊填寫 30 題紙本滿意度問卷才能拿走早餐"
+    ],
+    "answer": 1,
+    "explanation": "充滿情感溫度且具巧思的收尾接觸點，能大幅深化好感並引爆社群自發分享。"
+  },
+  {
+    "id": "Q109",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "當團隊分析數據發現『知曉 (Awareness)』人數極高，但『考慮 (Consideration)』轉化極低，應優先檢討：",
+    "options": [
+      "是不是辦公室電腦不夠新",
+      "價值主張是否過於晦澀難懂、缺乏明確社會證明 (Social Proof) 與信任背書，使受眾無法產生認同",
+      "立刻將公司名稱更換掉",
+      "大幅增加廣告曝光預算"
+    ],
+    "answer": 1,
+    "explanation": "大量曝光卻無法引發考慮，說明訊息未能切中受眾痛點或缺乏建立信任之關鍵證言。"
+  },
+  {
+    "id": "Q110",
+    "weeks": [
+      11
+    ],
+    "chapter": 11,
+    "chapter_title": "顧客旅程地圖（CJM）與服務接觸點設計",
+    "module": "【iPAS 品牌】顧客旅程地圖與體驗設計",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "顧客成為品牌的『擁護者 (Brand Advocate)』，在行銷層面帶來的最高價值為：",
+    "options": [
+      "願意每天到公司免費打掃衛生",
+      "在同儕社交圈主動口碑推薦 (Word of Mouth)、自發打卡傳播，創造極低成本之有機裂變增長",
+      "協助團隊撰寫期末課堂作業",
+      "完全不使用該產品但逢人就誇獎"
+    ],
+    "answer": 1,
+    "explanation": "真實用戶的自發口碑推薦是最高信任度且零邊際獲客成本的成長引擎。"
+  },
+  {
+    "id": "Q111",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "在多智能體系統 (Multi-Agent System, MAS) 中，『階層式協調者 (Supervisor / Hierarchical)』架構的運作方式為：",
+    "options": [
+      "所有智能體各自為政，隨機搶奪系統輸出資源",
+      "由主管 Agent 統籌拆解複雜任務，指派任務給專門職能 Agent (如市場調查、文案撰寫、程式架構)，並進行整合把關",
+      "完全不允許任何智能體之間進行通訊",
+      "強迫所有智能體使用相同之設定提示詞"
+    ],
+    "answer": 1,
+    "explanation": "Supervisor 架構能將長鏈複雜工作流進行精準分解與派發，提升系統可靠度。"
+  },
+  {
+    "id": "Q112",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "現代開源多智能體框架 (如 CrewAI, AutoGen, LangGraph) 的核心架構理念為：",
+    "options": [
+      "模擬現實專業團隊分工：為不同 Agent 設定明確角色 (Role)、目標 (Goal) 與專業背景 (Backstory)",
+      "取代電腦內部的作業系統",
+      "完全不需要依賴任何大語言模型即可自行產生智慧",
+      "只能用來進行西洋棋比賽對弈"
+    ],
+    "answer": 1,
+    "explanation": "擬人化的角色分工大幅突破了單一提示詞處理龐雜商業任務的認知負荷極限。"
+  },
+  {
+    "id": "Q113",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "在多特工創業工作流中，設置『審查反思特工 (Reviewer / Critic Agent)』的主要職責為：",
+    "options": [
+      "無條件讚美其他特工產出的所有內容",
+      "依據驗收標準、事實正確性、合規防禦與邏輯連貫性，嚴格審核前序特工成果並提出具體反饋修正意見",
+      "直接刪除團隊所有的數據庫檔案",
+      "關閉電腦螢幕"
+    ],
+    "answer": 1,
+    "explanation": "引入獨立反思批評機制能建構自我校正閉環，大幅過濾幻覺並提升交付品質。"
+  },
+  {
+    "id": "Q114",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "iPAS 檢定核心技術『檢索增強生成 (RAG, Retrieval-Augmented Generation)』的架構原理為：",
+    "options": [
+      "在回答前，先將使用者問題轉化為向量，於專屬外部知識庫檢索高相關片段，再作為上下文輔助 LLM 生成答案",
+      "隨機上網抓取不相關的搞笑影片播放",
+      "要求大語言模型重新從頭預訓練一次",
+      "將問題手動郵寄給原廠客服專家回答"
+    ],
+    "answer": 1,
+    "explanation": "RAG 透過外掛專業知識庫即時檢索，有效解決 LLM 知識截止、私有資料缺失與幻覺難題。"
+  },
+  {
+    "id": "Q115",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "在 RAG 系統中，將長篇文章切割為較小片段 (Chunks) 並轉換為數值陣列的過程稱為：",
+    "options": [
+      "文字壓縮 (Data Zip)",
+      "文本嵌入 (Text Embeddings) 與 向量化 (Vectorization)",
+      "文字加密 (Encryption)",
+      "字體渲染 (Font Rendering)"
+    ],
+    "answer": 1,
+    "explanation": "Embeddings 將語意特徵映射至高維向量空間，使系統能透過向量距離進行語意相似度檢索。"
+  },
+  {
+    "id": "Q116",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "多智能體之間傳遞任務參數與執行結果時，最適當之標準化格式通常採用：",
+    "options": [
+      "模糊不清的口語錄音檔",
+      "結構化數據格式 (如 JSON / XML) 或 具備固定錨點標籤之 Markdown 規格",
+      "手寫草稿掃描成的模糊圖片",
+      "完全未經格式化之長篇雜亂文本"
+    ],
+    "answer": 1,
+    "explanation": "標準結構化格式（如 JSON）能確保上下游 Agent 之間精準解析欄位，零失真傳遞數據。"
+  },
+  {
+    "id": "Q117",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "在配置『虛擬財務與風控特工』時，其在專案中的首要任務應當為：",
+    "options": [
+      "幫全組同學訂購昂貴下午茶外送",
+      "客觀試算微型創業之損益兩平點、單位毛利率，並對潛在侵權與個資外洩風險發出預警",
+      "任意捏造極端誇大的營收預測報表",
+      "刪除所有發票報帳記錄"
+    ],
+    "answer": 1,
+    "explanation": "財務模型精算與風險預警特工扮演理性剎車皮，防止初創團隊盲目擴張。"
+  },
+  {
+    "id": "Q118",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "當『行銷文案特工』產出的廣告詞誇大不實違反法規時，多特工架構中的『法遵特工』應採取的行動為：",
+    "options": [
+      "跟著一起拍手叫好並發布到各大社群",
+      "觸發系統安全防線，駁回該草案並具體引用消保法/廣告法規範，要求行銷特工重新修正",
+      "立刻將電腦主機電源拔除",
+      "將違規文案直接發布到政府官網"
+    ],
+    "answer": 1,
+    "explanation": "合規特工落實內部審查防線，確保品牌產出符合法令規章與社會責任底線。"
+  },
+  {
+    "id": "Q119",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "相較於單一長提示詞 (Single Mega-Prompt)，採用多智能體工作流 (Multi-Agent Workflow) 的顯著優勢在於：",
+    "options": [
+      "模組化分工大幅降低單次推論之上下文混淆，且各節點易於單獨調優、維護與除錯",
+      "完全不需要消耗任何 API Token 額度",
+      "能保證產出速度比光速還要快",
+      "完全不需要任何商業規格設計"
+    ],
+    "answer": 1,
+    "explanation": "多智能體工作流具備高內聚、低耦合特性，利於大型複雜商業專案的分工推進。"
+  },
+  {
+    "id": "Q120",
+    "weeks": [
+      12
+    ],
+    "chapter": 12,
+    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "企管專業人員在多智能體時代最無可取代的『指揮官 (Orchestrator)』角色在於：",
+    "options": [
+      "能夠親手手敲所有的底層 C 語言編譯器代碼",
+      "深刻理解企業商業模式、精準定義業務工作分解結構 (WBS)，並設計AI Agent 協同的驗收與授權閉環",
+      "每天手動幫電腦清理機殼灰塵",
+      "能夠背誦所有大語言模型的主機伺服器序號"
+    ],
+    "answer": 1,
+    "explanation": "商業流程架構能力與AI Agent 協同管理思維，是引領虛擬特工軍團落地的核心競爭力。"
+  },
+  {
+    "id": "Q121",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "iPAS 經典行銷轉換漏斗『AIDA』模型，四大核心階段依序代表：",
+    "options": [
+      "Action ➔ Internet ➔ Data ➔ App",
+      "Attention (吸引注意) ➔ Interest (引發興趣) ➔ Desire (點燃慾望) ➔ Action (促成行動)",
+      "Awareness ➔ Innovation ➔ Development ➔ Automation",
+      "Apple ➔ IBM ➔ Dell ➔ ASUS"
+    ],
+    "answer": 1,
+    "explanation": "AIDA 系統化勾勒受眾從最初被抓住眼球，至產生興趣、渴求擁有並落實行動的心理路徑。"
+  },
+  {
+    "id": "Q122",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在資訊碎片的數位社群傳播環境中，獲取受眾『Attention (注意)』的黃金時間通常只有：",
+    "options": [
+      "前 30 分鐘",
+      "前 1 到 3 秒 (黃金開頭 Hook)",
+      "前 10 個工作天",
+      "使用者把整部影片看完之後"
+    ],
+    "answer": 1,
+    "explanation": "滑動時代使用者的專注力極短，前 3 秒開頭 Hook 能否引爆好奇或痛點共鳴決定了成敗。"
+  },
+  {
+    "id": "Q123",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "AIDA 模型中的『Interest (興趣)』階段，行銷文案最關鍵的著力點為：",
+    "options": [
+      "詳細列出公司的伺服器硬體規格表",
+      "精準點出受眾日常切身遭遇的困境難題，並拋出令人耳目一新的獨特觀點或解方線索",
+      "威脅受眾如果不讀完貼文就會倒楣",
+      "直接要求受眾匯款"
+    ],
+    "answer": 1,
+    "explanation": "將注意力引向切身利益與痛點共鳴，能讓受眾從被動看見轉變為主動探索。"
+  },
+  {
+    "id": "Q124",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "基礎核心",
+    "question": "在行銷溝通中，所謂『Desire (慾望)』的核心激發機制主要仰賴：",
+    "options": [
+      "前後對比 (Before vs. After)、社會見證 (Social Proof)、權威背書與展現美好理想狀態",
+      "通篇使用全英文數學符號推導",
+      "不斷重複宣稱自己是宇宙第一品牌",
+      "向受眾展示工廠的平面設計圖"
+    ],
+    "answer": 1,
+    "explanation": "強烈的改變對比與真實見證，能有效引燃受眾內心深處渴望擺脫困境的情感驅力。"
+  },
+  {
+    "id": "Q125",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "網頁與社群轉換的核心樞紐『CTA (Call to Action)』的中文意涵與主要功能為：",
+    "options": [
+      "客戶電話號碼查詢區",
+      "行動召喚 / 促購按鈕：指引受眾採取下一步具體行動（如『免費取得企劃書』、『立即預購』）",
+      "公司商標註冊編號",
+      "網路退款申訴窗口"
+    ],
+    "answer": 1,
+    "explanation": "CTA 給予使用者清晰、零摩擦力且具前進動能的下一步行動指引。"
+  },
+  {
+    "id": "Q126",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "下列哪一組 CTA 按鈕文案設計，最符合『低心理阻力、高行動價值』之優質轉換法則？",
+    "options": [
+      "『提交您的全部隱私數據以供審查』",
+      "『立即 0 元解鎖《大一期末歐趴復習筆記包》➔』",
+      "『點擊此處將立即進行扣款』",
+      "『閱讀 10 萬字使用者條款』"
+    ],
+    "answer": 1,
+    "explanation": "強調高價值、零成本與清晰獲得物，並帶有前進箭頭符號，具備極高點擊轉化率。"
+  },
+  {
+    "id": "Q127",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "整合行銷傳播 (Integrated Marketing Communications, IMC) 的核心戰略精髓為：",
+    "options": [
+      "在所有的社群平台發布完全一模一樣的一字不差長篇公文",
+      "One Voice, One Message (一個核心聲音、統一的品牌主張)，但因應各通路生態進行客製化轉譯",
+      "只經營單一社群平台，徹底放棄其他所有傳播接觸點",
+      "大量發送沒有經過許可的垃圾促銷簡訊"
+    ],
+    "answer": 1,
+    "explanation": "IMC 強調跨通路的綜效一致性，以多管道合力定錨統一的品牌心智印象。"
+  },
+  {
+    "id": "Q128",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "進階應用",
+    "question": "行銷成效指標中，『轉換率 (Conversion Rate, CVR)』的標準計算公式為：",
+    "options": [
+      "(網站總訪客數) ÷ (創辦人人數)",
+      "【實質完成目標行動之使用者人數 (如表單提交/下單)】÷ 【到達該頁面的總造訪人次】× 100%",
+      "(社群貼文按讚數) ＋ (留言數)",
+      "(企劃書總頁數) ÷ 100"
+    ],
+    "answer": 1,
+    "explanation": "CVR 衡量造訪流量中有多大比例實質被內容說服並採取關鍵商業行動。"
+  },
+  {
+    "id": "Q129",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "在社群行銷中，所謂的『病毒傳播因子 (Viral Loop)』通常具備何項核心機制？",
+    "options": [
+      "內容枯燥生硬且技術上禁止轉發",
+      "為使用者提供強大的『社交貨幣 (Social Currency)』或利他價值，讓轉發者展現自身品味或幫助朋友",
+      "向每位點擊分享的使用者收取手續費",
+      "只在半夜時段隨機向少數人顯示"
+    ],
+    "answer": 1,
+    "explanation": "社交貨幣讓人們在分享時獲得自我形象提升，引爆自發性的人際網絡擴散。"
+  },
+  {
+    "id": "Q130",
+    "weeks": [
+      13
+    ],
+    "chapter": 13,
+    "chapter_title": "整合行銷傳播（IMC）與 AIDA 轉換漏斗",
+    "module": "【iPAS 品牌】整合行銷傳播 IMC 與 AIDA 漏斗",
+    "competency": "品牌策略與整合行銷",
+    "cert": "iPAS 品牌規劃師",
+    "subject": "行銷企劃實務",
+    "difficulty": "高階實戰",
+    "question": "電商行銷常運用的『顧客終身價值 (Customer Lifetime Value, LTV)』是指：",
+    "options": [
+      "顧客一輩子總共喝過幾杯咖啡的次數",
+      "一位顧客在與品牌維持關係的整個生命週期中，預期為企業貢獻的總毛利金額",
+      "顧客的平均壽命年數",
+      "公司所有股東的投資總額"
+    ],
+    "answer": 1,
+    "explanation": "LTV 衡量單一顧客帶來的長期總獲利能力，指導企業制定合理的獲客預算上限。"
+  },
+  {
+    "id": "Q131",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "基礎核心",
+    "question": "歐盟正式通過之《人工智慧法案 (EU AI Act)》，對 AI 系統採取何種核心監管架構？",
+    "options": [
+      "所有 AI 系統一律全面無條件禁用",
+      "基於風險分級模式 (Risk-Based Approach)：不可接受風險、高風險、有限風險與最小風險",
+      "由每位使用者自行投票決定合規與否",
+      "完全不進行任何監管放任市場自由發展"
+    ],
+    "answer": 1,
+    "explanation": "EU AI Act 依據對人權與安全之危害潛力，實施梯次風險分級監管。"
+  },
+  {
+    "id": "Q132",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "基礎核心",
+    "question": "在生成式 AI 應用中，使用第三方開源模型或 API 時，對於『智慧財產權與著作權』的正確法律認知為：",
+    "options": [
+      "網路上所有的圖片與文本都可以無條件複製並宣稱為自己的原創專利",
+      "必須審慎檢視模型授權條款 (如 Apache 2.0, MIT, Llama License)，且 AI 純生成的產出目前普遍不享有著作權保護",
+      "只要經過 AI 改寫過一句話，該內容即自動獲得全球專利",
+      "所有商業 AI 工具皆免費且無須遵守任何授權協定"
+    ],
+    "answer": 1,
+    "explanation": "需恪遵開源授權規範與商業使用限制，並認知純 AI 生成物之著作權歸屬爭議。"
+  },
+  {
+    "id": "Q133",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "基礎核心",
+    "question": "依據台灣《個人資料保護法》與歐盟 GDPR 規範，企業使用顧客資料進行 AI 模型微調或分析時，必須具備：",
+    "options": [
+      "黑客入侵手段以節省授權費",
+      "明確且具備知情同意的『法律基礎 (如當事人同意)』，並落實『目的限制』與『去識別化/匿名化』",
+      "不需要任何告知即可自由販賣資料給第三方",
+      "只要主管口頭同意即可任意使用任何資料"
+    ],
+    "answer": 1,
+    "explanation": "個資處理必須符合合法告知、同意機制、最小化蒐集與去識別化安全防護。"
+  },
+  {
+    "id": "Q134",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "基礎核心",
+    "question": "OWASP Top 10 for LLMs 中排名第一的重大資安威脅『提示注入攻擊 (Prompt Injection)』是指：",
+    "options": [
+      "駭客透過物理手段剪斷伺服器的電源線",
+      "攻擊者將惡意指令偽裝成正常資料輸入，誘騙大型語言模型覆蓋原本的系統安全設定，造成越權或資料外洩",
+      "電腦主機風扇運轉速度過慢",
+      "在鍵盤上潑灑咖啡導致短路"
+    ],
+    "answer": 1,
+    "explanation": "提示注入能越過系統原廠約束，誘騙模型執行越權指令或吐出系統提示詞。"
+  },
+  {
+    "id": "Q135",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "進階應用",
+    "question": "企業防範『間接提示注入 (Indirect Prompt Injection)』的最佳架構防禦策略為：",
+    "options": [
+      "永遠不連結網際網路且不用電腦",
+      "對外部網頁/檔案檢索內容視為『未信任資料 (Untrusted Data)』，實施沙箱隔離與權限最小化 (Least Privilege)",
+      "祈求駭客不會發現這個漏洞",
+      "讓 AI 隨意存取最高管理員帳號密碼"
+    ],
+    "answer": 1,
+    "explanation": "隔離不可信的外部輸入數據並限制 Agent 執行高風險工具之權限，能阻斷攻擊鏈。"
+  },
+  {
+    "id": "Q136",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "進階應用",
+    "question": "在生成式 AI 系統中，所謂的『數據投毒 (Data Poisoning)』威脅是指：",
+    "options": [
+      "在機房的飲用水中加入化學藥品",
+      "攻擊者惡意污染訓練集或 RAG 知識庫，植入偏差數據或後門，操縱模型在特定觸發詞下給出錯誤決策",
+      "電腦軟硬體設備的日常老化損耗",
+      "文字字型檔案損壞"
+    ],
+    "answer": 1,
+    "explanation": "惡意篡改知識庫與訓練數據會嚴重摧毀 AI 決策的客觀性與可信度。"
+  },
+  {
+    "id": "Q137",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "進階應用",
+    "question": "企業內部導入生成式 AI 輔助行銷與客服時，關於『AI 幻覺責任 (Hallucination Liability)』的法律歸屬為：",
+    "options": [
+      "完全由模型開發原廠 (如 OpenAI, Google) 負擔所有民事與刑事賠償責任",
+      "企業為最終發布與採納者，依法必須對向顧客發布的不實廣告、侵權與損害負起最終法律責任",
+      "由電腦硬體製造商負責",
+      "這屬於不可抗力之天災，沒有任何人需要負責任"
+    ],
+    "answer": 1,
+    "explanation": "企業身為商業營運主體，必須對自身對外發布的內容與承諾承擔不可推卸的法律責任。"
+  },
+  {
+    "id": "Q138",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "進階應用",
+    "question": "為防止員工在日常使用生成式 AI 時不慎洩漏企業核心商業機密，公司最應制定的政策為：",
+    "options": [
+      "完全禁止員工攜帶智慧型手機上班",
+      "建立《生成式 AI 使用規範 (AI Acceptable Use Policy)》，明確禁止將敏感客資、原始碼上傳至未授權公用雲端模型",
+      "每天下班檢查員工的私人書包",
+      "將所有公司檔案上傳至公開免費用戶論壇"
+    ],
+    "answer": 1,
+    "explanation": "制定清晰的企業 AI 使用規範與導入企業級隱私保護模型，是防範洩密之治本之道。"
+  },
+  {
+    "id": "Q139",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "高階實戰",
+    "question": "在演算法公平性維度中，『演算法偏見 (Algorithmic Bias)』通常源自於：",
+    "options": [
+      "電腦螢幕的解析度不對稱",
+      "歷史訓練數據中既有的性別、年齡、種族或文化不平等分佈，被模型學習並在推論時放大再現",
+      "伺服器的冷卻液溫度過高",
+      "程式碼縮排使用了 Tab 而非空格"
+    ],
+    "answer": 1,
+    "explanation": "訓練資料若蘊含社會歷史偏見，生成模型將會無意識地強化與複製該偏見。"
+  },
+  {
+    "id": "Q140",
+    "weeks": [
+      14
+    ],
+    "chapter": 14,
+    "chapter_title": "AI 倫理、法規與防禦性工程：安全可靠的創業基石",
+    "module": "【iPAS AI】AI 倫理法規、個資隱私與安全治理",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "AI 導入評估與倫理法規",
+    "difficulty": "高階實戰",
+    "question": "企管學生在建構 AI 微型創業專案時，網頁頁尾聲明應包含下列何項負責任實踐？",
+    "options": [
+      "宣稱本網站所有功能皆由外星科技全自動運作與人類無關",
+      "清楚的隱私權政策 (Privacy Policy)、服務條款、聯絡管道及主動揭露部分內容由 AI 輔助生成之說明",
+      "隨意貼上一段未經授權的知名企業商標",
+      "完全不提供任何聯絡資訊以躲避投訴"
+    ],
+    "answer": 1,
+    "explanation": "透明的隱私條款、AI 協同揭露與真誠負責的聯繫窗口，是建立消費者長期信任的基石。"
+  },
+  {
+    "id": "Q141",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "現代 Jamstack 靜態 Web 架構在微型創業原型建置中廣受青睞的核心優勢為：",
+    "options": [
+      "必須耗費巨額月租費維護複雜的關聯式資料庫伺服器",
+      "由預先編譯好的 HTML/CSS/JS 構成，安全性極高、抗流量衝擊且能實現零伺服器主機成本",
+      "完全無法在智慧型手機瀏覽器上正常瀏覽",
+      "只支援黑白兩色顯示"
+    ],
+    "answer": 1,
+    "explanation": "純前端靜態架構免疫 SQL Injection 等後端注入攻擊，且託管維護成本幾乎為零。"
+  },
+  {
+    "id": "Q142",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "利用自然語言引導 AI 生成單頁商業官網 (Landing Page) 時，最關鍵的『首屏英雄區 (Hero Section)』應具備：",
+    "options": [
+      "長達 3000 字的公司成立歷程回顧",
+      "一句話擊中受眾痛點的震撼標題、明確的副標價值主張與鮮明的行動呼籲 (CTA) 按鈕",
+      "複雜且需要登入才能看見內容的驗證碼視窗",
+      "一張沒有任何說明的超大型空白圖片"
+    ],
+    "answer": 1,
+    "explanation": "首屏 Hero 區是留住訪客眼球的最關鍵 5 秒，必須精準傳遞核心價值與促成下一步行動。"
+  },
+  {
+    "id": "Q143",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "在響應式網頁設計 (Responsive Web Design, RWD) 中，確保行動端良好瀏覽體驗的黃金準則為：",
+    "options": [
+      "強迫手機使用者必須橫向旋轉螢幕才能操作",
+      "採用彈性流動排版 (Flexbox / Grid)，按鈕尺寸適配手指觸控 (至少 44×44px)，文字無須縮放即可清晰閱讀",
+      "所有圖片一律採用固定 2000px 寬度",
+      "把手機瀏覽器的縮放功能完全鎖死"
+    ],
+    "answer": 1,
+    "explanation": "適配手指點擊熱區與流動排版，能確保在不同尺寸之手機螢幕上均維持優質操作體驗。"
+  },
+  {
+    "id": "Q144",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "基礎核心",
+    "question": "使用 Tailwind CSS 現代樣式庫時，其『Utility-First (實用類優先)』特點對 AI 協同生成的助益為：",
+    "options": [
+      "程式碼永遠無法被任何人讀懂",
+      "樣式直接內嵌於標籤類別中，免去跨檔案 CSS 命名衝突與外部相依性，非常利於 AI 單檔案完整生成",
+      "會導致瀏覽器執行速度嚴重變慢十倍",
+      "完全不支援任何色彩與圓角設計"
+    ],
+    "answer": 1,
+    "explanation": "實用類樣式讓 AI 能以自包含方式高速產出高質感介面，且零跨檔案樣式衝突。"
+  },
+  {
+    "id": "Q145",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "驗收 AI 生成之商業網頁代碼時，下列何者屬於『功能性驗收 (Functional Acceptance)』範疇？",
+    "options": [
+      "網頁背景顏色是否符合美感潮流",
+      "點擊導航錨點按鈕是否能平滑滾動至對應區塊、預購表單未填欄位時是否會給予防呆提示",
+      "公司商標是否足夠酷炫",
+      "程式碼檔案大小是否恰好為整數"
+    ],
+    "answer": 1,
+    "explanation": "按鈕跳轉、表單校驗與互動反饋屬於標準功能性驗收維度。"
+  },
+  {
+    "id": "Q146",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "驗收 AI 產出之網頁在效能與穩定度層面時，下列何者為常見的『潛在缺陷』？",
+    "options": [
+      "文字排版過於整齊",
+      "引用了不存在或失效的外部 CDN 連結、未壓縮之巨大高解析度圖檔導致載入延遲",
+      "在手機上能秒開網頁",
+      "按鈕點擊有清晰的反饋動畫"
+    ],
+    "answer": 1,
+    "explanation": "失效外鏈與未最佳化的巨大資產會造成破圖與嚴重加載卡頓，需特別檢驗。"
+  },
+  {
+    "id": "Q147",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "在靜態網頁中實現微型創業的『顧客名單收集 (Lead Generation)』，最經濟可靠的第三方整合解方為：",
+    "options": [
+      "手動架設大型 Oracle 資料庫機房",
+      "無縫外掛 Google Forms、Formspree 或 Notion 表單 API，資料自動同步至雲端試算表",
+      "要求顧客將姓名紙本郵寄至學校傳達室",
+      "強制要求顧客加創辦人的私人臉書"
+    ],
+    "answer": 1,
+    "explanation": "善用雲端無伺服器表單服務，能以零主機成本實現顧客意向名單之全自動收集。"
+  },
+  {
+    "id": "Q148",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "進階應用",
+    "question": "設計商業網站的『常見問題 (FAQ)』區塊，在轉換漏斗中主要扮演的功能為：",
+    "options": [
+      "填充頁面長度以顯得內容豐富",
+      "主動化解潛在顧客在付款前的最後疑慮（如退換貨保證、資安防護），消除購買心理摩擦力",
+      "向同業炫耀公司的專業術語",
+      "提供考卷標準答案"
+    ],
+    "answer": 1,
+    "explanation": "FAQ 針對顧客最後的猶豫點進行精準防禦拆解，大幅推動臨門一腳的付款轉換。"
+  },
+  {
+    "id": "Q149",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "企管學生在驗收 AI 生成的落地網頁時，最應秉持的『產品經理 (PM)』驗收標準為：",
+    "options": [
+      "不管內容是什麼，只要能跑出畫面就直接及格",
+      "站在真實目標受眾的視角，檢視該網頁是否在 5 秒內清楚交代『這在賣什麼、對我有何好處、如何立即行動』",
+      "要求 AI 必須寫出超過 10 萬行代碼才算合格",
+      "只要老師沒有檢查就不用驗收"
+    ],
+    "answer": 1,
+    "explanation": "商業價值的清晰傳達與轉化路徑順暢，是 PM 檢視網頁成果的終極驗收標準。"
+  },
+  {
+    "id": "Q150",
+    "weeks": [
+      15
+    ],
+    "chapter": 15,
+    "chapter_title": "【期末實戰】數位原型實踐（一）：利用 Antigravity 生成專案網站",
+    "module": "【iPAS AI】生成式 AI 前端落地與架構驗收",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "生成式 AI 應用與規劃",
+    "difficulty": "高階實戰",
+    "question": "為確保網頁能被搜尋引擎與社交平台正確預覽，HTML 標頭中不可或缺的標籤組為：",
+    "options": [
+      "只有 <body> 標籤即可",
+      "Open Graph (OG Tags: og:title, og:description, og:image) 與 基礎 SEO Meta 描述標籤",
+      "只能使用全英文的註解標籤",
+      "印出 Hello World 的腳本標籤"
+    ],
+    "answer": 1,
+    "explanation": "OG 標籤確保網址分享在 LINE、FB、IG 時能呈現吸睛的預覽卡片與縮圖。"
+  },
+  {
+    "id": "Q151",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "基礎核心",
+    "question": "在概念驗證 (Proof of Concept, PoC) 階段，選擇 GitHub Pages 作為全球發布平台的關鍵價值在於：",
+    "options": [
+      "必須支付高額年費以維持主機運作",
+      "完全免費、自帶頂級 SSL 安全憑證 (HTTPS)，且能秒級發布並取得全球可公開訪問之專屬網址",
+      "伺服器每隔兩小時會自動關機一次",
+      "只允許內部工程師瀏覽，外界完全無法訪問"
+    ],
+    "answer": 1,
+    "explanation": "GitHub Pages 提供零伺服器成本的 HTTPS 託管環境，是微型創業 PoC 驗證的最佳發布利器。"
+  },
+  {
+    "id": "Q152",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "基礎核心",
+    "question": "在標準 Web 專案部署中，首頁檔案名稱必須嚴格命名為『index.html』的主要原因為：",
+    "options": [
+      "這是電腦程式設計師的迷信習慣",
+      "全球主流 Web 伺服器預設皆以 index.html 作為該目錄下的預設入口文件 (Directory Index)",
+      "若不叫 index.html 電腦硬碟會損壞",
+      "為了防止其他組員閱讀代碼"
+    ],
+    "answer": 1,
+    "explanation": "伺服器在收到網址請求時，預設自動載入 index.html 作為網站首頁呈現。"
+  },
+  {
+    "id": "Q153",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "基礎核心",
+    "question": "現代網際網路架構中的『內容傳遞網路 (Content Delivery Network, CDN)』核心運作原理為：",
+    "options": [
+      "由一家快遞公司負責把實體硬碟送到顧客家",
+      "將靜態快取內容分散佈署在全球邊緣伺服器節點，讓使用者能就近獲取數據，極大化縮短載入時間",
+      "強制讓所有使用者的網速降至最低以節省頻寬",
+      "在每台電腦之間拉一條實體光纖線"
+    ],
+    "answer": 1,
+    "explanation": "CDN 將靜態資源快取於全球邊緣節點，確保國內外訪客皆能享受毫秒級的極速秒開體驗。"
+  },
+  {
+    "id": "Q154",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "基礎核心",
+    "question": "網址開頭具備『HTTPS』協定與綠色鎖頭標誌，在商業與資安層面的核心意義為：",
+    "options": [
+      "代表該網站販售的商品絕對不會損壞",
+      "資料在傳輸過程中經過 SSL/TLS 高強度加密，防範中間人攻擊 (MITM) 與封包竊聽，建立顧客信任",
+      "代表該公司獲得政府最高榮譽補助",
+      "代表該網頁永遠不會出現 404 錯誤"
+    ],
+    "answer": 1,
+    "explanation": "HTTPS 加密傳輸保護使用者隱私與表單數據，是現代商業網站必備之基礎資安標準。"
+  },
+  {
+    "id": "Q155",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "進階應用",
+    "question": "在 GitHub Pages 部署時，如果瀏覽器訪問網址時回傳『404 Not Found』，最常見的排查原創原因為：",
+    "options": [
+      "網路伺服器被外星人劫持",
+      "Repository 倉庫未設定為 Public 公開、GitHub Pages 部署分支設定錯誤，或檔案未放置於根目錄/命名錯誤",
+      "使用者的手機電量不足",
+      "今天的天氣太炎熱導致晶片降頻"
+    ],
+    "answer": 1,
+    "explanation": "確認倉庫權限 (Public)、發布來源分支 (main/root) 與 index.html 位置是排除 404 的標準 SOP。"
+  },
+  {
+    "id": "Q156",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "進階應用",
+    "question": "微型創業者在將專案公開上線前，針對『資安衛生 (Security Hygiene)』最關鍵的自檢步驟為：",
+    "options": [
+      "將全家人的帳號密碼寫在網頁首頁以防忘記",
+      "徹底檢查 HTML/JS 代碼中，嚴禁硬編碼 (Hardcode) 任何私人 API Key、資料庫連線密碼或敏感個資",
+      "確認網頁中有至少 50 個浮誇的跑馬燈動畫",
+      "將所有變數名稱全部改為亂碼"
+    ],
+    "answer": 1,
+    "explanation": "公開倉庫絕不可洩漏任何私密金鑰 (API Secrets)，避免遭受惡意盜刷或資安入侵。"
+  },
+  {
+    "id": "Q157",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "進階應用",
+    "question": "概念驗證 (PoC) 上線後，團隊進行『跨裝置相容性測試』的標準驗證維度應包含：",
+    "options": [
+      "僅在教師的高階電腦上打開確認一次即代表通過",
+      "實測不同品牌智慧型手機 (iOS Safari, Android Chrome) 之直向與橫向瀏覽，確保文字不跑版、按鈕好點擊",
+      "要求所有測試者必須購買同一款手機才能瀏覽",
+      "只要文字沒有拼錯就不用在手機上測試"
+    ],
+    "answer": 1,
+    "explanation": "行動端設備碎片化嚴重，跨瀏覽器與跨尺寸之真機實測是保證轉化體驗的必備步驟。"
+  },
+  {
+    "id": "Q158",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "進階應用",
+    "question": "在商業營運視角下，專案網址具備『行動端友善 (Mobile-Friendly)』對業務轉化的直接衝擊為：",
+    "options": [
+      "完全沒有任何影響",
+      "現代社群流量超過 85% 來自手機端，若行動體驗不良將造成極高跳出率 (Bounce Rate)，行銷預算全數浪費",
+      "手機使用者通常不具備消費能力",
+      "只會影響少數科技極客的滿意度"
+    ],
+    "answer": 1,
+    "explanation": "行動體驗是決定社群導流轉換成敗的第一道生死線，不良排版將導致流量瞬間流失。"
+  },
+  {
+    "id": "Q159",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "高階實戰",
+    "question": "若微型創業團隊希望未來綁定專屬自訂網域名稱 (Custom Domain, 如 mybrand.com)，其架構原理為：",
+    "options": [
+      "必須向電信公司申請拉一條專屬海底電纜",
+      "向網域商購買域名後，在 DNS 管理介面新增 CNAME 記錄指向 GitHub Pages 伺服器主機名稱",
+      "把電腦主機名稱直接改成 mybrand.com 即可全網通用",
+      "直接在網址列用鉛筆寫上自訂域名"
+    ],
+    "answer": 1,
+    "explanation": "DNS CNAME 記錄將自訂商用網域名稱解析至靜態託管節點，能大幅提升品牌專業度。"
+  },
+  {
+    "id": "Q160",
+    "weeks": [
+      16
+    ],
+    "chapter": 16,
+    "chapter_title": "【期末實戰】數位原型實踐（二）：GitHub Pages 平台部署實務發布",
+    "module": "【iPAS AI】雲端靜態託管、PoC 發布與 CDN",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS AI 應用規劃師",
+    "subject": "人工智慧基礎概論",
+    "difficulty": "高階實戰",
+    "question": "完成 PoC 上線並取得正式公開網址後，企管團隊在創業進程中的里程碑意義為：",
+    "options": [
+      "正式從『紙上空想的企劃草案』跨越至『全球可訪問、可向真實顧客展示驗證的數位資產』",
+      "代表微型創業已經完全成功，不需要再進行任何改進",
+      "可以立即向證券交易所申請股票上市代碼",
+      "本學期課程可以提前結束回家休息"
+    ],
+    "answer": 1,
+    "explanation": "公開可訪問的網址宣告了創意的具體落地，使團隊具備向市場與投資人展現實力的實質載體。"
+  },
+  {
+    "id": "Q161",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "基礎核心",
+    "question": "在數位產品使用者體驗評估中，『a11y』通常代表何種專業領域？",
+    "options": [
+      "人工智慧演算法 (AI Algorithm)",
+      "無障礙網頁體驗 (Web Accessibility: 取首尾字母 a 和 y，中間省略 11 個字母)",
+      "音訊解碼格式 (Audio Layer 11)",
+      "全自動產權註冊系統 (Auto License)"
+    ],
+    "answer": 1,
+    "explanation": "a11y 代表無障礙網頁設計，旨在確保身心障礙或年長者皆能平等順暢地使用數位產品。"
+  },
+  {
+    "id": "Q162",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "基礎核心",
+    "question": "依據 W3C 網頁內容無障礙指南 (WCAG)，確保視覺障礙者透過螢幕閱讀器理解圖片內容的必備標籤屬性為：",
+    "options": [
+      "<img border=\"5\">",
+      "<img alt=\"具備實質意義的圖片替代文字說明\">",
+      "<img secret=\"true\">",
+      "<img invisible=\"true\">"
+    ],
+    "answer": 1,
+    "explanation": "提供精確的 alt 替代文字說明，讓無視覺輔助設備能夠朗讀圖像核心意義。"
+  },
+  {
+    "id": "Q163",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "基礎核心",
+    "question": "WCAG 無障礙規範中，針對『文字與背景色彩對比度』的要求，其主要目的是：",
+    "options": [
+      "讓網頁在黑白螢幕上看呈現全灰色",
+      "確保在強光環境、低階螢幕或色弱受眾瀏覽時，內文字體依然清晰可辨識（標準文字至少 4.5:1）",
+      "強迫所有網站只能使用黑底白字",
+      "增加伺服器的圖像渲染時間"
+    ],
+    "answer": 1,
+    "explanation": "充足的對比度能保障視力衰退、色弱者及在戶外強光下閱讀者的基本可讀性。"
+  },
+  {
+    "id": "Q164",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "基礎核心",
+    "question": "在無障礙鍵盤導航測試中，使用者按下鍵盤『Tab 鍵』時，網頁元素應當表現出的正確狀態為：",
+    "options": [
+      "直接關閉瀏覽器視窗",
+      "當前聚焦之可互動元素（按鈕、超連結、表單）必須具備清晰可見的『焦點外框 (Focus Ring)』",
+      "隨機撥放一段警告警報聲",
+      "強制鎖定滑鼠指標不准移動"
+    ],
+    "answer": 1,
+    "explanation": "清晰的鍵盤焦點提示能引導無法使用滑鼠之身心障礙者依序精準操作互動元件。"
+  },
+  {
+    "id": "Q165",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "進階應用",
+    "question": "在商業簡報與展示網站串聯彩排中，『Demo Effect (發表翻車效應)』的最佳防禦對策為：",
+    "options": [
+      "完全不準備任何備案，祈禱現場網路絕對不會斷線",
+      "準備本機離線運作備案 (Local Fallback)、預錄展示動圖/短片，並於彩排時徹底壓力測試備份方案",
+      "如果在台上發現網頁打不開就立刻假裝肚子痛離場",
+      "直接取消所有產品現場展示環節"
+    ],
+    "answer": 1,
+    "explanation": "多重離線備案與展示預錄是專業商業路演必備之抗翻車防禦措施。"
+  },
+  {
+    "id": "Q166",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "進階應用",
+    "question": "期末成果發表會前夕，團隊進行『3 分鐘極簡路演 (Pitch)』彩排時，時間分配的黃金比重通常為：",
+    "options": [
+      "前 2 分 50 秒介紹公司名字，最後 10 秒草草結束",
+      "痛點與市場機會 (1分鐘) ➔ 核心解方與網頁原型展示 (1分鐘) ➔ 商業模式、驗證成果與未來展望 (1分鐘)",
+      "全員依序自我介紹各自的星座 3 分鐘",
+      "播放長達 3 分鐘的純音樂不說一句話"
+    ],
+    "answer": 1,
+    "explanation": "均衡的三幕式結構能精準掌控節奏，在極短時間內高效傳遞商業價值邏輯。"
+  },
+  {
+    "id": "Q167",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "進階應用",
+    "question": "企劃提案中若包含『點擊跳轉即時展示』，主講人與操作展示員之間的默契協同原則為：",
+    "options": [
+      "主講人講自己的，操作員隨便亂點螢幕",
+      "口頭論述與畫面點擊完全同步 (Say-and-Show)，操作員動作沉穩不慌亂，精準展示主講人提到的關鍵功能",
+      "兩人在台上公開互相爭吵誰的點擊速度慢",
+      "操作員故意快速滑動頁面讓評審看不清楚"
+    ],
+    "answer": 1,
+    "explanation": "講示合一、動作沉穩，能給予評審團隊高度專業與訓練有素之卓越信任感。"
+  },
+  {
+    "id": "Q168",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "進階應用",
+    "question": "在網站效能驗收維度中，Google 核心網頁指標 (Core Web Vitals) 中的『LCP』是指：",
+    "options": [
+      "Largest Contentful Paint (最大內容繪製時間：衡量頁面最大可見內容載入的速度標準)",
+      "Low Cost Price (極低成本價格)",
+      "Line Card Position (線路卡位置)",
+      "Last Customer Purchase (最後顧客購買)"
+    ],
+    "answer": 1,
+    "explanation": "LCP 衡量網頁主要內容載入完畢的時間，是評估使用者體驗流暢度的權威指標。"
+  },
+  {
+    "id": "Q169",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "高階實戰",
+    "question": "面對即席問答 (Q&A) 環節，當評審提出尖銳的商業漏洞質疑時，專業團隊的最佳應對為：",
+    "options": [
+      "當場與評審大聲爭辯並指責評審不懂科技",
+      "先感謝評審的深刻洞察，坦承該處為現階段已知邊界，並具體說明未來的迭代補強規劃或防禦假說",
+      "全員保持沉默長達 3 分鐘不予理睬",
+      "將責任全部推卸給不在場的組員"
+    ],
+    "answer": 1,
+    "explanation": "展現受教傾聽的胸襟與客觀冷靜的防禦思維，往往比強詞奪理更能贏得專業評審敬重。"
+  },
+  {
+    "id": "Q170",
+    "weeks": [
+      17
+    ],
+    "chapter": 17,
+    "chapter_title": "【期末實戰】系統整合與成效驗證：提案簡報與展示網站串聯彩排",
+    "module": "【iPAS 跨域】無障礙體驗 a11y 與專案整合驗證",
+    "competency": "AI 系統規劃與倫理法規",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "高階實戰",
+    "question": "彩排驗收清單 (Checklist) 在專案管理中的核心功能為：",
+    "options": [
+      "增加繁瑣的行政公文程序",
+      "透過標準化逐項檢核（如網址連線、簡報播放、投影片翻頁器、音訊輸出），消除人為疏失與遺漏風險",
+      "限制團隊成員的個人自由發揮空間",
+      "讓會議記錄看起來更加厚重"
+    ],
+    "answer": 1,
+    "explanation": "檢核清單是高可靠度專案管理的最有效工具，確保發表當日各項環節零失誤運作。"
+  },
+  {
+    "id": "Q171",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "基礎核心",
+    "question": "在現代微型創業競賽或育成中心 Demo Day 中，專業評審團綜合審查專案的三大黃金維度為：",
+    "options": [
+      "學生的考試成績、期中作業頁數與出席率",
+      "市場吸引力與痛點真實度 (Desirability) ✕ 商業模式可行性與獲利邏輯 (Viability) ✕ 數位原型落地完整度 (Feasibility)",
+      "簡報投影片中使用的藝術字型數量",
+      "團隊全體成員的平均年齡大小"
+    ],
+    "answer": 1,
+    "explanation": "商業價值、可行性與實作成品構成衡量新創專案成色之三大權威基石。"
+  },
+  {
+    "id": "Q172",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "基礎核心",
+    "question": "在 Demo Day 展演成果時，評審最看重團隊在 18 週學習歷程中所展現的何種核心素養？",
+    "options": [
+      "能夠背誦成千上萬個冷僻艱澀的電腦名詞",
+      "面對未知真實商業問題，能運用設計思考、AI Agent 協同與精實驗證工具，端到端產出具備商業說服力的實質解方",
+      "花費最多預算租賃昂貴主機",
+      "在台上有說有笑逗樂全場"
+    ],
+    "answer": 1,
+    "explanation": "解決真實問題的端到端實踐力與商業大局觀，是企管人才最受企業青睞的核心價值。"
+  },
+  {
+    "id": "Q173",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "基礎核心",
+    "question": "如果一個團隊的專案網站『視覺極其華麗炫目』，但評審一問才發現『完全沒有明確的目標受眾與收費模式』，其評價通常為：",
+    "options": [
+      "超越時代的完美創業代表作",
+      "典型的『解決方案在尋找問題 (Solution looking for a problem)』之技術玩具，缺乏商業立足點",
+      "可以直接給予百萬創業天使投資",
+      "值得全體同學起立致敬學習的典範"
+    ],
+    "answer": 1,
+    "explanation": "華而不實且缺乏商業模式閉環的玩具，無法在真實市場競爭中存活。"
+  },
+  {
+    "id": "Q174",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "基礎核心",
+    "question": "在面對全場同儕線上即時投票評比時，能有效激勵同儕『投資意向票』的關鍵因素為：",
+    "options": [
+      "強迫全組成員發送威脅訊息給同學",
+      "提案內容直擊校園或生活真實痛點，解法切角極具同理心共鳴，且現場網頁體驗流暢易懂",
+      "在簡報中不斷宣稱自己認識很多名人",
+      "上台發言聲音越大聲越容易得票"
+    ],
+    "answer": 1,
+    "explanation": "直擊切身痛點的真誠解法與流暢體驗，最能打動同儕並獲取真實支持意願。"
+  },
+  {
+    "id": "Q175",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "進階應用",
+    "question": "微型創業專案在 Demo Day 上線發布後，所謂『可持續經營 (Sustainability)』的關鍵考量為：",
+    "options": [
+      "每天消耗大筆金錢維持表面熱度",
+      "在零或極低維護成本架構下，能藉由有機口碑與自動化工作流，持續收集真實潛在顧客名單並驗證轉化",
+      "發表會一結束就立刻將網站徹底下架刪除",
+      "要求全體組員畢業後不得再提及該專案"
+    ],
+    "answer": 1,
+    "explanation": "輕資產高延展性的數位資產，能在課程結束後持續為創業者累積長期價值與人脈。"
+  },
+  {
+    "id": "Q176",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "進階應用",
+    "question": "將 18 週的微型創業成果（企劃書、公開網址、簡報、分析畫布）整理至個人求職履歷中，最大的競爭優勢為：",
+    "options": [
+      "增加自傳的文字行數以湊滿篇幅",
+      "以『具備真實運作網址與端到端商業驗證實績』超越千篇一律的傳統口頭自傳，具象化展現實戰力",
+      "證明自己是一個專業的網頁切版工人",
+      "向面試官炫耀自己不需要任何人指導"
+    ],
+    "answer": 1,
+    "explanation": "可點擊、可互動的真實商業作品集，是求職市場上最具殺傷力與說服力的黃金背書。"
+  },
+  {
+    "id": "Q177",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "進階應用",
+    "question": "考取經濟部 iPAS『品牌規劃師』專業能力鑑定，在職場上的核心專業認可代表：",
+    "options": [
+      "只懂得手繪傳統海報的繪圖技術員",
+      "具備國家級認證之品牌策略規劃、市場消費者洞察、整合行銷傳播與品牌資產維護之全方位專業實戰能力",
+      "可以在公家機關享有免費午餐特權",
+      "代表一生中不再需要學習任何行銷新知識"
+    ],
+    "answer": 1,
+    "explanation": "iPAS 品牌規劃師是經濟部策劃推動之國家級專業能力鑑定，深受各大企業與人資認可。"
+  },
+  {
+    "id": "Q178",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "進階應用",
+    "question": "考取經濟部 iPAS『AI 應用規劃師』專業能力鑑定，為非資訊背景企管人才帶來的關鍵賦能為：",
+    "options": [
+      "能背誦所有深度學習的底層數學矩陣公式",
+      "具備將生成式 AI 工具與企業業務流程整合、提示工程規劃、風險治理與AI Agent 協同導入之高階跨域架構能力",
+      "可以保證親手組裝所有超級電腦硬體設備",
+      "證明自己是全職的職業電競選手"
+    ],
+    "answer": 1,
+    "explanation": "AI 應用規劃師認證證明人才具備運用 AI 賦能企業業務轉型與風險管控之現代核心職能。"
+  },
+  {
+    "id": "Q179",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "高階實戰",
+    "question": "企業管理系學生在修習完整 18 週課程並完成 Demo Day 競演後，最核心的心智轉變 (Mindset Shift) 為：",
+    "options": [
+      "對科技感到更加恐懼與排斥",
+      "擺脫對編程語法的盲目恐懼，建立身為『數位共同創辦人』的大局觀，確信自己具備運用自然語言實現創意的無限可能",
+      "認為商業思考完全沒有用處，唯有當工程師才有一線生機",
+      "從此不再相信任何團隊合作的力量"
+    ],
+    "answer": 1,
+    "explanation": "由語法焦慮中解放，回歸商業大局觀與敏捷落地自信，是本課程之最高育人目標。"
+  },
+  {
+    "id": "Q180",
+    "weeks": [
+      18
+    ],
+    "chapter": 18,
+    "chapter_title": "【期末大會】Demo Day 成果發表會：網頁成果公開展示與競演",
+    "module": "【iPAS 跨域】Demo Day 成果競演與商業驗收",
+    "competency": "商業模式與精實驗證",
+    "cert": "iPAS 跨域實務",
+    "subject": "專案管理與商業驗證",
+    "difficulty": "高階實戰",
+    "question": "當 Demo Day 掌聲落下、全學期評分結算完畢後，這份微型創業專案的真正本質是：",
+    "options": [
+      "應付學校學分的一場演戲與負擔",
+      "個人與團隊數位資產的起點、未來創業的雛形種子，以及證明自身兼具商業思維與落地實踐力的終身代表作",
+      "應當立刻丟棄的期末過期作業",
+      "一張沒有任何後續價值的成績單數字"
+    ],
+    "answer": 1,
+    "explanation": "真實落地並公開運行的數位作品，是伴隨學生成長、持續創造可能性的終身無形資產。"
+  }
+]
