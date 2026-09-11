@@ -253,8 +253,8 @@ function renderHeaderInfo() {
   const studentBadge = document.getElementById('student-info-badge');
   if (studentBadge) {
     studentBadge.textContent = currentUser.studentId 
-      ? `第 ${currentUser.studentGroup || 1} 組 ${currentUser.studentName}` 
-      : '學號與組別登記';
+      ? `企管四系1甲 ${currentUser.studentName}` 
+      : '學號與姓名登記';
   }
 
   renderClassroomQRCode(displayUrl);
@@ -306,33 +306,40 @@ function copyClassroomUrl() {
 function initUserModal() {
   const inputId = document.getElementById('input-student-id');
   const inputName = document.getElementById('input-student-name');
-  const inputGroup = document.getElementById('input-student-group');
   if (inputId) inputId.value = currentUser.studentId;
   if (inputName) inputName.value = currentUser.studentName;
-  if (inputGroup) inputGroup.value = currentUser.studentGroup || '1';
 }
 
 function saveUserProfile() {
   const inputId = document.getElementById('input-student-id').value.trim();
   const inputName = document.getElementById('input-student-name').value.trim();
-  const inputGroup = document.getElementById('input-student-group') ? document.getElementById('input-student-group').value : '1';
   if (!inputId || !inputName) {
     alert('請輸入學號與姓名以記錄個人學習歷程！');
     return;
   }
   currentUser.studentId = inputId;
   currentUser.studentName = inputName;
-  currentUser.studentGroup = inputGroup;
-  currentUser.teamName = `企管四系1甲 第 ${inputGroup} 組`;
+  delete currentUser.studentGroup;
+  currentUser.teamName = '企管四系1甲';
+
+  const userProfile = {
+    studentId: inputId,
+    name: inputName,
+    team: '企管四系1甲'
+  };
+
+  localStorage.setItem('vnu_student_id', inputId);
+  localStorage.setItem('vnu_student_name', inputName);
+  localStorage.setItem('vnu_user_profile', JSON.stringify(userProfile));
   localStorage.setItem('vnu_ideation_student_id', inputId);
   localStorage.setItem('vnu_ideation_student_name', inputName);
-  localStorage.setItem('vnu_ideation_student_group', inputGroup);
   localStorage.setItem('vnu_ideation_team_name', currentUser.teamName);
+
   renderHeaderInfo();
   updatePortfolioUserInfo();
   renderStudentWorks();
   unlockBadge('badge_profile_set');
-  alert(`歡迎【企管四系1甲 第 ${inputGroup} 組】${currentUser.studentName} 同學！學籍與組別已成功綁定。`);
+  alert(`歡迎【企管四系1甲】${currentUser.studentName} 同學！學籍已成功綁定。`);
   closeModal('userProfileModal');
 }
 
@@ -1949,7 +1956,7 @@ function renderStudentWorks() {
   works.forEach(w => {
     const isHtmlWork = (w.category && w.category.includes('HTML')) || (w.file_name && (w.file_name.endsWith('.html') || w.file_name.endsWith('.htm'))) || Boolean(w.html_content);
     const scoreBadge = w.score ? `<span class="badge bg-warning text-dark fw-bold"><i class="fas fa-star text-danger me-1"></i>評分：${w.score} 分</span>` : `<span class="badge bg-secondary">教師審核中</span>`;
-    const groupBadge = w.group_num ? `<span class="badge bg-dark text-light border me-1"><i class="fas fa-users-cog me-1"></i>第 ${w.group_num} 組</span>` : '';
+    const individualBadge = `<span class="badge bg-dark text-light border me-1"><i class="fas fa-user-check me-1"></i>個人實作</span>`;
     const thumbnailBg = w.thumbnail || 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)';
     const thumbnailIcon = w.thumbnail_icon || 'fas fa-laptop-code';
 
@@ -1977,14 +1984,14 @@ function renderStudentWorks() {
           <div class="flex-grow-1 w-100">
             <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
               <div>
-                ${groupBadge}
+                ${individualBadge}
                 <span class="badge bg-primary me-1">${escapeHtml(w.category || '實務作品')}</span>
                 <span class="badge bg-light text-secondary border">第 ${w.week || 6} 週</span>
                 <h6 class="fw-bold text-dark mt-2 mb-1 fs-5">${escapeHtml(w.title || '未命名專案')}</h6>
                 <div class="small text-muted">
                   <i class="fas fa-user-circle me-1"></i>${escapeHtml(w.student_id || '')} ${escapeHtml(w.student_name || '同學')}
                   <span class="mx-1">•</span>
-                  <i class="fas fa-users me-1"></i>${escapeHtml(w.team_name || '企管四系1甲')}
+                  <i class="fas fa-graduation-cap me-1"></i>${escapeHtml(w.team_name || '企管四系1甲')}
                   <span class="mx-1">•</span>
                   <i class="fas fa-clock me-1"></i>${escapeHtml(w.submitted_at || '')}
                 </div>
@@ -2083,14 +2090,12 @@ async function handleProjectSubmit(e) {
 
   const workId = 'WORK-' + Date.now();
   const nowStr = new Date().toLocaleString('zh-TW', { hour12: false });
-  const groupNum = (userProfile && userProfile.studentGroup) ? userProfile.studentGroup : 1;
 
   const newWork = {
     id: workId,
     student_id: userProfile.studentId,
     student_name: userProfile.name || '同學',
-    team_name: `企管四系1甲 第 ${groupNum} 組`,
-    group_num: groupNum,
+    team_name: '企管四系1甲',
     week: week,
     week_title: weekTitle,
     title: title,
