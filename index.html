@@ -765,7 +765,7 @@ body {
           <span class="d-none d-sm-inline">全螢幕簡報</span>
         </a>
         <!-- Google 登入按鈕 (未登入時顯示) -->
-        <button type="button" class="btn btn-sm btn-light text-dark fw-bold d-flex align-items-center shadow-sm" id="btn-google-login" onclick="loginWithGoogle()">
+        <button type="button" class="btn btn-sm btn-light text-dark fw-bold align-items-center shadow-sm" id="btn-google-login" onclick="loginWithGoogle()" style="display: inline-flex;">
           <i class="fab fa-google text-danger me-1"></i>
           <span class="d-none d-sm-inline">Google 登入</span>
           <span class="d-inline d-sm-none">登入</span>
@@ -1072,7 +1072,7 @@ body {
                 </button>
               </div>
               <p class="small text-muted mb-0">
-                <i class="fas fa-info-circle text-info me-1"></i>若校園 Wi-Fi 限制區域網路互通，同學可直接打開單機離線版 HTML 或輸入教師分享之熱點網址。
+                <i class="fas fa-info-circle text-info me-1"></i>同學可使用個人手機或筆電直接連線至教學平台線上網址，即可隨時查閱課程進度與繳交作業。
               </p>
             </div>
             <div class="col-md-4 text-center mt-3 mt-md-0">
@@ -1550,24 +1550,32 @@ body {
           <!-- 左側：作業繳交表單 (Submit Project) -->
           <div class="col-lg-5">
             <!-- 未登入時顯示登入提示 -->
-            <div class="card-custom p-4 text-center h-100 d-flex flex-column justify-content-center align-items-center" id="upload-login-prompt-box">
+            <div class="card-custom p-4 text-center h-100 flex-column justify-content-center align-items-center" id="upload-login-prompt-box" style="display: flex;">
               <div class="rounded-circle bg-warning bg-opacity-10 p-4 mb-3 text-warning">
                 <i class="fas fa-lock fs-1"></i>
               </div>
-              <h5 class="fw-bold text-dark mb-2">作業繳交功能僅限學生登入使用</h5>
-              <p class="text-muted small mb-4" style="max-width: 360px;">
+              <h5 class="fw-bold text-dark mb-2">作業成果上傳與繳交</h5>
+              <p class="text-muted small mb-3" style="max-width: 360px;">
                 依課堂評分規定，企管四系1甲同學請先點擊下方按鈕使用 Google 帳號登入並綁定學號、姓名與組別，即可開啟「期中報告」與「期末報告」作品上傳表單。
               </p>
-              <button type="button" class="btn btn-primary fw-bold px-4 py-2 shadow-sm" onclick="loginWithGoogle()">
+              <button type="button" class="btn btn-primary fw-bold px-4 py-2 shadow-sm mb-3" onclick="loginWithGoogle()">
                 <i class="fab fa-google me-2"></i>使用 Google 帳號登入
               </button>
+              <div class="pt-2 border-top border-secondary border-opacity-10 w-100">
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleTeacherPreviewForm()">
+                  <i class="fas fa-eye me-1"></i>授課教師檢視／預覽表單樣式
+                </button>
+              </div>
             </div>
 
             <!-- 已登入時顯示作業繳交表單 -->
             <div class="card-custom p-4 h-100" id="upload-form-box" style="display: none;">
+              <div id="teacher-form-hint" class="alert alert-warning py-2 px-3 small mb-3" style="display: none;">
+                <i class="fas fa-chalkboard-teacher me-1"></i><strong>授課教師檢視模式：</strong>您目前以授課教師身分檢視作業上傳表單（可檢視各欄位與進行測試填寫）。批改全班成績請點選頂部導航列「📊 教師成績管理」。
+              </div>
               <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
                 <h5 class="fw-bold mb-0 text-dark"><i class="fas fa-cloud-upload-alt text-success me-2"></i>繳交微型創業報告</h5>
-                <span class="badge bg-success">支援單機/雲端雙模</span>
+                <span class="badge bg-primary"><i class="fas fa-cloud me-1"></i>線上即時雲端儲存</span>
               </div>
               <p class="text-muted small mb-3">請選擇繳交「期中報告」或「期末報告」，填寫專案資訊並上傳檔案或線上網址：</p>
 
@@ -8068,8 +8076,14 @@ function renderHeaderInfo() {
       currentUser.teamName = '授課教師';
     }
 
-    if (btnGoogleLogin) btnGoogleLogin.style.display = 'none';
-    if (userAuthBox) userAuthBox.style.display = 'block';
+    if (btnGoogleLogin) {
+      btnGoogleLogin.classList.add('d-none');
+      btnGoogleLogin.style.setProperty('display', 'none', 'important');
+    }
+    if (userAuthBox) {
+      userAuthBox.classList.remove('d-none');
+      userAuthBox.style.setProperty('display', 'block', 'important');
+    }
 
     if (currentFirebaseUser.photoURL && userAvatarImg) {
       userAvatarImg.src = currentFirebaseUser.photoURL;
@@ -8097,8 +8111,14 @@ function renderHeaderInfo() {
     if (teacherMenuItem) teacherMenuItem.style.display = isTeacherUser ? 'block' : 'none';
     if (btnTeacherExportCsv) btnTeacherExportCsv.style.display = isTeacherUser ? 'inline-block' : 'none';
   } else {
-    if (btnGoogleLogin) btnGoogleLogin.style.display = 'inline-flex';
-    if (userAuthBox) userAuthBox.style.display = 'none';
+    if (btnGoogleLogin) {
+      btnGoogleLogin.classList.remove('d-none');
+      btnGoogleLogin.style.setProperty('display', 'inline-flex', 'important');
+    }
+    if (userAuthBox) {
+      userAuthBox.classList.add('d-none');
+      userAuthBox.style.setProperty('display', 'none', 'important');
+    }
     if (studentBadge) {
       studentBadge.textContent = currentUser.studentId 
         ? `企管四系1甲 ${currentUser.studentName}` 
@@ -9702,15 +9722,30 @@ function updatePortfolioUserInfo() {
   const teamDisp = document.getElementById('portfolio-team-display');
   const uploadLoginPrompt = document.getElementById('upload-login-prompt-box');
   const uploadFormBox = document.getElementById('upload-form-box');
+  const teacherHint = document.getElementById('teacher-form-hint');
 
   const isLoggedIn = !!currentFirebaseUser;
+  const shouldShowForm = isLoggedIn || window.forceTeacherFormPreview;
+
   if (uploadLoginPrompt && uploadFormBox) {
-    if (isLoggedIn) {
-      uploadLoginPrompt.style.display = 'none';
-      uploadFormBox.style.display = 'block';
+    if (shouldShowForm) {
+      uploadLoginPrompt.classList.add('d-none');
+      uploadLoginPrompt.style.setProperty('display', 'none', 'important');
+      uploadFormBox.classList.remove('d-none');
+      uploadFormBox.style.setProperty('display', 'block', 'important');
     } else {
-      uploadLoginPrompt.style.display = 'flex';
-      uploadFormBox.style.display = 'none';
+      uploadLoginPrompt.classList.remove('d-none');
+      uploadLoginPrompt.style.setProperty('display', 'flex', 'important');
+      uploadFormBox.classList.add('d-none');
+      uploadFormBox.style.setProperty('display', 'none', 'important');
+    }
+  }
+
+  if (teacherHint) {
+    if (isTeacherUser || window.forceTeacherFormPreview) {
+      teacherHint.style.display = 'block';
+    } else {
+      teacherHint.style.display = 'none';
     }
   }
 
@@ -9718,7 +9753,7 @@ function updatePortfolioUserInfo() {
 
   if (isTeacherUser) {
     userDisp.innerHTML = `<span class="badge bg-warning text-dark me-1">授課教師</span>邱俊維 博士`;
-    if (teamDisp) teamDisp.textContent = `身分：課程主理教授 (擁有全班成績評定權限)`;
+    if (teamDisp) teamDisp.textContent = `身分：課程主理教授 (擁有全班作業評分與管理權限)`;
   } else if (currentUser && currentUser.studentId) {
     userDisp.textContent = `${currentUser.studentId} ${currentUser.studentName || ''}`;
     if (teamDisp) {
@@ -9726,9 +9761,14 @@ function updatePortfolioUserInfo() {
       teamDisp.textContent = `班級：企管四系1甲 ｜ 所屬組別：${gNum}`;
     }
   } else {
-    userDisp.textContent = '未登入 Google 帳號 (請先登入以解鎖作業繳交)';
+    userDisp.textContent = '未登入 Google 帳號 (請先登入以登記學號與上傳作業)';
     if (teamDisp) teamDisp.textContent = '班級：企管四系1甲 (尚未選組)';
   }
+}
+
+function toggleTeacherPreviewForm() {
+  window.forceTeacherFormPreview = !window.forceTeacherFormPreview;
+  updatePortfolioUserInfo();
 }
 
 async function initStudentWorks() {
@@ -10018,7 +10058,12 @@ async function handleProjectSubmit(e) {
     return;
   }
 
-  if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
+  if (isTeacherUser) {
+    if (!currentUser.studentId) currentUser.studentId = 'TEACHER';
+    if (!currentUser.studentName) currentUser.studentName = '邱俊維 博士';
+    if (!currentUser.studentGroup) currentUser.studentGroup = '授課教師示範';
+    if (!currentUser.teamName) currentUser.teamName = '授課教師示範';
+  } else if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
     alert('⚠️ 依課堂要求，請先完成「學號」、「姓名」與「組別」登記！');
     initUserModal();
     openModal('userProfileModal', true);
@@ -10636,6 +10681,7 @@ window.saveTeacherGrade = saveTeacherGrade;
 window.previewWork = previewWork;
 window.renderTeacherGradeDashboard = renderTeacherGradeDashboard;
 window.quickSaveGradeRow = quickSaveGradeRow;
+window.toggleTeacherPreviewForm = toggleTeacherPreviewForm;
 
 
   </script>

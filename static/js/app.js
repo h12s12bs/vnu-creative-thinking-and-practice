@@ -554,8 +554,14 @@ function renderHeaderInfo() {
       currentUser.teamName = '授課教師';
     }
 
-    if (btnGoogleLogin) btnGoogleLogin.style.display = 'none';
-    if (userAuthBox) userAuthBox.style.display = 'block';
+    if (btnGoogleLogin) {
+      btnGoogleLogin.classList.add('d-none');
+      btnGoogleLogin.style.setProperty('display', 'none', 'important');
+    }
+    if (userAuthBox) {
+      userAuthBox.classList.remove('d-none');
+      userAuthBox.style.setProperty('display', 'block', 'important');
+    }
 
     if (currentFirebaseUser.photoURL && userAvatarImg) {
       userAvatarImg.src = currentFirebaseUser.photoURL;
@@ -583,8 +589,14 @@ function renderHeaderInfo() {
     if (teacherMenuItem) teacherMenuItem.style.display = isTeacherUser ? 'block' : 'none';
     if (btnTeacherExportCsv) btnTeacherExportCsv.style.display = isTeacherUser ? 'inline-block' : 'none';
   } else {
-    if (btnGoogleLogin) btnGoogleLogin.style.display = 'inline-flex';
-    if (userAuthBox) userAuthBox.style.display = 'none';
+    if (btnGoogleLogin) {
+      btnGoogleLogin.classList.remove('d-none');
+      btnGoogleLogin.style.setProperty('display', 'inline-flex', 'important');
+    }
+    if (userAuthBox) {
+      userAuthBox.classList.add('d-none');
+      userAuthBox.style.setProperty('display', 'none', 'important');
+    }
     if (studentBadge) {
       studentBadge.textContent = currentUser.studentId 
         ? `企管四系1甲 ${currentUser.studentName}` 
@@ -2188,15 +2200,30 @@ function updatePortfolioUserInfo() {
   const teamDisp = document.getElementById('portfolio-team-display');
   const uploadLoginPrompt = document.getElementById('upload-login-prompt-box');
   const uploadFormBox = document.getElementById('upload-form-box');
+  const teacherHint = document.getElementById('teacher-form-hint');
 
   const isLoggedIn = !!currentFirebaseUser;
+  const shouldShowForm = isLoggedIn || window.forceTeacherFormPreview;
+
   if (uploadLoginPrompt && uploadFormBox) {
-    if (isLoggedIn) {
-      uploadLoginPrompt.style.display = 'none';
-      uploadFormBox.style.display = 'block';
+    if (shouldShowForm) {
+      uploadLoginPrompt.classList.add('d-none');
+      uploadLoginPrompt.style.setProperty('display', 'none', 'important');
+      uploadFormBox.classList.remove('d-none');
+      uploadFormBox.style.setProperty('display', 'block', 'important');
     } else {
-      uploadLoginPrompt.style.display = 'flex';
-      uploadFormBox.style.display = 'none';
+      uploadLoginPrompt.classList.remove('d-none');
+      uploadLoginPrompt.style.setProperty('display', 'flex', 'important');
+      uploadFormBox.classList.add('d-none');
+      uploadFormBox.style.setProperty('display', 'none', 'important');
+    }
+  }
+
+  if (teacherHint) {
+    if (isTeacherUser || window.forceTeacherFormPreview) {
+      teacherHint.style.display = 'block';
+    } else {
+      teacherHint.style.display = 'none';
     }
   }
 
@@ -2204,7 +2231,7 @@ function updatePortfolioUserInfo() {
 
   if (isTeacherUser) {
     userDisp.innerHTML = `<span class="badge bg-warning text-dark me-1">授課教師</span>邱俊維 博士`;
-    if (teamDisp) teamDisp.textContent = `身分：課程主理教授 (擁有全班成績評定權限)`;
+    if (teamDisp) teamDisp.textContent = `身分：課程主理教授 (擁有全班作業評分與管理權限)`;
   } else if (currentUser && currentUser.studentId) {
     userDisp.textContent = `${currentUser.studentId} ${currentUser.studentName || ''}`;
     if (teamDisp) {
@@ -2212,9 +2239,14 @@ function updatePortfolioUserInfo() {
       teamDisp.textContent = `班級：企管四系1甲 ｜ 所屬組別：${gNum}`;
     }
   } else {
-    userDisp.textContent = '未登入 Google 帳號 (請先登入以解鎖作業繳交)';
+    userDisp.textContent = '未登入 Google 帳號 (請先登入以登記學號與上傳作業)';
     if (teamDisp) teamDisp.textContent = '班級：企管四系1甲 (尚未選組)';
   }
+}
+
+function toggleTeacherPreviewForm() {
+  window.forceTeacherFormPreview = !window.forceTeacherFormPreview;
+  updatePortfolioUserInfo();
 }
 
 async function initStudentWorks() {
@@ -2504,7 +2536,12 @@ async function handleProjectSubmit(e) {
     return;
   }
 
-  if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
+  if (isTeacherUser) {
+    if (!currentUser.studentId) currentUser.studentId = 'TEACHER';
+    if (!currentUser.studentName) currentUser.studentName = '邱俊維 博士';
+    if (!currentUser.studentGroup) currentUser.studentGroup = '授課教師示範';
+    if (!currentUser.teamName) currentUser.teamName = '授課教師示範';
+  } else if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
     alert('⚠️ 依課堂要求，請先完成「學號」、「姓名」與「組別」登記！');
     initUserModal();
     openModal('userProfileModal', true);
@@ -3122,4 +3159,5 @@ window.saveTeacherGrade = saveTeacherGrade;
 window.previewWork = previewWork;
 window.renderTeacherGradeDashboard = renderTeacherGradeDashboard;
 window.quickSaveGradeRow = quickSaveGradeRow;
+window.toggleTeacherPreviewForm = toggleTeacherPreviewForm;
 
