@@ -239,8 +239,8 @@ function initFirebase() {
           console.log('👤 Google 使用者已登入:', user.email, user.uid);
           
           // 判定授課教師身分 (邱俊維 博士)
-          const teacherEmails = ['jimchiu@mail.vnu.edu.tw', 'jimchiu', 'vnuemba@gmail.com', 'h12s12bs@gmail.com'];
-          isTeacherUser = teacherEmails.some(em => (user.email && user.email.toLowerCase().includes(em)));
+          const teacherEmails = ['kevin87332000@gmail.com', 'jimchiu@mail.vnu.edu.tw', 'jimchiu', 'vnuemba@gmail.com', 'h12s12bs@gmail.com'];
+          isTeacherUser = teacherEmails.some(em => (user.email && user.email.toLowerCase().includes(em.toLowerCase())));
           
           await loadUserProfileFromFirestore(user);
           renderHeaderInfo();
@@ -320,6 +320,37 @@ function logoutUser() {
 async function loadUserProfileFromFirestore(user) {
   if (!firestoreDb) return;
   try {
+    if (isTeacherUser) {
+      currentUser.studentId = 'TEACHER';
+      currentUser.studentName = '邱俊維 博士';
+      currentUser.email = user.email || '';
+      currentUser.photoURL = user.photoURL || '';
+      currentUser.isGoogleAuth = true;
+      userProfile = {
+        studentId: 'TEACHER',
+        name: '邱俊維 博士',
+        team: '授課教師',
+        email: user.email || ''
+      };
+      localStorage.setItem('vnu_student_id', 'TEACHER');
+      localStorage.setItem('vnu_student_name', '邱俊維 博士');
+      localStorage.setItem('vnu_user_profile', JSON.stringify(userProfile));
+      
+      try {
+        firestoreDb.collection('users').doc(user.uid).set({
+          uid: user.uid,
+          email: user.email || '',
+          studentId: 'TEACHER',
+          studentName: '邱俊維 博士',
+          className: '授課教師',
+          photoURL: user.photoURL || '',
+          role: 'teacher',
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, { merge: true }).catch(() => {});
+      } catch(e) {}
+      return;
+    }
+
     const doc = await firestoreDb.collection('users').doc(user.uid).get();
     if (doc.exists) {
       const data = doc.data();
@@ -340,7 +371,7 @@ async function loadUserProfileFromFirestore(user) {
       localStorage.setItem('vnu_ideation_student_id', currentUser.studentId);
       localStorage.setItem('vnu_ideation_student_name', currentUser.studentName);
     } else {
-      // 首次登入 -> 自動彈窗請同學綁定學號與姓名
+      // 首次學生登入 -> 自動彈窗請同學綁定學號與姓名
       currentUser.studentId = '';
       currentUser.studentName = user.displayName || '';
       currentUser.email = user.email || '';
