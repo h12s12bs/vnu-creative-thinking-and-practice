@@ -2862,8 +2862,6 @@ function previewWork(workId) {
 
   if (extLink) {
     if (work.live_url) {
-  if (extLink) {
-    if (work.live_url) {
       extLink.href = work.live_url;
       extLink.style.display = 'inline-block';
       extLink.innerHTML = `<i class="fas fa-external-link-alt me-1"></i>在新分頁開啟網站`;
@@ -2898,7 +2896,7 @@ function previewWork(workId) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${escapeHtml(work.title)}</title>
-            <script src="https://cdn.tailwindcss.com"></script>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
           </head>
           <body class="bg-gray-50 p-8 font-sans">
             <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-6 border">
@@ -3144,6 +3142,10 @@ function exportGradesToCSV() {
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
+}
+
+function closeTeacherGradeModal() {
+  closeModal('teacherGradingModal');
 }
 
 // 明確將關鍵操作函式綁定至 window 全域，避免各類封裝環境之作用域問題
