@@ -239,8 +239,10 @@ function initFirebase() {
           console.log('👤 Google 使用者已登入:', user.email, user.uid);
           
           // 判定授課教師身分 (邱俊維 博士)
-          const teacherEmails = ['kevin87332000@gmail.com', 'jimchiu@mail.vnu.edu.tw', 'jimchiu', 'vnuemba@gmail.com', 'h12s12bs@gmail.com'];
-          isTeacherUser = teacherEmails.some(em => (user.email && user.email.toLowerCase().includes(em.toLowerCase())));
+          const userEmail = (user.email || (user.providerData && user.providerData[0] && user.providerData[0].email) || '').toLowerCase().trim();
+          const teacherEmails = ['kevin87332000', 'kevin87332000@gmail.com', 'jimchiu', 'jimchiu@mail.vnu.edu.tw', 'vnuemba@gmail.com', 'h12s12bs', 'h12s12bs@gmail.com'];
+          isTeacherUser = teacherEmails.some(em => userEmail.includes(em.toLowerCase()));
+          console.log('👑 教師身分判定結果:', isTeacherUser ? '是授課教師 (邱俊維 博士)' : '一般學生/訪客');
           
           await loadUserProfileFromFirestore(user);
           renderHeaderInfo();
@@ -491,6 +493,15 @@ function renderHeaderInfo() {
   const btnTeacherExportCsv = document.getElementById('btn-teacher-export-csv');
 
   if (currentFirebaseUser) {
+    const userEmail = (currentFirebaseUser.email || (currentFirebaseUser.providerData && currentFirebaseUser.providerData[0] && currentFirebaseUser.providerData[0].email) || '').toLowerCase().trim();
+    const teacherEmails = ['kevin87332000', 'kevin87332000@gmail.com', 'jimchiu', 'jimchiu@mail.vnu.edu.tw', 'vnuemba@gmail.com', 'h12s12bs', 'h12s12bs@gmail.com'];
+    if (teacherEmails.some(em => userEmail.includes(em.toLowerCase()))) {
+      isTeacherUser = true;
+      currentUser.studentName = '邱俊維 博士';
+      currentUser.studentId = 'TEACHER';
+      currentUser.teamName = '授課教師';
+    }
+
     if (btnGoogleLogin) btnGoogleLogin.style.display = 'none';
     if (userAuthBox) userAuthBox.style.display = 'block';
 
