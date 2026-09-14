@@ -160,6 +160,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     isOfflineMode = true;
   }
   
+  // 0. 優先初始化 Firebase 雲端服務與 Google 驗證監聽
+  try { initFirebase(); } catch(e) { console.warn('initFirebase error', e); }
+
   // 1. 優先立即載入系統資料與首頁核心資訊 (教師檔案、評分規準、教學地圖)
   try { await loadSystemData(); } catch(e) { console.warn('loadSystemData error', e); }
   try { renderCurriculum(); } catch(e) { console.warn('renderCurriculum error', e); }
@@ -187,7 +190,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 /* ==========================================================================
    0. Firebase 初始化與 Google 登入驗證
    ========================================================================== */
+const firebaseConfig = {
+  apiKey: "AIzaSyCSQ1SfZ67UYZ_4F4JazSC5QptA1ZY1UdU",
+  authDomain: "vnu-creative-11501.firebaseapp.com",
+  projectId: "vnu-creative-11501",
+  storageBucket: "vnu-creative-11501.firebasestorage.app",
+  messagingSenderId: "192871776919",
+  appId: "1:192871776919:web:47aea414ec5af5774b5fd2",
+  measurementId: "G-X90WGR0GV2"
+};
+
+let firebaseApp = null;
+let firebaseAuth = null;
+let firestoreDb = null;
+let isFirebaseAvailable = false;
+let currentFirebaseUser = null;
+let isTeacherUser = false;
+
 function initFirebase() {
+  if (isFirebaseAvailable && firebaseAuth) return;
   if (typeof firebase !== 'undefined' && firebase.initializeApp) {
     try {
       if (!firebase.apps || !firebase.apps.length) {
@@ -199,6 +220,17 @@ function initFirebase() {
       firestoreDb = firebase.firestore();
       isFirebaseAvailable = true;
       console.log('✅ Firebase 初始化成功 (專案: vnu-creative-11501)');
+
+      // 監聽 Redirect 登入結果 (避免彈跳視窗被攔截時仍可登入)
+      if (firebaseAuth.getRedirectResult) {
+        firebaseAuth.getRedirectResult().then((result) => {
+          if (result && result.user) {
+            console.log('Google 重定向登入成功:', result.user.email);
+          }
+        }).catch((err) => {
+          console.warn('Redirect sign-in notice:', err);
+        });
+      }
 
       // 監聽 Auth 登入狀態
       firebaseAuth.onAuthStateChanged(async (user) => {
@@ -231,27 +263,48 @@ function initFirebase() {
   }
 }
 
+// 立即嘗試一次初始化 (若腳本於 head 之後已載入 SDK)
+try { initFirebase(); } catch(e) {}
+
 function loginWithGoogle() {
+  console.log('🔘 Google 登入按鈕被點擊');
   if (!isFirebaseAvailable || !firebaseAuth) {
-    alert('Firebase 服務載入中或處於離線狀態，已為您開啟學籍登記視窗。');
+    if (typeof firebase !== 'undefined' && firebase.initializeApp) {
+      initFirebase();
+    }
+  }
+
+  if (!isFirebaseAvailable || !firebaseAuth) {
+    alert('Firebase 雲端驗證服務載入中或處於離線狀態，系統已為您直接開啟學籍登記視窗！');
     openModal('userProfileModal');
     return;
   }
-  const provider = new firebase.auth.GoogleAuthProvider();
-  provider.setCustomParameters({ prompt: 'select_account' });
-  firebaseAuth.signInWithPopup(provider).then((result) => {
-    console.log('Google 登入成功:', result.user.email);
-  }).catch((error) => {
-    console.error('Google 登入失敗:', error);
-    if (error.code === 'auth/popup-closed-by-user') return;
-    if (error.code === 'auth/unauthorized-domain') {
-      alert(`⚠️ 網域授權提示：
-請至 Firebase Console -> Authentication -> Settings -> Authorized domains
-將目前網域 (${window.location.hostname}) 加入授權清單即可！`);
-    } else {
-      alert('Google 登入提示：' + error.message);
-    }
-  });
+
+  try {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+    firebaseAuth.signInWithPopup(provider).then((result) => {
+      console.log('Google 登入成功:', result.user.email);
+    }).catch((error) => {
+      console.error('Google 登入失敗:', error);
+      if (error.code === 'auth/popup-closed-by-user') return;
+      if (error.code === 'auth/popup-blocked') {
+        const tryRedirect = confirm('⚠️ 您的瀏覽器封鎖了 Google 登入彈跳視窗！\n\n是否改用直接頁面跳轉 (Redirect) 方式進行 Google 登入？');
+        if (tryRedirect) {
+          firebaseAuth.signInWithRedirect(provider);
+        }
+        return;
+      }
+      if (error.code === 'auth/unauthorized-domain') {
+        alert(`⚠️ Firebase 網域尚未授權提示：\n\n目前網站網域為：【${window.location.hostname}】\n\n請至 Firebase Console (專案：vnu-creative-11501)\n-> Authentication\n-> Settings (設定)\n-> Authorized domains (已授權的網域)\n將【${window.location.hostname}】加入授權網域清單即可順利登入！`);
+        return;
+      }
+      alert('Google 登入提示：' + (error.message || error));
+    });
+  } catch (err) {
+    console.error('啟動登入程序錯誤:', err);
+    alert('啟動登入視窗失敗：' + err.message);
+  }
 }
 
 function logoutUser() {
@@ -495,8 +548,19 @@ function copyClassroomUrl() {
 function initUserModal() {
   const inputId = document.getElementById('input-student-id');
   const inputName = document.getElementById('input-student-name');
-  if (inputId) inputId.value = currentUser.studentId;
-  if (inputName) inputName.value = currentUser.studentName;
+  if (inputId) inputId.value = currentUser.studentId || '';
+  if (inputName) inputName.value = currentUser.studentName || '';
+
+  const googleBox = document.getElementById('google-account-info-box');
+  const googleEmail = document.getElementById('input-google-email');
+  if (googleBox && googleEmail) {
+    if (currentFirebaseUser && currentFirebaseUser.email) {
+      googleBox.style.display = 'block';
+      googleEmail.value = currentFirebaseUser.email;
+    } else {
+      googleBox.style.display = 'none';
+    }
+  }
 }
 
 function saveUserProfile() {
@@ -2674,3 +2738,18 @@ function exportGradesToCSV() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+
+// 明確將關鍵操作函式綁定至 window 全域，避免各類封裝環境之作用域問題
+window.initFirebase = initFirebase;
+window.loginWithGoogle = loginWithGoogle;
+window.logoutUser = logoutUser;
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.switchTab = switchTab;
+window.saveUserProfile = saveUserProfile;
+window.exportGradesToCSV = exportGradesToCSV;
+window.openTeacherGradeModal = openTeacherGradeModal;
+window.closeTeacherGradeModal = closeTeacherGradeModal;
+window.saveTeacherGrade = saveTeacherGrade;
+window.previewWork = previewWork;
+

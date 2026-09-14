@@ -50,7 +50,7 @@
           <span class="d-none d-sm-inline">全螢幕簡報</span>
         </a>
         <!-- Google 登入按鈕 (未登入時顯示) -->
-        <button class="btn btn-sm btn-light text-dark fw-bold d-flex align-items-center shadow-sm" id="btn-google-login" onclick="loginWithGoogle()">
+        <button type="button" class="btn btn-sm btn-light text-dark fw-bold d-flex align-items-center shadow-sm" id="btn-google-login" onclick="loginWithGoogle()">
           <i class="fab fa-google text-danger me-1"></i>
           <span class="d-none d-sm-inline">Google 登入</span>
           <span class="d-inline d-sm-none">登入</span>
@@ -1105,7 +1105,12 @@
           <button type="button" class="btn-close btn-close-white" onclick="closeModal('userProfileModal')"></button>
         </div>
         <div class="modal-body p-4">
-          <p class="small text-muted mb-3">輸入學號與姓名後，您的隨堂測驗成績、錯題筆記本與 8 大榮譽成就將永久保存在本機瀏覽器中。</p>
+          <div class="mb-3 p-3 bg-light rounded-3 border border-success border-opacity-25" id="google-account-info-box" style="display: none;">
+            <label class="form-label fw-bold small text-success mb-1"><i class="fab fa-google me-1"></i>已通過驗證之 Google 帳號</label>
+            <input type="text" class="form-control form-control-sm bg-white text-muted fw-bold" id="input-google-email" readonly>
+            <div class="form-text small text-muted" style="font-size: 0.75rem;">系統將自動將您的作品與成績綁定至此 Google 雲端帳號。</div>
+          </div>
+          <p class="small text-muted mb-3">請登記您的學號與真實姓名，以便授課教師進行課堂點名、作業指導評分與學期成績登記。</p>
           <div class="mb-3">
             <label class="form-label fw-bold small">學生學號 *</label>
             <input type="text" class="form-control" id="input-student-id" placeholder="例：11209001">
