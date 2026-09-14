@@ -67,9 +67,23 @@ let currentAgentIndex = 0;
 /* ==========================================================================
    0. 自建零依賴 Modal 與視窗控制系統 (完全相容離線與本地 file:/// 模式)
    ========================================================================== */
-function openModal(modalId) {
+let isForceProfileModal = false;
+
+function openModal(modalId, isForced = false) {
   const modal = document.getElementById(modalId);
   if (!modal) return;
+
+  if (modalId === 'userProfileModal') {
+    isForceProfileModal = !!isForced;
+    const forceNotice = document.getElementById('force-profile-notice');
+    const btnClose = document.getElementById('btn-close-profile');
+    const btnCancel = document.getElementById('btn-cancel-profile');
+
+    if (forceNotice) forceNotice.style.display = isForceProfileModal ? 'block' : 'none';
+    if (btnClose) btnClose.style.display = isForceProfileModal ? 'none' : 'block';
+    if (btnCancel) btnCancel.style.display = isForceProfileModal ? 'none' : 'inline-block';
+  }
+
   modal.classList.add('show');
   modal.style.display = 'block';
   document.body.classList.add('modal-open');
@@ -77,6 +91,13 @@ function openModal(modalId) {
 }
 
 function closeModal(modalId) {
+  if (modalId === 'userProfileModal' && isForceProfileModal) {
+    if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
+      alert('⚠️ 依課堂要求，請完整填寫學號、姓名與所屬組別後點擊「確認登記並進入平台」！');
+      return;
+    }
+  }
+
   const modal = document.getElementById(modalId);
   if (!modal) return;
   modal.classList.remove('show');
@@ -88,16 +109,22 @@ function closeModal(modalId) {
   }
 }
 
-// 全域監聽背景點擊關閉與 ESC 鍵關閉
+// 全域監聽背景點擊關閉與 ESC 鍵關閉 (若是強制登記視窗則禁止關閉)
 window.addEventListener('click', (e) => {
   if (e.target && e.target.classList.contains('modal')) {
+    if (e.target.id === 'userProfileModal' && isForceProfileModal) {
+      return;
+    }
     closeModal(e.target.id);
   }
 });
 
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    document.querySelectorAll('.modal.show').forEach(m => closeModal(m.id));
+    document.querySelectorAll('.modal.show').forEach(m => {
+      if (m.id === 'userProfileModal' && isForceProfileModal) return;
+      closeModal(m.id);
+    });
   }
 });
 
@@ -105,6 +132,15 @@ window.addEventListener('keydown', (e) => {
    0.1 自建零依賴 Tab 標籤切換系統 (相容任意網路環境與單機離線)
    ========================================================================== */
 function switchTab(tabId) {
+  // 教師成績後台權限防護
+  if (tabId === 'tab-teacher') {
+    if (!isTeacherUser) {
+      alert('⚠️ 此功能為授課教師專屬成績管理與評分後台，非授課教師無法查閱！');
+      switchTab('tab-intro');
+      return;
+    }
+  }
+
   // 1. 切換標籤頁按鈕樣式
   document.querySelectorAll('#mainTab .nav-link').forEach(btn => {
     btn.classList.remove('active');
@@ -129,6 +165,8 @@ function switchTab(tabId) {
   } else if (tabId === 'tab-portfolio') {
     updatePortfolioUserInfo();
     renderStudentWorks();
+  } else if (tabId === 'tab-teacher') {
+    renderTeacherGradeDashboard();
   } else if (tabId === 'tab-quiz') {
     renderRadarChart();
     renderWrongQuestions();
@@ -357,30 +395,44 @@ async function loadUserProfileFromFirestore(user) {
     if (doc.exists) {
       const data = doc.data();
       currentUser.studentId = data.studentId || '';
-      currentUser.studentName = data.studentName || user.displayName || '同學';
+      currentUser.studentName = data.studentName || user.displayName || '';
+      currentUser.studentGroup = data.studentGroup || '';
+      currentUser.teamName = currentUser.studentGroup || '個人獨立專案';
       currentUser.email = user.email || '';
       currentUser.photoURL = user.photoURL || '';
       currentUser.isGoogleAuth = true;
-      userProfile = {
-        studentId: currentUser.studentId,
-        name: currentUser.studentName,
-        team: '企管四系1甲',
-        email: currentUser.email
-      };
-      localStorage.setItem('vnu_student_id', currentUser.studentId);
-      localStorage.setItem('vnu_student_name', currentUser.studentName);
-      localStorage.setItem('vnu_user_profile', JSON.stringify(userProfile));
-      localStorage.setItem('vnu_ideation_student_id', currentUser.studentId);
-      localStorage.setItem('vnu_ideation_student_name', currentUser.studentName);
+
+      // 若學號、姓名或組別未完整填寫，直接強制彈窗登記
+      if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
+        initUserModal();
+        openModal('userProfileModal', true);
+      } else {
+        userProfile = {
+          studentId: currentUser.studentId,
+          name: currentUser.studentName,
+          group: currentUser.studentGroup,
+          team: currentUser.studentGroup,
+          email: currentUser.email
+        };
+        localStorage.setItem('vnu_student_id', currentUser.studentId);
+        localStorage.setItem('vnu_student_name', currentUser.studentName);
+        localStorage.setItem('vnu_ideation_student_group', currentUser.studentGroup);
+        localStorage.setItem('vnu_ideation_student_id', currentUser.studentId);
+        localStorage.setItem('vnu_ideation_student_name', currentUser.studentName);
+        localStorage.setItem('vnu_ideation_team_name', currentUser.studentGroup);
+        localStorage.setItem('vnu_user_profile', JSON.stringify(userProfile));
+      }
     } else {
-      // 首次學生登入 -> 自動彈窗請同學綁定學號與姓名
+      // 首次學生登入 -> 直接強制彈窗要求填寫學號、姓名與組別
       currentUser.studentId = '';
       currentUser.studentName = user.displayName || '';
+      currentUser.studentGroup = '';
+      currentUser.teamName = '';
       currentUser.email = user.email || '';
       currentUser.photoURL = user.photoURL || '';
       currentUser.isGoogleAuth = true;
       initUserModal();
-      openModal('userProfileModal');
+      openModal('userProfileModal', true);
     }
   } catch (e) {
     console.warn('載入 Firestore 使用者學籍失敗:', e);
@@ -541,6 +593,11 @@ function renderHeaderInfo() {
     if (btnTeacherExportCsv) btnTeacherExportCsv.style.display = 'none';
   }
 
+  // 頂部教師成績管理分頁按鈕顯示控制
+  const teacherTabItem = document.getElementById('nav-item-teacher-tab');
+  if (teacherTabItem) teacherTabItem.style.display = isTeacherUser ? 'block' : 'none';
+
+  updatePortfolioUserInfo();
   renderClassroomQRCode(displayUrl);
 }
 
@@ -590,8 +647,10 @@ function copyClassroomUrl() {
 function initUserModal() {
   const inputId = document.getElementById('input-student-id');
   const inputName = document.getElementById('input-student-name');
+  const inputGroup = document.getElementById('input-student-group');
   if (inputId) inputId.value = currentUser.studentId || '';
   if (inputName) inputName.value = currentUser.studentName || '';
+  if (inputGroup) inputGroup.value = currentUser.studentGroup || '';
 
   const googleBox = document.getElementById('google-account-info-box');
   const googleEmail = document.getElementById('input-google-email');
@@ -606,30 +665,35 @@ function initUserModal() {
 }
 
 function saveUserProfile() {
-  const inputId = document.getElementById('input-student-id').value.trim();
-  const inputName = document.getElementById('input-student-name').value.trim();
-  if (!inputId || !inputName) {
-    alert('請輸入學號與姓名以記錄個人學習歷程！');
+  const inputId = (document.getElementById('input-student-id')?.value || '').trim();
+  const inputName = (document.getElementById('input-student-name')?.value || '').trim();
+  const inputGroup = (document.getElementById('input-student-group')?.value || '').trim();
+
+  if (!inputId || !inputName || !inputGroup) {
+    alert('⚠️ 請務必完整填寫「學生學號」、「學生姓名」並選擇「所屬組別」！');
     return;
   }
+
   currentUser.studentId = inputId;
   currentUser.studentName = inputName;
-  delete currentUser.studentGroup;
-  currentUser.teamName = '企管四系1甲';
+  currentUser.studentGroup = inputGroup;
+  currentUser.teamName = inputGroup;
 
   userProfile = {
     studentId: inputId,
     name: inputName,
-    team: '企管四系1甲',
+    group: inputGroup,
+    team: inputGroup,
     email: currentFirebaseUser ? currentFirebaseUser.email : ''
   };
 
   localStorage.setItem('vnu_student_id', inputId);
   localStorage.setItem('vnu_student_name', inputName);
-  localStorage.setItem('vnu_user_profile', JSON.stringify(userProfile));
+  localStorage.setItem('vnu_ideation_student_group', inputGroup);
   localStorage.setItem('vnu_ideation_student_id', inputId);
   localStorage.setItem('vnu_ideation_student_name', inputName);
-  localStorage.setItem('vnu_ideation_team_name', currentUser.teamName);
+  localStorage.setItem('vnu_ideation_team_name', inputGroup);
+  localStorage.setItem('vnu_user_profile', JSON.stringify(userProfile));
 
   // 若使用 Google 登入，即時同步至雲端 Firestore
   if (currentFirebaseUser && firestoreDb) {
@@ -639,22 +703,24 @@ function saveUserProfile() {
         email: currentFirebaseUser.email || '',
         studentId: inputId,
         studentName: inputName,
+        studentGroup: inputGroup,
         className: '企管四系1甲',
         photoURL: currentFirebaseUser.photoURL || '',
         updatedAt: firebase.firestore.FieldValue.serverTimestamp()
       }, { merge: true }).then(() => {
-        console.log('✅ 學籍資料已同步儲存至 Firebase 雲端');
+        console.log('✅ 學籍與組別資料已同步儲存至 Firebase 雲端');
       }).catch(err => console.warn('Firestore sync user error:', err));
     } catch (e) {
       console.warn('Sync profile to Firestore failed:', e);
     }
   }
 
+  isForceProfileModal = false;
   renderHeaderInfo();
   updatePortfolioUserInfo();
   renderStudentWorks();
   unlockBadge('badge_profile_set');
-  alert(`歡迎【企管四系1甲】${currentUser.studentName} 同學！學籍已成功綁定。`);
+  alert(`歡迎【企管四系1甲 (${inputGroup})】${currentUser.studentName} 同學！學籍與組別已成功綁定。`);
   closeModal('userProfileModal');
 }
 
@@ -2120,16 +2186,33 @@ function applyDemoToAgentWorkspace() {
 function updatePortfolioUserInfo() {
   const userDisp = document.getElementById('portfolio-user-display');
   const teamDisp = document.getElementById('portfolio-team-display');
+  const uploadLoginPrompt = document.getElementById('upload-login-prompt-box');
+  const uploadFormBox = document.getElementById('upload-form-box');
+
+  const isLoggedIn = !!currentFirebaseUser;
+  if (uploadLoginPrompt && uploadFormBox) {
+    if (isLoggedIn) {
+      uploadLoginPrompt.style.display = 'none';
+      uploadFormBox.style.display = 'block';
+    } else {
+      uploadLoginPrompt.style.display = 'flex';
+      uploadFormBox.style.display = 'none';
+    }
+  }
+
   if (!userDisp) return;
 
-  if (userProfile && userProfile.studentId) {
-    userDisp.textContent = `${userProfile.studentId} ${userProfile.name || ''}`;
+  if (isTeacherUser) {
+    userDisp.innerHTML = `<span class="badge bg-warning text-dark me-1">授課教師</span>邱俊維 博士`;
+    if (teamDisp) teamDisp.textContent = `身分：課程主理教授 (擁有全班成績評定權限)`;
+  } else if (currentUser && currentUser.studentId) {
+    userDisp.textContent = `${currentUser.studentId} ${currentUser.studentName || ''}`;
     if (teamDisp) {
-      const gNum = userProfile.studentGroup || userProfile.group || '1';
-      teamDisp.textContent = `班級：企管四系1甲 ｜ 所屬：第 ${gNum} 組 (已綁定)`;
+      const gNum = currentUser.studentGroup || '個人獨立專案';
+      teamDisp.textContent = `班級：企管四系1甲 ｜ 所屬組別：${gNum}`;
     }
   } else {
-    userDisp.textContent = '未登記學號與組別 (點右側按鈕登入以選組)';
+    userDisp.textContent = '未登入 Google 帳號 (請先登入以解鎖作業繳交)';
     if (teamDisp) teamDisp.textContent = '班級：企管四系1甲 (尚未選組)';
   }
 }
@@ -2247,7 +2330,7 @@ function renderStudentWorks() {
         <div class="text-center py-5 text-muted">
           <i class="fas fa-id-card fs-1 text-secondary mb-2"></i>
           <p class="mb-2">尚未登入學號或 Google 帳號，無法顯示您的專屬繳交紀錄。</p>
-          <button class="btn btn-sm btn-primary" onclick="openModal('userProfileModal')">立即登記學號</button>
+          <button class="btn btn-sm btn-primary" onclick="openModal('userProfileModal', true)">立即登記學號</button>
         </div>
       `;
       if (countBadge) countBadge.textContent = `我的作業：0 件`;
@@ -2259,17 +2342,25 @@ function renderStudentWorks() {
       const matchUid = (w.uid && currentFirebaseUser && w.uid === currentFirebaseUser.uid);
       return matchId || matchEmail || matchUid;
     });
+  } else if (currentWorksFilter === '期中報告') {
+    works = works.filter(w => (w.report_type === '期中報告' || (w.week_title && w.week_title.includes('期中')) || w.week === 9 || w.week <= 9));
+  } else if (currentWorksFilter === '期末報告') {
+    works = works.filter(w => (w.report_type === '期末報告' || (w.week_title && w.week_title.includes('期末')) || w.week === 18 || w.week > 9));
   }
 
   if (countBadge) {
-    countBadge.textContent = currentWorksFilter === 'mine' ? `我的作業：${works.length} 件` : `全班成果：${works.length} 件`;
+    let filterLabel = '全班成果';
+    if (currentWorksFilter === 'mine') filterLabel = '我的作業';
+    else if (currentWorksFilter === '期中報告') filterLabel = '期中報告';
+    else if (currentWorksFilter === '期末報告') filterLabel = '期末報告';
+    countBadge.textContent = `${filterLabel}：${works.length} 件`;
   }
 
   if (works.length === 0) {
     container.innerHTML = `
       <div class="text-center py-5 text-muted">
         <i class="fas fa-folder-open fs-1 text-secondary mb-2"></i>
-        <p class="mb-0">目前尚無繳交之成果，快在左側提交你的第一件微型創業作品！</p>
+        <p class="mb-0">目前此分類尚無繳交之成果，快在左側提交微型創業報告！</p>
       </div>
     `;
     return;
@@ -2278,10 +2369,16 @@ function renderStudentWorks() {
   let html = '';
   works.forEach(w => {
     const isHtmlWork = (w.category && w.category.includes('HTML')) || (w.file_name && (w.file_name.endsWith('.html') || w.file_name.endsWith('.htm'))) || Boolean(w.html_content);
-    const scoreBadge = (w.score !== null && w.score !== undefined) ? `<span class="badge bg-warning text-dark fw-bold"><i class="fas fa-star text-danger me-1"></i>評分：${w.score} 分</span>` : `<span class="badge bg-secondary">教師審核中</span>`;
-    const individualBadge = `<span class="badge bg-dark text-light border me-1"><i class="fas fa-user-check me-1"></i>個人實作</span>`;
+    const scoreBadge = (w.score !== null && w.score !== undefined && w.score !== '') ? `<span class="badge bg-warning text-dark fw-bold"><i class="fas fa-star text-danger me-1"></i>評分：${w.score} 分</span>` : `<span class="badge bg-secondary">教師審核中</span>`;
+    const groupName = w.team_name || w.student_group || '個人獨立專案';
+    const groupBadge = `<span class="badge bg-dark text-light border me-1"><i class="fas fa-users me-1"></i>${escapeHtml(groupName)}</span>`;
     const thumbnailBg = w.thumbnail || 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)';
     const thumbnailIcon = w.thumbnail_icon || 'fas fa-laptop-code';
+
+    const isFinalReport = (w.report_type === '期末報告' || (w.week_title && w.week_title.includes('期末')) || w.week === 18);
+    const reportBadge = isFinalReport 
+      ? `<span class="badge bg-primary me-1"><i class="fas fa-trophy me-1"></i>期末報告</span>` 
+      : `<span class="badge bg-info text-dark me-1"><i class="fas fa-bookmark me-1"></i>期中報告</span>`;
 
     // 教師專屬評分按鈕
     const teacherGradeBtn = isTeacherUser ? `
@@ -2314,14 +2411,12 @@ function renderStudentWorks() {
           <div class="flex-grow-1 w-100">
             <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
               <div>
-                ${individualBadge}
-                <span class="badge bg-primary me-1">${escapeHtml(w.category || '實務作品')}</span>
-                <span class="badge bg-light text-secondary border">第 ${w.week || 6} 週</span>
+                ${groupBadge}
+                ${reportBadge}
+                <span class="badge bg-light text-secondary border">${escapeHtml(w.category || '實務作品')}</span>
                 <h6 class="fw-bold text-dark mt-2 mb-1 fs-5">${escapeHtml(w.title || '未命名專案')}</h6>
                 <div class="small text-muted">
                   <i class="fas fa-user-circle me-1"></i>${escapeHtml(w.student_id || '')} ${escapeHtml(w.student_name || '同學')}
-                  <span class="mx-1">•</span>
-                  <i class="fas fa-graduation-cap me-1"></i>${escapeHtml(w.team_name || '企管四系1甲')}
                   <span class="mx-1">•</span>
                   <i class="fas fa-clock me-1"></i>${escapeHtml(w.submitted_at || '')}
                 </div>
@@ -2386,31 +2481,42 @@ function renderStudentWorks() {
 function filterWorksDisplay(filter) {
   currentWorksFilter = filter;
   const btnAll = document.getElementById('btn-filter-all');
+  const btnMidterm = document.getElementById('btn-filter-midterm');
+  const btnFinal = document.getElementById('btn-filter-final');
   const btnMine = document.getElementById('btn-filter-mine');
 
-  if (filter === 'all') {
-    if (btnAll) btnAll.classList.add('active');
-    if (btnMine) btnMine.classList.remove('active');
-  } else {
-    if (btnAll) btnAll.classList.remove('active');
-    if (btnMine) btnMine.classList.add('active');
-  }
+  [btnAll, btnMidterm, btnFinal, btnMine].forEach(b => { if (b) b.classList.remove('active'); });
+
+  if (filter === 'all' && btnAll) btnAll.classList.add('active');
+  else if (filter === '期中報告' && btnMidterm) btnMidterm.classList.add('active');
+  else if (filter === '期末報告' && btnFinal) btnFinal.classList.add('active');
+  else if (filter === 'mine' && btnMine) btnMine.classList.add('active');
+
   renderStudentWorks();
 }
 
 async function handleProjectSubmit(e) {
   e.preventDefault();
 
-  if (!userProfile || !userProfile.studentId) {
-    alert('請先登記學號與姓名（或使用 Google 登入）再行繳交作業！');
-    openModal('userProfileModal');
+  if (!currentFirebaseUser) {
+    alert('⚠️ 請先使用 Google 帳號登入再行繳交作業！');
+    loginWithGoogle();
+    return;
+  }
+
+  if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
+    alert('⚠️ 依課堂要求，請先完成「學號」、「姓名」與「組別」登記！');
+    initUserModal();
+    openModal('userProfileModal', true);
     return;
   }
 
   const weekSelect = document.getElementById('upload-week-select');
-  const selectedOpt = weekSelect.options[weekSelect.selectedIndex];
-  const week = parseInt(weekSelect.value, 10);
-  const weekTitle = selectedOpt ? selectedOpt.getAttribute('data-title') || selectedOpt.text : `第 ${week} 週作業`;
+  const selectedOpt = weekSelect ? weekSelect.options[weekSelect.selectedIndex] : null;
+  const reportType = weekSelect ? weekSelect.value : '期中報告';
+  const weekTitle = selectedOpt ? selectedOpt.getAttribute('data-title') || selectedOpt.text : reportType;
+  const weekNum = (reportType === '期末報告' ? 18 : 9);
+
   const title = document.getElementById('upload-title').value.trim();
   const category = document.getElementById('upload-category').value;
   const concept = document.getElementById('upload-concept').value.trim();
@@ -2426,10 +2532,12 @@ async function handleProjectSubmit(e) {
     id: workId,
     uid: currentFirebaseUser ? currentFirebaseUser.uid : '',
     email: currentFirebaseUser ? currentFirebaseUser.email : '',
-    student_id: userProfile.studentId,
-    student_name: userProfile.name || '同學',
-    team_name: '企管四系1甲',
-    week: week,
+    student_id: currentUser.studentId,
+    student_name: currentUser.studentName,
+    student_group: currentUser.studentGroup || '個人獨立專案',
+    team_name: currentUser.studentGroup || '個人獨立專案',
+    report_type: reportType,
+    week: weekNum,
     week_title: weekTitle,
     title: title,
     category: category,
@@ -2439,8 +2547,8 @@ async function handleProjectSubmit(e) {
     live_url: liveUrl,
     file_name: file ? file.name : '',
     html_content: '',
-    thumbnail: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)',
-    thumbnail_icon: 'fas fa-rocket',
+    thumbnail: reportType === '期末報告' ? 'linear-gradient(135deg, #4338ca 0%, #6366f1 100%)' : 'linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)',
+    thumbnail_icon: reportType === '期末報告' ? 'fas fa-trophy' : 'fas fa-bookmark',
     submitted_at: nowStr,
     score: null,
     teacher_comment: ''
@@ -2486,8 +2594,226 @@ async function handleProjectSubmit(e) {
 
   if (btn) btn.disabled = false;
   document.getElementById('project-upload-form').reset();
-  alert(`🎉 恭喜【企管四系1甲】${userProfile.name} 同學！
-作業《${title}》已成功上傳並同步至雲端展示廊！`);
+  alert(`🎉 恭喜【企管四系1甲 ${currentUser.studentGroup}】${currentUser.studentName} 同學！
+《${title}》(${reportType}) 已成功上傳並同步至雲端展示廊！`);
+}
+
+/* ==========================================================================
+   教師專屬線上成績管理後台 (TEACHER GRADE DASHBOARD & QUICK GRADING)
+   ========================================================================== */
+function renderTeacherGradeDashboard() {
+  if (!isTeacherUser) return;
+  const tbody = document.getElementById('teacher-grades-tbody');
+  if (!tbody) return;
+
+  const totalWorks = studentWorksData || [];
+
+  // 1. 數據統計計算
+  let midtermCount = 0;
+  let finalCount = 0;
+  let gradedCount = 0;
+  let pendingCount = 0;
+  let scoreSum = 0;
+  let scoreCount = 0;
+
+  totalWorks.forEach(w => {
+    const isFinal = (w.report_type === '期末報告' || (w.week_title && w.week_title.includes('期末')) || w.week === 18 || w.week > 9);
+    if (isFinal) finalCount++;
+    else midtermCount++;
+
+    if (w.score !== null && w.score !== undefined && w.score !== '') {
+      gradedCount++;
+      const s = Number(w.score);
+      if (!isNaN(s)) {
+        scoreSum += s;
+        scoreCount++;
+      }
+    } else {
+      pendingCount++;
+    }
+  });
+
+  const avgScore = scoreCount > 0 ? (scoreSum / scoreCount).toFixed(1) + ' 分' : '尚無評分';
+
+  const statTotal = document.getElementById('teacher-stat-total');
+  const statMidterm = document.getElementById('teacher-stat-midterm');
+  const statFinal = document.getElementById('teacher-stat-final');
+  const statPending = document.getElementById('teacher-stat-pending');
+  const statGraded = document.getElementById('teacher-stat-graded');
+  const statAvg = document.getElementById('teacher-stat-avg');
+
+  if (statTotal) statTotal.textContent = totalWorks.length;
+  if (statMidterm) statMidterm.textContent = midtermCount;
+  if (statFinal) statFinal.textContent = finalCount;
+  if (statPending) statPending.textContent = pendingCount;
+  if (statGraded) statGraded.textContent = gradedCount;
+  if (statAvg) statAvg.textContent = avgScore;
+
+  // 2. 搜尋與條件過濾
+  const searchQ = (document.getElementById('teacher-search-input')?.value || '').trim().toLowerCase();
+  const filterCat = document.getElementById('teacher-filter-category')?.value || 'all';
+  const filterStat = document.getElementById('teacher-filter-status')?.value || 'all';
+  const filterGrp = document.getElementById('teacher-filter-group')?.value || 'all';
+
+  const filtered = totalWorks.filter(w => {
+    // 關鍵字搜尋
+    if (searchQ) {
+      const matchText = `${w.student_id || ''} ${w.student_name || ''} ${w.team_name || ''} ${w.title || ''} ${w.concept || ''}`.toLowerCase();
+      if (!matchText.includes(searchQ)) return false;
+    }
+    // 報告類別過濾
+    const isFinal = (w.report_type === '期末報告' || (w.week_title && w.week_title.includes('期末')) || w.week === 18 || w.week > 9);
+    if (filterCat === '期中報告' && isFinal) return false;
+    if (filterCat === '期末報告' && !isFinal) return false;
+
+    // 評分狀態過濾
+    const isGraded = (w.score !== null && w.score !== undefined && w.score !== '');
+    if (filterStat === 'graded' && !isGraded) return false;
+    if (filterStat === 'pending' && isGraded) return false;
+
+    // 組別過濾
+    if (filterGrp !== 'all') {
+      const gName = w.team_name || w.student_group || '';
+      if (gName !== filterGrp && !gName.includes(filterGrp)) return false;
+    }
+
+    return true;
+  });
+
+  const countElem = document.getElementById('teacher-filtered-count');
+  if (countElem) countElem.textContent = `顯示 ${filtered.length} / ${totalWorks.length} 筆`;
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="9" class="text-center py-5 text-muted">
+          <i class="fas fa-inbox fs-2 text-secondary mb-2 d-block"></i>
+          尚無符合篩選條件的學生報告資料
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  let rowsHtml = '';
+  filtered.forEach(w => {
+    const isFinal = (w.report_type === '期末報告' || (w.week_title && w.week_title.includes('期末')) || w.week === 18 || w.week > 9);
+    const catBadge = isFinal
+      ? `<span class="badge bg-primary px-2 py-1"><i class="fas fa-trophy me-1"></i>期末報告</span>`
+      : `<span class="badge bg-info text-dark px-2 py-1"><i class="fas fa-bookmark me-1"></i>期中報告</span>`;
+    
+    const groupName = w.team_name || w.student_group || '未分組';
+    const hasLiveUrl = !!w.live_url;
+    const hasFile = !!w.file_name;
+    const currentScore = (w.score !== null && w.score !== undefined) ? w.score : '';
+    const currentComment = w.teacher_comment || '';
+
+    rowsHtml += `
+      <tr id="grade-row-${escapeHtml(w.id)}">
+        <td><span class="badge bg-light text-dark border font-monospace">${escapeHtml(groupName)}</span></td>
+        <td><strong class="font-monospace text-primary">${escapeHtml(w.student_id || '無學號')}</strong></td>
+        <td><strong>${escapeHtml(w.student_name || '同學')}</strong></td>
+        <td>${catBadge}</td>
+        <td>
+          <div class="fw-bold text-dark mb-1">${escapeHtml(w.title || '無標題')}</div>
+          <div class="text-muted small text-truncate" style="max-width: 300px;" title="${escapeHtml(w.concept || '')}">
+            ${escapeHtml(w.concept || '無說明')}
+          </div>
+          <div class="text-muted small mt-1" style="font-size: 0.72rem;">
+            <i class="fas fa-clock me-1"></i>${escapeHtml(w.submitted_at || '')}
+          </div>
+        </td>
+        <td>
+          <div class="d-flex flex-column gap-1">
+            <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2" style="font-size: 0.78rem;" onclick="previewWork('${escapeHtml(w.id)}')">
+              <i class="fas fa-eye me-1"></i>檢視作品
+            </button>
+            ${hasLiveUrl ? `
+              <a href="${escapeHtml(w.live_url)}" target="_blank" class="btn btn-sm btn-outline-success py-0 px-2" style="font-size: 0.78rem;">
+                <i class="fas fa-external-link-alt me-1"></i>線上展示
+              </a>
+            ` : ''}
+            ${hasFile ? `
+              <button type="button" class="btn btn-sm btn-outline-secondary py-0 px-2" style="font-size: 0.78rem;" onclick="downloadWorkFile('${escapeHtml(w.id)}')">
+                <i class="fas fa-download me-1"></i>下載檔案
+              </button>
+            ` : ''}
+          </div>
+        </td>
+        <td>
+          <input type="number" min="0" max="100" class="form-control form-control-sm text-center fw-bold text-primary" id="row-score-${escapeHtml(w.id)}" value="${currentScore}" placeholder="0-100" style="width: 85px;">
+        </td>
+        <td>
+          <input type="text" class="form-control form-control-sm" id="row-comment-${escapeHtml(w.id)}" value="${escapeHtml(currentComment)}" placeholder="輸入教師評語或改進建議...">
+        </td>
+        <td class="text-center">
+          <button type="button" class="btn btn-sm btn-success fw-bold px-2 py-1 shadow-sm" onclick="quickSaveGradeRow('${escapeHtml(w.id)}')">
+            <i class="fas fa-save me-1"></i>儲存
+          </button>
+        </td>
+      </tr>
+    `;
+  });
+
+  tbody.innerHTML = rowsHtml;
+}
+
+async function quickSaveGradeRow(workId) {
+  const scoreInput = document.getElementById(`row-score-${workId}`);
+  const commentInput = document.getElementById(`row-comment-${workId}`);
+  if (!scoreInput) return;
+
+  const scoreVal = scoreInput.value.trim();
+  const commentVal = commentInput ? commentInput.value.trim() : '';
+
+  if (scoreVal === '') {
+    alert('請輸入評分分數 (0-100)！');
+    scoreInput.focus();
+    return;
+  }
+
+  const scoreNum = Number(scoreVal);
+  if (isNaN(scoreNum) || scoreNum < 0 || scoreNum > 100) {
+    alert('評分分數必須介於 0 至 100 之間！');
+    scoreInput.focus();
+    return;
+  }
+
+  const work = studentWorksData.find(w => w.id === workId);
+  if (work) {
+    work.score = scoreNum;
+    work.teacher_comment = commentVal;
+  }
+
+  // 同步至 Firestore 雲端資料庫
+  if (firestoreDb) {
+    try {
+      await firestoreDb.collection('works').doc(workId).update({
+        score: scoreNum,
+        teacher_comment: commentVal,
+        graded_at: new Date().toLocaleString('zh-TW', { hour12: false }),
+        graded_by: '邱俊維 博士'
+      });
+      console.log('✅ 教師線上即時打分已成功同步至 Firebase 雲端');
+    } catch (e) {
+      console.warn('Firestore grade update notice:', e);
+    }
+  }
+
+  // 同步本機快取
+  try {
+    const localWorks = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+    const target = localWorks.find(w => w.id === workId);
+    if (target) {
+      target.score = scoreNum;
+      target.teacher_comment = commentVal;
+      localStorage.setItem('vnu_submitted_works', JSON.stringify(localWorks));
+    }
+  } catch (e) {}
+
+  renderTeacherGradeDashboard();
+  renderStudentWorks();
+  alert(`✅ 評分成功！已為同學送出：${scoreNum} 分。`);
 }
 
 function previewWork(workId) {
@@ -2794,4 +3120,6 @@ window.openTeacherGradeModal = openTeacherGradeModal;
 window.closeTeacherGradeModal = closeTeacherGradeModal;
 window.saveTeacherGrade = saveTeacherGrade;
 window.previewWork = previewWork;
+window.renderTeacherGradeDashboard = renderTeacherGradeDashboard;
+window.quickSaveGradeRow = quickSaveGradeRow;
 

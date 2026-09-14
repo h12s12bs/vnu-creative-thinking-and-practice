@@ -155,6 +155,11 @@
           <i class="fas fa-medal me-1"></i>個人成就榜
         </button>
       </li>
+      <li class="nav-item" role="presentation" id="nav-item-teacher-tab" style="display: none;">
+        <button class="nav-link fw-bold text-dark bg-warning" id="tab-teacher-btn" onclick="switchTab('tab-teacher')" type="button">
+          <i class="fas fa-chalkboard-teacher me-1 text-dark"></i>教師成績管理
+        </button>
+      </li>
     </ul>
 
     <!-- 標籤頁內容區 -->
@@ -827,24 +832,36 @@
 
         <div class="row g-4">
           <!-- 左側：作業繳交表單 (Submit Project) -->
+          <!-- 左側：作業繳交表單 (Submit Project) -->
           <div class="col-lg-5">
-            <div class="card-custom p-4 h-100">
-              <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
-                <h5 class="fw-bold mb-0 text-dark"><i class="fas fa-cloud-upload-alt text-success me-2"></i>繳交微型創業實踐作品</h5>
-                <span class="badge bg-success">支援單機/線上雙模</span>
+            <!-- 未登入時顯示登入提示 -->
+            <div class="card-custom p-4 text-center h-100 d-flex flex-column justify-content-center align-items-center" id="upload-login-prompt-box">
+              <div class="rounded-circle bg-warning bg-opacity-10 p-4 mb-3 text-warning">
+                <i class="fas fa-lock fs-1"></i>
               </div>
-              <p class="text-muted small mb-3">填寫作品資訊並上傳 HTML 網頁原型、企劃書或作品截圖，系統將自動登錄至個人歷程與展示牆：</p>
+              <h5 class="fw-bold text-dark mb-2">作業繳交功能僅限學生登入使用</h5>
+              <p class="text-muted small mb-4" style="max-width: 360px;">
+                依課堂評分規定，企管四系1甲同學請先點擊下方按鈕使用 Google 帳號登入並綁定學號、姓名與組別，即可開啟「期中報告」與「期末報告」作品上傳表單。
+              </p>
+              <button type="button" class="btn btn-primary fw-bold px-4 py-2 shadow-sm" onclick="loginWithGoogle()">
+                <i class="fab fa-google me-2"></i>使用 Google 帳號登入
+              </button>
+            </div>
+
+            <!-- 已登入時顯示作業繳交表單 -->
+            <div class="card-custom p-4 h-100" id="upload-form-box" style="display: none;">
+              <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                <h5 class="fw-bold mb-0 text-dark"><i class="fas fa-cloud-upload-alt text-success me-2"></i>繳交微型創業報告</h5>
+                <span class="badge bg-success">支援單機/雲端雙模</span>
+              </div>
+              <p class="text-muted small mb-3">請選擇繳交「期中報告」或「期末報告」，填寫專案資訊並上傳檔案或線上網址：</p>
 
               <form id="project-upload-form" onsubmit="handleProjectSubmit(event)">
                 <div class="mb-3">
-                  <label class="form-label small fw-bold text-dark">繳交作業單元 / 週次 *</label>
-                  <select class="form-select form-select-sm" id="upload-week-select" required>
-                    <option value="3" data-title="第 03 週：設計思考與同理心訪談">第 03 週：同理心訪談與痛點 POV 企劃</option>
-                    <option value="6" data-title="第 06 週：精實創業與最小可行性產品 (MVP) 實務" selected>第 06 週：精實創業 MVP 一頁式原型 (最推薦)</option>
-                    <option value="8" data-title="第 08 週：冒煙測試 (Smoke Test) 與早鳥客戶意向驗證">第 08 週：冒煙測試早鳥登記頁</option>
-                    <option value="9" data-title="第 09 週：期中商業企劃書成果發表與評審回饋">第 09 週：期中商業企劃書與架構規格</option>
-                    <option value="14" data-title="第 14 週：社群文案特工與早鳥集客漏斗優化">第 14 週：行銷特工文案與宣傳頁</option>
-                    <option value="18" data-title="第 18 週：期末專案成果發表 (Demo Day) 與路演驗收">第 18 週：期末專案成果路演 (Demo Day)</option>
+                  <label class="form-label small fw-bold text-dark">繳交報告類別 *</label>
+                  <select class="form-select form-select-sm fw-bold text-primary" id="upload-week-select" required>
+                    <option value="期中報告" data-title="期中微型創業企劃書與 MVP 原型成果" selected>📌 期中報告：微型創業企劃書與 MVP 原型成果</option>
+                    <option value="期末報告" data-title="期末微型創業實踐與 AI Agent 成果發布">🏆 期末報告：微型創業實踐與 AI Agent 成果發布</option>
                   </select>
                 </div>
 
@@ -859,7 +876,7 @@
                     <option value="HTML 一頁式 MVP 登陸頁">HTML 一頁式 MVP 登陸頁 (可線上互動)</option>
                     <option value="商業企劃書與架構規格">商業企劃書與架構規格 (Word/PDF)</option>
                     <option value="行銷特工與文案素材包">行銷特工與文案素材包</option>
-                    <option value="期末成果簡報與路演錄影">期末成果簡報與路演 (PPT/影片)</option>
+                    <option value="期末成果簡報與路演錄影">成果簡報與路演 (PPT/影片)</option>
                   </select>
                 </div>
 
@@ -886,7 +903,7 @@
 
                 <div class="d-grid">
                   <button type="submit" class="btn btn-success fw-bold py-2 shadow-sm" id="btn-submit-work">
-                    <i class="fas fa-check-circle me-1"></i>確認送出繳交作品
+                    <i class="fas fa-check-circle me-1"></i>確認送出繳交報告
                   </button>
                 </div>
               </form>
@@ -899,14 +916,16 @@
               <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2 flex-wrap gap-2">
                 <div class="d-flex align-items-center gap-2">
                   <h5 class="fw-bold mb-0 text-dark"><i class="fas fa-th-large text-primary me-2"></i>企管四系1甲 作品成果展示廊</h5>
-                  <span class="badge bg-primary" id="total-works-count">共 3 件成果</span>
+                  <span class="badge bg-primary" id="total-works-count">共 0 件成果</span>
                 </div>
                 <div class="d-flex align-items-center gap-2">
                   <button type="button" class="btn btn-sm btn-outline-success fw-bold" id="btn-teacher-export-csv" onclick="exportGradesToCSV()" style="display: none;">
                     <i class="fas fa-file-excel me-1"></i>匯出全班作業成績單 (Excel)
                   </button>
                   <div class="btn-group btn-group-sm" role="group">
-                    <button type="button" class="btn btn-outline-secondary active" id="btn-filter-all" onclick="filterWorksDisplay('all')">全班觀摩</button>
+                    <button type="button" class="btn btn-outline-secondary active" id="btn-filter-all" onclick="filterWorksDisplay('all')">全部</button>
+                    <button type="button" class="btn btn-outline-secondary" id="btn-filter-midterm" onclick="filterWorksDisplay('期中報告')">期中報告</button>
+                    <button type="button" class="btn btn-outline-secondary" id="btn-filter-final" onclick="filterWorksDisplay('期末報告')">期末報告</button>
                     <button type="button" class="btn btn-outline-secondary" id="btn-filter-mine" onclick="filterWorksDisplay('mine')">我的作業</button>
                   </div>
                 </div>
@@ -920,6 +939,134 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- TAB 4.8: 教師專屬線上成績管理與評分後台 (僅授課教師可見) -->
+      <div class="tab-pane fade" id="tab-teacher" role="tabpanel" style="display: none;">
+        <div class="card-custom p-4 mb-4 bg-dark text-white border-0 shadow-lg">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <div>
+              <span class="badge bg-warning text-dark px-2 py-1 fw-bold me-2"><i class="fas fa-crown me-1"></i>教師專屬後台</span>
+              <h4 class="fw-bold d-inline align-middle">11501 創意發想與實踐 ✕ 作業線上成績評定管理</h4>
+              <p class="text-white-50 small mb-0 mt-1">授課教師：邱俊維 博士 ｜ 班級：企管四系1甲 ｜ 支援即時線上給分、指導評語、查閱專案與匯出 Excel</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-success fw-bold shadow-sm" onclick="exportGradesToCSV()">
+                <i class="fas fa-file-excel me-1"></i>匯出全班成績單 (Excel)
+              </button>
+              <button type="button" class="btn btn-outline-light btn-sm" onclick="renderTeacherGradeDashboard()">
+                <i class="fas fa-sync-alt me-1"></i>重新整理
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 數據指標概覽 -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-2 col-6">
+            <div class="card-custom p-3 text-center bg-white border">
+              <span class="text-muted small">總繳交件數</span>
+              <h3 class="fw-bold text-dark mt-1 mb-0" id="teacher-stat-total">0</h3>
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="card-custom p-3 text-center bg-white border border-info border-opacity-50">
+              <span class="text-info small fw-bold">期中報告</span>
+              <h3 class="fw-bold text-info mt-1 mb-0" id="teacher-stat-midterm">0</h3>
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="card-custom p-3 text-center bg-white border border-primary border-opacity-50">
+              <span class="text-primary small fw-bold">期末報告</span>
+              <h3 class="fw-bold text-primary mt-1 mb-0" id="teacher-stat-final">0</h3>
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="card-custom p-3 text-center bg-white border border-warning border-opacity-50">
+              <span class="text-warning small fw-bold">待評分件數</span>
+              <h3 class="fw-bold text-warning mt-1 mb-0" id="teacher-stat-pending">0</h3>
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="card-custom p-3 text-center bg-white border border-success border-opacity-50">
+              <span class="text-success small fw-bold">已完成評分</span>
+              <h3 class="fw-bold text-success mt-1 mb-0" id="teacher-stat-graded">0</h3>
+            </div>
+          </div>
+          <div class="col-md-2 col-6">
+            <div class="card-custom p-3 text-center bg-white border border-secondary border-opacity-50">
+              <span class="text-muted small">全班平均成績</span>
+              <h3 class="fw-bold text-dark mt-1 mb-0" id="teacher-stat-avg">0</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- 搜尋與過濾條件工具列 -->
+        <div class="card-custom p-3 mb-4 bg-white border shadow-sm">
+          <div class="row g-2 align-items-center">
+            <div class="col-md-4">
+              <div class="input-group input-group-sm">
+                <span class="input-group-text bg-light"><i class="fas fa-search"></i></span>
+                <input type="text" class="form-control" id="teacher-search-input" placeholder="搜尋學號、學生姓名、作品標題..." oninput="renderTeacherGradeDashboard()">
+              </div>
+            </div>
+            <div class="col-md-2 col-6">
+              <select class="form-select form-select-sm" id="teacher-filter-category" onchange="renderTeacherGradeDashboard()">
+                <option value="all">所有類別 (期中/期末)</option>
+                <option value="期中報告">僅看 期中報告</option>
+                <option value="期末報告">僅看 期末報告</option>
+              </select>
+            </div>
+            <div class="col-md-2 col-6">
+              <select class="form-select form-select-sm" id="teacher-filter-status" onchange="renderTeacherGradeDashboard()">
+                <option value="all">所有評分狀態</option>
+                <option value="pending">待評分</option>
+                <option value="graded">已評分</option>
+              </select>
+            </div>
+            <div class="col-md-2 col-6">
+              <select class="form-select form-select-sm" id="teacher-filter-group" onchange="renderTeacherGradeDashboard()">
+                <option value="all">所有組別</option>
+                <option value="第 1 組">第 1 組</option>
+                <option value="第 2 組">第 2 組</option>
+                <option value="第 3 組">第 3 組</option>
+                <option value="第 4 組">第 4 組</option>
+                <option value="第 5 組">第 5 組</option>
+                <option value="第 6 組">第 6 組</option>
+                <option value="第 7 組">第 7 組</option>
+                <option value="第 8 組">第 8 組</option>
+                <option value="個人獨立專案">個人獨立專案</option>
+              </select>
+            </div>
+            <div class="col-md-2 col-6 text-end">
+              <span class="small text-muted" id="teacher-filtered-count">顯示 0 / 0 筆</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 線上打成績專屬表格 -->
+        <div class="card-custom p-0 bg-white border shadow-sm overflow-hidden mb-4">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0" style="font-size: 0.88rem;">
+              <thead class="table-dark">
+                <tr>
+                  <th style="width: 100px;">組別</th>
+                  <th style="width: 100px;">學號</th>
+                  <th style="width: 90px;">姓名</th>
+                  <th style="width: 110px;">報告類別</th>
+                  <th>作品名稱與核心痛點</th>
+                  <th style="width: 110px;">預覽 / 檔案</th>
+                  <th style="width: 100px;">分數 (0-100)</th>
+                  <th style="width: 230px;">教師指導評語</th>
+                  <th style="width: 90px;" class="text-center">操作</th>
+                </tr>
+              </thead>
+              <tbody id="teacher-grades-tbody">
+                <!-- 由 JS 動態注入 -->
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
 
       <!-- TAB 5: 核心素養檢定與題庫中心 -->
@@ -1101,23 +1248,41 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content rounded-4 border-0 shadow">
         <div class="modal-header bg-dark text-white border-0">
-          <h5 class="modal-title fw-bold"><i class="fas fa-id-card text-warning me-2"></i>企管四系1甲 學籍登記</h5>
-          <button type="button" class="btn-close btn-close-white" onclick="closeModal('userProfileModal')"></button>
+          <h5 class="modal-title fw-bold"><i class="fas fa-id-card text-warning me-2"></i>企管四系1甲 學籍與組別登記</h5>
+          <button type="button" class="btn-close btn-close-white" id="btn-close-profile" onclick="closeModal('userProfileModal')"></button>
         </div>
         <div class="modal-body p-4">
+          <div id="force-profile-notice" class="alert alert-warning py-2 px-3 small fw-bold mb-3" style="display: none;">
+            <i class="fas fa-exclamation-triangle me-1"></i>依課堂要求，首次登入請務必完整填寫學號、姓名與組別後方可開始使用平台！
+          </div>
           <div class="mb-3 p-3 bg-light rounded-3 border border-success border-opacity-25" id="google-account-info-box" style="display: none;">
             <label class="form-label fw-bold small text-success mb-1"><i class="fab fa-google me-1"></i>已通過驗證之 Google 帳號</label>
             <input type="text" class="form-control form-control-sm bg-white text-muted fw-bold" id="input-google-email" readonly>
             <div class="form-text small text-muted" style="font-size: 0.75rem;">系統將自動將您的作品與成績綁定至此 Google 雲端帳號。</div>
           </div>
-          <p class="small text-muted mb-3">請登記您的學號與真實姓名，以便授課教師進行課堂點名、作業指導評分與學期成績登記。</p>
+          <p class="small text-muted mb-3">請登記您的學號、真實姓名與所屬組別，以便授課教師進行課堂點名、作業評定指導與期末成績登記。</p>
           <div class="mb-3">
-            <label class="form-label fw-bold small">學生學號 *</label>
-            <input type="text" class="form-control" id="input-student-id" placeholder="例：11209001">
+            <label class="form-label fw-bold small">學生學號 (必填) *</label>
+            <input type="text" class="form-control" id="input-student-id" placeholder="例：11209001" required>
           </div>
           <div class="mb-3">
-            <label class="form-label fw-bold small">學生姓名 *</label>
-            <input type="text" class="form-control" id="input-student-name" placeholder="例：王小明">
+            <label class="form-label fw-bold small">學生姓名 (必填) *</label>
+            <input type="text" class="form-control" id="input-student-name" placeholder="例：王小明" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-bold small text-dark">所屬組別 (必填) *</label>
+            <select class="form-select" id="input-student-group" required>
+              <option value="">-- 請選擇所屬組別 --</option>
+              <option value="第 1 組">第 1 組</option>
+              <option value="第 2 組">第 2 組</option>
+              <option value="第 3 組">第 3 組</option>
+              <option value="第 4 組">第 4 組</option>
+              <option value="第 5 組">第 5 組</option>
+              <option value="第 6 組">第 6 組</option>
+              <option value="第 7 組">第 7 組</option>
+              <option value="第 8 組">第 8 組</option>
+              <option value="個人獨立專案">個人獨立專案 (不分組)</option>
+            </select>
           </div>
           <div class="mb-3">
             <label class="form-label fw-bold small text-secondary"><i class="fas fa-university me-1"></i>開課班級</label>
@@ -1125,8 +1290,8 @@
           </div>
         </div>
         <div class="modal-footer border-0 bg-light">
-          <button type="button" class="btn btn-secondary btn-sm" onclick="closeModal('userProfileModal')">取消</button>
-          <button type="button" class="btn btn-primary btn-sm px-3" onclick="saveUserProfile()">保存學籍資訊</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-cancel-profile" onclick="closeModal('userProfileModal')">取消</button>
+          <button type="button" class="btn btn-primary btn-sm px-3 fw-bold" onclick="saveUserProfile()">確認登記並進入平台</button>
         </div>
       </div>
     </div>
