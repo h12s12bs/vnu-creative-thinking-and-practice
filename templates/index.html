@@ -43,7 +43,7 @@
 
       <div class="d-flex align-items-center gap-2">
         <!-- 簡報播放捷徑 -->
-        <a href="/presentation" target="_blank" class="btn btn-sm btn-outline-info d-flex align-items-center presentation-link" id="top-presentation-link">
+        <a href="Full_Screen_Presentation.html" target="_blank" class="btn btn-sm btn-outline-info d-flex align-items-center presentation-link" id="top-presentation-link">
           <i class="fas fa-tv me-1"></i>
           <span class="d-none d-sm-inline">全螢幕簡報</span>
         </a>
@@ -860,7 +860,7 @@
                 <h5 class="fw-bold mb-0 text-dark"><i class="fas fa-cloud-upload-alt text-success me-2"></i>繳交微型創業報告</h5>
                 <span class="badge bg-primary"><i class="fas fa-cloud me-1"></i>線上即時雲端儲存</span>
               </div>
-              <p class="text-muted small mb-3">請選擇繳交「期中報告」或「期末報告」，填寫專案資訊並上傳檔案或線上網址：</p>
+              <p class="text-muted small mb-3">請選擇繳交「期中報告」或「期末報告」，填寫專案資訊並提供線上部署之公開網站網址：</p>
 
               <form id="project-upload-form" onsubmit="handleProjectSubmit(event)">
                 <div class="mb-3">
@@ -873,38 +873,31 @@
 
                 <div class="mb-3">
                   <label class="form-label small fw-bold text-dark">作品名稱 / 專案標題 *</label>
-                  <input type="text" class="form-control form-control-sm" id="upload-title" placeholder="例：萬能二手原文書與學霸筆記媒合平台" required>
+                  <input type="text" class="form-control form-control-sm" id="upload-title" placeholder="例：萬能校園二手書即時媒合平台" required>
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label small fw-bold text-dark">作品類型 *</label>
-                  <select class="form-select form-select-sm" id="upload-category">
-                    <option value="HTML 一頁式 MVP 登陸頁">HTML 一頁式 MVP 登陸頁 (可線上互動)</option>
-                    <option value="商業企劃書與架構規格">商業企劃書與架構規格 (Word/PDF)</option>
-                    <option value="行銷特工與文案素材包">行銷特工與文案素材包</option>
-                    <option value="期末成果簡報與路演錄影">成果簡報與路演 (PPT/影片)</option>
+                  <select class="form-select form-select-sm fw-bold text-primary" id="upload-category" required>
+                    <option value="線上部署網頁 (GitHub Pages / 雲端發布)" selected>🌐 線上部署網頁 (GitHub Pages / 獨立專屬網址)</option>
                   </select>
+                  <div class="form-text small text-primary fw-semibold"><i class="fas fa-check-circle me-1"></i>本課程核心目標為實戰訓練同學親手部署上線真實網站，限繳交公開網頁。</div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label small fw-bold text-dark">作品線上部署公開網址 (必填) *</label>
+                  <input type="url" class="form-control form-control-sm border-primary" id="upload-live-url" placeholder="https://username.github.io/my-project/" required>
+                  <div class="form-text small text-muted">請填寫部署於 GitHub Pages 等平台的公開網址，供全班與授課教師直接線上點擊瀏覽評分。</div>
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label small fw-bold text-dark">創意核心概念與痛點說明 (200字內) *</label>
-                  <textarea class="form-control form-control-sm" id="upload-concept" rows="3" placeholder="簡述你的創意發想：為誰解決什麼痛點？核心功能是什麼？" required></textarea>
+                  <textarea class="form-control form-control-sm" id="upload-concept" rows="3" placeholder="簡述你的創意發想：為誰解決什麼痛點？網站核心功能是什麼？" required></textarea>
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label small fw-bold text-dark">使用之 Agentic AI 與黃金 Prompt 提示詞記錄</label>
                   <textarea class="form-control form-control-sm" id="upload-prompt-summary" rows="2" placeholder="例：使用痛點雷達 Agent ✕ 一頁式原型 Agent，輸入 CLEAR 提問框架..."></textarea>
-                </div>
-
-                <div class="mb-3">
-                  <label class="form-label small fw-bold text-dark">作品線上公開網址 (選填，如 GitHub Pages / Netlify)</label>
-                  <input type="url" class="form-control form-control-sm" id="upload-live-url" placeholder="https://username.github.io/my-project/">
-                </div>
-
-                <div class="mb-3">
-                  <label class="form-label small fw-bold text-dark">上傳實體作品檔案 (支援 .html, .zip, .pdf, .png, .docx)</label>
-                  <input type="file" class="form-control form-control-sm" id="upload-file-input" accept=".html,.htm,.zip,.pdf,.png,.jpg,.jpeg,.docx,.xlsx">
-                  <div class="form-text small">若為 HTML 網頁，繳交後全班即可直接在線上彈窗點擊預覽！</div>
                 </div>
 
                 <div class="d-grid">
@@ -1192,7 +1185,7 @@
             已無縫整合根目錄現有 <code>Full_Screen_Presentation.html</code>，支援鍵盤快捷鍵：<code>Space / →</code> 下一頁、<code>←</code> 上一頁、<code>F</code> 全螢幕切換、<code>N</code> 演講備忘稿。
           </p>
           <div class="d-flex justify-content-center gap-3 mb-4">
-            <a href="/presentation" target="_blank" class="btn btn-primary px-4 py-2 fw-bold presentation-link" id="tab-presentation-link">
+            <a href="Full_Screen_Presentation.html" target="_blank" class="btn btn-primary px-4 py-2 fw-bold presentation-link" id="tab-presentation-link">
               <i class="fas fa-external-link-alt me-1"></i>在新分頁開啟全螢幕簡報 (最推薦)
             </a>
             <button class="btn btn-outline-secondary px-3 py-2" onclick="toggleEmbeddedPresentation()">
@@ -1200,7 +1193,7 @@
             </button>
           </div>
           <div id="embedded-presentation-wrapper" style="display: none;">
-            <iframe id="presentation-iframe" src="/presentation" style="width: 100%; height: 680px; border: 1px solid #CBD5E1; border-radius: 12px;" allowfullscreen="true" allow="fullscreen"></iframe>
+            <iframe id="presentation-iframe" src="Full_Screen_Presentation.html" style="width: 100%; height: 680px; border: 1px solid #CBD5E1; border-radius: 12px;" allowfullscreen="true" allow="fullscreen"></iframe>
           </div>
         </div>
       </div>

@@ -181,8 +181,7 @@ function switchTab(tabId) {
 }
 
 function getPresentationUrl() {
-  const isLocal = (window.location.protocol === 'file:' || window.IS_STANDALONE_OFFLINE || isOfflineMode);
-  return isLocal ? 'Full_Screen_Presentation.html' : '/presentation';
+  return 'Full_Screen_Presentation.html';
 }
 
 function updateAllPresentationLinks() {
@@ -2273,9 +2272,13 @@ async function initStudentWorks() {
     try {
       const parsed = JSON.parse(localSaved);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        studentWorksData = parsed;
-        renderStudentWorks();
-        return;
+        if (parsed.some(w => w.id && (w.id.startsWith('WORK-2026-') || w.id.startsWith('work-0')))) {
+          localStorage.removeItem('vnu_ideation_works');
+        } else {
+          studentWorksData = parsed;
+          renderStudentWorks();
+          return;
+        }
       }
     } catch (e) {
       console.warn('解析本地作業失敗', e);
@@ -2288,58 +2291,58 @@ async function initStudentWorks() {
   } else {
     studentWorksData = [
       {
-        id: "WORK-2026-001",
-        student_id: "11209012",
-        student_name: "陳品妤",
-        team_name: "第 1 組 - 救救荷包隊",
-        week: 6,
-        week_title: "第 06 週：精實創業與最小可行性產品 (MVP) 實務",
-        title: "萬能二手原文書與學霸筆記即時媒合平台",
-        category: "HTML 一頁式 MVP 登陸頁",
-        concept: "解決企管系同學每學期買原文書花費數千元、期末卻只能賤賣的痛點。透過 Agentic AI 自動比對書況、版次與學長姐筆記，提供預購與面交登記。",
-        agent_used: "一頁式創業原型設計 Agent ✕ 商業模式規劃 Agent",
-        prompt_summary: "使用 CLEAR 框架引導 AI 生成具備 TailwindCSS 深藍風格之首頁、三大學長姐推薦書單、與 Google 表單串接之預訂彈窗。",
-        live_url: "",
-        file_name: "vnu_textbook_mvp.html",
-        submitted_at: "2026-10-18 14:35:20",
-        score: 95,
-        teacher_comment: "痛點洞察極為深刻！首頁 Call to Action 醒目，手機版適應性良好，非常適合校園落地！"
-      },
-      {
-        id: "WORK-2026-002",
-        student_id: "11209028",
-        student_name: "林宏宇",
-        team_name: "第 3 組 - 萬能吃飽飽",
-        week: 8,
-        week_title: "第 08 週：冒煙測試 (Smoke Test) 與早鳥客戶意向驗證",
-        title: "下課 10 分鐘秒速自取！健康舒肥輕食外帶預約頁",
-        category: "HTML 一頁式 MVP 登陸頁",
-        concept: "針對中午萬能學餐大排長龍導致下午第一堂課經常遲到的痛點，建立免排隊的預約取餐網頁，測試學生的付費與早鳥登記意願。",
-        agent_used: "痛點雷達 Agent ✕ 一頁式原型 Agent",
-        prompt_summary: "讓 AI 扮演連鎖餐飲產品經理，設計高對比健康綠橘色調、菜單輪播卡片與下課前 10 分鐘自取倒數提醒。",
-        live_url: "",
-        file_name: "healthy_meal_box.html",
-        submitted_at: "2026-11-02 11:20:15",
-        score: 92,
-        teacher_comment: "冒煙測試的定價假設符合校園市場行情，表單驗證機制完整。"
-      },
-      {
-        id: "WORK-2026-003",
-        student_id: "11209045",
-        student_name: "張子軒",
-        team_name: "第 5 組 - 租屋救星",
+        id: "DEMO-01",
+        student_id: "TEACHER",
+        student_name: "邱俊維 博士",
+        author: "授課教師 邱俊維 博士",
+        team_name: "授課教師示範",
+        student_group: "授課教師示範",
+        report_type: "期中報告",
         week: 9,
-        week_title: "第 09 週：期中商業企劃書成果發表與評審回饋",
-        title: "外宿新生好室友雷達：生活作息與習慣媒合服務企劃書",
-        category: "商業企劃書與架構規格",
-        concept: "解決大一新生外宿常遇到抽菸、衛生習慣不合的地雷室友問題。利用心理測驗與 Agentic AI 比對，媒合彼此生活習慣契合的合租夥伴。",
-        agent_used: "商業模式九宮格 Agent ✕ 行銷文案特工",
-        prompt_summary: "運用 Antigravity 梳理出精實商業模式圖 (BMC)、三階段收益模型（媒合手續費、房東贊助廣告）與損益兩平試算。",
-        live_url: "",
-        file_name: "roommate_finder_proposal.pdf",
-        submitted_at: "2026-11-09 15:40:00",
-        score: 96,
-        teacher_comment: "期中提案邏輯嚴密！目標客群定義精準，且針對個資隱私防護有提出明確因應對策。"
+        week_title: "期中報告：微型創業企劃書與 MVP 原型成果",
+        title: "《創意發想與實踐》Agentic AI 互動教學平台",
+        category: "線上部署網頁 (GitHub Pages / 雲端發布)",
+        type: "線上部署網頁 (GitHub Pages)",
+        concept: "整合 18 週精實創業教案、隨堂 5 題快測、AI Agent 工坊、轉盤抽籤與 Vibe Coding 學生自學手冊之現代化雲端教學與作品展評平台。",
+        desc: "整合 18 週精實創業教案、隨堂 5 題快測、AI Agent 工坊、轉盤抽籤與 Vibe Coding 學生自學手冊之現代化雲端教學與作品展評平台。",
+        agent_used: "Agentic AI 協同規劃 ✕ Antigravity 框架",
+        prompt_summary: "運用 CLEAR 提示詞框架引導生成全響應式 UI、即時題庫評分、轉盤與雲端評分系統。",
+        live_url: "https://h12s12bs.github.io/vnu-creative-thinking-and-practice/",
+        file_name: "",
+        file_url: "",
+        submitted_at: "2026-09-01 09:00:00",
+        score: 100,
+        teacher_comment: "【示範案例】具備完整微型創業教育價值、高可用性部署與極佳使用者互動體驗之典範成果。",
+        thumbnail: "linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%)",
+        thumbnail_icon: "fas fa-rocket",
+        tags: ["教學平台", "GitHub Pages", "MVP 實踐", "AI Agent"]
+      },
+      {
+        id: "DEMO-02",
+        student_id: "TEACHER",
+        student_name: "邱俊維 博士",
+        author: "授課教師 邱俊維 博士",
+        team_name: "授課教師示範",
+        student_group: "授課教師示範",
+        report_type: "期末報告",
+        week: 18,
+        week_title: "期末報告：微型創業實踐與 AI Agent 成果發布",
+        title: "萬能科技大學 邱俊維 博士 個人學術研究與教師歷程網站",
+        category: "線上部署網頁 (GitHub Pages / 雲端發布)",
+        type: "線上部署網頁 (GitHub Pages)",
+        concept: "萬能科技大學企業管理系 邱俊維 博士之個人學術論文著作、國科會計畫、教學歷程與全方位專業品牌呈現之現代化形象網站。",
+        desc: "萬能科技大學企業管理系 邱俊維 博士之個人學術論文著作、國科會計畫、教學歷程與全方位專業品牌呈現之現代化形象網站。",
+        agent_used: "全端形象網頁建置 ✕ GitHub Pages 自動發布",
+        prompt_summary: "設計簡約大器之學術與專業履歷介面，完整呈現國際期刊論文、研究計畫與教學特色。",
+        live_url: "https://h12s12bs.github.io/vanung-faculty-portfolio/index.html",
+        file_name: "",
+        file_url: "",
+        submitted_at: "2026-09-01 10:00:00",
+        score: 100,
+        teacher_comment: "【示範案例】將個人專業價值、學術成果與數位部署完美結合之標竿網站。",
+        thumbnail: "linear-gradient(135deg, #0ea5e9 0%, #10b981 100%)",
+        thumbnail_icon: "fas fa-globe",
+        tags: ["學術歷程", "個人品牌", "GitHub Pages", "響應式網頁"]
       }
     ];
   }
@@ -2555,12 +2558,17 @@ async function handleProjectSubmit(e) {
   const weekNum = (reportType === '期末報告' ? 18 : 9);
 
   const title = document.getElementById('upload-title').value.trim();
-  const category = document.getElementById('upload-category').value;
+  const category = (document.getElementById('upload-category') && document.getElementById('upload-category').value) || '線上部署網頁 (GitHub Pages / 雲端發布)';
   const concept = document.getElementById('upload-concept').value.trim();
-  const promptSummary = document.getElementById('upload-prompt-summary').value.trim();
-  const liveUrl = document.getElementById('upload-live-url').value.trim();
-  const fileInput = document.getElementById('upload-file-input');
-  const file = fileInput.files && fileInput.files[0];
+  const promptSummary = document.getElementById('upload-prompt-summary') ? document.getElementById('upload-prompt-summary').value.trim() : '';
+  const liveUrlInput = document.getElementById('upload-live-url');
+  const liveUrl = liveUrlInput ? liveUrlInput.value.trim() : '';
+
+  if (!liveUrl) {
+    alert('⚠️ 本課程核心要求實戰部署，請填寫作品線上公開部署網址（如 GitHub Pages 網址）！');
+    if (liveUrlInput) liveUrlInput.focus();
+    return;
+  }
 
   const workId = 'WORK-' + Date.now();
   const nowStr = new Date().toLocaleString('zh-TW', { hour12: false });
@@ -2582,28 +2590,14 @@ async function handleProjectSubmit(e) {
     agent_used: 'Agentic AI 協同發想',
     prompt_summary: promptSummary,
     live_url: liveUrl,
-    file_name: file ? file.name : '',
+    file_name: '',
     html_content: '',
-    thumbnail: reportType === '期末報告' ? 'linear-gradient(135deg, #4338ca 0%, #6366f1 100%)' : 'linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)',
-    thumbnail_icon: reportType === '期末報告' ? 'fas fa-trophy' : 'fas fa-bookmark',
+    thumbnail: reportType === '期末報告' ? 'linear-gradient(135deg, #0ea5e9 0%, #10b981 100%)' : 'linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%)',
+    thumbnail_icon: reportType === '期末報告' ? 'fas fa-globe' : 'fas fa-rocket',
     submitted_at: nowStr,
     score: null,
     teacher_comment: ''
   };
-
-  const btn = document.getElementById('btn-submit-work');
-  if (btn) btn.disabled = true;
-
-  // 嘗試讀取檔案內容
-  if (file) {
-    try {
-      if (file.name.endsWith('.html') || file.name.endsWith('.htm') || file.name.endsWith('.txt')) {
-        newWork.html_content = await file.text();
-      }
-    } catch (err) {
-      console.warn('讀取檔案內容失敗', err);
-    }
-  }
 
   // 1. 同步上傳至雲端 Firestore (若在線上且有 Firebase)
   if (firestoreDb) {
@@ -2868,14 +2862,19 @@ function previewWork(workId) {
 
   if (extLink) {
     if (work.live_url) {
+  if (extLink) {
+    if (work.live_url) {
       extLink.href = work.live_url;
       extLink.style.display = 'inline-block';
+      extLink.innerHTML = `<i class="fas fa-external-link-alt me-1"></i>在新分頁開啟網站`;
     } else {
       extLink.style.display = 'none';
     }
   }
 
-  const isHtml = (work.category && work.category.includes('HTML')) ||
+  const hasLiveUrl = Boolean(work.live_url);
+  const isHtml = hasLiveUrl || (work.category && work.category.includes('HTML')) ||
+                (work.category && work.category.includes('網頁')) ||
                 (work.file_name && (work.file_name.endsWith('.html') || work.file_name.endsWith('.htm'))) ||
                 Boolean(work.html_content);
 
@@ -2883,7 +2882,10 @@ function previewWork(workId) {
     if (textBox) textBox.style.display = 'none';
     if (iframe) {
       iframe.style.display = 'block';
-      if (work.html_content) {
+      if (work.live_url) {
+        iframe.removeAttribute('srcdoc');
+        iframe.src = work.live_url;
+      } else if (work.html_content) {
         iframe.srcdoc = work.html_content;
       } else if (work.file_url) {
         iframe.src = work.file_url;
