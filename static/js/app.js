@@ -1452,7 +1452,7 @@ function renderActiveAgent() {
             <span class="small text-muted">ReAct Thought-Action-Observation Engine</span>
           </div>
           <div class="terminal-body" id="react-terminal-body">
-            <div class="text-secondary small">準備就緒。點擊上方【啟動 ReAct 推理模擬】按鈕觀察智能體思考軌跡...</div>
+            <div class="text-secondary small">準備就緒。點擊上方【啟動 ReAct 推理模擬】按鈕觀察AI Agent思考軌跡...</div>
           </div>
         </div>
       </div>
@@ -1627,7 +1627,7 @@ function generateLandingPageCode() {
       <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition">
         <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-xl mb-4">03</div>
         <h3 class="text-lg font-bold text-white mb-2">匿名互助答客問</h3>
-        <p class="text-slate-400 text-sm">不懂隨時在線發問，學長姐 AI 智能體 24 小時秒速解惑。</p>
+        <p class="text-slate-400 text-sm">不懂隨時在線發問，學長姐 AI Agent 24 小時秒速解惑。</p>
       </div>
     </div>
   </section>

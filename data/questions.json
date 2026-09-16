@@ -225,13 +225,13 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
     "difficulty": "基礎核心",
-    "question": "自主智能體 (AI Agent) 與傳統對話式聊天機器人 (Chatbot) 最本質之差異在於：",
+    "question": "AI Agent (AI Agent) 與傳統對話式聊天機器人 (Chatbot) 最本質之差異在於：",
     "options": [
       "Agent 模型運算參數量一定比聊天機器人大十倍以上",
       "Agent 具備自主任務分解、環境感知、工具調用 (Tool Calling) 與目標驅動決策行動之閉環能力",
@@ -247,13 +247,13 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
     "difficulty": "基礎核心",
-    "question": "普林斯頓大學與 Google 提出的『ReAct』智能體架構，其核心推論循環步驟為：",
+    "question": "普林斯頓大學與 Google 提出的『ReAct』AI Agent架構，其核心推論循環步驟為：",
     "options": [
       "Read ➔ Act ➔ Close",
       "Thought (思考推理) ➔ Action (工具行動) ➔ Observation (環境觀察反思)",
@@ -269,8 +269,8 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -291,8 +291,8 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -313,8 +313,8 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -335,8 +335,8 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -357,13 +357,13 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
     "difficulty": "進階應用",
-    "question": "企業建構具備『長期記憶 (Long-Term Memory)』能力的 AI 智能體時，通常搭配何種關鍵架構？",
+    "question": "企業建構具備『長期記憶 (Long-Term Memory)』能力的 AI Agent時，通常搭配何種關鍵架構？",
     "options": [
       "手動將每日對話記錄列印並存入檔案夾",
       "檢索增強生成 (RAG) 結合向量資料庫 (Vector Database)，依據語義相似度動態檢索歷史上下文",
@@ -379,8 +379,8 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -401,8 +401,8 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -415,7 +415,7 @@
       "讓所有 Agent 同時爭奪同一個系統權限"
     ],
     "answer": 1,
-    "explanation": "明確的組織職能分工與資料交接介面標準，是多智能體系統順暢協同運作的基石。"
+    "explanation": "明確的組織職能分工與資料交接介面標準，是多 Agent 系統順暢協同運作的基石。"
   },
   {
     "id": "Q020",
@@ -423,8 +423,8 @@
       2
     ],
     "chapter": 2,
-    "chapter_title": "自主智能體（AI Agent）演進：從對話式檢索到自主任務規劃",
-    "module": "【iPAS AI】自主智能體架構與 ReAct 機制",
+    "chapter_title": "AI Agent演進：從對話式檢索到自主任務規劃",
+    "module": "【iPAS AI】AI Agent架構與 ReAct 機制",
     "competency": "生成式 AI 與提示工程",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -2425,18 +2425,18 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
     "difficulty": "基礎核心",
-    "question": "在多智能體系統 (Multi-Agent System, MAS) 中，『階層式協調者 (Supervisor / Hierarchical)』架構的運作方式為：",
+    "question": "在多 Agent 系統 (Multi-Agent System, MAS) 中，『階層式協調者 (Supervisor / Hierarchical)』架構的運作方式為：",
     "options": [
-      "所有智能體各自為政，隨機搶奪系統輸出資源",
+      "所有AI Agent各自為政，隨機搶奪系統輸出資源",
       "由主管 Agent 統籌拆解複雜任務，指派任務給專門職能 Agent (如市場調查、文案撰寫、程式架構)，並進行整合把關",
-      "完全不允許任何智能體之間進行通訊",
-      "強迫所有智能體使用相同之設定提示詞"
+      "完全不允許任何AI Agent之間進行通訊",
+      "強迫所有AI Agent使用相同之設定提示詞"
     ],
     "answer": 1,
     "explanation": "Supervisor 架構能將長鏈複雜工作流進行精準分解與派發，提升系統可靠度。"
@@ -2447,13 +2447,13 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
     "difficulty": "基礎核心",
-    "question": "現代開源多智能體框架 (如 CrewAI, AutoGen, LangGraph) 的核心架構理念為：",
+    "question": "現代開源多 Agent框架 (如 CrewAI, AutoGen, LangGraph) 的核心架構理念為：",
     "options": [
       "模擬現實專業團隊分工：為不同 Agent 設定明確角色 (Role)、目標 (Goal) 與專業背景 (Backstory)",
       "取代電腦內部的作業系統",
@@ -2469,8 +2469,8 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -2491,8 +2491,8 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -2513,8 +2513,8 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -2535,13 +2535,13 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
     "difficulty": "進階應用",
-    "question": "多智能體之間傳遞任務參數與執行結果時，最適當之標準化格式通常採用：",
+    "question": "多 Agent之間傳遞任務參數與執行結果時，最適當之標準化格式通常採用：",
     "options": [
       "模糊不清的口語錄音檔",
       "結構化數據格式 (如 JSON / XML) 或 具備固定錨點標籤之 Markdown 規格",
@@ -2557,8 +2557,8 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -2579,8 +2579,8 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
@@ -2601,13 +2601,13 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
     "difficulty": "高階實戰",
-    "question": "相較於單一長提示詞 (Single Mega-Prompt)，採用多智能體工作流 (Multi-Agent Workflow) 的顯著優勢在於：",
+    "question": "相較於單一長提示詞 (Single Mega-Prompt)，採用多 Agent工作流 (Multi-Agent Workflow) 的顯著優勢在於：",
     "options": [
       "模組化分工大幅降低單次推論之上下文混淆，且各節點易於單獨調優、維護與除錯",
       "完全不需要消耗任何 API Token 額度",
@@ -2615,7 +2615,7 @@
       "完全不需要任何商業規格設計"
     ],
     "answer": 1,
-    "explanation": "多智能體工作流具備高內聚、低耦合特性，利於大型複雜商業專案的分工推進。"
+    "explanation": "多 Agent工作流具備高內聚、低耦合特性，利於大型複雜商業專案的分工推進。"
   },
   {
     "id": "Q120",
@@ -2623,13 +2623,13 @@
       12
     ],
     "chapter": 12,
-    "chapter_title": "多智能體協同架構（Multi-Agent System）：虛擬創業團隊",
-    "module": "【iPAS AI】多智能體協同架構與 RAG 檢索增強",
+    "chapter_title": "多 Agent 協同架構（Multi-Agent System）：虛擬創業團隊",
+    "module": "【iPAS AI】多 Agent 協同架構與 RAG 檢索增強",
     "competency": "AI 系統規劃與倫理法規",
     "cert": "iPAS AI 應用規劃師",
     "subject": "生成式 AI 應用與規劃",
     "difficulty": "高階實戰",
-    "question": "企管專業人員在多智能體時代最無可取代的『指揮官 (Orchestrator)』角色在於：",
+    "question": "企管專業人員在多 Agent時代最無可取代的『指揮官 (Orchestrator)』角色在於：",
     "options": [
       "能夠親手手敲所有的底層 C 語言編譯器代碼",
       "深刻理解企業商業模式、精準定義業務工作分解結構 (WBS)，並設計AI Agent 協同的驗收與授權閉環",
