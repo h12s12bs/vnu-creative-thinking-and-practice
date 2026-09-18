@@ -70,7 +70,7 @@
     "badge": "心理模型探勘",
     "role": "深度使用者研究專家 ✕ 心理學人物誌架構師",
     "goal": "構建具備靈魂的具象化受眾人物誌，完整還原 Says / Thinks / Does / Feels 四象限與深層 Pains / Gains。",
-    "description": "避免團隊陷入『自嗨』與主觀臆測，為團隊塑造一位有血有肉的虛擬核心代表人物，作為後續所有定價、文案與功能設計的指南針。",
+    "description": "避免團隊陷入『閉門造車』與主觀臆測，為團隊塑造一位有血有肉的虛擬核心代表人物，作為後續所有定價、文案與功能設計的指南針。",
     "inputs": [
       {
         "field": "persona_name",
@@ -197,9 +197,9 @@
     "english_name": "Business Model Canvas Agent",
     "icon": "fa-th-large",
     "color": "#2563EB",
-    "badge": "商業閉環檢驗",
+    "badge": "商業完整流程檢驗",
     "role": "商業模式分析師 ✕ 創業收支顧問",
-    "goal": "完整構建商業模式 9 大模組，嚴格檢視價值主張與收益流之閉環，指出最脆弱的成本漏洞。",
+    "goal": "完整構建商業模式 9 大模組，嚴格檢視價值主張與收益流之完整流程，指出最脆弱的成本漏洞。",
     "description": "將空泛的創意轉化為可持續獲利的商業全景圖，自動盤點客戶關係、關鍵活動與合作夥伴，並試算損益兩平點。",
     "inputs": [
       {
@@ -234,7 +234,7 @@
       },
       {
         "step": "Thought 2",
-        "desc": "為關鍵夥伴模組加入分潤激勵機制（每售出一份給予筆記作者 30% 分潤），補齊閉環。"
+        "desc": "為關鍵夥伴模組加入分潤激勵機制（每售出一份給予筆記作者 30% 分潤），補齊完整流程。"
       },
       {
         "step": "Decision",
@@ -369,7 +369,7 @@
       },
       {
         "step": "Decision",
-        "desc": "產出《品牌核心規格書》，包含色彩代碼 (HEX)、字體建議、語氣指引與網頁視覺生成指令。"
+        "desc": "產出《品牌核心規格書》，包含色彩色碼 (HEX)、字體建議、語氣指引與網頁視覺生成指令。"
       }
     ],
     "output_template": {
@@ -496,7 +496,7 @@
       },
       {
         "step": "Thought 2",
-        "desc": "撰寫乾淨、免編譯且具備詳細中文註解的單一 HTML5 代碼，並備妥 GitHub Pages 3 分鐘部署指引。"
+        "desc": "撰寫乾淨、免編譯且具備詳細中文註解的單一 HTML5 程式碼，並備妥 GitHub Pages 3 分鐘部署指引。"
       },
       {
         "step": "Decision",
@@ -516,6 +516,6 @@
       ],
       "github_pages_sop": "1. 登入 GitHub ➔ 2. 新增公開 Repository ➔ 3. 拖曳上傳此 index.html ➔ 4. Settings ➔ Pages 選擇 main 分支儲存 ➔ 5. 取得全世界公開網址！"
     },
-    "external_prompt": "【身分】你是頂級的前端 Vibe Coding 專家，精通以極簡無建置架構產出世界級水準的原型網頁。\n【任務】請根據以下商業企劃資訊，產出一個『單一 HTML 檔案』的完整可運行網頁代碼：\n- 專案名稱與標語：{project_title}\n- 三大特色：{three_features}\n- 品牌配色：{theme_colors}\n【技術規格要求】\n1. 必須是單一 index.html 檔案，不得引用外部本地 CSS/JS 檔案。\n2. 樣式必須採用 `<script src=\"https://cdn.tailwindcss.com\"><\\/script>` CDN。\n3. 圖標採用 FontAwesome 或純 SVG。\n4. 包含 5 大標準區塊：現代導航列 (Navbar)、強烈視覺 Hero 區、3 列特色卡片 (Features)、定價方案 (Pricing)、預購表單與 Footer。\n5. 點擊按鈕時請以原生 JavaScript 彈出友善的『預約成功』互動通知！"
+    "external_prompt": "【身分】你是頂級的前端 Vibe Coding 專家，精通以極簡無建置架構產出世界級水準的原型網頁。\n【任務】請根據以下商業企劃資訊，產出一個『單一 HTML 檔案』的完整可運行網頁程式碼：\n- 專案名稱與標語：{project_title}\n- 三大特色：{three_features}\n- 品牌配色：{theme_colors}\n【技術規格要求】\n1. 必須是單一 index.html 檔案，不得引用外部本地 CSS/JS 檔案。\n2. 樣式必須採用 `<script src=\"https://cdn.tailwindcss.com\"><\\/script>` CDN。\n3. 圖標採用 FontAwesome 或純 SVG。\n4. 包含 5 大標準區塊：現代導航列 (Navbar)、強烈視覺 Hero 區、3 列特色卡片 (Features)、定價方案 (Pricing)、預購表單與 Footer。\n5. 點擊按鈕時請以原生 JavaScript 彈出友善的『預約成功』互動通知！"
   }
 ]

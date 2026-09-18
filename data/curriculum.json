@@ -48,7 +48,7 @@
           {
             "item": "商業模式畫布 (BMC) 與 MVP 驗證方案",
             "weight": "8%",
-            "desc": "商業模式九宮格閉環檢驗與低成本冒煙測試方案。"
+            "desc": "商業模式九宮格完整流程檢驗與低成本冒煙測試方案。"
           },
           {
             "item": "企劃書上傳教學網站與口頭發表",
@@ -179,7 +179,7 @@
       "title": "商業模式畫布（BMC）：九大模組架構與價值主張",
       "subtitle": "商業模式九宮格全景圖",
       "hook": "光有好點子賺不了錢！Uber 沒買一輛車，Airbnb 沒蓋一間房，他們的商業模式到底厲害在哪裡？",
-      "concept": "拆解商業模式九宮格（Business Model Canvas）：價值主張、目標客群、接觸管道、顧客關係、收益來源、關鍵資源、關鍵活動、關鍵夥伴、成本結構；架構完整商業邏輯閉環。",
+      "concept": "拆解商業模式九宮格（Business Model Canvas）：價值主張、目標客群、接觸管道、顧客關係、收益來源、關鍵資源、關鍵活動、關鍵夥伴、成本結構；架構完整商業邏輯完整流程。",
       "antigravity_demo": "演示將個人的選題輸入 Antigravity，AI 即時自動填寫九宮格草案，並提出關鍵成本漏洞警訊。",
       "practice": "個人合作在工作表上填寫《創業專案商業模式九宮格》，重點鎖定『價值主張』與『收益來源』。",
       "wrap_up": "商業模式畫布是一份『動態假設清單』，每一個格子都是等待被市場檢驗的猜想。",
@@ -250,7 +250,7 @@
       "subtitle": "AI 多AI Agent協同概念在微型創業之實務應用",
       "hook": "你只有一個人或一個個人，如何能像百人外商公司一樣同時擁有專屬公關、文案、財務與技術支援？",
       "concept": "多AI Agent協同概念：主管AI Agent協調各專責AI Agent分工；角色設定、工作交接與合作流程。",
-      "antigravity_demo": "演示 Antigravity 內建之AI Agent協作流程：研究AI Agent先抓市場資料 ➔ 文案AI Agent產出草稿 ➔ 審核AI Agent進行品質把關的一條龍閉環。",
+      "antigravity_demo": "演示 Antigravity 內建之AI Agent協作流程：研究AI Agent先抓市場資料 ➔ 文案AI Agent產出草稿 ➔ 審核AI Agent進行品質把關的一條龍完整流程。",
       "practice": "填寫工作表五《多 Agent虛擬組織職能配置表》：為團隊配置 3 類虛擬員工 Agent，定義每位AI Agent的職責與啟動提示詞。",
       "wrap_up": "未來的微型企業競爭力，取決於創辦人指揮與串聯 AI Agent集群的調度能力。",
       "clear_prompt": "【角色】Multi-Agent 系統設計師。【目標】為校園外送點餐團隊規劃 3 位協同AI Agent：1. 菜單分析AI Agent；2. 客服對答AI Agent；3. 營收對帳AI Agent。請列出各自的 System Prompt 與協同邏輯。",
