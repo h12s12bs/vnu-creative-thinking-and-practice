@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 時代的創意發想與微型創業 ｜ 18 週全景教學簡報系統</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -16,7 +17,11 @@
                     },
                     colors: {
                         navy: { 900: '#070d1e', 800: '#0f172a', 700: '#1e293b' },
-                        brand: { blue: '#2563eb', teal: '#0d9488', emerald: '#059669', amber: '#d97706', gold: '#f59e0b', indigo: '#4f46e5' }
+                        brand: { blue: '#2563eb', teal: '#0d9488', emerald: '#059669', amber: '#d97706', gold: '#f59e0b', indigo: '#4f46e5' },
+                        warm: { 50: '#FAF8F5', 100: '#F4EFE6', 200: '#EAE4D6', 300: '#DCD4C2', 400: '#C2B69D', 500: '#9E9075', 600: '#7D7056', 700: '#5E533E', 800: '#41392A', 900: '#262016' },
+                        terracotta: { 50: '#FFF5F2', 100: '#FFE8E1', 200: '#FFD2C4', 300: '#FFAF97', 400: '#F98160', 500: '#E76F51', 600: '#CE5334', 700: '#A93B20', 800: '#87301B', 900: '#6E2A19' },
+                        sage: { 50: '#F4F7F5', 100: '#E3EBE6', 200: '#C5D7CC', 300: '#9FBFA9', 400: '#75A384', 500: '#2A9D8F', 600: '#228176', 700: '#1C665E', 800: '#18514B', 900: '#14423D' },
+                        amberwood: { 50: '#FDF9F0', 100: '#FBF0DD', 500: '#DDA15E', 600: '#BC6C25' }
                     }
                 }
             }
@@ -119,6 +124,30 @@
             line-height: 1.38 !important;
             word-break: break-word;
         }
+        
+        /* 自媒體電商風格專屬大字體工具 */
+        .slide-text-badge { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-meta { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-body { font-size: 1.45rem !important; line-height: 1.5 !important; font-weight: 600 !important; }
+        .slide-text-subhead { font-size: 1.65rem !important; line-height: 1.3 !important; font-weight: 800 !important; }
+        .slide-text-title { font-size: 2.25rem !important; line-height: 1.2 !important; font-weight: 900 !important; }
+        .slide-text-hero { font-size: 3rem !important; line-height: 1.15 !important; font-weight: 900 !important; }
+        .slide-text-stat { font-size: 3.5rem !important; line-height: 1.05 !important; font-weight: 900 !important; }
+        @media (max-width: 1024px) {
+            .slide-text-body { font-size: 1.25rem !important; }
+            .slide-text-subhead { font-size: 1.4rem !important; }
+            .slide-text-title { font-size: 1.75rem !important; }
+            .slide-text-hero { font-size: 2.25rem !important; }
+            .slide-text-stat { font-size: 2.75rem !important; }
+        }
+        @media (max-width: 640px) {
+            .slide-text-body { font-size: 1.05rem !important; }
+            .slide-text-subhead { font-size: 1.2rem !important; }
+            .slide-text-title { font-size: 1.4rem !important; }
+            .slide-text-hero { font-size: 1.75rem !important; }
+            .slide-text-stat { font-size: 2.2rem !important; }
+        }
+    
         .point-multi-card {
             font-size: 24pt !important;
             line-height: 1.32 !important;
@@ -129,7 +158,31 @@
                 font-size: 26pt !important;
                 line-height: 1.35 !important;
             }
-            .point-multi-card {
+            
+        /* 自媒體電商風格專屬大字體工具 */
+        .slide-text-badge { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-meta { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-body { font-size: 1.45rem !important; line-height: 1.5 !important; font-weight: 600 !important; }
+        .slide-text-subhead { font-size: 1.65rem !important; line-height: 1.3 !important; font-weight: 800 !important; }
+        .slide-text-title { font-size: 2.25rem !important; line-height: 1.2 !important; font-weight: 900 !important; }
+        .slide-text-hero { font-size: 3rem !important; line-height: 1.15 !important; font-weight: 900 !important; }
+        .slide-text-stat { font-size: 3.5rem !important; line-height: 1.05 !important; font-weight: 900 !important; }
+        @media (max-width: 1024px) {
+            .slide-text-body { font-size: 1.25rem !important; }
+            .slide-text-subhead { font-size: 1.4rem !important; }
+            .slide-text-title { font-size: 1.75rem !important; }
+            .slide-text-hero { font-size: 2.25rem !important; }
+            .slide-text-stat { font-size: 2.75rem !important; }
+        }
+        @media (max-width: 640px) {
+            .slide-text-body { font-size: 1.05rem !important; }
+            .slide-text-subhead { font-size: 1.2rem !important; }
+            .slide-text-title { font-size: 1.4rem !important; }
+            .slide-text-hero { font-size: 1.75rem !important; }
+            .slide-text-stat { font-size: 2.2rem !important; }
+        }
+    
+        .point-multi-card {
                 font-size: 22pt !important;
                 line-height: 1.30 !important;
             }
@@ -139,7 +192,31 @@
                 font-size: 24pt !important;
                 line-height: 1.32 !important;
             }
-            .point-multi-card {
+            
+        /* 自媒體電商風格專屬大字體工具 */
+        .slide-text-badge { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-meta { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-body { font-size: 1.45rem !important; line-height: 1.5 !important; font-weight: 600 !important; }
+        .slide-text-subhead { font-size: 1.65rem !important; line-height: 1.3 !important; font-weight: 800 !important; }
+        .slide-text-title { font-size: 2.25rem !important; line-height: 1.2 !important; font-weight: 900 !important; }
+        .slide-text-hero { font-size: 3rem !important; line-height: 1.15 !important; font-weight: 900 !important; }
+        .slide-text-stat { font-size: 3.5rem !important; line-height: 1.05 !important; font-weight: 900 !important; }
+        @media (max-width: 1024px) {
+            .slide-text-body { font-size: 1.25rem !important; }
+            .slide-text-subhead { font-size: 1.4rem !important; }
+            .slide-text-title { font-size: 1.75rem !important; }
+            .slide-text-hero { font-size: 2.25rem !important; }
+            .slide-text-stat { font-size: 2.75rem !important; }
+        }
+        @media (max-width: 640px) {
+            .slide-text-body { font-size: 1.05rem !important; }
+            .slide-text-subhead { font-size: 1.2rem !important; }
+            .slide-text-title { font-size: 1.4rem !important; }
+            .slide-text-hero { font-size: 1.75rem !important; }
+            .slide-text-stat { font-size: 2.2rem !important; }
+        }
+    
+        .point-multi-card {
                 font-size: 20pt !important;
                 line-height: 1.28 !important;
             }
@@ -149,7 +226,31 @@
                 font-size: 16pt !important;
                 line-height: 1.28 !important;
             }
-            .point-multi-card {
+            
+        /* 自媒體電商風格專屬大字體工具 */
+        .slide-text-badge { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-meta { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-body { font-size: 1.45rem !important; line-height: 1.5 !important; font-weight: 600 !important; }
+        .slide-text-subhead { font-size: 1.65rem !important; line-height: 1.3 !important; font-weight: 800 !important; }
+        .slide-text-title { font-size: 2.25rem !important; line-height: 1.2 !important; font-weight: 900 !important; }
+        .slide-text-hero { font-size: 3rem !important; line-height: 1.15 !important; font-weight: 900 !important; }
+        .slide-text-stat { font-size: 3.5rem !important; line-height: 1.05 !important; font-weight: 900 !important; }
+        @media (max-width: 1024px) {
+            .slide-text-body { font-size: 1.25rem !important; }
+            .slide-text-subhead { font-size: 1.4rem !important; }
+            .slide-text-title { font-size: 1.75rem !important; }
+            .slide-text-hero { font-size: 2.25rem !important; }
+            .slide-text-stat { font-size: 2.75rem !important; }
+        }
+        @media (max-width: 640px) {
+            .slide-text-body { font-size: 1.05rem !important; }
+            .slide-text-subhead { font-size: 1.2rem !important; }
+            .slide-text-title { font-size: 1.4rem !important; }
+            .slide-text-hero { font-size: 1.75rem !important; }
+            .slide-text-stat { font-size: 2.2rem !important; }
+        }
+    
+        .point-multi-card {
                 font-size: 14pt !important;
                 line-height: 1.25 !important;
             }
@@ -166,7 +267,31 @@
                 font-size: 15pt !important;
                 line-height: 1.32 !important;
             }
-            .point-multi-card {
+            
+        /* 自媒體電商風格專屬大字體工具 */
+        .slide-text-badge { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-meta { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-body { font-size: 1.45rem !important; line-height: 1.5 !important; font-weight: 600 !important; }
+        .slide-text-subhead { font-size: 1.65rem !important; line-height: 1.3 !important; font-weight: 800 !important; }
+        .slide-text-title { font-size: 2.25rem !important; line-height: 1.2 !important; font-weight: 900 !important; }
+        .slide-text-hero { font-size: 3rem !important; line-height: 1.15 !important; font-weight: 900 !important; }
+        .slide-text-stat { font-size: 3.5rem !important; line-height: 1.05 !important; font-weight: 900 !important; }
+        @media (max-width: 1024px) {
+            .slide-text-body { font-size: 1.25rem !important; }
+            .slide-text-subhead { font-size: 1.4rem !important; }
+            .slide-text-title { font-size: 1.75rem !important; }
+            .slide-text-hero { font-size: 2.25rem !important; }
+            .slide-text-stat { font-size: 2.75rem !important; }
+        }
+        @media (max-width: 640px) {
+            .slide-text-body { font-size: 1.05rem !important; }
+            .slide-text-subhead { font-size: 1.2rem !important; }
+            .slide-text-title { font-size: 1.4rem !important; }
+            .slide-text-hero { font-size: 1.75rem !important; }
+            .slide-text-stat { font-size: 2.2rem !important; }
+        }
+    
+        .point-multi-card {
                 font-size: 13pt !important;
                 line-height: 1.28 !important;
             }
@@ -176,7 +301,31 @@
                 font-size: 1.025rem !important; /* ~16.4px */
                 line-height: 1.45 !important;
             }
-            .point-multi-card {
+            
+        /* 自媒體電商風格專屬大字體工具 */
+        .slide-text-badge { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-meta { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-body { font-size: 1.45rem !important; line-height: 1.5 !important; font-weight: 600 !important; }
+        .slide-text-subhead { font-size: 1.65rem !important; line-height: 1.3 !important; font-weight: 800 !important; }
+        .slide-text-title { font-size: 2.25rem !important; line-height: 1.2 !important; font-weight: 900 !important; }
+        .slide-text-hero { font-size: 3rem !important; line-height: 1.15 !important; font-weight: 900 !important; }
+        .slide-text-stat { font-size: 3.5rem !important; line-height: 1.05 !important; font-weight: 900 !important; }
+        @media (max-width: 1024px) {
+            .slide-text-body { font-size: 1.25rem !important; }
+            .slide-text-subhead { font-size: 1.4rem !important; }
+            .slide-text-title { font-size: 1.75rem !important; }
+            .slide-text-hero { font-size: 2.25rem !important; }
+            .slide-text-stat { font-size: 2.75rem !important; }
+        }
+        @media (max-width: 640px) {
+            .slide-text-body { font-size: 1.05rem !important; }
+            .slide-text-subhead { font-size: 1.2rem !important; }
+            .slide-text-title { font-size: 1.4rem !important; }
+            .slide-text-hero { font-size: 1.75rem !important; }
+            .slide-text-stat { font-size: 2.2rem !important; }
+        }
+    
+        .point-multi-card {
                 font-size: 0.90rem !important; /* ~14.4px */
                 line-height: 1.40 !important;
             }
@@ -196,7 +345,31 @@
                 font-size: 0.925rem !important; /* ~14.8px */
                 line-height: 1.40 !important;
             }
-            .point-multi-card {
+            
+        /* 自媒體電商風格專屬大字體工具 */
+        .slide-text-badge { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-meta { font-size: 1.15rem !important; line-height: 1.35 !important; font-weight: 700 !important; }
+        .slide-text-body { font-size: 1.45rem !important; line-height: 1.5 !important; font-weight: 600 !important; }
+        .slide-text-subhead { font-size: 1.65rem !important; line-height: 1.3 !important; font-weight: 800 !important; }
+        .slide-text-title { font-size: 2.25rem !important; line-height: 1.2 !important; font-weight: 900 !important; }
+        .slide-text-hero { font-size: 3rem !important; line-height: 1.15 !important; font-weight: 900 !important; }
+        .slide-text-stat { font-size: 3.5rem !important; line-height: 1.05 !important; font-weight: 900 !important; }
+        @media (max-width: 1024px) {
+            .slide-text-body { font-size: 1.25rem !important; }
+            .slide-text-subhead { font-size: 1.4rem !important; }
+            .slide-text-title { font-size: 1.75rem !important; }
+            .slide-text-hero { font-size: 2.25rem !important; }
+            .slide-text-stat { font-size: 2.75rem !important; }
+        }
+        @media (max-width: 640px) {
+            .slide-text-body { font-size: 1.05rem !important; }
+            .slide-text-subhead { font-size: 1.2rem !important; }
+            .slide-text-title { font-size: 1.4rem !important; }
+            .slide-text-hero { font-size: 1.75rem !important; }
+            .slide-text-stat { font-size: 2.2rem !important; }
+        }
+    
+        .point-multi-card {
                 font-size: 0.825rem !important; /* ~13.2px */
                 line-height: 1.35 !important;
             }
@@ -3257,1478 +3430,1594 @@
   {
     "week_num": 3,
     "module": "模組一：AI 浪潮與企劃思維啟蒙",
-    "title": "行銷企劃目標：問題界定、機會洞察與具體生動的目標設定",
-    "subtitle": "曾光華教授 CH02 行銷企劃目標、策略 vs 技術層次、漢堡店案例、四個設定途徑、SMART 與圖像感注入",
+    "title": "CH02 行銷企劃目標：問題界定、機會洞察與具體生動的目標設定",
+    "subtitle": "曾光華教授 CH02 核心學理 ｜ 策略 vs 技術層次 ｜ 四大設定途徑 ｜ SMART 圖像感注入",
     "slides": [
       {
-        "layout": "cover",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
+        "layout": "hero",
+        "badge": "觀念躍升 · 01/60",
+        "module": "模組一：AI 浪潮與企劃思維啟蒙",
         "title": "行銷企劃目標：問題界定、機會洞察與具體生動的目標設定",
-        "subtitle": "曾光華教授 CH02 核心學理 ｜ 策略 vs 技術層次 ｜ 四個設定途徑 ｜ SMART 與圖像感注入",
-        "meta": [
-          "萬能科技大學 企業管理系",
-          "授課教師：邱俊維 博士 / 助理教授",
-          "2小時深度企劃與 AI 實踐"
-        ]
+        "subtitle": "曾光華教授 CH02 核心學理 ｜ 策略 vs 技術層次 ｜ 四大設定途徑 ｜ SMART 圖像感注入",
+        "tagline": "曾光華教授行銷心法 ✕ Google Antigravity 工具鏈 ✕ 個人獨立 AI 協同推演",
+        "stats": [
+          {
+            "num": "100%",
+            "label": "個人獨立實踐率"
+          },
+          {
+            "num": "10x",
+            "label": "企劃思維推演效率"
+          },
+          {
+            "num": "0 元",
+            "label": "起步雲端發布成本"
+          }
+        ],
+        "coreConcept": "掌握問題本質與真因洞察，結合 AI 協同推演，每位同學皆能獨立完成高水準微型創業企劃"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "商業情境震撼破題",
-        "title": "業績下滑 30%，狂打八折促銷為何反而加速品牌走向死亡？",
-        "subtitle": "當行銷主管面對業績警訊時，最危險的反應就是『病急亂投醫』",
-        "left": {
-          "title": "常見的病急亂投醫反應",
-          "theme": "blue",
-          "points": [
-            "業績警訊一響，主管立刻要求下週啟動全館八折、買一送一等促銷戰",
-            "表面效果：短期營收看似微幅回升，但毛利率雪崩，原有忠誠顧客感覺被背叛",
-            "長期惡果：促銷一停業績再次探底，品牌形象嚴重廉價化，從此陷入降價泥淖",
-            "企劃大腦的警鐘：你看到的是真正的病因，還是只是身體發燒的表面徵狀？"
-          ]
-        },
-        "right": {
-          "title": "專業企劃大腦的深度診斷",
-          "theme": "teal",
-          "points": [
-            "穿透表象：銷售下滑只是結果，背後的真因究竟是產品品質、服務體驗還是競品替代？",
-            "層次分明：區分這是短期操作的技術問題，還是牽涉品牌核心定位的戰略轉折？",
-            "目標錨定：設定真正能解決問題核心的企劃目標，而非飲鴆止渴的盲目數字衝刺",
-            "大師箴言：『在錯誤的方向上狂奔，再快的速度也只是加速走向毀滅！』"
-          ]
-        }
+        "layout": "comparison",
+        "badge": "商業震撼破題 · 02/60",
+        "sec": "企劃目標本質",
+        "title": "業績下滑 30%！狂打八折促銷為何加速走向衰亡？",
+        "subtitle": "當行銷人面對業績警訊時，最危險的直覺反應就是『病急亂投醫』",
+        "leftTitle": "常見盲目反應（治標不治本）",
+        "leftBadge": "表面徵狀處置",
+        "leftPoints": [
+          "業績一有警訊，主管立刻要求啟動全館八折、買一送一等流血折扣",
+          "短期營收看似微幅回升，但毛利嚴重受損且老顧客覺得被背叛",
+          "促銷活動一結束業績立刻再次探底，品牌從此陷入價格戰泥淖",
+          "錯把『營收下滑』當作問題本身，未探究顧客不買的背後真因"
+        ],
+        "rightTitle": "專業企劃大腦（對症下藥）",
+        "rightBadge": "核心真因突破",
+        "rightPoints": [
+          "層次分明：區分這是短期操作的技術問題，還是品牌核心的策略問題",
+          "真因探究：透過 5-Whys 深入釐清是產品質量、服務體驗還是替代品衝擊",
+          "目標錨定：設定能解決核心痛點的企劃目標，建立差異化護城河",
+          "大師指引：花一小時徹底釐清問題真因，勝過花三個月執行無效方案"
+        ],
+        "insight": "曾光華教授提示：在錯誤的方向上狂奔，再快的速度也只是加速走向失敗。找對真因勝過盲目降價。"
       },
       {
-        "layout": "1card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "大師企劃黃金金句",
-        "title": "曾光華教授企劃金句：找對問題比提出漂亮解方重要十倍",
-        "subtitle": "花一小時界定問題，勝過花三個月執行錯誤的企劃方案",
-        "card": {
-          "title": "曾光華教授對企劃目標的深刻洞察",
-          "theme": "blue",
-          "points": [
-            "『行銷企劃永遠源自於問題與機會。如果連我們要解決什麼問題都沒搞清楚，後面的創意與執行全是徒勞。』",
-            "『設定行銷企劃目標是整個企劃程序中最關鍵、最容易被輕忽的一步。』",
-            "『一個好的企劃目標，必須像黑夜中的燈塔，既有理性的客觀刻度，又有召喚團隊前行的情感溫度！』"
-          ]
-        }
+        "layout": "quote_takeaway",
+        "badge": "大師思維 · 03/60",
+        "sec": "企劃目標本質",
+        "title": "曾光華教授企劃箴言：目標即黑夜中的燈塔",
+        "subtitle": "企劃目標的靈魂在於兼具理性刻度與感性召喚力",
+        "quote": "行銷企劃永遠始於問題與機會。如果企劃目標模糊不清，團隊的所有熱情與創意，終將在錯誤的執行細節中消耗殆盡。",
+        "author": "曾光華 教授 ｜ 國立中正大學行銷學名譽教授",
+        "pillars": [
+          {
+            "title": "理性的客觀刻度",
+            "desc": "明確的數值與時間邊界，讓每一分資源投入都能被精準衡量與驗證。"
+          },
+          {
+            "title": "感性的召喚力量",
+            "desc": "具體生動的圖像感與故事性，激發創業者不畏艱難共同實現願景。"
+          },
+          {
+            "title": "動態的校準羅盤",
+            "desc": "目標並非刻在石頭上的教條，而是隨著市場反饋動態校準的導航儀。"
+          }
+        ],
+        "insight": "真正頂尖的企劃案，開篇的目標設定就能讓閱讀者感受到躍動的生命力與強烈的必成信念。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "概念深度辨析",
-        "title": "行銷問題的雙重層次：【策略層次】與【技術層次】之本質區隔",
-        "subtitle": "治標還是治本？清楚界定層次才能對症下藥",
-        "left": {
-          "title": "策略層次問題（Strategic Level）",
-          "theme": "blue",
-          "points": [
-            "性質範疇：攸關企業長期生存、核心競爭力、新產品線發展或目標客群轉移",
-            "決策主體：公司高層董事會、事業部主管、跨部門策略委員會",
-            "影響期程：影響深遠，通常為 3 到 5 年甚至更久的長遠佈局",
-            "典型問題：面對高齡化與少子化，現有產品線是否該徹底轉型或開闢全新市場？"
-          ]
-        },
-        "right": {
-          "title": "技術層次問題（Tactical Level）",
-          "theme": "teal",
-          "points": [
-            "性質範疇：在既定策略方向下，針對單一行銷工具（4P）的操作優化與執行微調",
-            "決策主體：產品經理、社群小編、活動企劃人員、業務第一線主管",
-            "影響期程：短期至中期（數天、數週到數個月）",
-            "典型問題：這波社群廣告點擊率偏低該如何調整視覺？門市陳列如何吸引眼球？"
-          ]
-        }
+        "layout": "four_pillars",
+        "badge": "學理架構 · 04/60",
+        "sec": "企劃目標本質",
+        "title": "行銷企劃目標的四大核心功能",
+        "subtitle": "曾光華教授學理精髓：目標不只是數字，更是企劃案的心臟",
+        "pillars": [
+          {
+            "icon": "compass",
+            "name": "1. 指引資源聚焦",
+            "detail": "確立最優先突破口，避免微型創業有限的人力與資金分散在次要雜事。"
+          },
+          {
+            "icon": "users",
+            "name": "2. 凝聚合作共識",
+            "detail": "為個人獨立專案與 AI 協同工作建立統一語言，讓所有產出緊扣同一主軸。"
+          },
+          {
+            "icon": "bar-chart-2",
+            "name": "3. 衡量實踐績效",
+            "detail": "提供清晰客觀的驗證標竿，作為期中提案審查與期末成果發布之依據。"
+          },
+          {
+            "icon": "zap",
+            "name": "4. 激發實踐動能",
+            "detail": "具備挑戰性且可實現的願景，賦予創業者持續推進原型研發的內在動力。"
+          }
+        ],
+        "insight": "企劃目標猶如建築藍圖的基樁，基樁越穩固清晰，後續搭建的商業模式與行銷方案才不會崩塌。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "策略 vs 技術案例",
-        "title": "曾光華經典教材案例剖析：某兒童食品商的長期因應之道",
-        "subtitle": "面對國外品牌大軍壓陣與國內少子化衝擊，企劃大腦如何破局？",
-        "left": {
-          "title": "企業面臨的險峻情境",
-          "theme": "blue",
-          "points": [
-            "外部衝擊：進口知名母嬰品牌大舉搶佔實體百貨通路，且台灣少子化趨勢日益嚴峻，新生兒年年創新低",
-            "內部焦慮：業績連續兩年下滑，第一線業務不斷抱怨價格太貴，要求降價促銷",
-            "高層警醒：董事會意識到這絕非降價促銷等『技術層次』所能扭轉，必須從『策略層次』重新思考"
-          ]
-        },
-        "right": {
-          "title": "策略層次的企劃破局方案",
-          "theme": "teal",
-          "points": [
-            "戰略決策：董事會決議增設全新產品線，將目標客群由嬰幼兒向上延伸至『銀髮營養機能食品』",
-            "資源重組：運用既有低敏食品研發技術與無塵室生產線，開拓高齡銀髮機能果凍與易咀嚼餐點",
-            "成果印證：跳脫殘酷的少子化紅海，成功搶佔蓬勃發展的高齡銀髮藍海市場！"
-          ]
-        }
+        "layout": "stepper",
+        "badge": "推演程序 · 05/60",
+        "sec": "企劃目標本質",
+        "title": "企劃程序的起承轉合：為何目標設定決定一切？",
+        "subtitle": "從現況診斷到執行落地的關鍵傳遞鏈條",
+        "steps": [
+          {
+            "tag": "起：環境與問題",
+            "phase": "現況盤點",
+            "title": "發掘核心痛點與機會",
+            "desc": "透徹分析宏觀趨勢、競爭局勢與目標受眾未滿足之焦慮與渴望。"
+          },
+          {
+            "tag": "承：目標定錨",
+            "phase": "關鍵樞紐",
+            "title": "確立具體生動的企劃目標",
+            "desc": "將模糊痛點轉化為具備量化刻度、期限與圖像感的戰略指針。"
+          },
+          {
+            "tag": "轉：策略開展",
+            "phase": "方案設計",
+            "title": "規劃 STP 與 4P 組合",
+            "desc": "圍繞企劃目標量身打造定位、產品特色、定價機制與傳播通暢管道。"
+          },
+          {
+            "tag": "合：執行驗證",
+            "phase": "成果發布",
+            "title": "雲端落地與效益評估",
+            "desc": "透過獨立網站部署與真實互動，對照初始目標驗證商業假設。"
+          }
+        ],
+        "insight": "目標是企劃程序的『承上啟下』核心節點；目標偏了一度，後續的策略與執行方案就會偏離十萬八千里。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "策略層次決策核心",
-        "title": "策略層次決策的核心：增設新產品線或開拓新客群的戰略眼光",
-        "subtitle": "企劃人不可整天埋首文案細節，必須培養抬頭看路的戰略視野",
-        "left": {
-          "title": "戰略視野的三大自我提問",
-          "theme": "blue",
-          "points": [
-            "『我們的核心技術與資產，還能跨界應用在哪些高潛力的新市場？』",
-            "『目前的目標客群在未來五年內會增長還是萎縮？我們該跟著他們一起長大嗎？』",
-            "『如果我們不做這項戰略轉型，三年後的我們會被誰徹底顛覆？』"
-          ]
-        },
-        "right": {
-          "title": "戰略落地的紀律配套",
-          "theme": "teal",
-          "points": [
-            "戰略企劃絕非空口白話，必須經過嚴格的研發可行性、法規審查與市場規模試算",
-            "建立階段性戰略試水溫方案，以敏捷原型小步快跑驗證市場接受度",
-            "適時割捨無法產生綜效的邊緣老舊業務，將資源集中於戰略切入點"
-          ]
-        }
-      },
-      {
-        "layout": "3card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "行銷問題分類",
-        "title": "企業常見的四大行銷問題類型（曾光華問題分類架構）",
-        "subtitle": "精準識別問題種類，才能快速匹配正確的分析框架與解方",
+        "layout": "visual_matrix",
+        "badge": "痛點警示 · 06/60",
+        "sec": "企劃目標本質",
+        "title": "企劃目標模糊帶來的商業三大隱形損耗",
+        "subtitle": "許多微型創業失敗並非不夠努力，而是死於目標定義不清的無謂消耗",
         "cards": [
           {
-            "title": "1. 銷售與營收障礙",
-            "theme": "blue",
-            "points": [
-              "新客獲取成本高昂、舊客回購率低迷",
-              "促銷檔期疲乏、客單價持續萎縮",
-              "需深究產品性價比與消費者利益感受"
-            ]
+            "icon": "alert-triangle",
+            "title": "1. 方向迷航與多頭馬車",
+            "desc": "創業者每天忙於處理日常瑣碎事務，抓不住真正能帶動成長的關鍵槓桿。"
           },
           {
-            "title": "2. 品牌認知老化與模糊",
-            "theme": "teal",
-            "points": [
-              "品牌失去對年輕世代的吸引力與話題感",
-              "品牌定位與競爭對手嚴重重疊同質化",
-              "需透過文化轉譯與生活風格重塑形象"
-            ]
+            "icon": "clock",
+            "title": "2. 時間與資金的巨大浪費",
+            "desc": "開發了市場不需要的繁雜功能，投入預算推廣卻無法驗證任何有效數據。"
           },
           {
-            "title": "3. 通路摩擦與溝通斷層",
-            "theme": "amber",
-            "points": [
-              "線上線下通路利益衝突、實體排面被壓縮",
-              "行銷廣告訊息與一線門市人員話術脫節",
-              "需重構整合行銷溝通（IMC）與通路激勵"
-            ]
+            "icon": "trending-down",
+            "title": "3. 信心挫折與執行疲乏",
+            "desc": "因缺乏明確衡量刻度，無法判斷方案是成功或失敗，陷入長期焦慮與內耗。"
           }
-        ]
+        ],
+        "insight": "明確的目標是抵禦創業焦慮的最佳防護罩；唯有清楚知道要抵達何方，腳下的每一步才算數。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "行銷機會洞察",
-        "title": "企劃不只源自問題，更源自對【行銷機會】的前瞻捕捉",
-        "subtitle": "問題是被動防禦，機會是主動進攻；卓越企業永遠在尋找下一個成長引擎",
-        "left": {
-          "title": "行銷機會的三大核心來源",
-          "theme": "blue",
-          "points": [
-            "【市場空缺（Market Gap）】：市場上存在一群未被滿足的特定受眾或新生活型態",
-            "【未被妥善解決的深層痛點】：現有競品解法笨拙繁瑣，消費者忍受已久卻無可奈何",
-            "【新興科技與法規驅動力】：AI、物聯網、循環經濟法規等外力創造出前所未有的商業可能"
-          ]
-        },
-        "right": {
-          "title": "將機會轉化為企劃的思維躍遷",
-          "theme": "teal",
-          "points": [
-            "看到少子化，一般人看到的是『玩具市場萎縮的危機』，敏銳企劃人看到的是『毛小孩寵物市場爆發的商機』",
-            "看到高齡化，一般人看到的是『消費力衰退』，敏銳企劃人看到的是『有錢有閒的銀髮樂活體驗經濟』",
-            "機會永遠只留給隨時以邏輯大腦掃描環境的企劃師！"
-          ]
-        }
+        "layout": "comparison",
+        "badge": "層次辨析 · 07/60",
+        "sec": "問題層次剖析",
+        "title": "行銷問題的雙重層次：【策略層次】與【技術層次】",
+        "subtitle": "治標還是治本？清晰界定層次才能對症下藥，避免戰略怠惰",
+        "leftTitle": "策略層次問題（Strategic Level）",
+        "leftBadge": "長期生存命脈",
+        "leftPoints": [
+          "性質範疇：攸關長期生存、核心競爭力、新產品線開闢或客群轉移",
+          "決策主體：創辦人、董事會、跨領域策略核心決策團隊",
+          "影響期程：影響深遠，通常為 1 年、3 年甚至更長久的格局佈局",
+          "典型提問：面對少子化與高齡化，現有產品該轉型還是開闢新市場？"
+        ],
+        "rightTitle": "技術層次問題（Tactical Level）",
+        "rightBadge": "執行細節優化",
+        "rightPoints": [
+          "性質範疇：在既定策略方向下，針對單一行銷工具（4P）的操作微調",
+          "決策主體：產品企劃人員、社群小編、活動執行人員、第一線人員",
+          "影響期程：短期至中期（數天、數週到數個月的執行週期）",
+          "典型提問：社群圖文點擊率偏低如何改進？門市動線如何提升客單價？"
+        ],
+        "insight": "曾光華教授強調：策略層次決定『做什麼（What to do）』，技術層次決定『如何做好（How to do well）』；不可混為一談。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "行銷機會案例",
-        "title": "前瞻機會洞察實例：少子化浪潮下的『毛小孩擬人化』商機",
-        "subtitle": "從賣狗飼料到提供頂級寵物身心靈健康管理",
-        "left": {
-          "title": "傳統思維 vs 機會洞察思維",
-          "theme": "blue",
-          "points": [
-            "傳統思維：寵物只是看門動物，飼料越便宜越好，屬於低涉入度的大宗民生商品",
-            "機會洞察：少子化與單身化使年輕世代將貓狗視為『親生毛小孩』，願意為其健康投入大量預算",
-            "商機裂變：頂級機能鮮食、寵物水療、寵物安親班、寵物專屬保險與長照中心相繼湧現"
-          ]
-        },
-        "right": {
-          "title": "企劃落地啟發",
-          "theme": "teal",
-          "points": [
-            "跳脫單純的產品功能競爭，昇華為情感寄託與陪伴關係的終身守護",
-            "微型創業切入點：不必自建大工廠，可從『客製化無毒天然寵物零食』或『銀髮毛孩到府照護媒合平台』起步",
-            "好機會必須配合精準的目標設定才能變現為真實的商業成果"
-          ]
-        }
+        "layout": "four_pillars",
+        "badge": "戰略視野 · 08/60",
+        "sec": "問題層次剖析",
+        "title": "策略層次（Strategic Level）決策的四大維度",
+        "subtitle": "企劃大腦抬頭看路：從長期格局審視微型創業的立足點",
+        "pillars": [
+          {
+            "icon": "layers",
+            "name": "1. 目標客群重構",
+            "detail": "辨識現有客群的成長極限，評估是否該勇敢轉向高潛力之全新利基市場。"
+          },
+          {
+            "icon": "box",
+            "name": "2. 產品線戰略延伸",
+            "detail": "跳脫單一爆款思維，規劃能夠形成長期營收防禦縱深的階梯式產品矩陣。"
+          },
+          {
+            "icon": "cpu",
+            "name": "3. 核心資產跨界複用",
+            "detail": "將既有技術、供應鏈優勢或個人專長，遷移至尚未被充分開發的藍海領域。"
+          },
+          {
+            "icon": "shield",
+            "name": "4. 建立長期競爭壁壘",
+            "detail": "建構難以被競爭對手低價抄襲的品牌信任、社群黏著度與服務體驗。"
+          }
+        ],
+        "insight": "策略層次的決策需要勇氣與定力；一旦選對戰略賽道，後續的執行事半功倍。"
       },
       {
-        "layout": "1card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "目標三要素",
-        "title": "曾光華教授行銷企劃目標三要素：面對什麼、採取什麼、達成什麼",
-        "subtitle": "完整嚴謹的企劃目標必須具備清楚的因果結構",
-        "card": {
-          "title": "企劃目標三要素黃金句型",
-          "theme": "blue",
-          "points": [
-            "【要素一：面對什麼問題或機會？】清楚指明企劃案的觸發源頭與市場現況背景。",
-            "【要素二：採取什麼核心對策與方向？】交代解決方案的戰略方向（非細節流水帳）。",
-            "【要素三：預期達成什麼清楚具體的成果？】明確界定量化商業指標與質性品牌效益。",
-            "黃金句型範例：『針對本校周邊傳統早餐店在早自習時段排隊擁擠、學生常因趕課放棄購買的問題（要素一），導入 LINE 點餐預先結帳與快取保溫箱服務（要素二），期在三個月內提升尖峰時段出餐量 35%，並讓萬能學生獲得熱騰騰且不遲到的安心早餐（要素三）。』"
-          ]
-        }
+        "layout": "stepper",
+        "badge": "經典教材案例 · 09/60",
+        "sec": "問題層次剖析",
+        "title": "曾光華教材經典案例：某兒童食品商的策略破局",
+        "subtitle": "面對少子化海嘯衝擊，企劃大腦如何以策略層次眼光力挽狂瀾？",
+        "steps": [
+          {
+            "tag": "情境挑戰",
+            "phase": "外部巨浪",
+            "title": "少子化嚴峻與進口品牌夾擊",
+            "desc": "台灣新生兒年年創新低，且進口知名母嬰品牌大舉搶佔實體百貨通路，本土業績連年下滑。"
+          },
+          {
+            "tag": "直覺迷思",
+            "phase": "業務焦慮",
+            "title": "第一線業務要求降價促銷",
+            "desc": "業務抱怨價格太貴要求大打促銷戰；董事會警醒若降價只會加速流血，根本無法扭轉少子化大勢。"
+          },
+          {
+            "tag": "戰略決策",
+            "phase": "賽道切換",
+            "title": "跨足銀髮營養機能食品藍海",
+            "desc": "運用既有無塵室生產線與低敏配方技術，戰略性開闢高齡長者易咀嚼果凍餐點，成功切入龐大銀髮商機！"
+          }
+        ],
+        "insight": "如果是技術層次思維，只會無休止降價促銷；策略層次思維則能看見『銀髮市場』的巨大藍海。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "謹慎界定問題",
-        "title": "謹慎界定問題與因應方向：只看到問題『表徵』還是看透『真因』？",
-        "subtitle": "若把感冒發燒當成病因，吃再多退燒藥也治不好發炎感染",
-        "left": {
-          "title": "只看到問題『表徵』（Symptom）",
-          "theme": "blue",
-          "points": [
-            "現象：門市來客數銳減、商品庫存堆積如山、社群貼文互動率雪崩",
-            "錯誤直覺：『一定是我們宣傳不夠，立刻花錢買廣告找網紅發業配！』",
-            "結果：廣告帶來了點擊，但客人進店看了兩眼依然轉身離去，預算白白浪費"
-          ]
-        },
-        "right": {
-          "title": "看透問題『真因』（Root Cause）",
-          "theme": "teal",
-          "points": [
-            "深入現場：消費者為什麼不買？是因為價格太貴？款式過時？還是店員態度冷漠？",
-            "深度訪談：發現客人反映『試衣間太少且昏暗悶熱，試穿體驗極為糟糕』！",
-            "正確解方：將廣告預算省下，重新改造明亮寬敞的試衣空間與全身鏡，回購率自然暴增！"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "經典案例剖析",
-        "title": "曾光華經典教材案例剖析：某漢堡店漢堡銷量日益萎縮",
-        "subtitle": "看似口味不如人的表象背後，隱藏著截然不同的真因",
-        "left": {
-          "title": "漢堡店老闆的直覺反應與困境",
-          "theme": "blue",
-          "points": [
-            "情境：某商圈知名獨立漢堡店，最近半年內招牌牛肉堡銷量每況愈下，營收銳減 25%",
-            "老闆直覺：『一定是顧客吃膩了我們的獨門醬汁，或是肉排不夠厚！』",
-            "老闆行動：投入大筆資金重新研發黑松露松阪豬漢堡，並找來名廚代言，結果銷量依然毫無起色！"
-          ]
-        },
-        "right": {
-          "title": "曾光華教授的現場企劃診斷",
-          "theme": "teal",
-          "points": [
-            "顧客現場調查：老顧客紛紛表示『你們的牛肉堡依然全商圈最好吃，但我們根本不敢來買！』",
-            "驚人真因：午休時間只有 40 分鐘，漢堡現點現煎導致出餐平均等待超過 25 分鐘，附近上班族根本來不及吃！",
-            "解方：問題根本不是『口味』，而是『出餐速度與點餐流程』！改採預先低溫慢煮熟成與線上預約取餐，銷量立竿見影大幅反彈！"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "案例深度反思",
-        "title": "漢堡店案例深度反思：錯誤歸因導致無效行銷投入的悲劇",
-        "subtitle": "企業多數的資源浪費，不是因為執行不力，而是把力氣用錯了地方",
-        "left": {
-          "title": "常見的三種錯誤歸因偏誤",
-          "theme": "blue",
-          "points": [
-            "自戀偏誤：創辦人往往對自己的產品技術過度自信，認為問題一定出在『行銷宣傳做得不夠好』",
-            "推託偏誤：將業績不振怪罪於『大環境不景氣、政府政策不力、年輕人不努力』",
-            "跟風偏誤：看到對手拍短影音就跟著拍短影音，完全不管自己的受眾在哪裡"
-          ]
-        },
-        "right": {
-          "title": "企劃大腦的思維訓練",
-          "theme": "teal",
-          "points": [
-            "當業績下滑時，先不要急著寫企劃案，先到門市站在角落觀察 100 位顧客的行為",
-            "計算顧客從進店到離店的每一個步驟與猶豫時刻，找出摩擦阻力點（Friction）",
-            "唯有將問題真因鎖定在精準的摩擦點上，企劃才能一擊必中！"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "問題探究利器",
-        "title": "問題探究利器：豐田 5-Why 連續追問法在行銷診斷中的應用",
-        "subtitle": "連續問五次『為什麼』，穿透表象直達問題的核心本質",
-        "left": {
-          "title": "5-Why 行銷診斷實戰示範（以校園二手書交易為例）",
-          "theme": "blue",
-          "points": [
-            "【現象】：學生在二手書社團的交易量極為冷清，大多寧可買昂貴的新書或印二手講義。",
-            "1. 為什麼不買二手書？ -> 因為很難找到剛好同個教授指定版本的課本。",
-            "2. 為什麼找不到同版本課本？ -> 因為學長姐發文格式混亂，沒有標記出版年份與授課老師姓名。",
-            "3. 為什麼學長姐不標記？ -> 因為社團貼文輸入很繁瑣，大家懶得打字只隨便拍張封面照片。"
-          ]
-        },
-        "right": {
-          "title": "直達核心真因與突破性企劃對策",
-          "theme": "teal",
-          "points": [
-            "4. 為什麼大家懶得打字？ -> 因為缺乏結構化的快速上架工具，也沒有激勵機制。",
-            "5. 為什麼缺乏工具？ -> 因為沒有人整合學校各系所的選課課綱資料庫！",
-            "【真因與破局企劃】：打造『綁定系所選課課綱的二手書智慧媒合小工具』，只要輸入課號，一秒自動配對同系學長姐二手書，徹底引爆校園流轉商機！"
-          ]
-        }
-      },
-      {
-        "layout": "1card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "階段學理小結",
-        "title": "階段小結：界定正確問題是行銷企劃成功的基石",
-        "subtitle": "找錯問題，方案越精彩，離成功就越遙遠",
-        "card": {
-          "title": "問題界定的三大自我檢核標準",
-          "theme": "blue",
-          "points": [
-            "1. 【客觀性】：這個問題是由客觀數據與顧客心聲支撐，還是主管團隊的憑空想像？",
-            "2. 【可解性】：這個問題在團隊現有的時間、資源與能力範圍內，是否具備解決的切入點？",
-            "3. 【價值性】：如果這個問題被徹底解決，是否能為組織帶來顯著的營收成長或品牌躍遷？",
-            "牢記曾光華教授教誨：寧可精準地解決半個核心真因，也不要完美地解決一個無關痛癢的表徵！"
-          ]
-        }
-      },
-      {
-        "layout": "section",
-        "num": "CHAPTER 02",
-        "title": "利用四個途徑設定行銷企劃目標與 SMART 框架",
-        "desc": "走出象牙塔，用科學方法與多元視角錨定企劃的指南針"
-      },
-      {
-        "layout": "3card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "四個途徑總覽",
-        "title": "曾光華教授設定行銷企劃目標的四大途徑架構",
-        "subtitle": "多元交叉驗證，確保企劃目標客觀、可行且切中市場動脈",
+        "layout": "visual_matrix",
+        "badge": "執行拆解 · 10/60",
+        "sec": "問題層次剖析",
+        "title": "技術層次（Tactical Level）操作的四大實務範疇",
+        "subtitle": "策略方向確立後，技術層次的操作就是確保每一發子彈精準命中靶心",
         "cards": [
           {
-            "title": "途徑一：與利害關係人討論",
-            "theme": "blue",
-            "points": [
-              "一線業務、門市店員、協力廠商",
-              "掌握現場第一線摩擦與真實痛點",
-              "消除總部辦公室的認知偏差"
-            ]
+            "icon": "palette",
+            "title": "1. 視覺呈現與文案優化",
+            "desc": "運用高對比排版、吸睛主標題與動人故事，在社群與著陸頁上抓住受眾注意力。"
           },
           {
-            "title": "途徑二：請教產學專家意見",
-            "theme": "teal",
-            "points": [
-              "產業資深顧問、學術研究專家",
-              "站在巨人肩膀看清產業趨勢",
-              "獲得宏觀生命週期與政策盲點指引"
-            ]
+            "icon": "shopping-cart",
+            "title": "2. 促銷節奏與定價微調",
+            "desc": "設計限時早鳥方案、滿額搭贈或組合包優惠，促進顧客快速完成下單決策。"
           },
           {
-            "title": "途徑三：次級資料分析與質性研究",
-            "theme": "amber",
-            "points": [
-              "權威官方公報、市調研報宏觀佐證",
-              "深度訪談與焦點團體微觀挖掘",
-              "兼具數字骨架與情感血肉"
-            ]
+            "icon": "share-2",
+            "title": "3. 傳播通路排程與推播",
+            "desc": "選定受眾最常活躍的社群平台，配合發文黃金時段進行精準推播與互動維護。"
+          },
+          {
+            "icon": "repeat",
+            "title": "4. 體驗流程與轉換漏斗修補",
+            "desc": "簡化結帳流程、減少表單必填項、提升手機載入速度，降低顧客流失率。"
           }
-        ]
+        ],
+        "insight": "技術層次的優化不可偏廢，它是實現戰略目標的具體手腳；但必須時時向戰略目標對齊。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "途徑一：利害關係人",
-        "title": "途徑一：與『利害關係人』深度討論（第一線現場的智慧）",
-        "subtitle": "最好的企劃靈感往往不在主管辦公室，而在收銀機旁與倉庫角落",
-        "left": {
-          "title": "誰是關鍵的利害關係人？",
-          "theme": "blue",
-          "points": [
-            "第一線門市店員與客服人員：每天親耳聽見顧客抱怨什麼、為什麼退換貨",
-            "外勤業務與配送物流司機：清楚掌握通路排面競爭、退貨破損與對手促銷動作",
-            "核心忠誠顧客與流失顧客：明白他們當初為何愛上你，如今又為何轉投競爭者懷抱",
-            "上游原料供應商與通路經銷商：提早預警原料缺貨、通膨成本與通路抽成壓力"
-          ]
-        },
-        "right": {
-          "title": "利害關係人訪談的核心原則",
-          "theme": "teal",
-          "points": [
-            "放低身段、少說多聽：切忌以總部權威自居向一線同仁說教，真誠請教現場困難",
-            "辨識雜音與訊號：區分個別員工的個人抱怨，與反覆出現的系統性作業障礙",
-            "建立利益共同體：讓利害關係人感受到這份企劃是在為他們解決問題，贏得後續落地的全力配合"
-          ]
-        }
+        "layout": "comparison",
+        "badge": "盲點剖析 · 11/60",
+        "sec": "問題層次剖析",
+        "title": "致命陷阱：錯把【技術層次的修補】當作【策略層次的解方】",
+        "subtitle": "用戰術上的勤奮，掩蓋戰略上的怠惰，是許多企劃案夭折的主因",
+        "leftTitle": "迷思：戰術勤奮掩蓋戰略怠惰",
+        "leftBadge": "徒勞的修補",
+        "leftPoints": [
+          "產品根本沒有市場需求，卻整天埋頭更換社群貼文配色與排版風格",
+          "商業模式無法盈利，卻寄望於花更多廣告預算買流量來掩飾虧損",
+          "定價策略與受眾嚴重脫節，卻寄望於發放更多折扣券來刺激轉換",
+          "在行銷工具（4P）上忙得焦頭爛額，但產品的核心競爭力依然為零"
+        ],
+        "rightTitle": "正解：以清醒戰略引領戰術落實",
+        "rightBadge": "清醒的突破",
+        "rightPoints": [
+          "先驗證價值：確認解決的痛點是否為真實剛需，且受眾願意付費支持",
+          "再調配工具：當戰略方向正確時，4P 工具的優化才能產生乘數效益",
+          "敏捷停損修正：若核心假設被證偽，果斷在策略層次進行轉型或軸轉",
+          "戰略技術互鎖：戰略目標賦予戰術意義，戰術反饋檢驗戰略有效性"
+        ],
+        "insight": "曾光華教授警示：千萬別在錯誤的樓梯上拚命往上爬，爬到了頂端才發現靠錯了牆壁！"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "利害關係人好處",
-        "title": "利害關係人訪談的好處：看見總部辦公室看不到的現場真實摩擦",
-        "subtitle": "避免企劃案變成脫離現實的空中樓閣",
-        "left": {
-          "title": "總部冷氣房的常見盲區",
-          "theme": "blue",
-          "points": [
-            "以為只要設計精美的 POP 宣傳海報，門市就會主動貼在最醒目的位置",
-            "以為顧客都會熱心下載 APP 填寫繁瑣的十題滿意度問卷",
-            "以為業務同仁都會全力推廣新產品，卻忽視了新產品抽成制度遠不如老產品划算"
-          ]
-        },
-        "right": {
-          "title": "現場訪談帶來的企劃轉變",
-          "theme": "teal",
-          "points": [
-            "一線店員說：『結帳櫃檯空間太小，海報太大根本放不下，立牌小卡片更實用！』",
-            "顧客說：『排隊時只要能一秒出示條碼折抵 5 元，我根本不想留電話資料註冊！』",
-            "企劃目標從追求虛榮的『APP 下載量』，轉為務實的『櫃檯 3 秒快速結帳參與率』！"
-          ]
-        }
+        "layout": "four_pillars",
+        "badge": "自我盤點 · 12/60",
+        "sec": "問題層次剖析",
+        "title": "企劃大腦抬頭看路的四大戰略自我提問",
+        "subtitle": "定期跳脫日常瑣事，以高維視角審視個人微型創業題目的生存競爭力",
+        "pillars": [
+          {
+            "icon": "help-circle",
+            "name": "提問一：核心資產跨界潛力",
+            "detail": "『我的核心專長與專業技術，還能跨界應用在哪些高潛力的新市場？』"
+          },
+          {
+            "icon": "trending-up",
+            "name": "提問二：客群五年的生命週期",
+            "detail": "『我的目標受眾在未來三年內會持續增長還是萎縮？我該跟著他們一起成長嗎？』"
+          },
+          {
+            "icon": "zap",
+            "name": "提問三：未來的顛覆者是誰",
+            "detail": "『如果今天不主動推動這項微型創業創新，兩年後的我會被哪種新型態模式淘汰？』"
+          },
+          {
+            "icon": "check-circle",
+            "name": "提問四：敏捷驗證的最小成本",
+            "detail": "『我能用多小的雲端原型（MVP）在最短時間內完成第一波真實市場檢驗？』"
+          }
+        ],
+        "insight": "好問題是好企劃的起點；敢於對自己提出尖銳的戰略問題，才能避開日後的商業暗礁。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "途徑二：請教專家",
-        "title": "途徑二：請教產學『專家意見』（產業分析師與資深前輩）",
-        "subtitle": "借用巨人的肩膀，看清產業生命週期與技術轉折趨勢",
-        "left": {
-          "title": "專家的獨特視野與價值",
-          "theme": "blue",
-          "points": [
-            "產業分析師（如 MIC、工研院、IDC）：掌握整體產業規模、產值增長率與國際技術演進",
-            "資深從業前輩：擁有數十年摸爬滾打的實戰經驗，一眼看出新點子是否曾有人做過且失敗",
-            "學術研究學者：提供嚴謹的理論驗證架構與跨國對照案例，防止企劃落入經驗主義狹隘視角"
-          ]
-        },
-        "right": {
-          "title": "向專家請益的專業禮節與技巧",
-          "theme": "teal",
-          "points": [
-            "不做伸手黨：訪談前必須做足功課，閱讀專家的著作與公開演講，準備精準具體的深度問題",
-            "問題聚焦：避免問『這行好不好做』等空泛大哉問，改問『面對特定法規變更，中小型業者的最大挑戰是什麼』",
-            "保持批判性吸收：專家有時會過於保守或受限於過去的成功經驗，企劃人需結合新工具獨立判斷"
-          ]
-        }
+        "layout": "stepper",
+        "badge": "層級展開 · 13/60",
+        "sec": "問題層次剖析",
+        "title": "從策略目標到技術目標的上下層級展開路徑",
+        "subtitle": "由高至低層層遞進，確保組織與個人的每項操作都有戰略著落",
+        "steps": [
+          {
+            "tag": "第一層：願景定位",
+            "phase": "戰略頂層",
+            "title": "確立微型創業核心價值主張",
+            "desc": "例如：成為萬能科大學生最信賴的校園二手器材專業檢驗與循環媒合平台。"
+          },
+          {
+            "tag": "第二層：策略目標",
+            "phase": "戰略中層",
+            "title": "訂定年度生存與市場滲透指標",
+            "desc": "例如：期中前累積 300 名認證會員，促成 50 筆無爭議交易，達成 95% 正評率。"
+          },
+          {
+            "tag": "第三層：技術目標",
+            "phase": "戰術底層",
+            "title": "細化每週 4P 操作驗證指標",
+            "desc": "例如：著陸頁跳出率降至 35% 以下，每篇專業開箱貼文帶來 15 次新用戶註冊。"
+          }
+        ],
+        "insight": "上下貫通的目標體系，讓每位創業者既能仰望星空看清全局，又能腳踏實地做好每一處細節。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "專家諮詢價值",
-        "title": "專家諮詢的價值：避開致命合規地雷與不可逆的技術死胡同",
-        "subtitle": "一句專業提醒，可能為企業挽回數百萬元的法律訴訟或重工損失",
-        "left": {
-          "title": "避開隱藏的產業地雷",
-          "theme": "blue",
-          "points": [
-            "法規合規盲區：例如健康食品宣稱療效涉嫌違反食安法，專家能提早標註法規文字紅線",
-            "專利侵權風險：看似新穎的機構外觀設計，可能早已被跨國大廠申請專利佈局卡位",
-            "供應鏈極限：某些特殊原料的採購起訂量（MOQ）極高且交期長達半年，非微型新創所能承擔"
-          ]
-        },
-        "right": {
-          "title": "賦予企劃目標高度權威性",
-          "theme": "teal",
-          "points": [
-            "企劃書中若能明確引用產業權威專家的背書與判斷，能大幅降低投資人與主管的疑慮",
-            "證明提案團隊具備嚴謹的產業連結與實務求證精神，絕非一般課堂的簡單習作"
-          ]
-        }
+        "layout": "comparison",
+        "badge": "時代躍升 · 14/60",
+        "sec": "問題層次剖析",
+        "title": "傳統行銷的局部盲修 vs Agentic 時代的全局戰略校準",
+        "subtitle": "擁抱 AI Agent 工具鏈，讓個人創業者擁有媲美跨國企劃智囊團的戰略推演能力",
+        "leftTitle": "傳統行銷操作（孤島化碎片）",
+        "leftBadge": "單兵摸索",
+        "leftPoints": [
+          "單打獨鬥：企劃人受限於個人知識盲區，難以跳脫固有思維框框",
+          "盲目試錯：缺乏多維度的邏輯壓力測試，方案上線後才發現漏洞百出",
+          "局部修補：整天被文案潤飾與排版微調淹沒，忽略了外部市場風向變化",
+          "耗時費力：完成一份基礎企劃書需要數週時間，市場機會早已稍縱即逝"
+        ],
+        "rightTitle": "Agentic 協同操作（全視角推演）",
+        "rightBadge": "智慧躍升",
+        "rightPoints": [
+          "人機協同：調用多個專屬 AI Agent 擔任策略智囊、市場批判官與數據分析師",
+          "全局對齊：在幾分鐘內完成從戰略定位到 4P 執行的上下層級推演校準",
+          "紅隊預演：在方案發布前主動進行嚴苛質疑，提前修補商業模式致命傷",
+          "一人成軍：個人創業者得以將精力集中於高階商業決策與真因洞察"
+        ],
+        "insight": "AI Agent 不是用來替你寫空泛文案，而是用來擴展你的戰略大腦，協助你洞察真因、精煉目標。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "途徑三：次級資料分析",
-        "title": "途徑三：權威『次級資料分析』（政府統計、產業年鑑與調研報告）",
-        "subtitle": "次級資料是企劃論述的鋼筋水泥，提供無可辯駁的客觀底氣",
-        "left": {
-          "title": "什麼是次級資料（Secondary Data）？",
-          "theme": "blue",
-          "points": [
-            "定義：由其他人為了其他研究目的所蒐集、整理並公開發布的既有資料",
-            "來源分類：政府公報（主計處、統計處）、產業公會年鑑、市調公司公開白皮書、學術實證論文",
-            "優勢：取得速度快、成本相對低廉、具備宏觀代表性與公信力"
-          ]
-        },
-        "right": {
-          "title": "次級資料分析的三大檢驗標準",
-          "theme": "teal",
-          "points": [
-            "時效性（Timeliness）：數據是否過時？三年前疫情期間的消費數據不可直接套用在今天",
-            "權威性（Authority）：發布機構是否客觀中立？避免引用利益相關廠商發布的自吹自擂廣告文",
-            "相關性（Relevance）：數據定義的範疇是否與你的目標市場一致？不要拿全美數據推論萬能科大學生"
-          ]
-        }
+        "layout": "quote_takeaway",
+        "badge": "大師思維 · 15/60",
+        "sec": "問題層次剖析",
+        "title": "曾光華教授談戰略方向：方向永遠優先於速度",
+        "subtitle": "寧可在正確的方向上慢慢走，也絕不在錯誤的賽道上盲目狂奔",
+        "quote": "許多人誤以為企劃就是拼命執行。然而，如果戰略方向是錯的，執行力越強，只會讓企業死得越快。企劃的第一要務，就是抬頭看清方向。",
+        "author": "曾光華 教授 ｜ 國立中正大學行銷學名譽教授",
+        "pillars": [
+          {
+            "title": "辨識大勢所趨",
+            "desc": "順應人口結構、科技變革與消費行為的歷史趨勢，順勢而為。"
+          },
+          {
+            "title": "聚焦核心優勢",
+            "desc": "集中有限精力打造局部第一，在細分利基市場建立絕對競爭優勢。"
+          },
+          {
+            "title": "隨時保持警醒",
+            "desc": "不被短期的虛榮指標迷惑，時刻檢視核心假設是否依然成立。"
+          }
+        ],
+        "insight": "確立正確的戰略層次目標，是每位企劃負責人最神聖不可推卸的職責。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "次級資料好處",
-        "title": "次級資料分析的好處：精準推估市場規模（TAM/SAM/SOM）",
-        "subtitle": "以扎實數字擊碎『我感覺這個市場很大』的主觀臆測",
-        "left": {
-          "title": "市場規模推估三層架構",
-          "theme": "blue",
-          "points": [
-            "【TAM（Total Addressable Market, 總潛在市場）】：整體產業的所有可能需求（如台灣外食早餐總產值 2,000 億）",
-            "【SAM（Serviceable Available Market, 可服務市場）】：自身商業模式能觸及的範疇（如桃園市大專院校周邊早餐產值 15 億）",
-            "【SOM（Serviceable Obtainable Market, 可獲取市場）】：微型創業初期能拿下的市佔份額（如萬能科大校門周邊商圈 3,000 萬的 5% = 150 萬）"
-          ]
-        },
-        "right": {
-          "title": "企劃目標設定的合理性錨定",
-          "theme": "teal",
-          "points": [
-            "如果推估出 SOM 一年只有 150 萬，企劃目標卻寫著『第一年營收突破 1,000 萬』，立刻被識破為天方夜譚",
-            "次級資料讓你的目標設定既有野心，又經得起財務邏輯的嚴格檢驗！"
-          ]
-        }
+        "layout": "four_pillars",
+        "badge": "學理核心 · 16/60",
+        "sec": "四大設定途徑",
+        "title": "曾光華教授行銷企劃目標四大設定途徑總覽",
+        "subtitle": "多維立體推導模型：從願景、市場、資源到歷史經驗的完整交集",
+        "pillars": [
+          {
+            "icon": "compass",
+            "name": "途徑一：願景與使命導向",
+            "detail": "由上而下推導：以創始人初心、核心使命為指引，確立長遠發展方針與不可退讓價值觀。"
+          },
+          {
+            "icon": "users",
+            "name": "途徑二：市場與痛點導向",
+            "detail": "由外而內洞察：深入目標受眾真實生活場景，發掘未被滿足的焦慮、不便與潛在渴望。"
+          },
+          {
+            "icon": "cpu",
+            "name": "途徑三：資源與優勢導向",
+            "detail": "由內而外延伸：盤點個人或團隊不可替代之核心專長、技術與資源，將優勢轉化為市場利基。"
+          },
+          {
+            "icon": "bar-chart-2",
+            "name": "途徑四：歷史與數據導向",
+            "detail": "由下而上反思：分析過往營運數據、轉換漏斗與真實反饋，找出流失瓶頸並設定改善指標。"
+          }
+        ],
+        "insight": "四大途徑並非孤立排他，優秀的企劃目標往往是四大途徑交會的『甜蜜點（Sweet Spot）』。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "途徑四：質性研究",
-        "title": "途徑四：深層『質性研究』（深度訪談、焦點團體與現場觀察）",
-        "subtitle": "冰冷的數字告訴你『發生了什麼』，溫熱的質性研究告訴你『為什麼發生』",
-        "left": {
-          "title": "質性研究的核心方法",
-          "theme": "blue",
-          "points": [
-            "半結構式深度訪談（In-depth Interview）：與 3~5 位極端使用者進行一對一 60 分鐘深談",
-            "焦點團體訪談（Focus Group Discussion）：邀請 6~8 位目標受眾在主持引導下相互激盪討論",
-            "影子觀察法（Shadowing Observation）：不打擾顧客，靜靜跟隨其購物旅程，記錄每一個遲疑動作",
-            "移情同理地圖（Empathy Map）：整理受眾的所見（See）、所聞（Hear）、所思（Think）與所受痛點（Pain）"
-          ]
-        },
-        "right": {
-          "title": "質性研究的魅力所在",
-          "theme": "teal",
-          "points": [
-            "挖掘消費者在制式問卷中不會勾選、甚至自己都未曾意識到的潛意識動機與情感焦慮",
-            "獲取極具畫面感的第一手顧客原話（Verbatim），直接轉化為企劃案中最動人的金句！"
-          ]
-        }
+        "layout": "stepper",
+        "badge": "途徑詳解 · 17/60",
+        "sec": "四大設定途徑",
+        "title": "途徑一：由企業願景與使命由上而下推導程序",
+        "subtitle": "從形而上的價值觀，層層收斂為具體可行的企劃行動指針",
+        "steps": [
+          {
+            "tag": "步驟 1：使命定位",
+            "phase": "核心初衷",
+            "title": "回答『我們為何而存在？』",
+            "desc": "明確微型創業能為社會、校園或特定客群創造什麼獨特價值與長期福祉。"
+          },
+          {
+            "tag": "步驟 2：願景描繪",
+            "phase": "未來藍圖",
+            "title": "回答『三年後的我們長成什麼樣？』",
+            "desc": "勾勒清晰具體的目標樣貌，讓創業者能在腦海中清楚看見未來的成功畫面。"
+          },
+          {
+            "tag": "步驟 3：年度企劃目標",
+            "phase": "落地轉換",
+            "title": "回答『今年最重要的里程碑是什麼？』",
+            "desc": "將長期願景拆解為當前學期或年度必須達成的核心指標，作為期中提案重點。"
+          }
+        ],
+        "insight": "缺乏願景的目標只是冰冷的賺錢手段；唯有融入使命感，才能吸引志同道合的忠誠顧客。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "質性研究魅力",
-        "title": "質性研究案例：挖掘高齡長輩拒絕使用智慧手機的真正心魔",
-        "subtitle": "看似怕學不會的藉口背後，隱藏著害怕被晚輩嫌棄的尊嚴焦慮",
-        "left": {
-          "title": "問卷調查的表面盲區",
-          "theme": "blue",
-          "points": [
-            "量化問卷結果：高達 80% 銀髮長輩勾選『功能太複雜，字太小看不清，學不會』",
-            "傳統解法：放大字體、簡化介面，結果長輩依然把智慧手機鎖在抽屜不用"
-          ]
-        },
-        "right": {
-          "title": "深度訪談挖掘出的真實情感痛點",
-          "theme": "teal",
-          "points": [
-            "長輩在深談中眼角泛淚說：『我不是看不清，是我每次按錯問兒子，兒子就不耐煩地皺眉頭嘆氣...我覺得自己很沒用，像個累贅。』",
-            "痛點真因：長輩怕的不是『技術複雜』，而是『失去尊嚴與害怕被晚輩嫌棄』！",
-            "破局企劃目標：設計『祖孫共學遊戲化點數系統』，讓教長輩用手機變成晚輩賺取零用錢的溫馨任務，長輩尊嚴得到保護，手機使用率徹底破冰！"
-          ]
-        }
+        "layout": "comparison",
+        "badge": "實務案例 · 18/60",
+        "sec": "四大設定途徑",
+        "title": "願景導向實戰案例：連鎖書店的價值重構與目標設定",
+        "subtitle": "當實體書市場萎縮，企劃大腦如何以願景使命重新定義商業邊界？",
+        "leftTitle": "傳統賣書思維（產品視角）",
+        "leftBadge": "通路侷限",
+        "leftPoints": [
+          "目標定義：『提升實體門市圖書銷售冊數與坪效』",
+          "面臨困境：無法與網路書店的折扣戰、即時送達競爭，來客數雪崩",
+          "應對手段：縮減門市、裁員、要求出版社給予更低進貨折扣",
+          "結果惡果：門市越顯冷清，閱讀體驗惡化，陷入不可逆的衰退"
+        ],
+        "rightTitle": "文化生活提案（願景視角）",
+        "rightBadge": "價值升維",
+        "rightPoints": [
+          "目標定義：『成為城市中最溫暖的文化生活提案與心靈棲息場所』",
+          "戰略佈局：引進生活風格選品、手沖咖啡、作家沙龍與深度策展空間",
+          "商業成效：非書商品營收佔比攀升至 60% 以上，客單價與停留時間倍增",
+          "品牌昇華：不再是一家賣紙本書的店，而是現代人不可或缺的生活生活場域"
+        ],
+        "insight": "曾光華教授提示：重新定義你的事業使命，你所看到的市場機會與企劃目標將完全不同！"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "SMART 原則解析",
-        "title": "經典 SMART 目標設定原則在行銷企劃中的標準操作",
-        "subtitle": "五大黃金準則，杜絕含糊不清與無法驗收的空想目標",
-        "left": {
-          "title": "SMART 五大原則規格化解析",
-          "theme": "blue",
-          "points": [
-            "【S - Specific（具體明確）】：不能只寫『提升知名度』，必須寫『建立大桃園地區青年族群對品牌的認知』",
-            "【M - Measurable（可衡量性）】：必須有明確數量或百分比，如『官網每月不重複訪客突破 10,000 人次』",
-            "【A - Achievable（可達成性）】：目標需具挑戰性但不可脫離現實，符合團隊資源與人力極限",
-            "【R - Relevant（相關性）】：目標必須與企業核心願景、獲利模式及解決的問題真因緊密相連",
-            "【T - Time-bound（時效明確）】：必須有清楚的截止期限，如『在專案啟動後第 90 天前達成』"
-          ]
-        },
-        "right": {
-          "title": "常見的反面失敗範例",
-          "theme": "teal",
-          "points": [
-            "『我們要成為全台灣最棒、最受歡迎的環保文創品牌，讓大家都很喜歡我們！』",
-            "完全缺乏 M（多少人喜歡？）、缺乏 T（何時算達成？）、缺乏 S（最棒是指銷售第一還是設計得獎？）"
-          ]
-        }
+        "layout": "stepper",
+        "badge": "途徑詳解 · 19/60",
+        "sec": "四大設定途徑",
+        "title": "途徑二：由市場競爭與未滿足痛點由外而內洞察程序",
+        "subtitle": "走進受眾生活現場，用同理心捕捉那些尚未被現有產品滿足的深層渴望",
+        "steps": [
+          {
+            "tag": "步驟 1：場景浸潤",
+            "phase": "現場觀察",
+            "title": "觀察受眾真實遭遇阻礙的時刻",
+            "desc": "記錄顧客在購買、使用或尋求替代方案時，所產生的抱怨、遲疑與不耐煩。"
+          },
+          {
+            "tag": "步驟 2：未滿足缺口",
+            "phase": "競品比對",
+            "title": "比對現有競品遺漏的服務空白",
+            "desc": "找出大品牌因為成本考量不願做、或是傳統廠商思維僵化沒想到的服務盲區。"
+          },
+          {
+            "tag": "步驟 3：差異化目標",
+            "phase": "利基錨定",
+            "title": "設定直擊痛點的企劃目標",
+            "desc": "以『解決這項最痛的不便』為核心承諾，建立清晰且具備排他性的市場定位。"
+          }
+        ],
+        "insight": "顧客不是要買 1/4 吋的鑽頭，而是要買牆上 1/4 吋的洞。牢記痛點本質，才不會迷失在產品規格中。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "SMART 的兩難困境",
-        "title": "SMART 目標的兩難：過於冰冷是否會扼殺行銷團隊的熱情與想像力？",
-        "subtitle": "只有理性指標的企劃，就像一張不苟言笑而乏味的撲克臉",
-        "left": {
-          "title": "純冰冷數字目標帶來的副作用",
-          "theme": "blue",
-          "points": [
-            "如果企劃目標只寫著：『本季營收成長 15%，毛利率提升 3 個百分點，CAC 降低 10%』",
-            "主管看了滿意，但第一線執行團隊、設計師與門市人員卻感到冰冷麻木、毫無靈魂",
-            "數字無法在人腦中激發美麗的畫面，更無法在遭遇困難時點燃同仁心中的使命感"
-          ]
-        },
-        "right": {
-          "title": "曾光華教授的突破性企劃心法",
-          "theme": "teal",
-          "points": [
-            "在行銷這個強調感性、體驗、美感與人性的世界裡，企劃目標絕不能只有冰冷的數學公式",
-            "我們必須在高度理性的 SMART 骨架上，注入澎湃的『圖像與感覺（Images & Feelings）』",
-            "讓每一個數字背後，都躍動著具體鮮活的人群面孔與動人故事！"
-          ]
-        }
+        "layout": "comparison",
+        "badge": "實務案例 · 20/60",
+        "sec": "四大設定途徑",
+        "title": "市場導向實戰案例：連鎖健身房的高流失率破局",
+        "subtitle": "辦卡容易 vs 養成習慣障礙：穿透表面退費，洞悉運動初學者的深層痛點",
+        "leftTitle": "傳統營運思維（銷售導向）",
+        "leftBadge": "衝刺辦卡",
+        "leftPoints": [
+          "目標設定：『業務團隊本月簽約新會員數突破 500 名』",
+          "操作手法：狂打超低月費、免入會費優惠，透過話術推銷長期會籍",
+          "殘酷現實：新會員第一個月來三次，第二個月來一次，半年後全數流失",
+          "後遺症：續約率慘澹，客訴退費不斷，必須耗費更高成本抓取新客"
+        ],
+        "rightTitle": "現代體驗思維（痛點解決）",
+        "rightBadge": "習慣養成",
+        "rightPoints": [
+          "目標設定：『協助初學者在首月達成 8 次無痛回訪，建立持久運動習慣』",
+          "創新機制：推出新手免尷尬專區、初學破冰關卡、打卡獎勵與友善社群伴跑",
+          "商業成效：首季流失率自 45% 驟降至 12%，老會員主動推薦率倍增",
+          "商業啟示：解決顧客『害怕尷尬、難以堅持』的心理痛點，建立高黏著度"
+        ],
+        "insight": "幫助顧客成功克服生活障礙，顧客就會用忠誠度和長久終身價值來回報你的商業品牌。"
       },
       {
-        "layout": "1card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "大師企劃心法",
-        "title": "曾光華教授企劃心法：在高度理性的 SMART 中注入靈魂與畫面感",
-        "subtitle": "卓越的企劃目標，能讓看過的人在腦海中瞬間『看見成功的畫面』",
-        "card": {
-          "title": "理智與情感的完美交融",
-          "theme": "blue",
-          "points": [
-            "企劃目標不僅是用來向主管報告進度的量化儀表板，更是激勵團隊全員奮勇向前的戰鬥號角！",
-            "合乎理性的 SMART 確保我們在商業上不致翻車、獲利可期；",
-            "具有生命力的圖像與感覺，則讓我們的品牌在消費者心目中發光發熱、無可取代。",
-            "把撲克臉換成微笑的面孔，這正是頂尖企劃師與平庸填表員的真正分水嶺！"
-          ]
-        }
+        "layout": "stepper",
+        "badge": "途徑詳解 · 21/60",
+        "sec": "四大設定途徑",
+        "title": "途徑三：由內部核心資源與技術優勢由內而外延伸程序",
+        "subtitle": "盤點自身不可替代的看家本領，將技術專長轉化為商業護城河",
+        "steps": [
+          {
+            "tag": "步驟 1：資產盤點",
+            "phase": "核心審視",
+            "title": "客觀盤點自身最強能力或獨家技術",
+            "desc": "包括個人專業技能、技術專利、特有供應鏈資源或特殊的社群號召力。"
+          },
+          {
+            "tag": "步驟 2：跨界掃描",
+            "phase": "場景遷移",
+            "title": "探索現有能力可應用的全新場景",
+            "desc": "尋找哪些市場正在面臨你所擅長解決的難題，且該市場競爭者尚未掌握該項能力。"
+          },
+          {
+            "tag": "步驟 3：產品化定錨",
+            "phase": "目標確立",
+            "title": "設定以技術優勢為基石的企劃目標",
+            "desc": "建立『在該垂直領域提供最高精度或最佳體驗』的具體度量指標。"
+          }
+        ],
+        "insight": "做自己擅長的事，成功機率提高十倍。企劃目標必須建立在自身資源能支撐的基石之上。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "目標對比實例",
-        "title": "案例深度對比：純冰冷數字目標 vs 具有感染力與生命力的目標",
-        "subtitle": "文字的溫度直接決定了企劃案的傳播力與執行張力",
-        "left": {
-          "title": "冰冷缺乏畫面感的企劃目標（撲克臉）",
-          "theme": "blue",
-          "points": [
-            "『本企劃目標在於本年度提升某休閒農業園區之入園參觀人次達 20%，並增加園區周邊農特產品銷售營業額達新台幣 300 萬元整。』",
-            "評語：標準符合 SMART，但毫無生氣，像一份隨時可被替換的財務報表，無法激起任何人的熱情。"
-          ]
-        },
-        "right": {
-          "title": "注入圖像與感覺的生命力目標（曾光華式目標）",
-          "theme": "teal",
-          "points": [
-            "『在今年夏天的落羽松林下，讓 5,000 位在都市冷氣房長大的孩子脫下球鞋、赤腳踏上溫熱濕潤的泥土，雙手捧起金黃稻穗開懷大笑；同時讓在地 30 位辛勤老農以自豪的眼神，將剛採收的無毒蔬果親手交到年輕父母手中，共享大地的恩賜。』",
-            "評語：數字一應俱全，且在腦海中勾勒出無比清晰、感人至深的幸福畫面，全員立刻明白為何而戰！"
-          ]
-        }
+        "layout": "comparison",
+        "badge": "實務案例 · 22/60",
+        "sec": "四大設定途徑",
+        "title": "資源導向實戰案例：精密機械廠跨足高階醫療輔具",
+        "subtitle": "從毛利 3% 的代工紅海，走向毛利 40% 的銀髮高階醫療藍海",
+        "leftTitle": "固守傳統代工（紅海苦戰）",
+        "leftBadge": "代工微利",
+        "leftPoints": [
+          "原狀企劃：『提升傳統汽機車螺絲零件產能與降本 5%』",
+          "殘酷現狀：海外低成本工廠殺價競爭，原料上漲導致毛利瀕臨虧損",
+          "企劃困境：無論怎麼優化生產流程，都無法跳脫買方市場的無情議價",
+          "危機警訊：企業生存面臨嚴重挑戰，年輕技術人才嚴重流失"
+        ],
+        "rightTitle": "核心技術跨界（高附加價值）",
+        "rightBadge": "利基躍升",
+        "rightPoints": [
+          "轉型企劃：『運用微米級精準車削技術，開發鈦合金骨科微創手術器械』",
+          "戰略佈局：取得醫療器材 ISO 認證，與醫學中心醫生合作客製化開發",
+          "輝煌成果：成功切入高階醫療器材供應鏈，產品單價提升 50 倍",
+          "轉型啟示：將核心精密加工技術遷移到高信任門檻市場，建立不可替代性"
+        ],
+        "insight": "同一項核心技術，放在不同市場，其商業價值與企劃目標將有天壤之別！"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "目標設定檢核表",
-        "title": "曾光華教授企劃目標雙軌檢核表（理性與感性兼備）",
-        "subtitle": "在正式定稿前，用這張清單自我審視目標的成色",
-        "left": {
-          "title": "理性維度檢核清單（SMART 檢驗）",
-          "theme": "blue",
-          "points": [
-            "□ 是否明確指出面對的問題真因或核心市場機會？",
-            "□ 關鍵績效指標是否清楚量化、具備明確驗收門檻？",
-            "□ 目標是否在團隊現有預算與時間內切實可行？",
-            "□ 完成時限是否具體明確到具體年月日？"
-          ]
-        },
-        "right": {
-          "title": "感性維度檢核清單（圖像與感覺檢驗）",
-          "theme": "teal",
-          "points": [
-            "□ 目標文字讀起來是否能在腦中立刻浮現具體的場景與畫面？",
-            "□ 是否捕捉到了目標受眾享受服務時的真實情感與微表情？",
-            "□ 這句話能否印在團隊辦公室牆上，激勵每一位同學全力以赴？"
-          ]
-        }
+        "layout": "stepper",
+        "badge": "途徑詳解 · 23/60",
+        "sec": "四大設定途徑",
+        "title": "途徑四：由過往營運數據與歷史經驗由下而上反思程序",
+        "subtitle": "用數據說話：穿透主觀直覺，從歷史軌跡與流失漏斗中挖掘改善指標",
+        "steps": [
+          {
+            "tag": "步驟 1：數據診斷",
+            "phase": "漏斗分析",
+            "title": "全盤檢視各轉換環節之關鍵指標",
+            "desc": "分析訪問量、停留時長、加購率、結帳放棄率與售後客訴退貨數據。"
+          },
+          {
+            "tag": "步驟 2：瓶頸定位",
+            "phase": "漏斗流失",
+            "title": "鎖定流失率最反常的單一節點",
+            "desc": "找出哪一個步驟造成最多潛在顧客流失，作為本次企劃最需攻堅的核心破口。"
+          },
+          {
+            "tag": "步驟 3：增量目標",
+            "phase": "刻度錨定",
+            "title": "設定具備基準線（Baseline）的改善目標",
+            "desc": "例如：依據上季 65% 的結帳放棄率，設定本季透過流程優化降至 40% 以下。"
+          }
+        ],
+        "insight": "數據不會說謊；歷史數據是企劃目標最客觀的起跑線，讓你的企劃案具備強大說服力。"
       },
       {
-        "layout": "section",
-        "num": "CHAPTER 03",
-        "title": "將圖像與感覺帶入企劃目標（五感化行銷）",
-        "desc": "用視覺、聽覺、觸覺與深層情感，喚醒團隊與消費者的深層渴望"
+        "layout": "comparison",
+        "badge": "實務案例 · 24/60",
+        "sec": "四大設定途徑",
+        "title": "數據導向實戰案例：電商購物車結帳流失的瓶頸突破",
+        "subtitle": "數據追蹤發現：72% 的顧客將商品加入購物車後，卻在最後一刻放棄結帳！",
+        "leftTitle": "未經數據診斷（盲目歸因）",
+        "leftBadge": "直覺猜測",
+        "leftPoints": [
+          "直覺猜想：主管認為一定是『商品價格太貴』或『促銷不夠吸引人』",
+          "盲目操作：立刻發放全站 85 折優惠券，並投入巨資在社群加強廣告曝光",
+          "結果依然：即便打了折扣，加入購物車後的放棄結帳率依然高達 70%",
+          "慘痛教訓：浪費了毛利與廣告預算，卻絲毫沒有解決真正的流失障礙"
+        ],
+        "rightTitle": "深度數據探勘（真因擊破）",
+        "rightBadge": "流程重塑",
+        "rightPoints": [
+          "真因發現：結帳步驟過於繁複，且在最後一步才突然顯示高達 150 元的運費",
+          "精準目標：『將結帳流程自 5 步簡化至 2 步，並在首頁提前標註滿額免運』",
+          "顯著成效：購物車放棄率自 72% 大幅驟降至 38%，整體營業額提升 45%",
+          "核心啟示：數據導向能直擊漏斗中的真正摩擦力（Friction），四兩撥千斤"
+        ],
+        "insight": "曾光華教授提示：企劃的智慧在於用數據找出摩擦力最小的破局點，而非盲目蠻幹！"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "為什麼需要感覺",
-        "title": "為什麼現代卓越行銷企劃，必須將『圖像與感覺』帶入目標？",
-        "subtitle": "消費者購買的從來不是冰冷的規格，而是生活風格的美好嚮往",
-        "left": {
-          "title": "現代消費者的心智認知變遷",
-          "theme": "blue",
-          "points": [
-            "物質極大豐裕的時代，功能層面的好處（品質好、便宜耐用）早已變成基本門檻",
-            "消費者渴望的是身分認同、生活美感、情感寄託與值得在社群炫耀的獨特體驗",
-            "如果企劃目標自己都感受不到興奮與感動，做出來的行銷方案必然索然無味"
-          ]
-        },
-        "right": {
-          "title": "對企劃推進的深遠影響",
-          "theme": "teal",
-          "points": [
-            "統一團隊的美學與調性共識：避免文案寫的是文青風，設計師做出來卻是俗麗電商風",
-            "成為方案發想的篩選器：所有後續提出的 4P 方案，只要無法呼應這個美好畫面，一律淘汰！"
-          ]
-        }
+        "layout": "flow_chart",
+        "badge": "架構整合 · 25/60",
+        "sec": "四大設定途徑",
+        "title": "四大途徑交叉驗證模型：打造無死角的企劃目標矩陣",
+        "subtitle": "個人獨立企劃推演時，如何同時調用四大途徑進行全方位壓力測試？",
+        "flow": [
+          {
+            "step": "01",
+            "name": "願景校準",
+            "desc": "檢視目標是否符合個人微型創業的初衷與長期承諾。"
+          },
+          {
+            "step": "02",
+            "name": "痛點對照",
+            "desc": "驗證目標是否切中目標客群真實存在且急迫的生活痛點。"
+          },
+          {
+            "step": "03",
+            "name": "資源檢驗",
+            "desc": "評估自身技能與工具鏈是否足以支撐該目標在期末落地上線。"
+          },
+          {
+            "step": "04",
+            "name": "數據對齊",
+            "desc": "以過往觀察數據或競品現況為基線，設定合理的增量刻度。"
+          },
+          {
+            "step": "05",
+            "name": "矛盾調和",
+            "desc": "化解願景過大而資源不足、或數據過於保守而缺乏創意的矛盾。"
+          },
+          {
+            "step": "06",
+            "name": "產出矩陣",
+            "desc": "完成兼具高度、深度、溫度與刻度的個人期中企劃目標章節。"
+          }
+        ],
+        "insight": "通過四大途徑共同過濾出的企劃目標，既有宏觀願景的召喚力，又有微觀數據的踏實支撐。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "撲克臉的代價",
-        "title": "在強調感性與體驗的行銷世界裡，只有理性數字就像乏味的撲克臉",
-        "subtitle": "缺乏情感共鳴的提案，在主管會議上最容易被無情砍掉預算",
-        "left": {
-          "title": "撲克臉企劃在跨部門溝通中的慘敗",
-          "theme": "blue",
-          "points": [
-            "向主管報告：主管聽了只覺得你在要錢，開始無情砍預算與挑剔細節",
-            "向業務溝通：業務覺得又是一次交差了事的宣傳，私底下根本不願全力配合推廣",
-            "向消費者溝通：廣告投放出去點擊率慘淡，消費者感受不到任何靈魂觸動"
-          ]
-        },
-        "right": {
-          "title": "注入靈魂之後的化學反應",
-          "theme": "teal",
-          "points": [
-            "主管被感人至深的品牌畫面打動，願意給予更多資源與信任授權",
-            "第一線員工感受到了這項工作的崇高意義，自發性提供超越標準的熱情服務",
-            "消費者在社群上自發成為品牌自來水，主動拍照打卡、奔相走告！"
-          ]
-        }
+        "layout": "stepper",
+        "badge": "推演程序 · 26/60",
+        "sec": "問題界定與真因",
+        "title": "問題界定三階漏斗：從表面抱怨到核心病因的過濾程序",
+        "subtitle": "層層剝離外在偶然因素，逼近系統性缺陷的核心命題",
+        "steps": [
+          {
+            "tag": "第一階：現象蒐集",
+            "phase": "現況盤點",
+            "title": "廣泛記錄業務表徵與顧客反饋",
+            "desc": "客觀記錄客訴反映、退換貨率、停留時長與銷售曲線，避免主觀武斷定性。"
+          },
+          {
+            "tag": "第二階：因果解構",
+            "phase": "鏈條推演",
+            "title": "運用 5-Whys 進行因果鏈條深挖",
+            "desc": "針對表象現象連續追問『為什麼會這樣？』，層層剝開表皮探尋組織結構問題。"
+          },
+          {
+            "tag": "第三階：目標收斂",
+            "phase": "決策錨定",
+            "title": "鎖定具體可解之結構性真因",
+            "desc": "將診斷成果轉化為兼具商業價值與執行可行性的具體命題，作為企劃指針。"
+          }
+        ],
+        "insight": "唯有穿透第一層的表面抱怨，經過第二層的因果梳理，才能在第三層錨定真正有價值的企劃命題。"
       },
       {
-        "layout": "3card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "圖像三大激勵作用",
-        "title": "將圖像與感覺帶入企劃目標的三大激勵作用（曾光華歸納）",
-        "subtitle": "激發內在驅動力，讓團隊從『要我做』變成『我想要做』",
+        "layout": "comparison",
+        "badge": "學理深化 · 27/60",
+        "sec": "問題界定與真因",
+        "title": "表面現象 vs 本質真因：冰山理論在商業企劃的深度應用",
+        "subtitle": "看見水面上的事件只是基本功，看懂水面下的思維模型才是頂尖企劃人",
+        "leftTitle": "水面之上（事件與徵狀）",
+        "leftBadge": "可見的表象",
+        "leftPoints": [
+          "事件層（Events）：『今天的營業額又掉了 15%！』",
+          "常見處置：主管咆哮、要求今天立刻發傳單、在群組逼問業績",
+          "盲目循環：每天疲於奔命滅火，但同樣的問題明天依然重複上演",
+          "本質弱點：只看到單點發生的個別事件，未察覺深層規律"
+        ],
+        "rightTitle": "水面之下（結構與心智模型）",
+        "rightBadge": "不可見的本質",
+        "rightPoints": [
+          "趨勢層（Patterns）：連續六個月在下午時段顧客停留時間持續縮短",
+          "結構層（Structures）：門市動線擁擠且缺乏充電插座，不適合停留交談",
+          "心智層（Mental Models）：管理層誤以為顧客只是來快速買咖啡走人",
+          "戰略突破：重構空間體驗與下午茶情境，徹底扭轉下午時段之營收結構"
+        ],
+        "insight": "曾光華教授提示：治病若只治發燒，病人終將病危。優秀企劃大腦永遠致力於水面下的結構性突破。"
+      },
+      {
+        "layout": "stepper",
+        "badge": "思考工具 · 28/60",
+        "sec": "問題界定與真因",
+        "title": "5-Whys 思考鏈：連續追問五次為什麼的實戰威力",
+        "subtitle": "豐田生產方式（TPS）經典心法，在行銷企劃目標設定中的驚人威力",
+        "steps": [
+          {
+            "tag": "Why 1 & 2",
+            "phase": "初級解構",
+            "title": "從表象推導至直接原因",
+            "desc": "現象：新顧客下單率偏低 ➔ Why 1：結帳頁面跳出率過高 ➔ Why 2：需要填寫過多非必要個人資料。"
+          },
+          {
+            "tag": "Why 3 & 4",
+            "phase": "系統檢視",
+            "title": "從直接原因推導至流程缺失",
+            "desc": "Why 3：行銷團隊想蒐集完整的 CRM 資料 ➔ Why 4：未建立首購與後續追蹤的分階段留存機制。"
+          },
+          {
+            "tag": "Why 5",
+            "phase": "核心真因",
+            "title": "直擊核心心智模型與目標定錨",
+            "desc": "Why 5：企劃思維以內部管理方便為中心，而非以顧客流暢體驗為核心！"
+          }
+        ],
+        "insight": "5-Whys 的目的不是找人推卸責任，而是找到系統流程的漏洞；問到第五個為什麼，真因自然浮現。"
+      },
+      {
+        "layout": "comparison",
+        "badge": "經典案例剖析 · 29/60",
+        "sec": "問題界定與真因",
+        "title": "漢堡店銷量下滑診斷：產品口味迷思 vs 等候動線真因",
+        "subtitle": "曾光華教授生動案例：顧客不來買午餐，真的是因為漢堡不好吃嗎？",
+        "leftTitle": "主觀假設（口味迷思）",
+        "leftBadge": "誤判病因",
+        "leftPoints": [
+          "主管直覺：『一定是最近研發的主打黑椒牛肉堡口味不符合大眾喜好！』",
+          "企劃方案：花費 50 萬元重新邀請名廚調配醬汁，並更換特選牛肉原料",
+          "結果依然：漢堡成本提高了，但午餐尖峰時段的排隊顧客依然持續流失",
+          "致命盲點：沒有走到第一線排隊現場，觀察顧客真實的焦慮與放棄決策"
+        ],
+        "rightTitle": "現場真因探究（動線瓶頸）",
+        "rightBadge": "真因擊破",
+        "rightPoints": [
+          "現場觀察：附近上班族午餐休息僅 60 分鐘，而點餐到取餐平均耗時 18 分鐘！",
+          "真正真因：上班族害怕下午上班遲到，轉而走去隔壁便利商店買飯糰",
+          "精準目標：『建立午餐預先手機點餐專屬快速取餐通道，等候降至 3 分鐘』",
+          "業績爆發：午餐時段營收在兩週內暴增 65%，原口味漢堡大獲好評！"
+        ],
+        "insight": "顧客放棄你的原因往往不是產品本體，而是獲得產品過程中的巨大時間痛苦！"
+      },
+      {
+        "layout": "four_pillars",
+        "badge": "診斷工具 · 30/60",
+        "sec": "問題界定與真因",
+        "title": "魚骨圖（要因分析圖）在微型創業情境的四大維度",
+        "subtitle": "有系統地窮盡可能原因，避免個人盲點遺漏關鍵要素",
+        "pillars": [
+          {
+            "icon": "users",
+            "name": "1. 人員因素（People）",
+            "detail": "服務應對是否專業親切？溝通話術是否清晰？是否缺乏主動解說產品價值的熱情？"
+          },
+          {
+            "icon": "file-text",
+            "name": "2. 方法流程（Methods）",
+            "detail": "交易流程是否繁瑣？等待時間是否過長？退換貨或售後支援是否讓顧客產生疑慮？"
+          },
+          {
+            "icon": "map-pin",
+            "name": "3. 環境場景（Environment）",
+            "detail": "實體攤位或線上網頁介面是否整潔美觀？導購動線是否直覺？信任背書是否充足？"
+          },
+          {
+            "icon": "box",
+            "name": "4. 產品本體（Materials）",
+            "detail": "包裝設計是否具有質感？品質穩定度是否符合預期？性價比感受是否具有競爭力？"
+          }
+        ],
+        "insight": "透過魚骨圖的結構化梳理，創業者能清晰看清問題的全貌，不再憑感覺瞎猜。"
+      },
+      {
+        "layout": "comparison",
+        "badge": "逆向企劃 · 31/60",
+        "sec": "問題界定與真因",
+        "title": "逆向思維企劃：季節性逆轉策略（冰淇淋與防曬傘的奇蹟）",
+        "subtitle": "市場看似死寂的淡季，往往隱藏著顛覆常規思維的巨大藍海機會",
+        "leftTitle": "傳統被動思維（聽天由命）",
+        "leftBadge": "順應常規",
+        "leftPoints": [
+          "冬天冰淇淋門市：『冬天大家怕冷不吃冰，只能縮短營業時間等待春天』",
+          "晴天雨傘品牌：『晴天大家都不買傘，只能在梅雨季節拼命削價促銷清庫存』",
+          "企劃盲點：將產品用途自我設限在單一情境，營收隨天氣劇烈波動",
+          "後果後患：淡季固定租金與人事成本照付，旺季賺的利潤全被淡季虧損吃掉"
+        ],
+        "rightTitle": "逆向價值重構（場景再造）",
+        "rightBadge": "場景翻轉",
+        "rightPoints": [
+          "冬季冰淇淋逆襲：主打『暖氣房裡的奢華幸福感』，推出濃郁烤布蕾熱淋醬冰品",
+          "晴天陽傘逆襲：重新定位為『抗 UV 頂級美白護膚時尚單品』，晴天熱銷反超雨天",
+          "企劃目標：『將原本淡季營收佔比自 8% 提升至全年度的 35% 以上』",
+          "核心啟示：重新定義產品使用場景與情感價值，就能徹底打破季節性魔咒"
+        ],
+        "insight": "曾光華教授提示：沒有絕對的淡季，只有尚未被喚醒的使用場景與企劃創意！"
+      },
+      {
+        "layout": "stepper",
+        "badge": "商機轉化 · 32/60",
+        "sec": "問題界定與真因",
+        "title": "從痛點到商機的四步轉換跳板",
+        "subtitle": "把別人的麻煩與痛苦，變成你微型創業企劃最值錢的商業模式",
+        "steps": [
+          {
+            "tag": "第一步：捕捉痛苦",
+            "phase": "痛點聚焦",
+            "title": "精準描繪受眾的負面情緒時刻",
+            "desc": "記錄顧客何時感到焦慮、尷尬、耗時、繁瑣或被敲竹槓的真實生活瞬間。"
+          },
+          {
+            "tag": "第二步：價值反轉",
+            "phase": "反向提案",
+            "title": "設計『一鍵解除痛苦』的價值主張",
+            "desc": "將痛苦的相反面直接作為核心訴求，例如：『免排隊、免等待、三分鐘取餐』。"
+          },
+          {
+            "tag": "第三步：MVP 原型",
+            "phase": "最小產品",
+            "title": "打造驗證解方的最小可行原型",
+            "desc": "運用靜態部署網頁與即時表單，以最低成本搭建能提供該解法的服務樣態。"
+          },
+          {
+            "tag": "第四步：目標驗證",
+            "phase": "數據定錨",
+            "title": "訂定期中提案之成效驗證指標",
+            "desc": "以痛點解除前後之體驗滿意度與推薦意願，作為衡量企劃成功的客觀標準。"
+          }
+        ],
+        "insight": "痛苦越深，解方的價值越高。優秀的企劃者是『問題的收購者』與『痛點的終結者』。"
+      },
+      {
+        "layout": "visual_matrix",
+        "badge": "避坑指南 · 33/60",
+        "sec": "問題界定與真因",
+        "title": "青年微型創業常見的三大『假問題』與破局法",
+        "subtitle": "大一企管同學最常踩中的三個思維陷阱，必須提早識破並嚴格排除",
         "cards": [
           {
-            "title": "1. 凝聚跨領域共識",
-            "theme": "blue",
-            "points": [
-              "文字可能產生歧義，但鮮明的畫面不會",
-              "讓行銷、工程、設計、財務腦袋看見同一副未來圖景",
-              "大幅降低溝通摩擦成本"
-            ]
+            "icon": "frown",
+            "title": "陷阱一：自我想像的需求",
+            "desc": "創業者自己覺得很酷、很有趣，但實際訪談 20 位潛在顧客卻無人願意買單。"
           },
           {
-            "title": "2. 點燃持續奮鬥熱情",
-            "theme": "teal",
-            "points": [
-              "創業與企劃落地過程充斥挫折與突發危機",
-              "當團隊疲憊想放棄時，美好的成功畫面就是最強興奮劑",
-              "支撐團隊熬過至暗時刻"
-            ]
+            "icon": "settings",
+            "title": "陷阱二：無關痛癢的次要問題",
+            "desc": "解決了某個小不便，但受眾覺得現狀也可以湊合著過，缺乏立即改變的急迫性。"
           },
           {
-            "title": "3. 指引創意發想航向",
-            "theme": "amber",
-            "points": [
-              "創意發散時容易天馬行空走偏",
-              "圖像化目標就像北極星，指引創意聚焦在真實體驗上",
-              "確保創新不脫靶"
-            ]
+            "icon": "dollar-sign",
+            "title": "陷阱三：缺乏支付意願的偽需求",
+            "desc": "大家都說這項服務好，但一旦要掏錢付費或提供具體承諾時，眾人立刻作鳥獸散。"
           }
-        ]
+        ],
+        "insight": "判斷真假問題的唯一標準：受眾是否曾為了解決該問題，主動花費過金錢或大量時間！"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "實踐方法一：受眾",
-        "title": "具體實踐方法一：想像企劃成果對『目標消費者』產生的幸福畫面",
-        "subtitle": "用特寫鏡頭捕捉顧客解決痛苦那一刻的釋懷與喜悅",
-        "left": {
-          "title": "如何描摹消費者的幸福特寫？",
-          "theme": "blue",
-          "points": [
-            "閉上眼睛，想像企劃案成功推行三個月後的某個星期六下午",
-            "你的目標顧客在哪裡？身邊有誰陪伴？他手裡拿著你們的產品，臉上的表情是什麼？",
-            "他對身邊的朋友說了一句什麼讚美的話？他在 IG 貼文上寫下了什麼感謝字句？"
-          ]
-        },
-        "right": {
-          "title": "實戰文字轉化技巧",
-          "theme": "teal",
-          "points": [
-            "不寫：『提升大學生自習效率 30%』",
-            "改寫：『讓期末考週在圖書館苦讀到深夜的大學生，闔上筆電走出大門時，不再感到頭痛焦慮，而是嘴角帶著自信微笑，抬頭看見滿天星斗。』"
-          ]
-        }
+        "layout": "quote_takeaway",
+        "badge": "大師思維 · 34/60",
+        "sec": "問題界定與真因",
+        "title": "曾光華教授談問題界定：花一小時找對問題",
+        "subtitle": "問題定義的精確度，決定了整個商業企劃的天花板",
+        "quote": "如果你給我一個小時拯救地球，我會花五十九分鐘界定問題，最後只留一分鐘尋找解方。因為一旦找對了核心問題，答案往往呼之欲出。",
+        "author": "曾光華 教授 ｜ 國立中正大學行銷學名譽教授",
+        "pillars": [
+          {
+            "title": "避免盲目投入",
+            "desc": "在問題真因未經檢驗前，絕不輕易耗費開發成本與行銷預算。"
+          },
+          {
+            "title": "鍛鍊批判眼光",
+            "desc": "對表面數據與第一手抱怨保持懷疑，堅持追問背後系統性因果。"
+          },
+          {
+            "title": "錨定黃金命題",
+            "desc": "將所有精力聚焦於能夠引發骨牌效應的核心關鍵命題之上。"
+          }
+        ],
+        "insight": "找對問題就是成功的一半；每位同學在期中提案前，都必須對自己的題目進行深度拷問。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "實踐方法二：夥伴",
-        "title": "具體實踐方法二：想像企劃成果對『通路與合作夥伴』帶來的尊榮",
-        "subtitle": "共贏才能長久，好企劃讓合作夥伴感到被尊重與攜手成長",
-        "left": {
-          "title": "將合作夥伴納入美好圖景",
-          "theme": "blue",
-          "points": [
-            "傳統企劃只把通路與供應商當成殺價壓榨的對象，關係脆弱緊張",
-            "卓越企劃將合作夥伴視為共同創造價值的盟友，讓他們因為參與本案而獲得行業聲譽",
-            "描繪合作夥伴如何自豪地向其同業炫耀這次創新的跨界合作"
-          ]
-        },
-        "right": {
-          "title": "實戰文字轉化技巧",
-          "theme": "teal",
-          "points": [
-            "不寫：『壓低在地小農進貨成本 10%，擴大合作家數』",
-            "改寫：『讓原本默默無聞的桃園在地有機茶農，看見自己的名字與故事被精緻印刷在每一罐文創茶飲包裝上，被全台灣年輕人珍藏與打卡。』"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "實踐方法三：團隊",
-        "title": "具體實踐方法三：想像企劃成果對『第一線同仁』激發的自豪感",
-        "subtitle": "讓每一位參與者在企劃成功那天，都能挺起胸膛為自己鼓掌",
-        "left": {
-          "title": "喚醒團隊深處的職業自尊",
-          "theme": "blue",
-          "points": [
-            "沒有人希望自己一輩子只是個毫無靈魂的工具人或例行公事執行機器",
-            "一份伟大的企劃案，應當成為參與者職業生涯中引以為傲的里程碑",
-            "描繪專案慶功宴那天，團隊成員舉杯相慶、互相擁抱的熱淚盈眶瞬間"
-          ]
-        },
-        "right": {
-          "title": "實戰文字轉化技巧",
-          "theme": "teal",
-          "points": [
-            "不寫：『要求門市工讀生貫徹標準微笑話術』",
-            "改寫：『讓萬能科大的實習工讀生在服務顧客時，不再感到枯燥疲憊，而是能因為聽見客人一句真誠的謝謝，真切感受到自己正在點亮別人的生活。』"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "經典標竿案例一",
-        "title": "經典標竿案例剖析：迪士尼樂園的企劃目標——不只是賣門票",
-        "subtitle": "超越商業交易，定義終極的情感價值追求",
-        "left": {
-          "title": "迪士尼企劃目標的世紀演進",
-          "theme": "blue",
-          "points": [
-            "如果迪士尼的企劃目標寫：『在加州興建一座擁有 40 項遊樂設施的主題樂園，每年吸引 500 萬遊客，獲取門票與餐飲營收 2 億美元。』",
-            "這只是一份平庸的遊樂場開發案，絕不可能誕生後續百年的文化奇蹟！",
-            "華特·迪士尼親手寫下的企劃目標：『我們要打造一個能讓成年人和小孩子一同沉浸在魔法童話中、創造世界上最快樂回憶的地方（The Happiest Place on Earth）！』"
-          ]
-        },
-        "right": {
-          "title": "對全體同仁行為的深遠塑造",
-          "theme": "teal",
-          "points": [
-            "園區內沒有『清潔工』，只有『魔幻演出者』；沒有『顧客』，只有『尊貴的賓客』",
-            "哪怕只是一張掉在地上的爆米花紙屑，同仁也會以優雅的舞步姿勢迅速撿起，只為不打破孩子心中的魔法世界！"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "經典標竿案例二",
-        "title": "經典標竿案例剖析：全聯超市『全聯經濟美學』——把省錢變成時髦生活態度",
-        "subtitle": "將傳統廉價超市形象，昇華為年輕世代的情感共鳴聖地",
-        "left": {
-          "title": "傳統連鎖超市的痛點困境",
-          "theme": "blue",
-          "points": [
-            "全聯在早期以低價著稱，但主要客群多為婆婆媽媽，在年輕大學生與白領心中是『廉價、老氣、省小錢』的象徵",
-            "年輕人逛全聯甚至會覺得有點不好意思，寧可去更時髦但昂貴的高檔百貨超市",
-            "如果企劃目標只是：『提升 20~29 歲年輕客群來客數 15%』，必然落入無效的打折促銷"
-          ]
-        },
-        "right": {
-          "title": "全聯經濟美學的突破性目標與畫面",
-          "theme": "teal",
-          "points": [
-            "企劃目標重構：『讓年輕人拿著全聯白色塑膠提袋走在東區街頭時，內心感到的不是拮据省錢，而是一種懂得精明過生活、不被消費主義綁架的酷炫生活態度！』",
-            "成果：推出一系列文青風經典海報，引爆全台灣年輕人瘋狂轉發與搶購，徹底翻轉品牌生命週期！"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "目標文字雕琢",
-        "title": "企劃目標的文字雕琢修煉：兼具商業指標的嚴密性與品牌修辭的藝術性",
-        "subtitle": "一字一句反覆推敲，打造如鑽石般璀璨堅硬的企劃宣言",
-        "left": {
-          "title": "文字雕琢的三大境界",
-          "theme": "blue",
-          "points": [
-            "第一境界【正確無錯】：文法通順，明確交代人、事、時、地、物與數字（及格水準）",
-            "第二境界【精準有力】：動詞精練，剔除一切打轉繞圈的贅字，每一句都直擊商業痛點（良好水準）",
-            "第三境界【意象萬千】：字裡行間散發出獨特的品牌人格與文化底蘊，讀完令人熱血沸騰、久久難忘（大師水準）"
-          ]
-        },
-        "right": {
-          "title": "課堂實踐打磨練習",
-          "theme": "teal",
-          "points": [
-            "每位同學將初步擬定的企劃目標寫在白板上，全體同學共同刪除其中 30% 不必要的副詞與套話",
-            "換上 2 個極具畫面感與五感體驗的生動動詞，立刻讓目標鮮活起來！"
-          ]
-        }
-      },
-      {
-        "layout": "section",
-        "num": "CHAPTER 04",
-        "title": "AI Agent 協助問題診斷與目標鍛造",
-        "desc": "企劃大腦以 ReAct 思考鏈條驅動 AI 協同體，完成從混沌直覺到精準目標的進化"
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "傳統診斷瓶頸",
-        "title": "傳統問題發掘的致命瓶頸：團隊容易陷入當局者迷與集體盲思",
-        "subtitle": "自己生的小孩自己看都漂亮，難以看見房間裡的大象",
-        "left": {
-          "title": "團隊討論的常見社交心理障礙",
-          "theme": "blue",
-          "points": [
-            "害怕冒犯同儕或組長，對明顯有漏洞的想法保持禮貌性沉默（Groupthink）",
-            "受限於自身有限的生活經驗，誤以為『我和我朋友都這樣，所以全世界都這樣』",
-            "在討論會議中耗費數小時爭論主觀感覺，缺乏客觀對照組與事實基線"
-          ]
-        },
-        "right": {
-          "title": "導入 AI Agent 作為客觀鏡子",
-          "theme": "teal",
-          "points": [
-            "AI Agent 沒有社交包袱，不會為了顧及面子而迎合討好",
-            "能夠瞬間調用全網百萬篇產業案例與消費者客訴，提供冷酷的對照檢驗",
-            "扮演不知疲倦的蘇格拉底，透過連續提問逼迫團隊直面思維盲區"
-          ]
-        }
-      },
-      {
-        "layout": "3card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "多 Agent 診斷架構",
-        "title": "多 Agent 協同問題診斷系統架構設計",
-        "subtitle": "分工明確的虛擬專家團，為小組提案提供全方位壓力測試",
+        "layout": "visual_matrix",
+        "badge": "管理學經典 · 35/60",
+        "sec": "SMART 原則與圖像感",
+        "title": "S.M.A.R.T. 原則的現代企業實務拆解",
+        "subtitle": "曾光華教授學理精髓：杜絕空泛口號，建立有刻度、有期限的目標指針",
         "cards": [
           {
-            "title": "【Agent 1：市場偵探】",
-            "theme": "blue",
-            "points": [
-              "專門爬梳同業差評與客訴社群",
-              "找出消費者最常抱怨但未被解決的摩擦阻力",
-              "輸出客觀痛點清單與發生情境"
-            ]
+            "icon": "target",
+            "title": "S - Specific (具體明確)",
+            "desc": "精確指涉欲改變的行為或市場指標，例如『提升午餐尖峰出餐效率』而非『加強服務品質』。"
           },
           {
-            "title": "【Agent 2：反向辯駁者】",
-            "theme": "teal",
-            "points": [
-              "專門質疑小組的前提假設",
-              "連續追問 5 個『如果不是這樣呢？』",
-              "防止團隊落入自我陶醉的陷阱"
-            ]
+            "icon": "activity",
+            "title": "M - Measurable (可衡量度量)",
+            "desc": "訂定明確的數據指標，如『顧客平均等候時間自 14 分鐘降至 6 分鐘以內』。"
           },
           {
-            "title": "【Agent 3：目標雕琢師】",
-            "theme": "amber",
-            "points": [
-              "將鬆散的討論收斂為 SMART 架構",
-              "運用修辭學技巧注入生動圖像與感覺",
-              "產出具震撼力的企劃目標宣告"
-            ]
+            "icon": "award",
+            "title": "A - Achievable (積極可行)",
+            "desc": "在團隊現有技術與資源邊界內，經由優化流程可以達成的挑戰性目標。"
+          },
+          {
+            "icon": "compass",
+            "title": "R - Relevant (戰略攸關)",
+            "desc": "緊扣微型創業的核心生存命脈，能實質帶動翻桌率與再訪率的關鍵指標。"
+          },
+          {
+            "icon": "clock",
+            "title": "T - Time-bound (期限明確)",
+            "desc": "設定明確的里程碑驗證節點，如『期中提案通過後四週內完成第一波驗證』。"
           }
-        ]
+        ],
+        "insight": "好的企劃目標不是激勵大會上的口號，而是每一天每一位團隊夥伴都能清楚對齊的行動準繩。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "5-Why 提示詞工程",
-        "title": "以 AI Agent 執行 5-Why 深度追問的實戰提示詞設計",
-        "subtitle": "讓 AI 化身為最犀利的豐田生產線品質總監",
-        "left": {
-          "title": "CLEAR 框架之 5-Why 提示詞模板",
-          "theme": "blue",
-          "points": [
-            "【Context】：我們是一組大一企劃團隊，正在探討『大學生租屋寵物寄宿問題』",
-            "【Logical Role】：請你扮演精通豐田 5-Why 方法論的資深企劃顧問，以嚴厲冷靜的態度引導我",
-            "【Exact Task】：針對我們提出的初步痛點『寒暑假找不到人幫忙照顧貓咪』，連續進行 5 層深度追問，每一層必須打破表面藉口，逼問深層真因",
-            "【Action Boundaries】：禁止直接給予解決方案，每次只問一個關鍵問題，等待我的回答後再進行下一層追問"
-          ]
-        },
-        "right": {
-          "title": "演練效果與心得",
-          "theme": "teal",
-          "points": [
-            "避免一次性生成過多無效資訊，透過一問一答的互動，真正引導出個人創辦人從未思考過的現場細節！"
-          ]
-        }
+        "layout": "comparison",
+        "badge": "實務對照 · 36/60",
+        "sec": "SMART 原則與圖像感",
+        "title": "模糊空泛目標 vs S.M.A.R.T. 具體目標深度對照表",
+        "subtitle": "一字之差，天壤之別：從無法執行的願望清單，升級為精確導航的戰鬥指令",
+        "leftTitle": "常見空泛口號（無效目標）",
+        "leftBadge": "無法衡量",
+        "leftPoints": [
+          "『我們要大幅提升萬能科大校園師生對我們品牌的知名度！』",
+          "『這學期要用心經營社群，把貼文內容做得非常豐富有趣！』",
+          "『期中報告上線後，希望能吸引很多同學來使用我們的平台！』",
+          "致命缺點：沒有定義誰是大眾、沒有量化指標、沒有驗證期限"
+        ],
+        "rightTitle": "S.M.A.R.T. 專業目標（精準導航）",
+        "rightBadge": "刻度清晰",
+        "rightPoints": [
+          "『在期中考前 3 週，吸引萬能企管系 120 名大一同學完成平台註冊』",
+          "『促成首批 30 筆二手教科書真實媒合，且每筆交易平均滿意度達 4.5 星』",
+          "『將著陸頁表單填寫轉換率自初期的 8% 提升至 22% 以上』",
+          "強大優勢：對象明確、刻度具體、時間節奏清晰，團隊每個人都知道該做什麼"
+        ],
+        "insight": "當目標變得具體可衡量，模糊的恐懼就會消失，取而代之的是清晰踏實的執行路徑。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "約束 AI 防幻覺",
-        "title": "避免 AI 幻覺：如何用真實次級資料嚴格約束 AI Agent 的推論範圍",
-        "subtitle": "把事實的籠子鎖好，讓 AI 在安全邊界內發揮推理能力",
-        "left": {
-          "title": "AI 幻覺在目標設定中的危險展現",
-          "theme": "blue",
-          "points": [
-            "如果你問：『請幫我預估台灣大學生二手書市場的年產值是多少？』",
-            "缺乏檢索約束的 AI 可能隨口捏造出『經教育部統計約為新台幣 85 億元』的虛假數據！",
-            "如果直接貼進企劃書，將在期中報告現場被授課教師與評審當場拆穿！"
-          ]
-        },
-        "right": {
-          "title": "雙重接地防護機制（Grounding & Retrieval）",
-          "theme": "teal",
-          "points": [
-            "第一步【指定事實來源】：在 Prompt 中明確附上政府統計公報或你親自查到的真實論文數據文本",
-            "第二步【設定防呆邊界】：『若提供的資料中未包含該項數字，請明確回答不知道，嚴禁自行揣測捏造！』",
-            "第三步【交叉比對】：要求 AI 列出所有推導所引用的具體段落與頁數，企劃大腦親自點開原文覆核"
-          ]
-        }
+        "layout": "stepper",
+        "badge": "維度精修 · 37/60",
+        "sec": "SMART 原則與圖像感",
+        "title": "S - Specific (具體明確)：精確界定欲改變之關鍵商業行為",
+        "subtitle": "拒絕籠統形容詞，用高解析度鏡頭描摹目標達成的具體狀態",
+        "steps": [
+          {
+            "tag": "檢驗 1：受眾具體",
+            "phase": "對象鎖定",
+            "title": "精確指定目標對象是誰？",
+            "desc": "從籠統的『大學生』收斂為『萬能科大無機車代步、需要在校內解決午餐的外宿大一新生』。"
+          },
+          {
+            "tag": "檢驗 2：行為具體",
+            "phase": "動作界定",
+            "title": "期望受眾做出什麼具體動作？",
+            "desc": "從『喜歡我們』收斂為『每週至少使用本系統進行兩次午餐預約點餐』。"
+          },
+          {
+            "tag": "檢驗 3：場景具體",
+            "phase": "情境還原",
+            "title": "該行為在何種時空場景下發生？",
+            "desc": "明確鎖定在上午第四節下課（12:00）前 15 分鐘的預先集單時段。"
+          }
+        ],
+        "insight": "具體性是專業企劃的基本功；模糊是執行力的頭號殺手。"
       },
       {
-        "layout": "3card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "提示詞工程三部曲",
-        "title": "AI 輔助『SMART + 圖像感』目標生成的提示詞工程三部曲",
-        "subtitle": "從散亂的想法碎片，淬鍊為光彩奪目的黃金目標",
+        "layout": "stepper",
+        "badge": "維度精修 · 38/60",
+        "sec": "SMART 原則與圖像感",
+        "title": "M - Measurable (可衡量度量)：訂定具備基線與刻度的量化指標",
+        "subtitle": "無法衡量就無法管理；為企劃案裝上靈敏的商業儀表板",
+        "steps": [
+          {
+            "tag": "要素 1：基準線",
+            "phase": "起跑點",
+            "title": "建立現狀基準線（Baseline）",
+            "desc": "清楚記錄在企劃介入前，該項指標的歷史平均數值（例如：目前每週平均僅 5 筆委託）。"
+          },
+          {
+            "tag": "要素 2：增量目標",
+            "phase": "目標值",
+            "title": "設定具有挑戰性的目標增量",
+            "desc": "明確宣示透過本次企劃案要達成的目標數值（例如：本學期提升至每週 35 筆委託）。"
+          },
+          {
+            "tag": "要素 3：驗證管道",
+            "phase": "測量機制",
+            "title": "確立可靠的數據追蹤來源",
+            "desc": "指定使用 Google Analytics、網站後台資料庫或線上回饋問卷進行客觀度量。"
+          }
+        ],
+        "insight": "數字是企劃案的骨架；有骨架支撐的企劃案，才能承受市場嚴苛的檢驗。"
+      },
+      {
+        "layout": "stepper",
+        "badge": "維度精修 · 39/60",
+        "sec": "SMART 原則與圖像感",
+        "title": "A & R：積極可行性與微型創業生存戰略之高度攸關",
+        "subtitle": "在『跳起來搆得著』的挑戰區間，找到攸關生存的核心指標",
+        "steps": [
+          {
+            "tag": "A - Achievable",
+            "phase": "能力邊界",
+            "title": "積極可行：不妄想、不躺平",
+            "desc": "設定經過努力跳起來可以達成的目標；大一同學切忌訂出『第一季營收突破一千萬』等脫離現實之幻想。"
+          },
+          {
+            "tag": "R - Relevant",
+            "phase": "戰略扣連",
+            "title": "戰略攸關：直擊生存命脈",
+            "desc": "該指標必須與微型創業的核心生存息息相關；切忌追求百萬粉專點讚等無法轉化為真實價值的虛榮指標。"
+          },
+          {
+            "tag": "綜效平衡",
+            "phase": "兩者交會",
+            "title": "在資源約束下最大化商業價值",
+            "desc": "盤點個人現有技術與時間，確保每項指標的達成都能直接鞏固期中與期末成果。"
+          }
+        ],
+        "insight": "目標要像摘蘋果：站在地上搆不著，但搬個梯子跳一下就能摘到，這樣的目標最能激發潛能。"
+      },
+      {
+        "layout": "stepper",
+        "badge": "維度精修 · 40/60",
+        "sec": "SMART 原則與圖像感",
+        "title": "T - Time-bound (期限明確)：設定敏捷里程碑與驗證節奏",
+        "subtitle": "沒有期限的目標只是一場夢想；給目標設定嚴格的倒數計時器",
+        "steps": [
+          {
+            "tag": "里程碑一",
+            "phase": "第 01~04 週",
+            "title": "企劃思維啟蒙與真因定錨",
+            "desc": "完成個人微型創業題目之問題界定、5-Whys 診斷與 SMART 目標確立。"
+          },
+          {
+            "tag": "里程碑二",
+            "phase": "第 05~09 週",
+            "title": "商業推演與期中提案發布",
+            "desc": "完成精實畫布、MVP 著陸頁設計，並於期中進行公開提案與原型展示。"
+          },
+          {
+            "tag": "里程碑三",
+            "phase": "第 10~18 週",
+            "title": "真實發布與期末成果發布",
+            "desc": "完成雲端部署、AI Agent 串接與真實用戶互動驗證，登上期末 Demo Day 競演！"
+          }
+        ],
+        "insight": "時間節奏是企劃落地的保證；按照 18 週節奏穩步推進，期末必能收穫令人驚艷的真實作品。"
+      },
+      {
+        "layout": "four_pillars",
+        "badge": "大師獨門心法 · 41/60",
+        "sec": "SMART 原則與圖像感",
+        "title": "曾光華教授獨門心法：為企劃目標注入「圖像感」與「心跳感」",
+        "subtitle": "冰冷的數字只能說服理智，具備畫面的目標才能點燃熱血與靈魂",
+        "pillars": [
+          {
+            "icon": "image",
+            "name": "1. 畫面感（Visual Sense）",
+            "detail": "讓閱讀企劃案的人腦海中立刻浮現生動的電影畫面，看見顧客開心的笑容與熱絡場景。"
+          },
+          {
+            "icon": "heart",
+            "name": "2. 心跳感（Emotional Beat）",
+            "detail": "訴諸真實情感與價值共鳴，讓創業者每天清晨醒來都充滿迫不及待要實現的渴望。"
+          },
+          {
+            "icon": "film",
+            "name": "3. 故事性（Narrative Drive）",
+            "detail": "將目標包裝成一個英雄克服困難、化解危機、為校園帶來美好改變的動人故事。"
+          },
+          {
+            "icon": "radio",
+            "name": "4. 召喚力（Call to Action）",
+            "detail": "創造一句響亮、震撼且能引發顧客主動轉發傳播的品牌核心戰鬥宣言。"
+          }
+        ],
+        "insight": "曾光華教授提示：頂尖企劃人是理性的會計師與感性的詩人之完美結合！"
+      },
+      {
+        "layout": "comparison",
+        "badge": "境界昇華 · 42/60",
+        "sec": "SMART 原則與圖像感",
+        "title": "冰冷冰塊數字 vs 具備畫面召喚力的企劃目標範例對照",
+        "subtitle": "同樣是達成商業指標，加入圖像感後如何瞬間打動評審與投資人？",
+        "leftTitle": "冰冷無感的條列數字",
+        "leftBadge": "如同一塊乾冰",
+        "leftPoints": [
+          "『目標在萬能科大校園推廣自製低卡便當，本學期預計售出 600 個便當』",
+          "『目標達成毛利率 32%，獲取 150 名重複購買顧客』",
+          "閱讀者感受：枯燥乏味、像是在看報表，缺乏情感連結與支持衝動",
+          "執行者心態：只是一份需要交差的差事，缺乏主動突破的熱情"
+        ],
+        "rightTitle": "注入心跳感的生動目標",
+        "rightBadge": "如同一團火焰",
+        "rightPoints": [
+          "『讓 150 位每天在超商為熱量焦慮的萬能同學，能在中午打開一份冒著香氣、色澤繽紛且熱量精準控制在 450 卡的現做暖心便當！』",
+          "『在期末前，成為萬能科大圖書館旁最溫暖的健康飲食補給站！』",
+          "閱讀者感受：畫面躍然紙上，立刻感受到香氣、溫度與強烈的社會價值",
+          "執行者心態：使命感油然而生，願意傾注全力打造極致美味體驗"
+        ],
+        "insight": "文字有了畫面，目標就有了靈魂；這正是頂尖行銷企劃與平庸方案的分水嶺。"
+      },
+      {
+        "layout": "four_pillars",
+        "badge": "在地實踐 · 43/60",
+        "sec": "校園在地微型創業",
+        "title": "萬能科技大學周邊商圈之微型創業四大典型場景",
+        "subtitle": "不用出校門，就在大園與中壢交界的生活圈發掘最真實的商業機會",
+        "pillars": [
+          {
+            "icon": "coffee",
+            "name": "場景一：特色手搖飲創新",
+            "detail": "針對萬能學生課間下課時間短暫，設計下課前預約、到店 10 秒取餐的零等待飲品服務。"
+          },
+          {
+            "icon": "truck",
+            "name": "場景二：宿舍外送拼單團購",
+            "detail": "突破外送平台高額外送費限制，打造宿舍樓棟定點拼單團購模式，共享外送優惠。"
+          },
+          {
+            "icon": "repeat",
+            "name": "場景三：二手專業器材租售",
+            "detail": "為航空、設計、企管等專業學生，搭建期末二手教科書、儀器器材檢驗代銷專區。"
+          },
+          {
+            "icon": "smartphone",
+            "name": "場景四：青年自媒體垂直選品",
+            "detail": "結合個人穿搭、美妝或開箱專長，打造針對大專生實習面試需求的膠囊服飾推薦。"
+          }
+        ],
+        "insight": "生活處處是商機；最成功的創業往往來自於創業者每天在校園生活中感受到的不便。"
+      },
+      {
+        "layout": "comparison",
+        "badge": "場景深耕 · 44/60",
+        "sec": "校園在地微型創業",
+        "title": "在地場景一：校園周邊特色手搖飲的目標設定與真因破解",
+        "subtitle": "大熱天想喝飲料但怕上課遲到：穿透口味競爭，直擊『時間摩擦力』",
+        "leftTitle": "傳統盲目競爭（紅海苦戰）",
+        "leftBadge": "價格與用料戰",
+        "leftPoints": [
+          "常規思維：『我們要在校門口開一家用料更頂級的手搖飲店，大打第二杯半價』",
+          "現實打擊：校門口已有十幾家連鎖品牌，降價促銷毛利幾乎歸零",
+          "致命障礙：下課僅 10 分鐘，學生看到排隊人潮就放棄購買",
+          "結果依然：即便飲料再好喝，也難以在短暫下課時段消化龐大客流"
+        ],
+        "rightTitle": "體驗模式創新（零等待取餐）",
+        "rightBadge": "效率革命",
+        "rightPoints": [
+          "真因洞察：學生不是不買，而是無法承受『排隊遲到』的懲罰風險",
+          "SMART 目標：『在第 08 週前建置 LINE 預點系統，下課前 15 分鐘接單並備妥，達成 10 秒快速取餐率 95%』",
+          "圖像感描繪：『鐘聲一響走出教室，走進店裡報號碼立刻接過冰涼飲料，優雅走進下一堂教室！』",
+          "商業成效：下課 10 分鐘內出杯量增加 3 倍，老顧客回購率達到 80%"
+        ],
+        "insight": "在校園微型創業中，時間往往比價格更具競爭力。解決時間焦慮就是最好的商業模式。"
+      },
+      {
+        "layout": "comparison",
+        "badge": "場景深耕 · 45/60",
+        "sec": "校園在地微型創業",
+        "title": "在地場景二：校園外送拼單團購平台的目標設定與真因破解",
+        "subtitle": "外送費比便當還貴：破解單人點餐外送費高昂的宿舍剛需",
+        "leftTitle": "傳統外送模式的痛點",
+        "leftBadge": "高昂門檻",
+        "leftPoints": [
+          "現狀困境：外送平台基本運費 60~80 元，一個人點 100 元便當極度不划算",
+          "等待煎熬：每個人各自叫外送，外送員頻繁在校門口等待，校園門禁管理混亂",
+          "盲目嘗試：發起一般 Line 群組聊天室統計，文字混亂經常漏單或算錯錢",
+          "失敗收場：主揪者墊錢又被抱怨，難以長期可持續運營"
+        ],
+        "rightTitle": "定點拼單模式的創新",
+        "rightBadge": "團購集單",
+        "rightPoints": [
+          "真因洞察：住宿生需要的是『平攤外送費與統一定點取餐』的自動化工具",
+          "SMART 目標：『期中前在萬能學生宿舍打造樓棟拼單著陸頁，每晚 18:00 定點送達，單人分攤運費降至 10 元以內』",
+          "圖像感描繪：『不用再為了湊滿額四處敲門問室友，手機一點自動拼單，下課回宿舍一樓順手領取熱騰騰晚餐！』",
+          "商業成效：期中提案前達成每晚穩定 40 單拼單，累積滿意度 98%"
+        ],
+        "insight": "微型創業就是把混亂的民間自發互助，升級為規範化、具備美感與效率的數位服務。"
+      },
+      {
+        "layout": "comparison",
+        "badge": "場景深耕 · 46/60",
+        "sec": "校園在地微型創業",
+        "title": "在地場景三：學生二手專業器材與教科書的痛點突破",
+        "subtitle": "買新書荷包痛、社團買賣怕被騙：搭建校園信任代銷媒合平台",
+        "leftTitle": "傳統自由交易的亂象",
+        "leftBadge": "缺乏信任",
+        "leftPoints": [
+          "買方焦慮：大一買全新原文書一本動輒千元，但社團二手書貼文雜亂且常被放鴿子",
+          "賣方麻煩：大四學長姐畢業在即，急於出清但嫌面交繁瑣、私訊議價耗損心力",
+          "品質糾紛：器材二手狀況不明（是否有刮痕、功能異常），缺乏客觀檢驗機制",
+          "交易斷層：每逢開學季社團貼文洗版，開學兩週後又迅速恢復死寂"
+        ],
+        "rightTitle": "專業代銷檢驗的創新",
+        "rightBadge": "信任護城河",
+        "rightPoints": [
+          "真因洞察：痛點核心在於『缺乏第三方品質驗證與便利的代收代付機制』",
+          "SMART 目標：『期中前完成萬能校園二手專屬目錄網站，提供器材狀況五星分級與學號認證，期中累積完成 60 筆無爭議交易』",
+          "圖像感描繪：『學長姐畢業行李箱一鍵清空，新生用半價開開心心領取經過消毒檢驗的整潔書本與專業器材！』",
+          "商業成效：收取 10% 服務手續費仍廣受歡迎，建立強大校園信任資產"
+        ],
+        "insight": "信任是商業中最稀缺的貨幣。只要你能為交易雙方建立信任保障，利潤自然隨之而來。"
+      },
+      {
+        "layout": "comparison",
+        "badge": "場景深耕 · 47/60",
+        "sec": "校園在地微型創業",
+        "title": "在地場景四：青年個人專業自媒體選品的利基定位",
+        "subtitle": "拒絕空泛網美網紅：以企管專業顧問視角，打造大專生膠囊職場穿搭選品",
+        "leftTitle": "通俗大眾自媒體（迷航紅海）",
+        "leftBadge": "面目模糊",
+        "leftPoints": [
+          "盲目跟風：每天分享通俗大眾搞笑短影音或隨性日常生活隨拍",
+          "流量迷失：耗費大量精力追逐點讚數，但粉絲輪廓模糊且毫無商業變現力",
+          "選品混亂：今天賣美妝、明天賣零食，毫無專業人設與信任度",
+          "下場黯淡：三個月後熱情耗盡，無法產出任何有深度的企劃或商業成果"
+        ],
+        "rightTitle": "垂直利基顧問（專業信任）",
+        "rightBadge": "精準變現",
+        "rightPoints": [
+          "利基定位：專為萬能大三大四同學打造『實習面試必勝：5 件單品搞定一週得體穿搭』",
+          "SMART 目標：『期中前完成 6 篇高質感圖文與選品著陸頁，獲取 100 位求職大專生訂閱並促成 25 套膠囊穿搭預約推薦』",
+          "圖像感描繪：『讓即將踏入航空實習或企業面試的同學，不用花大錢也能穿出自信專業的大將之風！』",
+          "商業成效：轉換率高達 25%，與在地優質西服選品店達成導流分潤合作"
+        ],
+        "insight": "自媒體不是比誰的粉絲多，而是比誰在細分領域更懂顧客痛點、更能建立不可動搖的專業信任！"
+      },
+      {
+        "layout": "stepper",
+        "badge": "題目篩選 · 48/60",
+        "sec": "校園在地微型創業",
+        "title": "個人獨立創業題目的篩選三原則：熱情、專長與市場剛需",
+        "subtitle": "刺蝟法則（Hedgehog Concept）在個人微型創業企劃中的經典應用",
+        "steps": [
+          {
+            "tag": "圈一：內在熱情",
+            "phase": "持久動力",
+            "title": "這件事能讓你廢寢忘食嗎？",
+            "desc": "挑選自己真心熱愛、即使遇到挫折也願意持續探究的領域，避免半途而廢。"
+          },
+          {
+            "tag": "圈二：專長與優勢",
+            "phase": "能力護城河",
+            "title": "你在這件事上有相對優勢嗎？",
+            "desc": "結合自己的專業技能、觀察敏銳度或現有資源，確保在該領域能做得比一般人好。"
+          },
+          {
+            "tag": "圈三：市場剛性需求",
+            "phase": "商業驗證",
+            "title": "市場有人願意為此掏錢買單嗎？",
+            "desc": "確認受眾痛點是否足夠深刻，具備真實付費意願或轉發分享的強烈衝動。"
+          }
+        ],
+        "insight": "三大圓圈重疊交會之處，就是每位同學個人專屬的期中微型創業最佳題目！"
+      },
+      {
+        "layout": "four_pillars",
+        "badge": "AI 協同實作 · 49/60",
+        "sec": "AI 協同目標推演",
+        "title": "個人獨立專案之 AI Agent 協同三人顧問團架構",
+        "subtitle": "貫徹個人獨立實踐！每位同學配備專屬的三大頂級 AI 虛擬專家顧問",
+        "pillars": [
+          {
+            "icon": "help-circle",
+            "name": "顧問一：真因診斷 Agent",
+            "detail": "擔任蘇格拉底式提問官，運用 5-Whys 連續追問五輪，逼出痛點背後的深層病因。"
+          },
+          {
+            "icon": "target",
+            "name": "顧問二：SMART 精煉 Agent",
+            "detail": "擔任資深企劃審查官，將模糊草案重塑為具備量化刻度、期限與圖像感的戰鬥指令。"
+          },
+          {
+            "icon": "shield-alert",
+            "name": "顧問三：紅隊防禦 Agent",
+            "detail": "擔任最挑剔的投資人與競爭者，嚴苛質疑商業模式漏洞，逼你建立防禦護城河。"
+          },
+          {
+            "icon": "user-check",
+            "name": "核心司令：同學個人決策大腦",
+            "detail": "保留最高決策權，以批判性思維裁決 AI 的各項建議，主導期中提案的靈魂。"
+          }
+        ],
+        "insight": "一人就是一家企劃顧問公司！善用 AI Agent 團隊，大一同學也能展現資深行銷主管的分析深度。"
+      },
+      {
+        "layout": "prompt_showcase",
+        "badge": "提示詞工程 · 50/60",
+        "sec": "AI 協同目標推演",
+        "title": "AI 協同實作一：問題真因診斷 Agent 提示詞設計",
+        "subtitle": "運用 5-Whys 思考鏈，讓 AI 擔任嚴格的蘇格拉底式提問官",
+        "agentRole": "企劃真因診斷 Agent (Root-Cause Diagnostic Specialist)",
+        "outputSpec": "多輪深度對話 ｜ 連續追問 ｜ 穿透表面現象",
+        "promptText": "你現在是一位擁有20年企業輔導經驗的資深行銷企劃顧問。我目前正在規劃一項個人微型創業題目：【請輸入你的創業主題，例如：萬能科大校園二手教科書與器材媒合平台】。\n\n我們面臨的核心問題表面上是：【請輸入觀察到的表面現象，例如：學生每學期買新書太貴，但二手書交易社團貼文雜亂無章】。\n\n請不要直接給我解答，而是依據曾光華教授『問題界定與真因挖掘』的學理，運用 5-Whys 思考法對我進行連續 3 到 5 輪的深度追問：\n1. 針對我提出的現象，分析其背後可能的第二層因果關係。\n2. 提出一個犀利且具體的引導問題，要求我提供更多具體細節與數據。\n3. 等我回答後，再進一步深挖下一層，直到找出結構性核心真因為止。",
+        "insight": "優秀的企劃者懂得將 AI 當作思想磨刀石，而非單純的文案代寫器；多輪提問能逼出最有價值的商業洞察。"
+      },
+      {
+        "layout": "stepper",
+        "badge": "實作攻略 · 51/60",
+        "sec": "AI 協同目標推演",
+        "title": "診斷 Agent 實戰多輪提問應對技巧",
+        "subtitle": "如何與 AI 進行高質量對話，避免流於表面泛泛而談？",
+        "steps": [
+          {
+            "tag": "第一輪：拒絕敷衍",
+            "phase": "破除表面",
+            "title": "提供真實校園細節與數據",
+            "desc": "不要只回答『很多人抱怨』，請具體說出『訪談了 8 位大一同學，其中 6 位提到找不到書況照片』。"
+          },
+          {
+            "tag": "第二輪：深挖阻礙",
+            "phase": "因果逼近",
+            "title": "直面顧客放棄決策的關鍵瞬間",
+            "desc": "分析顧客在點開貼文 30 秒後關閉視窗的真正心理阻力，如『怕被私訊騷擾』或『怕匯款後拿不到書』。"
+          },
+          {
+            "tag": "第三輪：真因鎖定",
+            "phase": "核心收斂",
+            "title": "總結系統性核心缺陷",
+            "desc": "與 AI 共同將真因收斂至一行話：『非價格問題，而是缺乏第三方信任背書與安全交付機制』。"
+          }
+        ],
+        "insight": "輸入越具體，AI 的洞察越深刻；將對話記錄妥善保存，就是期中企劃書最扎實的背景章節。"
+      },
+      {
+        "layout": "prompt_showcase",
+        "badge": "提示詞工程 · 52/60",
+        "sec": "AI 協同目標推演",
+        "title": "AI 協同實作二：S.M.A.R.T. 目標精煉 Agent 提示詞設計",
+        "subtitle": "將模糊的創業願望，重塑為具備量化刻度與圖像感的戰鬥指令",
+        "agentRole": "SMART 目標精煉 Agent (Strategic Target Architect)",
+        "outputSpec": "SMART 五維度拆解 ｜ 注入生動圖像感 ｜ 標註驗證指標",
+        "promptText": "你現在是一位頂尖行銷策略總監。我已經透過真因診斷，鎖定了我的微型創業核心問題：【請填入上一輪診斷出的核心真因】。\n\n我初步想設定的企劃目標是：【請填入你的初步構想，例如：希望能做一個萬能校園二手書平台，讓大家開學買到便宜的好書】。\n\n請依據曾光華教授『行銷企劃目標設定』之 S.M.A.R.T. 原則與『圖像感注入』心法，協助我進行深度優化：\n1. 【S - 具體明確】重構：精確指出目標客群、行為改變與應用場景。\n2. 【M - 可衡量】刻度：訂定 3 項具備基線與挑戰性的量化數據指標。\n3. 【A & R】可行與攸關：評估大一同學在 18 週內的可行性，並確保緊扣商業存活命脈。\n4. 【T - 期限】節奏：拆解期中提案（第9週）與期末發布（第18週）之明確驗證節點。\n5. 【圖像感心跳文案】：產出一句讓評審與顧客眼前一亮的畫面感戰鬥目標宣言！",
+        "insight": "AI 能迅速提供規範的格式架構，但最關鍵的量化刻度與真實情感，必須由創業者親自裁決與微調。"
+      },
+      {
+        "layout": "comparison",
+        "badge": "批判思維 · 53/60",
+        "sec": "AI 協同目標推演",
+        "title": "AI 生成初步草案 vs 個人批判校準後的卓越企劃目標",
+        "subtitle": "不能盲信 AI！創業者必須以現場觀察校準 AI 脫離現實的盲點",
+        "leftTitle": "AI 生成的通用草案（缺乏在地靈魂）",
+        "leftBadge": "空泛模板",
+        "leftPoints": [
+          "目標陳述：『在第一季度獲取 10,000 名活躍用戶，營收達到 50 萬元』",
+          "脫離現實：忽略了萬能科大校園人數規模與大一學生的資源邊界",
+          "缺乏溫度：文案充斥著通用商學院術語，感受不到萬能學生的在地溫度",
+          "無法驗證：沒有結合課程 18 週發布上線的具體操作工具鏈"
+        ],
+        "rightTitle": "個人批判校準後的卓越目標（扎實可行）",
+        "rightBadge": "在地靈魂",
+        "rightPoints": [
+          "精準聚焦：『在第 9 週前鎖定企管與航空系大一 150 名新生，達成 40 筆器材媒合』",
+          "具備刻度：『著陸頁留單率達 20%、器材品質 0 糾紛、正評率達 95%』",
+          "生動圖像：『讓學長姐畢業時行李箱一鍵清空，新生帶著安心笑容接過檢驗合格好物』",
+          "完整工具鏈：以 GitHub Pages 靜態網站發布原型，完全符合期中期末進度"
+        ],
+        "insight": "AI 是你的畫筆，你才是執筆的畫家；真正讓企劃案發光的是你的批判思維與在地洞察。"
+      },
+      {
+        "layout": "prompt_showcase",
+        "badge": "提示詞工程 · 54/60",
+        "sec": "AI 協同目標推演",
+        "title": "AI 協同實作三：紅隊防禦測試 Agent 提示詞設計",
+        "subtitle": "模擬最挑剔的投資人與競爭者，在方案發布前找出所有致命漏洞",
+        "agentRole": "紅隊防禦測試 Agent (Red-Team Challenger)",
+        "outputSpec": "嚴苛質疑 ｜ 商業漏洞檢驗 ｜ 逼出護城河",
+        "promptText": "你現在是一位極其嚴苛的創投評審與市場競爭情報專家。你對所有過於樂觀、空泛的創業企劃充滿懷疑。\n\n以下是我剛剛設定的微型創業企劃目標：\n【請貼上你剛剛精煉完成的 SMART 目標與圖像感宣言】\n\n請對我的企劃目標進行無情的『紅隊壓力測試（Red-Team Stress Test）』：\n1. 【資源邊界質疑】：以一位大一學生在有限時間與 0 元預算下，質疑這個目標最可能在哪個環節斷鏈崩潰？\n2. 【護城河質疑】：如果學校現有的校園二手社團或大型二手拍賣平台也推出類似功能，為什麼顧客一定要選我？\n3. 【用戶惰性質疑】：用戶真的會按照我預期的步驟去操作嗎？他們最可能因為什麼惰性而中途放棄？\n4. 請逼我提出三項具體的『防禦對策』，修補我的企劃漏洞！",
+        "insight": "在教室裡被 AI 犀利質疑一百次，也好過在市場上被真實顧客冷漠忽視一次！紅隊測試是頂級防彈衣。"
+      },
+      {
+        "layout": "visual_matrix",
+        "badge": "防禦策略 · 55/60",
+        "sec": "AI 協同目標推演",
+        "title": "紅隊防禦測試常見三大致命提問與個人防禦對策",
+        "subtitle": "預先演練評審與市場的嚴苛拷問，讓你的期中提案堅不可摧",
         "cards": [
           {
-            "title": "第一部：理性骨架建構",
-            "theme": "blue",
-            "points": [
-              "將小組初步訪談發現餵給 AI",
-              "要求嚴格依照 SMART 五維度列出草案",
-              "標註每個指標的測量方法與基準值"
-            ]
+            "icon": "shield-off",
+            "title": "質疑一：缺乏防禦壁壘，別人抄你怎麼辦？",
+            "desc": "防禦對策：深耕萬能科大在地班級人脈網絡，建立大平台無法標準化複製的線下面對面溫暖服務與極速交付。"
           },
           {
-            "title": "第二部：感性意象注入",
-            "theme": "teal",
-            "points": [
-              "要求 AI 針對目標客群的成功場景",
-              "構思 3 種不同五感體驗的視覺畫面描述",
-              "帶入時間、光線、表情與情感關鍵字"
-            ]
+            "icon": "trending-down",
+            "title": "質疑二：初期沒有流量，雙邊市場冷啟動如何破局？",
+            "desc": "防禦對策：先做單邊突破！先集中資源鎖定大四即將實習之學長姐獲取優質二手器材，貨架豐富後買家自然湧入。"
           },
           {
-            "title": "第三部：合體精煉打磨",
-            "theme": "amber",
-            "points": [
-              "融合理性數據與感性畫面為 150 字目標宣告",
-              "由企劃大腦進行最後的修辭潤色與決策",
-              "成為個人專案的靈魂燈塔"
-            ]
+            "icon": "user-x",
+            "title": "質疑三：顧客用了第一次，私下交易跳過平台怎麼辦？",
+            "desc": "防禦對策：提供平台專屬的『七天品質保障退換』與『信用積點兌換校園特約商店折扣』，讓脫離平台的風險成本遠大於手續費。"
           }
-        ]
+        ],
+        "insight": "頂尖企劃不是沒有缺點，而是早就預料到所有質疑，並且準備好了無懈可擊的應對方案。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "CLEAR 提示詞實例",
-        "title": "CLEAR 提示詞實戰示範：針對萬能校園二手書專案鍛造企劃目標",
-        "subtitle": "標準範例拆解，同學可直接依樣畫葫蘆應用於個人專案",
-        "left": {
-          "title": "完整高階提示詞指令範例",
-          "theme": "blue",
-          "points": [
-            "【C】：萬能科技大學企管系大一團隊，針對校園每學期數千本二手教科書被丟棄、新生卻買不起新書的痛點",
-            "【L】：曾光華學派行銷企劃教練，擅長將商業邏輯與在地人文關懷相結合",
-            "【E】：將上述痛點轉化為一組包含『SMART 量化指標』與『曾光華圖像感宣言』的完整企劃目標",
-            "【A】：目標時程以大一上學期 18 週為限，預算 5,000 元內，必須包含校內實體交接地點的幸福場景描述"
-          ]
-        },
-        "right": {
-          "title": "AI 優質輸出成果示範",
-          "theme": "teal",
-          "points": [
-            "『在第 16 週前完成校內專屬二手書快速媒合平台，達成 300 本教科書流轉，替萬能同學省下共計 15 萬元的購書開銷；並在開學第一週的學生活動中心穿堂，讓大一新生接過學長姐手中整潔泛著微光、寫滿重點筆記的傳承課本時，感受到溫暖的學長姐關懷與友善校園文化。』"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "對抗式驗證實戰",
-        "title": "對抗式驗證：讓 AI 扮演『嚴謹創投天使投資人』檢驗企劃目標",
-        "subtitle": "在動手前先接受最嚴酷的拷問，讓脆弱的想法及早被淘汰",
-        "left": {
-          "title": "模擬嚴謹創投投資人的專業質詢清單",
-          "theme": "blue",
-          "points": [
-            "『你說 18 週要達成 300 本流轉，你們組上只有 4 個人，請問平均一星期要經手幾本書？你們有時間上課嗎？』",
-            "『萬一學長姐根本不願意把書拿出來賣，你們的備案是什麼？去哪裡生出第一批庫存？』",
-            "『如果學校教官或總務處認為你們在穿堂擺攤違反校規，你們如何在一小時內應變？』"
-          ]
-        },
-        "right": {
-          "title": "小組防禦修訂對策",
-          "theme": "teal",
-          "points": [
-            "將全手動搬運改為『無人信箱置物櫃密碼取書』，大幅降低人力負荷",
-            "提前尋求系學會與系辦公室正式核可，將活動列為迎新輔導專案，獲得合法場地支援",
-            "每一次對抗式審查，都是企劃案生命力的一次巨大躍升！"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "人機邊界反思",
-        "title": "人機邊界反思：AI 可以給出上百個目標選項，但企劃大腦必須拍板價值觀",
-        "subtitle": "決定我們成為什麼樣的人的，不是我們的能力，而是我們的選擇",
-        "left": {
-          "title": "AI 的局限：缺乏價值觀與信念",
-          "theme": "blue",
-          "points": [
-            "AI 可以精算出哪種目標最賺錢、哪種文案點擊率最高（例如煽動焦慮、製造對立的腥羶色標題）",
-            "但 AI 不會在乎這個目標是否傷害了社會信任、是否符合企業長遠的品牌倫理",
-            "盲目追求演算法的最佳解，往往會把企業帶入道德淪喪的深淵"
-          ]
-        },
-        "right": {
-          "title": "企劃大腦的崇高擔當",
-          "theme": "teal",
-          "points": [
-            "在利益與善良之間，勇敢選擇善良；在短期暴利與長遠信任之間，堅守品牌誠信",
-            "這份對社會的同理心與對未來的責任感，正是人類企劃大腦永遠無法被演算法取代的光輝之處！"
-          ]
-        }
-      },
-      {
-        "layout": "section",
-        "num": "CHAPTER 05",
-        "title": "課堂分組工作坊：漢堡店問題重構與個人專案目標確立",
-        "desc": "理論轉化為肌肉記憶，全員動手完成個人專案的企劃目標定稿"
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "工作坊任務一",
-        "title": "工作坊任務一：曾光華經典『漢堡店銷量萎縮』問題重構實作（15分鐘）",
-        "subtitle": "分組演練：如果你是這家漢堡店的企劃顧問，你如何推導出真因？",
-        "left": {
-          "title": "小組演練情境背景",
-          "theme": "blue",
-          "points": [
-            "門市地點：桃園高鐵特區捷運站出口旁，周邊有三棟商辦大樓與兩千戶新住宅區",
-            "問題表徵：平日午間 12:00~13:00 漢堡銷售量在最近三個月連續下滑 30%，但晚餐與假日時段正常",
-            "老闆直覺：『附近新開了義大利麵店搶走客人，我們要立刻推出九折商業午餐！』"
-          ]
-        },
-        "right": {
-          "title": "小組實作要求",
-          "theme": "teal",
-          "points": [
-            "運用 5-Why 連續追問法，至少推導出 2 種與『餐點口味與價格』無關的深層結構性真因",
-            "記錄討論過程，推派一名同學準備向全班進行 60 秒口頭剖析！"
-          ]
-        }
-      },
-      {
-        "layout": "3card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "漢堡店演練步驟",
-        "title": "漢堡店案例實作四步法拆解（各組白板演練引導）",
-        "subtitle": "掌握標準推演工序，杜絕無意義的發散爭吵",
-        "cards": [
+        "layout": "stepper",
+        "badge": "實作指引 · 56/60",
+        "sec": "AI 協同目標推演",
+        "title": "個人獨立推演成果之整合與歷程存檔指引",
+        "subtitle": "善用學習歷程平台，將與 AI 互動的智慧結晶轉化為期中提案核心資產",
+        "steps": [
           {
-            "title": "第一步：繪製顧客動線旅程",
-            "theme": "blue",
-            "points": [
-              "從上班族離開辦公室搭電梯、走路進店、排隊點餐、等待出餐、吞嚥食用到趕回打卡",
-              "計算每個環節消耗的分鐘數"
-            ]
+            "tag": "步驟 1：對話備份",
+            "phase": "歷程沉澱",
+            "title": "複製整理三輪核心對話關鍵點",
+            "desc": "將 5-Whys 診斷、SMART 精煉與紅隊防禦的重要問答，整理至個人雲端筆記中。"
           },
           {
-            "title": "第二步：找出致命摩擦節點",
-            "theme": "teal",
-            "points": [
-              "發現排隊與現煎等待合計長達 22 分鐘",
-              "上班族用餐時間只剩 8 分鐘，心理壓力極度巨大",
-              "因此轉向便利商店買三明治"
-            ]
+            "tag": "步驟 2：核心提煉",
+            "phase": "成果收斂",
+            "title": "提煉 300 字目標精華章節",
+            "desc": "包含：核心真因陳述、SMART 五大指標、生動圖像感宣言與三大紅隊防禦策略。"
           },
           {
-            "title": "第三步：重塑企劃核心真因",
-            "theme": "amber",
-            "points": [
-              "真因不是漢堡不好吃，而是出餐機制不符合辦公室極限時效",
-              "目標鎖定：『在不犧牲現煎肉排品質下，將取餐時間壓縮至 60 秒內』！"
-            ]
+            "tag": "步驟 3：平台存檔",
+            "phase": "期中準備",
+            "title": "填妥個人歷程並對齊期中提案",
+            "desc": "確認目標章節完整無誤，作為下週（CH03 市場分析）與後續期中提案網頁之基石。"
           }
-        ]
+        ],
+        "insight": "每一步推演都是你微型創業的智慧印記；妥善保存歷程，期中提案只需輕鬆組裝即可水到渠成。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "工作坊任務二",
-        "title": "工作坊任務二：確立各個人微型創業專案的『核心問題或市場機會』",
-        "subtitle": "將鏡頭拉回各組本學期的真實微型創業主題",
-        "left": {
-          "title": "檢驗個人專案問題的三大準繩",
-          "theme": "blue",
-          "points": [
-            "1. 是否為真需求？你是否能在今天放學後，在校園內找到 3 個真正被這個問題困擾的同學？",
-            "2. 是否具備足夠的痛感？同學是覺得『有這服務很好，沒有也無所謂』，還是『為此苦惱已久，願意付錢解決』？",
-            "3. 你的解法是否切中真因？有沒有把手段當成了目的？"
-          ]
-        },
-        "right": {
-          "title": "組內角色協同分工",
-          "theme": "teal",
-          "points": [
-            "專案召集人主持聚焦，市場研究員上網查核相關次級數據，創意架構師構思獨特切角，原型師記錄核心規格"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "四個途徑自我審視",
-        "title": "運用四個途徑檢視小組提案：你們掌握了哪些次級資料與顧客心聲？",
-        "subtitle": "拒絕『我們自己覺得』，拿出真實的證據來證明問題存在",
-        "left": {
-          "title": "小組四途徑檢核清單",
-          "theme": "blue",
-          "points": [
-            "【利害關係人】：你們組訪談過學校周邊店家、警衛伯伯、社團幹部或系辦助教了嗎？他們怎麼說？",
-            "【產學專家】：有沒有請教過系上相關專長教授，或閱讀過相關新創的創辦人訪談文章？",
-            "【次級資料】：你們掌握了萬能科大有多少學生通勤？周邊同類服務有幾家？市場規模有多大？",
-            "【質性研究】：記錄下 2 段目標受眾受訪時抱怨的原話，必須包含具體情境與情緒動詞！"
-          ]
-        },
-        "right": {
-          "title": "課堂展示規範",
-          "theme": "teal",
-          "points": [
-            "報告時若未列出至少一項客觀訪談原話或權威次級數據，該項成績不予計分"
-          ]
-        }
-      },
-      {
-        "layout": "3card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "工作坊任務三",
-        "title": "工作坊任務三：為個人專案鍛造『SMART + 圖像感』的黃金企劃目標",
-        "subtitle": "將理性指標與感性畫面融為一體，寫出你們專案的靈魂宣言",
-        "cards": [
+        "layout": "flow_chart",
+        "badge": "成果推進 · 57/60",
+        "sec": "期中提案推進",
+        "title": "個人企劃目標章節之產出管線與期中報告對接",
+        "subtitle": "貫徹零作業原則：本週所有實作直接轉化為期中微型創業企劃書第一章！",
+        "flow": [
           {
-            "title": "步驟 1：擬定 SMART 骨架（10分鐘）",
-            "theme": "blue",
-            "points": [
-              "明確量化：預計服務人數、完成件數、營業額或節省成本",
-              "設定截止時限（如 115 學年度第 1 學期第 16 週）"
-            ]
+            "step": "01",
+            "name": "痛點發掘",
+            "desc": "校園在地真實不便與需求缺口（期中背景說明）。"
           },
           {
-            "title": "步驟 2：雕琢生動畫面感（10分鐘）",
-            "theme": "teal",
-            "points": [
-              "使用具體五感詞彙描繪受眾享受服務時的幸福場景",
-              "注入團隊對這項微型創業的初心與使命感"
-            ]
+            "step": "02",
+            "name": "層次界定",
+            "desc": "明確策略層次之長期價值與定位（期中戰略願景）。"
           },
           {
-            "title": "步驟 3：個人宣讀與定稿（5分鐘）",
-            "theme": "amber",
-            "points": [
-              "全員起立朗讀一遍，聽聽看是否朗朗上口、令人振奮",
-              "上傳至課堂即時協作看板，準備接受全班檢驗！"
-            ]
+            "step": "03",
+            "name": "真因診斷",
+            "desc": "5-Whys 深度剖析排除表面徵狀（期中問題分析）。"
+          },
+          {
+            "step": "04",
+            "name": "SMART 刻度",
+            "desc": "確立具體可衡量的驗證數據指標（期中量化目標）。"
+          },
+          {
+            "step": "05",
+            "name": "生動圖像",
+            "desc": "注入心跳感與召喚力之目標宣言（期中核心主張）。"
+          },
+          {
+            "step": "06",
+            "name": "紅隊防禦",
+            "desc": "預先修補商業模式三大漏洞（期中可行性評估）。"
           }
-        ]
+        ],
+        "insight": "我們不浪費時間寫課後作業，我們把每一分鐘都花在打磨真實可行的期中微型創業企劃案上！"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "成果登台互評",
-        "title": "小組展示與即時回饋：同儕使用『曾光華目標檢核三維度』進行互評",
-        "subtitle": "上台發表 90 秒，台下同學使用手機線上系統進行即時評分與留言",
-        "left": {
-          "title": "同儕互評三大核心評分維度（各佔 1/3）",
-          "theme": "blue",
-          "points": [
-            "【真因穿透力】：問題界定是否犀利？有沒有避開表面症狀、直擊痛點真因？",
-            "【SMART 精確度】：目標是否具體、可衡量、有明確期限？數字是否合乎常理？",
-            "【畫面感染力】：讀完目標後，腦海中是否立刻浮現出具體感人的幸福場景？"
-          ]
-        },
-        "right": {
-          "title": "給予建設性回饋的藝術",
-          "theme": "teal",
-          "points": [
-            "拒絕人情捧場，也不做無效攻擊；先肯定對方最具畫面的亮點，再指出一處邏輯不合常理的前提漏洞"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "教師講評常見錯誤",
-        "title": "教師講評大一新生目標設定的三大常見通病",
-        "subtitle": "有則改之，無則加勉，迅速修正航向",
-        "left": {
-          "title": "通病一：把『手段』當成『目標』",
-          "theme": "blue",
-          "points": [
-            "錯誤範例：『我們的目標是做一個很棒的網站，並在 IG 發 30 篇貼文。』",
-            "糾正：網站與貼文只是手段！目標應該是透過網站獲取多少真實預購名單、解決了什麼問題！"
-          ]
-        },
-        "right": {
-          "title": "通病二：目標範圍過大、缺乏邊界",
-          "theme": "teal",
-          "points": [
-            "錯誤範例：『我們的目標是徹底消滅大學生的所有生活煩惱。』",
-            "糾正：大而無當等於毫無目標！聚焦於一項極其具體的痛點（如二手書、早餐、租屋毛孩）！"
-          ]
-        }
-      },
-      {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "課後自主實踐",
-        "title": "第 03 週課後自主實踐指引（期中提案推進與市場實地訪談）",
-        "subtitle": "走進真實世界，讓真實顧客的聲音檢驗你們的企劃目標",
-        "left": {
-          "title": "期中企劃自主推進任務（為期中報告奠定基礎）",
-          "theme": "blue",
-          "points": [
-            "根據課堂同儕與教師回饋，修訂個人專案的【SMART + 圖像感】企劃目標定稿",
-            "走出校園，深入訪談至少 3 位符合目標客群特徵的真實顧客，使用錄音或筆記完整記錄",
-            "驗證小組界定的問題真因是否成立：他們是否真有這個痛點？過去如何克難解決？"
-          ]
-        },
-        "right": {
-          "title": "個人學習歷程檔案（Portfolio）累積",
-          "theme": "teal",
-          "points": [
-            "撰寫 200 字反思筆記：『當看到漢堡店案例時，我反思自己在生活中是否有過把表徵當真因的經驗？』"
-          ]
-        }
-      },
-      {
-        "layout": "3card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "核心學理回顧",
-        "title": "第 03 週核心學理全景回顧（目標設定心法備忘錄）",
-        "subtitle": "牢記曾光華教授方法論，目標明確才能行穩致遠",
-        "cards": [
+        "layout": "four_pillars",
+        "badge": "品質指標 · 58/60",
+        "sec": "期中提案推進",
+        "title": "期中微型創業企劃書「目標章節」自評指標",
+        "subtitle": "提案正式發布前，用資深教授的評審眼光為自己的目標章節打分",
+        "pillars": [
           {
-            "title": "1. 問題與機會雙源頭",
-            "theme": "blue",
-            "points": [
-              "企劃始於真實世界的不完美或新趨勢",
-              "區分策略層次（戰略生存）與技術層次（戰術微調）"
-            ]
+            "icon": "check-square",
+            "name": "指標一：真因是否穿透表象？",
+            "detail": "是否跳脫『降價促銷』等技術表象，找到痛點背後不可替代之結構性根因？"
           },
           {
-            "title": "2. 穿透表徵直達真因",
-            "theme": "teal",
-            "points": [
-              "業績下滑莫慌張，嚴禁病急亂投醫",
-              "善用 5-Why 追問法，找出深層結構性摩擦阻力"
-            ]
+            "icon": "target",
+            "name": "指標二：SMART 是否完整具備？",
+            "detail": "五個維度是否皆有嚴謹對應，指標數值是否有歷史基線與挑戰性？"
           },
           {
-            "title": "3. 四途徑與 SMART 靈魂",
-            "theme": "amber",
-            "points": [
-              "結合利害關係人、專家、次級資料與質性研究",
-              "在冰冷 SMART 骨架上注入生動活潑的圖像與感覺"
-            ]
+            "icon": "image",
+            "name": "指標三：是否具備生動圖像感？",
+            "detail": "閱讀時能否在腦海中浮現生動具體的成功畫面，產生強烈的情感召喚？"
+          },
+          {
+            "icon": "shield-check",
+            "name": "指標四：能否經得起紅隊拷問？",
+            "detail": "面對競爭者抄襲、缺乏流量與用戶惰性，是否已有清晰可行的防禦機制？"
           }
-        ]
+        ],
+        "insight": "嚴格的自評是卓越的開始；每一項指標都達到優秀，你的期中提案就已經立於不敗之地。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "大師名言與預告",
-        "title": "行銷企劃大師思維金句與下週課程預告",
-        "subtitle": "以扎實學理引領實踐方向，用敏銳觸角探索外部世界",
-        "left": {
-          "title": "大師思維金句",
-          "theme": "blue",
-          "points": [
-            "『瞄準錯誤的靶心，哪怕百發百中，也只是在浪費子彈。』—— 曾光華",
-            "『好的目標是清晨喚醒團隊的朝陽，而不是深夜壓垮團隊的巨石。』",
-            "『走進顧客的鞋子裡走一哩路，你才會明白他在哪裡被石頭磨破了腳。』"
-          ]
-        },
-        "right": {
-          "title": "下週精彩預告：CH03 外部環境分析與 PESTC 矩陣",
-          "theme": "teal",
-          "points": [
-            "站在風口上，豬都能飛起來？看曾光華教授如何用 PESTC 矩陣洞察市場大勢！",
-            "企劃背景怎麼寫最吸睛？告別枯燥論文，看英國廢棄漁網眼鏡如何用『微故事』征服全世界！",
-            "如何辨別是短暫的泡沫流行，還是不可逆轉的時代巨浪？我們下週揭曉！"
-          ]
-        }
+        "layout": "comparison",
+        "badge": "範例剖析 · 59/60",
+        "sec": "期中提案推進",
+        "title": "優秀期中提案目標 vs 待改進提案目標範例深度剖析",
+        "subtitle": "看懂高分提案的秘訣，讓你的個人企劃案脫穎而出、令人驚豔",
+        "leftTitle": "待改進提案範例（缺乏深度）",
+        "leftBadge": "需大幅修改",
+        "leftPoints": [
+          "目標表述：『我們希望做一個校園咖啡外送平台，讓大家都能喝到好咖啡』",
+          "評審質疑：誰是大家？校園內早已有多家外送，為什麼要選你？何時達成？",
+          "缺乏真因：沒有探究現有咖啡外送的真正痛點（是送達太慢還是價格太貴？）",
+          "致命傷：沒有量化指標、沒有防禦壁壘、沒有時間節奏，像是一篇隨筆"
+        ],
+        "rightTitle": "優秀期中提案範例（專業嚴謹）",
+        "rightBadge": "頂尖水準",
+        "rightPoints": [
+          "目標表述：『在第 9 週前鎖定萬能圖書館早八讀書會 80 名同學，建置保溫杯直送服務，達成上午 07:50 前 100% 準時送達且溫度維持 65 度以上』",
+          "量化刻度：『首月預定留存率達 60%，平均單人外送費分攤僅 8 元』",
+          "生動圖像：『讓早起苦讀的同學，在坐進自習室的第一分鐘，就能捧著一杯熱氣騰騰的香醇美式，開啟精力充沛的一天！』",
+          "防禦佈局：採與在地烘豆坊獨家聯名，並自帶環保杯折抵，建立品牌黏著度"
+        ],
+        "insight": "高分提案的秘訣就在於：精準的對象、深刻的真因、具體的刻度與動人的畫面感。"
       },
       {
-        "layout": "2card",
-        "badge": "WEEK 03 ｜ CH02 行銷企劃目標與問題發掘",
-        "sec": "課後自主檢核",
-        "title": "第 03 週課後自我評量檢核清單（5 題快速確認掌握度）",
-        "subtitle": "檢驗自己的企劃大腦是否已掌握 CH02 核心精髓",
-        "left": {
-          "title": "5 題快速自我檢核",
-          "theme": "blue",
-          "points": [
-            "1. 我能清楚說明【策略層次】與【技術層次】行銷問題的根本差異嗎？",
-            "2. 當遇到業績下滑時，我能運用 5-Why 追問法找出真因，而不是直覺式地打折降價嗎？",
-            "3. 我能列舉出設定行銷企劃目標的四個途徑，並說明各自的優缺點嗎？",
-            "4. 我能為一個冰冷的 SMART 目標注入具有五感體驗的『圖像與感覺』嗎？",
-            "5. 我們小組的微型創業目標，是否已經通過同儕互評與真實顧客的初心檢驗？"
-          ]
-        },
-        "right": {
-          "title": "學習警惕",
-          "theme": "teal",
-          "points": [
-            "凡有任何一題猶豫不決，請重溫曾光華教授 CH02 教科書章節，或向授課教師提問討論！"
-          ]
-        }
-      },
-      {
-        "layout": "closing",
-        "title": "第 03 週授課完畢：精準鎖定目標，企劃方向堅定不移！",
-        "desc": "恭喜同學們完成行銷企劃目標與核心問題發掘的深度修煉！方向對了，就不怕路遠，我們下週見！"
+        "layout": "conclusion",
+        "badge": "單元收斂 · 60/60",
+        "title": "本週學習覆盤與期中微型創業企劃推進",
+        "subtitle": "完成個人企劃目標章節，為期中微型創業企劃書奠定堅不可摧的基石",
+        "actions": [
+          {
+            "step": "行動一",
+            "title": "完成真因診斷歷程存檔",
+            "desc": "將與 5-Whys 診斷 Agent 的多輪對話整理至個人學習歷程，確認穿透表面徵狀直擊核心病因。"
+          },
+          {
+            "step": "行動二",
+            "title": "確立 SMART 圖像目標",
+            "desc": "完成具備量化刻度、明確期限與生動畫面召喚力的個人企劃目標陳述，對齊期中提案。"
+          },
+          {
+            "step": "行動三",
+            "title": "通過紅隊防禦壓力測試",
+            "desc": "針對紅隊 Agent 提出的三項嚴厲質疑，備妥扎實防禦對策，確保商業模式具備生存護城河。"
+          }
+        ],
+        "insight": "目標已經確立，方向不再迷茫！每位同學請獨立保存與 AI 協同推演之成果，持續深化期中微型創業企劃提案！"
       }
     ]
   },
@@ -24363,9 +24652,347 @@
         if (mobIndicator) mobIndicator.textContent = `${curNum} / ${total}`;
 
         let html = '';
-        const layout = slide.layout || '1card';
+        const layout = slide.layout || slide.type || '1card';
+        const d = slide.data || slide;
 
-        if (layout === 'cover') {
+        // 1. 首頁封面大字報 (Hero Cover)
+        if (layout === 'hero') {
+            html = `
+            <div class="h-full flex flex-col justify-between py-2 sm:py-4 animate-fadeIn overflow-y-auto custom-scrollbar">
+                <div class="space-y-3 sm:space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs sm:text-sm font-bold">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i> ${escapeHtml(slide.badge || '觀念躍升')}
+                        </span>
+                        <span class="text-xs sm:text-sm font-extrabold text-teal-400 tracking-wider">${escapeHtml(slide.module || weekData.module)}</span>
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        ${escapeHtml(slide.title)}
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-amber-400 leading-snug">
+                        ${escapeHtml(slide.subtitle)}
+                    </p>
+                    ${d.tagline ? `
+                    <div class="p-4 sm:p-5 rounded-2xl bg-slate-800/90 border-l-8 border-amber-500 text-slate-100 text-base sm:text-lg lg:text-xl font-bold shadow-lg">
+                        ${escapeHtml(d.tagline)}
+                    </div>
+                    ` : ''}
+                </div>
+
+                ${d.stats ? `
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 my-3 sm:my-5">
+                    ${d.stats.map(s => `
+                    <div class="bg-slate-800/90 rounded-2xl border-t-8 border-amber-500 border-x border-b border-slate-700/60 p-4 sm:p-6 shadow-xl text-center sm:text-left">
+                        <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-amber-400 mb-1.5 sm:mb-2">${escapeHtml(s.num)}</div>
+                        <div class="text-base sm:text-lg lg:text-xl font-bold text-slate-200">${escapeHtml(s.label)}</div>
+                    </div>
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                ${d.coreConcept ? `
+                <div class="p-4 sm:p-5 rounded-2xl bg-teal-950/40 border-2 border-teal-500/40 text-teal-200 text-base sm:text-lg lg:text-xl font-bold flex items-center gap-3.5 shadow-lg">
+                    <i data-lucide="check-circle" class="w-7 h-7 sm:w-8 sm:h-8 text-teal-400 shrink-0"></i>
+                    <span>${escapeHtml(d.coreConcept)}</span>
+                </div>
+                ` : ''}
+            </div>
+            `;
+        }
+        // 2. 雙欄對抗辨析 (Comparison)
+        else if (layout === 'comparison') {
+            html = `
+            <div class="h-full flex flex-col justify-between animate-fadeIn">
+                ${renderHeader(slide.badge, slide.sec, slide.title, slide.subtitle, curNum, total)}
+                <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 py-2 items-stretch overflow-y-auto custom-scrollbar">
+                    <!-- 左欄：傳統盲點 -->
+                    <div class="bg-slate-800/80 rounded-2xl border-2 border-slate-700 p-5 lg:p-6 flex flex-col justify-between shadow-xl">
+                        <div>
+                            <div class="flex items-center justify-between mb-3.5 pb-2.5 border-b-2 border-slate-700">
+                                <h3 class="text-lg sm:text-xl lg:text-2xl font-black text-slate-200">${escapeHtml(d.leftTitle || '常見盲目處置')}</h3>
+                                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-700 text-slate-300">${escapeHtml(d.leftBadge || '表面處置')}</span>
+                            </div>
+                            <div class="space-y-3">
+                                ${(d.leftPoints || []).map(pt => `
+                                <div class="flex items-start gap-2.5 text-slate-300 text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
+                                    <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6 text-rose-400 shrink-0 mt-0.5"></i>
+                                    <span>${escapeHtml(pt)}</span>
+                                </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右欄：核心解法 -->
+                    <div class="bg-slate-800/95 rounded-2xl border-4 border-amber-500/90 p-5 lg:p-6 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-500 to-orange-400"></div>
+                        <div>
+                            <div class="flex items-center justify-between mb-3.5 pb-2.5 border-b-2 border-amber-500/30">
+                                <h3 class="text-lg sm:text-xl lg:text-2xl font-black text-amber-300 flex items-center gap-2">
+                                    <i data-lucide="zap" class="w-5 h-5 sm:w-6 sm:h-6 text-amber-400"></i> ${escapeHtml(d.rightTitle || '專業真因突破')}
+                                </h3>
+                                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">${escapeHtml(d.rightBadge || '核心突破')}</span>
+                            </div>
+                            <div class="space-y-3">
+                                ${(d.rightPoints || []).map(pt => `
+                                <div class="flex items-start gap-2.5 text-white text-sm sm:text-base lg:text-lg font-bold leading-relaxed">
+                                    <i data-lucide="check" class="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400 shrink-0 mt-0.5 font-bold"></i>
+                                    <span>${escapeHtml(pt)}</span>
+                                </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ${d.insight ? `
+                <div class="mt-2.5 p-3.5 sm:p-4 rounded-xl bg-slate-800/90 border border-amber-500/40 flex items-center gap-3 text-amber-200 text-xs sm:text-sm lg:text-base font-bold shadow-md shrink-0">
+                    <i data-lucide="lightbulb" class="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 shrink-0"></i>
+                    <span>${escapeHtml(d.insight)}</span>
+                </div>
+                ` : ''}
+            </div>
+            `;
+        }
+        // 3. 四大核心支柱 (Four Pillars)
+        else if (layout === 'four_pillars') {
+            html = `
+            <div class="h-full flex flex-col justify-between animate-fadeIn">
+                ${renderHeader(slide.badge, slide.sec, slide.title, slide.subtitle, curNum, total)}
+                <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-3.5 lg:gap-5 py-2 items-stretch overflow-y-auto custom-scrollbar">
+                    ${(d.pillars || []).map((p, idx) => {
+                        const colors = [
+                            { border: 'border-amber-500/60', text: 'text-amber-400', bg: 'bg-amber-500/10', bar: 'from-amber-500 to-orange-400' },
+                            { border: 'border-teal-500/60', text: 'text-teal-400', bg: 'bg-teal-500/10', bar: 'from-teal-500 to-emerald-400' },
+                            { border: 'border-blue-500/60', text: 'text-blue-400', bg: 'bg-blue-500/10', bar: 'from-blue-500 to-indigo-400' },
+                            { border: 'border-purple-500/60', text: 'text-purple-400', bg: 'bg-purple-500/10', bar: 'from-purple-500 to-pink-400' }
+                        ][idx % 4];
+                        return `
+                        <div class="bg-slate-800/90 rounded-2xl border-2 ${colors.border} p-4 sm:p-5 flex flex-col justify-between shadow-xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${colors.bar}"></div>
+                            <div>
+                                <div class="flex items-center gap-3 mb-2.5">
+                                    <div class="w-10 h-10 rounded-xl ${colors.bg} ${colors.text} flex items-center justify-center shrink-0">
+                                        <i data-lucide="${p.icon || 'star'}" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                                    </div>
+                                    <h3 class="text-lg sm:text-xl font-black text-white">${escapeHtml(p.name || p.title)}</h3>
+                                </div>
+                                <p class="text-slate-200 text-sm sm:text-base lg:text-lg font-medium leading-relaxed">${escapeHtml(p.detail || p.desc)}</p>
+                            </div>
+                        </div>
+                        `;
+                    }).join('')}
+                </div>
+                ${d.insight ? `
+                <div class="mt-2.5 p-3.5 sm:p-4 rounded-xl bg-slate-800/90 border border-amber-500/40 flex items-center gap-3 text-amber-200 text-xs sm:text-sm lg:text-base font-bold shadow-md shrink-0">
+                    <i data-lucide="lightbulb" class="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 shrink-0"></i>
+                    <span>${escapeHtml(d.insight)}</span>
+                </div>
+                ` : ''}
+            </div>
+            `;
+        }
+        // 4. 步驟流程 (Stepper)
+        else if (layout === 'stepper') {
+            const stepCount = (d.steps || []).length;
+            const gridCols = stepCount >= 4 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4' : 'grid-cols-1 md:grid-cols-3';
+            html = `
+            <div class="h-full flex flex-col justify-between animate-fadeIn">
+                ${renderHeader(slide.badge, slide.sec, slide.title, slide.subtitle, curNum, total)}
+                <div class="flex-1 grid ${gridCols} gap-3.5 lg:gap-5 py-2 items-stretch overflow-y-auto custom-scrollbar">
+                    ${(d.steps || []).map((st, i) => `
+                    <div class="bg-slate-800/90 rounded-2xl border-2 border-teal-500/50 p-4 sm:p-5 flex flex-col justify-between shadow-xl relative overflow-hidden">
+                        <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-teal-500 to-emerald-400"></div>
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-teal-500/20 border-2 border-teal-400 text-teal-300 font-black text-lg flex items-center justify-center shrink-0">
+                                    ${i+1}
+                                </span>
+                                <span class="px-2.5 py-0.5 rounded-lg text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                                    ${escapeHtml(st.tag || `階段 0${i+1}`)}
+                                </span>
+                            </div>
+                            ${st.phase ? `<div class="text-xs font-bold text-teal-400 mb-1">${escapeHtml(st.phase)}</div>` : ''}
+                            <h3 class="text-base sm:text-lg lg:text-xl font-black text-white mb-2">${escapeHtml(st.title)}</h3>
+                            <p class="text-slate-200 text-xs sm:text-sm lg:text-base font-medium leading-relaxed">${escapeHtml(st.desc)}</p>
+                        </div>
+                    </div>
+                    `).join('')}
+                </div>
+                ${d.insight ? `
+                <div class="mt-2.5 p-3.5 sm:p-4 rounded-xl bg-slate-800/90 border border-amber-500/40 flex items-center gap-3 text-amber-200 text-xs sm:text-sm lg:text-base font-bold shadow-md shrink-0">
+                    <i data-lucide="lightbulb" class="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 shrink-0"></i>
+                    <span>${escapeHtml(d.insight)}</span>
+                </div>
+                ` : ''}
+            </div>
+            `;
+        }
+        // 5. 視覺矩陣 (Visual Matrix)
+        else if (layout === 'visual_matrix') {
+            const cardCount = (d.cards || []).length;
+            const gridCols = cardCount === 3 ? 'grid-cols-1 md:grid-cols-3' : (cardCount >= 5 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2');
+            html = `
+            <div class="h-full flex flex-col justify-between animate-fadeIn">
+                ${renderHeader(slide.badge, slide.sec, slide.title, slide.subtitle, curNum, total)}
+                <div class="flex-1 grid ${gridCols} gap-3.5 lg:gap-5 py-2 items-stretch overflow-y-auto custom-scrollbar">
+                    ${(d.cards || []).map((c, idx) => `
+                    <div class="bg-slate-800/90 rounded-2xl border-2 border-slate-700/80 hover:border-amber-500/60 transition p-4 sm:p-5 flex flex-col justify-between shadow-xl">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black mb-2.5">
+                                <i data-lucide="${c.icon || 'box'}" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                            </div>
+                            <h3 class="text-base sm:text-lg lg:text-xl font-black text-white mb-1.5">${escapeHtml(c.title)}</h3>
+                            <p class="text-slate-200 text-xs sm:text-sm lg:text-base font-medium leading-relaxed">${escapeHtml(c.desc)}</p>
+                        </div>
+                    </div>
+                    `).join('')}
+                </div>
+                ${d.insight ? `
+                <div class="mt-2.5 p-3.5 sm:p-4 rounded-xl bg-slate-800/90 border border-amber-500/40 flex items-center gap-3 text-amber-200 text-xs sm:text-sm lg:text-base font-bold shadow-md shrink-0">
+                    <i data-lucide="lightbulb" class="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 shrink-0"></i>
+                    <span>${escapeHtml(d.insight)}</span>
+                </div>
+                ` : ''}
+            </div>
+            `;
+        }
+        // 6. 流程總覽貫穿管線 (Flow Chart)
+        else if (layout === 'flow_chart') {
+            html = `
+            <div class="h-full flex flex-col justify-between animate-fadeIn">
+                ${renderHeader(slide.badge, slide.sec, slide.title, slide.subtitle, curNum, total)}
+                <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 lg:gap-4 py-2 items-stretch overflow-y-auto custom-scrollbar">
+                    ${(d.flow || []).map(f => `
+                    <div class="bg-slate-800/90 rounded-2xl border-2 border-slate-700/80 p-4 flex flex-col justify-between shadow-xl hover:border-teal-500/60 transition">
+                        <div>
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-teal-500/20 text-teal-300 font-black text-xs sm:text-sm flex items-center justify-center border-2 border-teal-400 shrink-0">
+                                    ${escapeHtml(f.step)}
+                                </div>
+                                <h3 class="text-base sm:text-lg font-black text-white">${escapeHtml(f.name)}</h3>
+                            </div>
+                            <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed">${escapeHtml(f.desc)}</p>
+                        </div>
+                    </div>
+                    `).join('')}
+                </div>
+                ${d.insight ? `
+                <div class="mt-2.5 p-3.5 sm:p-4 rounded-xl bg-slate-800/90 border border-amber-500/40 flex items-center gap-3 text-amber-200 text-xs sm:text-sm lg:text-base font-bold shadow-md shrink-0">
+                    <i data-lucide="lightbulb" class="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 shrink-0"></i>
+                    <span>${escapeHtml(d.insight)}</span>
+                </div>
+                ` : ''}
+            </div>
+            `;
+        }
+        // 7. 大師哲思金句 (Quote Takeaway)
+        else if (layout === 'quote_takeaway') {
+            html = `
+            <div class="h-full flex flex-col justify-between animate-fadeIn">
+                ${renderHeader(slide.badge, slide.sec, slide.title, slide.subtitle, curNum, total)}
+                <div class="flex-1 flex flex-col justify-between gap-4 py-2 overflow-y-auto custom-scrollbar">
+                    <div class="p-5 sm:p-7 rounded-2xl bg-slate-800/95 border-l-8 border-amber-500 shadow-2xl relative">
+                        <div class="text-amber-400/20 text-6xl sm:text-7xl font-serif absolute top-1 right-4 select-none">“</div>
+                        <p class="text-lg sm:text-2xl lg:text-3xl font-black text-white leading-relaxed mb-3 sm:mb-4">
+                            ${escapeHtml(d.quote)}
+                        </p>
+                        <div class="text-xs sm:text-sm md:text-base font-bold text-amber-400 flex items-center gap-2">
+                            <i data-lucide="award" class="w-5 h-5"></i>
+                            <span>${escapeHtml(d.author || '曾光華 教授 ｜ 國立中正大學行銷學名譽教授')}</span>
+                        </div>
+                    </div>
+
+                    ${d.pillars ? `
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+                        ${d.pillars.map(p => `
+                        <div class="bg-slate-800/80 rounded-xl border border-slate-700 p-4 shadow-lg">
+                            <h4 class="text-base sm:text-lg font-black text-teal-300 mb-1.5">${escapeHtml(p.title)}</h4>
+                            <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed">${escapeHtml(p.desc)}</p>
+                        </div>
+                        `).join('')}
+                    </div>
+                    ` : ''}
+                </div>
+                ${d.insight ? `
+                <div class="mt-2.5 p-3.5 sm:p-4 rounded-xl bg-slate-800/90 border border-amber-500/40 flex items-center gap-3 text-amber-200 text-xs sm:text-sm lg:text-base font-bold shadow-md shrink-0">
+                    <i data-lucide="lightbulb" class="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 shrink-0"></i>
+                    <span>${escapeHtml(d.insight)}</span>
+                </div>
+                ` : ''}
+            </div>
+            `;
+        }
+        // 8. AI 提示詞展示 (Prompt Showcase)
+        else if (layout === 'prompt_showcase') {
+            html = `
+            <div class="h-full flex flex-col justify-between animate-fadeIn">
+                ${renderHeader(slide.badge, slide.sec, slide.title, slide.subtitle, curNum, total)}
+                <div class="flex-1 flex flex-col gap-3 py-2 overflow-y-auto custom-scrollbar">
+                    <div class="flex flex-wrap items-center justify-between gap-2.5 bg-slate-800/90 px-4 py-2.5 rounded-xl border border-slate-700">
+                        <div class="flex items-center gap-2 text-teal-300 font-bold text-xs sm:text-sm md:text-base">
+                            <i data-lucide="bot" class="w-5 h-5 text-teal-400"></i>
+                            <span>協同角色：${escapeHtml(d.agentRole || 'AI 企劃顧問')}</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-amber-300 text-xs sm:text-sm font-semibold">
+                            <i data-lucide="target" class="w-4 h-4"></i>
+                            <span>${escapeHtml(d.outputSpec || '多輪深度對話')}</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 rounded-2xl border-2 border-slate-700 p-4 sm:p-5 shadow-2xl relative font-mono text-slate-100 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed whitespace-pre-wrap select-all">
+                        ${escapeHtml(d.promptText)}
+                    </div>
+                </div>
+                ${d.insight ? `
+                <div class="mt-2.5 p-3.5 sm:p-4 rounded-xl bg-slate-800/90 border border-amber-500/40 flex items-center gap-3 text-amber-200 text-xs sm:text-sm lg:text-base font-bold shadow-md shrink-0">
+                    <i data-lucide="lightbulb" class="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 shrink-0"></i>
+                    <span>${escapeHtml(d.insight)}</span>
+                </div>
+                ` : ''}
+            </div>
+            `;
+        }
+        // 9. 總結收斂 (Conclusion)
+        else if (layout === 'conclusion') {
+            html = `
+            <div class="h-full flex flex-col justify-between py-2 sm:py-4 animate-fadeIn overflow-y-auto custom-scrollbar">
+                <div class="mb-3 sm:mb-4">
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500 text-slate-950 font-black text-xs sm:text-sm tracking-wider uppercase mb-1.5 shadow-lg">
+                        ${escapeHtml(slide.badge || '單元收斂')}
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mt-1">
+                        ${escapeHtml(slide.title)}
+                    </h2>
+                    <p class="text-base sm:text-xl font-bold text-amber-400 mt-1">
+                        ${escapeHtml(slide.subtitle)}
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-3 items-stretch">
+                    ${(d.actions || []).map(act => `
+                    <div class="bg-slate-800/90 rounded-2xl border-t-8 border-amber-500 border-x border-b border-slate-700 p-4 sm:p-5 flex flex-col justify-between shadow-xl">
+                        <div>
+                            <span class="text-xs font-black text-amber-400 tracking-wider">${escapeHtml(act.step)}</span>
+                            <h3 class="text-base sm:text-lg font-black text-white mt-1 mb-2">${escapeHtml(act.title)}</h3>
+                            <p class="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed">${escapeHtml(act.desc)}</p>
+                        </div>
+                        <div class="mt-4 pt-2.5 border-t border-slate-700 text-xs sm:text-sm font-bold text-teal-400 flex items-center gap-1.5">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i> 實戰落實目標
+                        </div>
+                    </div>
+                    `).join('')}
+                </div>
+
+                ${d.insight ? `
+                <div class="p-4 sm:p-5 rounded-2xl bg-amber-500/10 border-2 border-amber-500/40 text-center shadow-lg">
+                    <p class="text-base sm:text-xl font-black text-amber-300">${escapeHtml(d.insight)}</p>
+                    <p class="text-slate-300 text-xs sm:text-sm mt-1 font-medium">每位同學請獨立保存與 AI 協同推演之成果，持續深化期中微型創業企劃提案！</p>
+                </div>
+                ` : ''}
+            </div>
+            `;
+        }
+        // 10. 既有版型：封面 (Cover)
+        else if (layout === 'cover') {
             html = `
             <div class="h-full flex flex-col justify-center px-4 py-4 sm:px-8 md:px-16 animate-fadeIn">
                 <div class="flex items-center gap-4 mb-4">
@@ -24389,7 +25016,9 @@
                 </div>
             </div>
             `;
-        } else if (layout === 'section') {
+        }
+        // 11. 既有版型：章節 (Section)
+        else if (layout === 'section') {
             html = `
             <div class="h-full flex flex-col justify-center px-4 py-4 sm:px-8 md:px-20 animate-fadeIn">
                 <div class="inline-block px-5 py-2.5 rounded-xl bg-blue-600 text-white font-black text-base md:text-lg tracking-widest mb-6 w-fit shadow-xl shadow-blue-500/30">
@@ -24403,7 +25032,9 @@
                 </p>
             </div>
             `;
-        } else if (layout === '1card') {
+        }
+        // 12. 既有版型：單卡 (1card)
+        else if (layout === '1card') {
             const card = slide.card || {};
             const theme = getThemeStyles(card.theme || 'blue');
             html = `
@@ -24427,7 +25058,9 @@
                 </div>
             </div>
             `;
-        } else if (layout === '2card') {
+        }
+        // 13. 既有版型：雙卡 (2card)
+        else if (layout === '2card') {
             const left = slide.left || {};
             const right = slide.right || {};
             const tLeft = getThemeStyles(left.theme || 'blue');
@@ -24467,7 +25100,9 @@
                 </div>
             </div>
             `;
-        } else if (layout === '3card') {
+        }
+        // 14. 既有版型：三卡 (3card)
+        else if (layout === '3card') {
             const cards = slide.cards || (slide.col1 ? [slide.col1, slide.col2, slide.col3] : (slide.c1 ? [slide.c1, slide.c2, slide.c3, slide.c4] : []));
             html = `
             <div class="h-full flex flex-col animate-fadeIn">
@@ -24496,7 +25131,9 @@
                 </div>
             </div>
             `;
-        } else if (layout === '4card') {
+        }
+        // 15. 既有版型：四卡 (4card)
+        else if (layout === '4card') {
             const cards = slide.cards || (slide.col1 ? [slide.col1, slide.col2, slide.col3] : (slide.c1 ? [slide.c1, slide.c2, slide.c3, slide.c4] : []));
             html = `
             <div class="h-full flex flex-col animate-fadeIn">
@@ -24530,7 +25167,9 @@
                 </div>
             </div>
             `;
-        } else if (layout === 'closing') {
+        }
+        // 16. 既有版型：結尾 (Closing)
+        else if (layout === 'closing') {
             html = `
             <div class="h-full flex flex-col justify-center px-4 py-4 sm:px-8 md:px-20 animate-fadeIn">
                 <div class="inline-block px-5 py-2 rounded-xl bg-amber-600 text-white font-black text-base md:text-lg tracking-widest mb-6 w-fit shadow-xl shadow-amber-500/30">
@@ -24540,7 +25179,7 @@
                     ${escapeHtml(slide.title || '單元授課完畢')}
                 </h2>
                 <p class="text-2xl md:text-3xl text-slate-200 font-bold max-w-4xl leading-relaxed mb-8">
-                    ${escapeHtml(slide.subtitle || '感謝各位的專注投入與深度研討！請個人組長妥善保存工作表。')}
+                    ${escapeHtml(slide.subtitle || '感謝各位的專注投入與深度研討！請每位同學妥善保存個人企劃推演歷程與工作表。')}
                 </p>
                 <div class="pt-6 border-t-2 border-slate-800 text-lg md:text-xl font-bold text-teal-400">
                     ${escapeHtml(slide.final_message || '期末成果串接歷程：Antigravity 生成單頁網站 ➔ GitHub Pages 全球發布 ➔ Demo Day 競演')}
@@ -24549,8 +25188,11 @@
             `;
         }
 
-        // CRITICAL: Put HTML into stage!
+        // CRITICAL: Put HTML into stage and initialize Lucide icons
         stage.innerHTML = html;
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+            lucide.createIcons();
+        }
     }
 
     function prevSlide() {
