@@ -10322,7 +10322,7 @@
         "sec": "期中提案推進",
         "title": "內部環境分析與期中微型創業企劃書第二章對接管線",
         "subtitle": "六階轉譯管線：將課堂推演成果無縫鑄造為期中提案最扎實的戰略地基",
-        "flows": [
+        "flow": [
           {
             "step": "01",
             "name": "內部檢核表建立",
@@ -10375,41 +10375,6 @@
               "將推演成果無縫整合入期中微型創業企劃書第二章「策略推演」之中",
               "與第一章「環境背景微故事」及第三章「4P 執行方案」緊密咬合",
               "完成個人專案雲端發布，為期中提案簡報奠定堅不可摧之事實基礎"
-            ]
-          }
-        ],
-        "steps": [
-          {
-            "tag": "整理階段 01",
-            "phase": "資料匯出",
-            "title": "將與 AI 協同推演之完整對話歷程結構化匯出",
-            "points": [
-              "將與優劣勢檢核 Agent、假想敵辨識 Agent 及 SWOT 矩陣 Agent 之問答紀錄完整留存",
-              "標註每一輪對話中自己所補充之真實校園田野數據與批判性修正指令",
-              "將零散的聊天對話轉化為條理分明之商管分析備忘錄，作為期中企劃案之原始依據",
-              "確保整個策略推演歷程具備完整之可追溯性與學術嚴謹度，杜絕抄襲與空想嫌疑"
-            ]
-          },
-          {
-            "tag": "整理階段 02",
-            "phase": "學理轉譯",
-            "title": "對齊期中企劃書「內部環境分析」章節學術規格",
-            "points": [
-              "依照企劃書格式規範，編寫「二、內部環境優劣勢分析」完整章節內容",
-              "繪製標準 2x2 SWOT 交叉戰略矩陣圖表，清楚標註內外關鍵要素之咬合代號",
-              "將每項交叉策略嚴格依據「假設-推論-建議-前提」四部曲進行段落化清晰闡述",
-              "特別撰寫「主要競爭假想敵辨認與定位守護原則」專節，展現深入成熟之商管視野"
-            ]
-          },
-          {
-            "tag": "整理階段 03",
-            "phase": "雲端同步",
-            "title": "同步更新至個人雲端歷程檔案庫與靜態網頁作品集",
-            "points": [
-              "將編寫完成之章節內容轉為 Markdown 格式，更新至個人專案之 Git 儲存庫中",
-              "透過 GitHub Pages 進行即時靜態網頁發布，確保評審與授課教師隨時可線上檢視",
-              "檢查網頁排版是否清晰美觀、字體與圖表在手機與筆電螢幕上皆具備良好之閱讀體驗",
-              "為即將到來的期中提案簡報儲備最扎實、最無懈可擊之戰略論述基樁"
             ]
           }
         ]
@@ -27655,7 +27620,7 @@
             <div class="h-full flex flex-col justify-between animate-fadeIn">
                 ${renderHeader(slide.badge, slide.sec, slide.title, slide.subtitle, curNum, total)}
                 <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 py-2 items-stretch overflow-y-auto custom-scrollbar">
-                    ${(d.flow || []).map(f => {
+                    ${(d.flow || d.flows || []).map(f => {
                         const pts = Array.isArray(f.points) ? f.points : (f.desc ? [f.desc] : []);
                         return `
                         <div class="bg-slate-800/90 rounded-2xl border-2 border-slate-700/80 p-5 flex flex-col justify-between shadow-xl hover:border-teal-500/60 transition">
