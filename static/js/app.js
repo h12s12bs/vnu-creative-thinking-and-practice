@@ -228,13 +228,13 @@ document.addEventListener('DOMContentLoaded', async () => {
    0. Firebase 初始化與 Google 登入驗證
    ========================================================================== */
 const firebaseConfig = {
-  apiKey: "AIzaSyCSQ1SfZ67UYZ_4F4JazSC5QptA1ZY1UdU",
-  authDomain: "vnu-creative-11501.firebaseapp.com",
-  projectId: "vnu-creative-11501",
-  storageBucket: "vnu-creative-11501.firebasestorage.app",
-  messagingSenderId: "192871776919",
-  appId: "1:192871776919:web:47aea414ec5af5774b5fd2",
-  measurementId: "G-X90WGR0GV2"
+  apiKey: "AIzaSyBvnm6fkAl8BLGkNvyfvyvUzQK4cTz4aK8",
+  authDomain: "vnu-business-software-11501.firebaseapp.com",
+  projectId: "vnu-business-software-11501",
+  storageBucket: "vnu-business-software-11501.firebasestorage.app",
+  messagingSenderId: "422671793777",
+  appId: "1:422671793777:web:dfa1d400c17a80daf025d0",
+  measurementId: "G-CZVC62B1PV"
 };
 
 let firebaseApp = null;
@@ -439,32 +439,195 @@ async function loadUserProfileFromFirestore(user) {
 }
 
 let unsubscribeFirestoreWorks = null;
+
+function updateFirestoreSyncBadge(status, text) {
+  const badge = document.getElementById('firestore-sync-badge');
+  if (!badge) return;
+  if (status === 'synced') {
+    badge.style.background = '#dcfce7';
+    badge.style.color = '#15803d';
+    badge.innerHTML = `<i class="fas fa-check-circle"></i> 雲端已同步 (${text})`;
+  } else if (status === 'error') {
+    badge.style.background = '#fee2e2';
+    badge.style.color = '#b91c1c';
+    badge.innerHTML = `<i class="fas fa-exclamation-triangle"></i> 雲端讀取受限 (${text})`;
+  } else if (status === 'loading') {
+    badge.style.background = '#f1f5f9';
+    badge.style.color = '#64748b';
+    badge.innerHTML = `<i class="fas fa-circle-notch fa-spin"></i> 雲端同步中...`;
+  }
+}
+
+function loadDefaultSampleWorks() {
+  const sampleWorks = window.OFFLINE_WORKS || [];
+  const localSubmitted = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+  const existingIds = new Set(localSubmitted.map(w => w.id));
+  const nonDuplicateSamples = sampleWorks.filter(w => !existingIds.has(w.id));
+  studentWorksData = [...localSubmitted, ...nonDuplicateSamples];
+}
+
 function listenToFirestoreWorks() {
-  if (!firestoreDb) return;
+  if (!firestoreDb) {
+    updateFirestoreSyncBadge('error', '未連線');
+    loadDefaultSampleWorks();
+    renderStudentWorks();
+    return;
+  }
   if (unsubscribeFirestoreWorks) unsubscribeFirestoreWorks();
+  updateFirestoreSyncBadge('loading', '');
 
   try {
     unsubscribeFirestoreWorks = firestoreDb.collection('works')
       .onSnapshot((snapshot) => {
         const firestoreWorks = [];
         snapshot.forEach(doc => {
-          firestoreWorks.push(doc.data());
+          const d = doc.data();
+          if (d.course_id === 'creative_thinking' || d.class_name === '企管四系1甲' || (d.id && d.id.includes('CREATIVE'))) {
+            firestoreWorks.push(d);
+          }
         });
         if (firestoreWorks.length > 0) {
-          // 依提交時間排序
           firestoreWorks.sort((a, b) => (b.submitted_at || '').localeCompare(a.submitted_at || ''));
-          
           const existingIds = new Set(firestoreWorks.map(w => w.id));
-          const nonDuplicateSamples = (window.OFFLINE_WORKS || []).filter(w => !existingIds.has(w.id));
-          studentWorksData = [...firestoreWorks, ...nonDuplicateSamples];
+          const sampleWorks = window.OFFLINE_WORKS || [];
+          const nonDuplicateSamples = sampleWorks.filter(w => !existingIds.has(w.id));
+          const localSubmitted = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+          const uncommittedLocal = localSubmitted.filter(w => !existingIds.has(w.id));
+
+          studentWorksData = [...firestoreWorks, ...uncommittedLocal, ...nonDuplicateSamples];
+          updateFirestoreSyncBadge('synced', `${firestoreWorks.length} 筆雲端`);
+        } else {
+          loadDefaultSampleWorks();
+          updateFirestoreSyncBadge('synced', '0 筆雲端');
         }
         renderStudentWorks();
+        if (isTeacherUser) {
+          renderTeacherGradeDashboard();
+        }
       }, (err) => {
-        console.warn('Firestore works listener notice:', err);
+        console.warn('Firestore works 監聽提醒:', err);
+        const errTag = err.code === 'permission-denied' ? '403 需登入或開放Rules' : '無法讀取';
+        updateFirestoreSyncBadge('error', errTag);
+        loadDefaultSampleWorks();
+        renderStudentWorks();
       });
   } catch (e) {
     console.warn('建立 Firestore 作品即時監聽失敗:', e);
+    updateFirestoreSyncBadge('error', '監聽異常');
+    loadDefaultSampleWorks();
+    renderStudentWorks();
   }
+}
+
+async function syncFirestoreWorksNow(isManual = false) {
+  if (!firestoreDb) {
+    if (isManual) alert('⚠️ 雲端資料庫 (Firestore) 尚未初始化，請確認網路連線！');
+    return;
+  }
+  updateFirestoreSyncBadge('loading', '');
+  try {
+    const snapshot = await firestoreDb.collection('works').get();
+    const firestoreWorks = [];
+    snapshot.forEach(doc => {
+      const d = doc.data();
+      if (d.course_id === 'creative_thinking' || d.class_name === '企管四系1甲' || (d.id && d.id.includes('CREATIVE'))) {
+        firestoreWorks.push(d);
+      }
+    });
+    if (firestoreWorks.length > 0) {
+      firestoreWorks.sort((a, b) => (b.submitted_at || '').localeCompare(a.submitted_at || ''));
+      const existingIds = new Set(firestoreWorks.map(w => w.id));
+      const sampleWorks = window.OFFLINE_WORKS || [];
+      const nonDuplicateSamples = sampleWorks.filter(w => !existingIds.has(w.id));
+      const localSubmitted = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+      const uncommittedLocal = localSubmitted.filter(w => !existingIds.has(w.id));
+
+      studentWorksData = [...firestoreWorks, ...uncommittedLocal, ...nonDuplicateSamples];
+      updateFirestoreSyncBadge('synced', `${firestoreWorks.length} 筆雲端`);
+    } else {
+      loadDefaultSampleWorks();
+      updateFirestoreSyncBadge('synced', '0 筆雲端');
+    }
+    renderStudentWorks();
+    if (isTeacherUser) renderTeacherGradeDashboard();
+    if (isManual) {
+      alert(`✅ 雲端作品同步完成！\n目前展示廊共載入 ${studentWorksData.length} 件作品 (雲端最新收件：${firestoreWorks.length} 筆)。`);
+    }
+  } catch (err) {
+    console.warn('手動同步 Firestore 失敗:', err);
+    const errTag = err.code === 'permission-denied' ? '403 需登入或開放Rules' : '讀取失敗';
+    updateFirestoreSyncBadge('error', errTag);
+    if (isManual) {
+      alert(`⚠️ 雲端作品同步提示：\n${err.message}`);
+    }
+  }
+}
+
+async function teacherManualAddWork() {
+  if (!isTeacherUser) {
+    alert('僅限授課教師（邱俊維 博士）使用此補登功能！\n請先使用授課教師 Google 帳號登入。');
+    return;
+  }
+  const studentId = prompt('【補登作業】請輸入學生學號：', '11209001');
+  if (!studentId) return;
+  const studentName = prompt('【補登作業】請輸入學生真實姓名：', '測試同學');
+  if (!studentName) return;
+  const workTitle = prompt('【補登作業】請輸入作品名稱：', '樂肉選品微型創業網站');
+  if (!workTitle) return;
+  const liveUrl = prompt('【補登作業】請輸入成果網址 (GitHub Pages 或雲端連結)：', 'https://');
+  if (!liveUrl) return;
+  const isMidterm = confirm('點擊【確定】登記為「期中報告」；\n點擊【取消】登記為「期末報告」');
+  const reportType = isMidterm ? '期中報告' : '期末報告';
+  const weekNum = isMidterm ? 9 : 18;
+
+  const workId = 'WORK-CREATIVE-' + Date.now();
+  const nowStr = new Date().toLocaleString('zh-TW', { hour12: false });
+  const newWork = {
+    id: workId,
+    uid: 'TEACHER_MANUAL',
+    email: currentFirebaseUser ? currentFirebaseUser.email : '',
+    student_id: studentId.trim(),
+    student_name: studentName.trim(),
+    class_name: '企管四系1甲',
+    student_group: '個人獨立專案',
+    team_name: '個人獨立專案',
+    course_id: 'creative_thinking',
+    report_type: reportType,
+    week: weekNum,
+    week_title: isMidterm ? '期中報告：微型創業企劃書與 MVP 原型成果' : '期末報告：微型創業實踐與 AI Agent 成果發布',
+    title: workTitle.trim(),
+    category: '線上部署網頁 (GitHub Pages / 雲端發布)',
+    concept: '由授課教師邱俊維博士手動補登之學生實作成果。',
+    agent_used: 'Agentic AI 協同發想',
+    prompt_summary: '個人獨立微型創業專案成果部署發布',
+    live_url: liveUrl.trim(),
+    submitted_at: nowStr,
+    score: null,
+    teacher_comment: ''
+  };
+
+  if (firestoreDb) {
+    try {
+      await firestoreDb.collection('works').doc(workId).set({
+        ...newWork,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      console.log('✅ 教師手動補登已同步至 Firestore');
+    } catch (e) {
+      console.warn('Firestore 手動補登寫入警告:', e);
+    }
+  }
+
+  studentWorksData.unshift(newWork);
+  try {
+    const localWorks = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+    localWorks.unshift(newWork);
+    localStorage.setItem('vnu_submitted_works', JSON.stringify(localWorks));
+  } catch (e) {}
+
+  renderStudentWorks();
+  renderTeacherGradeDashboard();
+  alert(`✅ 已成功補登【${studentName} (${studentId})】同學之《${workTitle}》(${reportType})！`);
 }
 
 /* ==========================================================================
@@ -678,32 +841,32 @@ function initUserModal() {
 function saveUserProfile() {
   const inputId = (document.getElementById('input-student-id')?.value || '').trim();
   const inputName = (document.getElementById('input-student-name')?.value || '').trim();
-  const inputGroup = (document.getElementById('input-student-group')?.value || '').trim();
+  const inputGroup = (document.getElementById('input-student-group')?.value || '').trim() || '個人獨立專案';
 
-  if (!inputId || !inputName || !inputGroup) {
-    alert('⚠️ 請務必完整填寫「學生學號」、「學生姓名」並選擇「所屬組別」！');
+  if (!inputId || !inputName) {
+    alert('⚠️ 請務必填寫「學生學號」與「學生姓名」！');
     return;
   }
 
   currentUser.studentId = inputId;
   currentUser.studentName = inputName;
-  currentUser.studentGroup = inputGroup;
-  currentUser.teamName = inputGroup;
+  currentUser.studentGroup = '個人獨立專案';
+  currentUser.teamName = '個人獨立專案';
 
   userProfile = {
     studentId: inputId,
     name: inputName,
-    group: inputGroup,
-    team: inputGroup,
+    group: '個人獨立專案',
+    team: '個人獨立專案',
     email: currentFirebaseUser ? currentFirebaseUser.email : ''
   };
 
   localStorage.setItem('vnu_student_id', inputId);
   localStorage.setItem('vnu_student_name', inputName);
-  localStorage.setItem('vnu_ideation_student_group', inputGroup);
+  localStorage.setItem('vnu_ideation_student_group', '個人獨立專案');
   localStorage.setItem('vnu_ideation_student_id', inputId);
   localStorage.setItem('vnu_ideation_student_name', inputName);
-  localStorage.setItem('vnu_ideation_team_name', inputGroup);
+  localStorage.setItem('vnu_ideation_team_name', '個人獨立專案');
   localStorage.setItem('vnu_user_profile', JSON.stringify(userProfile));
 
   // 若使用 Google 登入，即時同步至雲端 Firestore
@@ -714,12 +877,12 @@ function saveUserProfile() {
         email: currentFirebaseUser.email || '',
         studentId: inputId,
         studentName: inputName,
-        studentGroup: inputGroup,
+        studentGroup: '個人獨立專案',
         className: '企管四系1甲',
         photoURL: currentFirebaseUser.photoURL || '',
         updatedAt: firebase.firestore.FieldValue.serverTimestamp()
       }, { merge: true }).then(() => {
-        console.log('✅ 學籍與組別資料已同步儲存至 Firebase 雲端');
+        console.log('✅ 學籍資料已同步儲存至 Firebase 雲端');
       }).catch(err => console.warn('Firestore sync user error:', err));
     } catch (e) {
       console.warn('Sync profile to Firestore failed:', e);
@@ -731,7 +894,7 @@ function saveUserProfile() {
   updatePortfolioUserInfo();
   renderStudentWorks();
   unlockBadge('badge_profile_set');
-  alert(`歡迎【企管四系1甲 (${inputGroup})】${currentUser.studentName} 同學！學籍與組別已成功綁定。`);
+  alert(`歡迎【企管四系1甲】${currentUser.studentName} 同學！學籍資料已成功綁定。`);
   closeModal('userProfileModal');
 }
 
@@ -2534,9 +2697,11 @@ async function handleProjectSubmit(e) {
   e.preventDefault();
 
   if (!currentFirebaseUser) {
-    alert('⚠️ 請先使用 Google 帳號登入再行繳交作業！');
-    loginWithGoogle();
-    return;
+    const proceedGuest = confirm(`💡 提示：您尚未登入 Google 帳號。\n\n建議先使用 Google 帳號登入，以享有雲端永久保存與身分驗證！\n\n若您在教室或手機上暫時無法登入 Google，點擊【確定】可繼續以登記的學號姓名上傳：`);
+    if (!proceedGuest) {
+      loginWithGoogle();
+      return;
+    }
   }
 
   if (isTeacherUser) {
@@ -2544,8 +2709,8 @@ async function handleProjectSubmit(e) {
     if (!currentUser.studentName) currentUser.studentName = '邱俊維 博士';
     if (!currentUser.studentGroup) currentUser.studentGroup = '授課教師示範';
     if (!currentUser.teamName) currentUser.teamName = '授課教師示範';
-  } else if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
-    alert('⚠️ 依課堂要求，請先完成「學號」、「姓名」與「組別」登記！');
+  } else if (!currentUser.studentId || !currentUser.studentName) {
+    alert('⚠️ 依課堂要求，請先完成「學號」與「真實姓名」登記！');
     initUserModal();
     openModal('userProfileModal', true);
     return;
@@ -2570,17 +2735,19 @@ async function handleProjectSubmit(e) {
     return;
   }
 
-  const workId = 'WORK-' + Date.now();
+  const workId = 'WORK-CREATIVE-' + Date.now();
   const nowStr = new Date().toLocaleString('zh-TW', { hour12: false });
 
   const newWork = {
     id: workId,
-    uid: currentFirebaseUser ? currentFirebaseUser.uid : '',
+    uid: currentFirebaseUser ? currentFirebaseUser.uid : 'GUEST-' + Date.now(),
     email: currentFirebaseUser ? currentFirebaseUser.email : '',
     student_id: currentUser.studentId,
     student_name: currentUser.studentName,
-    student_group: currentUser.studentGroup || '個人獨立專案',
-    team_name: currentUser.studentGroup || '個人獨立專案',
+    student_group: '個人獨立專案',
+    team_name: '個人獨立專案',
+    class_name: '企管四系1甲',
+    course_id: 'creative_thinking',
     report_type: reportType,
     week: weekNum,
     week_title: weekTitle,
@@ -2599,16 +2766,27 @@ async function handleProjectSubmit(e) {
     teacher_comment: ''
   };
 
-  // 1. 同步上傳至雲端 Firestore (若在線上且有 Firebase)
+  const submitBtn = document.getElementById('btn-submit-work');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>同步儲存中...';
+  }
+
+  let firestoreSuccess = false;
+  let firestoreErrMsg = '';
+
+  // 1. 同步上傳至雲端 Firestore
   if (firestoreDb) {
     try {
       await firestoreDb.collection('works').doc(workId).set({
         ...newWork,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
       });
+      firestoreSuccess = true;
       console.log('✅ 作業已成功同步至 Firebase 雲端資料庫');
     } catch (err) {
       console.warn('Firebase 寫入警告 (改用本機儲存):', err);
+      firestoreErrMsg = err.message || err.code || '雲端資料庫權限受限';
     }
   }
 
@@ -2620,13 +2798,22 @@ async function handleProjectSubmit(e) {
     localStorage.setItem('vnu_submitted_works', JSON.stringify(localWorks));
   } catch(e) {}
 
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="fas fa-check-circle me-1"></i>確認送出繳交報告';
+  }
+
   renderStudentWorks();
+  if (isTeacherUser) renderTeacherGradeDashboard();
   unlockBadge('badge_work_submitted');
 
-  if (btn) btn.disabled = false;
   document.getElementById('project-upload-form').reset();
-  alert(`🎉 恭喜【企管四系1甲 ${currentUser.studentGroup}】${currentUser.studentName} 同學！
-《${title}》(${reportType}) 已成功上傳並同步至雲端展示廊！`);
+
+  if (firestoreSuccess) {
+    alert(`🎉 恭喜【企管四系1甲】${currentUser.studentName} 同學！\n《${title}》(${reportType}) 已成功上傳並同步至 Firebase 雲端資料庫！\n授課教師與全班同學重新整理展示廊即可即時檢視！`);
+  } else {
+    alert(`⚠️ 繳交提示：\n作品已儲存於您的「本機瀏覽器」，但【雲端同步未成功】！\n(原因：${firestoreErrMsg})\n\n💡 說明：其他裝置暫時無法讀取此筆作品，請將作品公開網址複製提供給邱老師。`);
+  }
 }
 
 /* ==========================================================================
@@ -3162,6 +3349,8 @@ window.closeTeacherGradeModal = closeTeacherGradeModal;
 window.saveTeacherGrade = saveTeacherGrade;
 window.previewWork = previewWork;
 window.renderTeacherGradeDashboard = renderTeacherGradeDashboard;
+window.syncFirestoreWorksNow = syncFirestoreWorksNow;
+window.teacherManualAddWork = teacherManualAddWork;
 window.quickSaveGradeRow = quickSaveGradeRow;
 window.toggleTeacherPreviewForm = toggleTeacherPreviewForm;
 

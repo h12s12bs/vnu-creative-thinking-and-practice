@@ -911,11 +911,23 @@
           <div class="col-lg-7">
             <div class="card-custom p-4 h-100">
               <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2 flex-wrap gap-2">
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 flex-wrap">
                   <h5 class="fw-bold mb-0 text-dark"><i class="fas fa-th-large text-primary me-2"></i>企管四系1甲 作品成果展示廊</h5>
                   <span class="badge bg-primary" id="total-works-count">共 0 件成果</span>
+                  <span id="firestore-sync-badge" style="font-size:11px; padding:3px 8px; border-radius:12px; font-weight:700; background:#f1f5f9; color:#64748b; display:inline-flex; align-items:center; gap:4px;">
+                    <i class="fas fa-circle-notch fa-spin"></i> 雲端連線中...
+                  </span>
+                  <button type="button" class="btn btn-sm btn-outline-primary fw-bold" onclick="syncFirestoreWorksNow(true)" style="font-size:11px; padding:2px 8px;" title="強制自 Firebase 雲端重新讀取所有最新作品">
+                    <i class="fas fa-sync-alt me-1"></i>重新整理雲端
+                  </button>
                 </div>
                 <div class="d-flex align-items-center gap-2">
+                  <button type="button" class="btn btn-sm btn-primary fw-bold" id="btn-teacher-manual-add" onclick="teacherManualAddWork()" style="display: none;">
+                    <i class="fas fa-plus-circle me-1"></i>補登/新增學生作業
+                  </button>
+                  <button type="button" class="btn btn-sm btn-primary fw-bold" id="btn-teacher-manual-add" onclick="teacherManualAddWork()" style="display: none;">
+                    <i class="fas fa-plus-circle me-1"></i>補登/新增學生作業
+                  </button>
                   <button type="button" class="btn btn-sm btn-outline-success fw-bold" id="btn-teacher-export-csv" onclick="exportGradesToCSV()" style="display: none;">
                     <i class="fas fa-file-excel me-1"></i>匯出全班作業成績單 (Excel)
                   </button>
@@ -1245,19 +1257,19 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content rounded-4 border-0 shadow">
         <div class="modal-header bg-dark text-white border-0">
-          <h5 class="modal-title fw-bold"><i class="fas fa-id-card text-warning me-2"></i>企管四系1甲 學籍與組別登記</h5>
+          <h5 class="modal-title fw-bold"><i class="fas fa-id-card text-warning me-2"></i>企管四系1甲 學籍登記</h5>
           <button type="button" class="btn-close btn-close-white" id="btn-close-profile" onclick="closeModal('userProfileModal')"></button>
         </div>
         <div class="modal-body p-4">
           <div id="force-profile-notice" class="alert alert-warning py-2 px-3 small fw-bold mb-3" style="display: none;">
-            <i class="fas fa-exclamation-triangle me-1"></i>依課堂要求，首次登入請務必完整填寫學號、姓名與組別後方可開始使用平台！
+            <i class="fas fa-exclamation-triangle me-1"></i>依課堂要求，首次登入請務必填寫學號與真實姓名後方可開始使用平台！
           </div>
           <div class="mb-3 p-3 bg-light rounded-3 border border-success border-opacity-25" id="google-account-info-box" style="display: none;">
             <label class="form-label fw-bold small text-success mb-1"><i class="fab fa-google me-1"></i>已通過驗證之 Google 帳號</label>
             <input type="text" class="form-control form-control-sm bg-white text-muted fw-bold" id="input-google-email" readonly>
             <div class="form-text small text-muted" style="font-size: 0.75rem;">系統將自動將您的作品與成績綁定至此 Google 雲端帳號。</div>
           </div>
-          <p class="small text-muted mb-3">請登記您的學號、真實姓名與所屬組別，以便授課教師進行課堂點名、作業評定指導與期末成績登記。</p>
+          <p class="small text-muted mb-3">請登記您的學號與真實姓名，以便授課教師進行課堂點名、作業評定指導與期末成績登記（本課程為 100% 個人獨立專案，無須分組）。</p>
           <div class="mb-3">
             <label class="form-label fw-bold small">學生學號 (必填) *</label>
             <input type="text" class="form-control" id="input-student-id" placeholder="例：11209001" required>
@@ -1266,21 +1278,8 @@
             <label class="form-label fw-bold small">學生姓名 (必填) *</label>
             <input type="text" class="form-control" id="input-student-name" placeholder="例：王小明" required>
           </div>
-          <div class="mb-3">
-            <label class="form-label fw-bold small text-dark">所屬組別 (必填) *</label>
-            <select class="form-select" id="input-student-group" required>
-              <option value="">-- 請選擇所屬組別 --</option>
-              <option value="第 1 組">第 1 組</option>
-              <option value="第 2 組">第 2 組</option>
-              <option value="第 3 組">第 3 組</option>
-              <option value="第 4 組">第 4 組</option>
-              <option value="第 5 組">第 5 組</option>
-              <option value="第 6 組">第 6 組</option>
-              <option value="第 7 組">第 7 組</option>
-              <option value="第 8 組">第 8 組</option>
-              <option value="個人獨立專案">個人獨立專案 (不分組)</option>
-            </select>
-          </div>
+          <!-- 本課程為 100% 個人獨立微型創業專案，無須分組，自動隱藏帶入 -->
+          <input type="hidden" id="input-student-group" value="個人獨立專案">
           <div class="mb-3">
             <label class="form-label fw-bold small text-secondary"><i class="fas fa-university me-1"></i>開課班級</label>
             <input type="text" class="form-control bg-light" value="企管四系1甲" readonly>
