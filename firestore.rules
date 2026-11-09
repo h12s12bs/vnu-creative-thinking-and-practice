@@ -1,0 +1,118 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ==========================================
+    // 授課教師名單與身分驗證輔助函式
+    // ==========================================
+
+    /// 檢查使用者是否已透過 Google 登入
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    /// 授課教師清單（邱俊維 博士 官方授權管理帳號）
+    function isTeacher() {
+      return isAuthenticated() &&
+        request.auth.token.email in [
+          'kevin87332000@gmail.com',
+          'jimchiu@mail.vnu.edu.tw'
+        ];
+    }
+
+    /// 檢查操作者是否為資料擁有者（綁定 Firebase Auth UID）
+    function isOwner(uid) {
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+
+    // ==========================================
+    // 學生作業建立與更新校驗函式
+    // ==========================================
+
+    /// 驗證學生建立作業時的防弊條件：
+    /// 1. 作者 UID 必須與登入者的 request.auth.uid 完全一致（防止冒名頂替）
+    /// 2. 分數 (score) 必須為 null、空字串或未填寫（嚴禁學生自填分數）
+    /// 3. 教師評語 (teacher_comment) 必須為 null、空字串或未填寫（嚴禁學生自填評語）
+    function isValidStudentCreation() {
+      let data = request.resource.data;
+      return data.uid == request.auth.uid
+        && (!('score' in data) || data.score == null || (data.score is string && data.score == ''))
+        && (!('teacher_comment' in data) || data.teacher_comment == null || (data.teacher_comment is string && data.teacher_comment == ''))
+        // 基礎型別與長度防護（防止惡意 DoS 與惡意字元攻擊）
+        && (!('title' in data) || (data.title is string && data.title.size() <= 300))
+        && (!('concept' in data) || (data.concept is string && data.concept.size() <= 5000))
+        && (!('live_url' in data) || (data.live_url is string && data.live_url.size() <= 2048));
+    }
+
+    /// 驗證學生更新作業時的防護條件：
+    /// 1. 不可竄改原作者身分（uid 與 student_id 絕對不可變）
+    /// 2. 分數 (score) 與評語 (teacher_comment) 必須維持原狀，嚴禁學生竄改或偽造
+    function isValidStudentUpdate() {
+      let incoming = request.resource.data;
+      let existing = resource.data;
+      
+      let uidImmutable = incoming.uid == existing.uid;
+      let studentIdImmutable = (!('student_id' in existing) && !('student_id' in incoming)) 
+        || (incoming.student_id == existing.student_id);
+      
+      let scoreUntampered = (!('score' in existing) && !('score' in incoming))
+        || (incoming.score == existing.score);
+
+      let commentUntampered = (!('teacher_comment' in existing) && !('teacher_comment' in incoming))
+        || (incoming.teacher_comment == existing.teacher_comment);
+
+      return uidImmutable 
+        && studentIdImmutable 
+        && scoreUntampered 
+        && commentUntampered
+        && (!('title' in incoming) || (incoming.title is string && incoming.title.size() <= 300))
+        && (!('concept' in incoming) || (incoming.concept is string && incoming.concept.size() <= 5000))
+        && (!('live_url' in incoming) || (incoming.live_url is string && incoming.live_url.size() <= 2048));
+    }
+
+    // ==========================================
+    // 1. 作業與展示成果集合 (/works/{workId})
+    // ==========================================
+    match /works/{workId} {
+      
+      // 讀取權限：公開瀏覽（允許學生、教師與校內外訪客瀏覽作品成果展示牆，隱私欄位已於前端進行過濾與防護）
+      allow read: if true;
+
+      // 建立權限：
+      // - 授課教師可直接新增作業或示範專案
+      // - 登入學生僅能建立綁定自己 uid 且 score / teacher_comment 為空的作業
+      allow create: if isAuthenticated() && (
+        isTeacher() || isValidStudentCreation()
+      );
+
+      // 更新權限：
+      // - 授課教師可更新任何欄位（線上評分、評語、修改等）
+      // - 學生僅能更新自己所繳交的作品，且絕對不能修改 score, teacher_comment, uid, student_id
+      allow update: if isAuthenticated() && (
+        isTeacher() || (
+          isOwner(resource.data.uid) && isValidStudentUpdate()
+        )
+      );
+
+      // 刪除權限：僅限授課教師擁有刪除權限；學生與公開大眾一律嚴禁刪除！
+      allow delete: if isTeacher();
+    }
+
+    // ==========================================
+    // 2. 使用者個人資料集合 (/users/{userId})
+    // ==========================================
+    match /users/{userId} {
+      // 學生登入後同步個人學號與姓名設定；僅允許本人讀寫自身資料，或由授課教師統一管理
+      allow read, write: if isAuthenticated() && (
+        request.auth.uid == userId || isTeacher()
+      );
+    }
+
+    // ==========================================
+    // 3. 預設阻擋所有其他未明確定義之集合路徑
+    // ==========================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
