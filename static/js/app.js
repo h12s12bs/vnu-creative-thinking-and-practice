@@ -2588,20 +2588,38 @@ function renderStudentWorks() {
     html += `
       <div class="card-custom p-3 border position-relative horizontal-work-card mb-3" style="background: #FFFFFF;">
         <div class="d-flex flex-column flex-md-row gap-3 align-items-start">
-          <!-- 橫式左側：原型縮圖預覽 -->
-          <div class="work-thumbnail-box" style="background: ${thumbnailBg};" onclick="previewWork('${escapeHtml(w.id)}')" title="點擊即時預覽原型">
-            <div class="work-thumbnail-browser-bar">
+          <!-- 橫式左側：網頁即時預覽縮圖 (直接載入真實網站截圖) -->
+          <div class="work-thumbnail-box" onclick="previewWork('${escapeHtml(w.id)}')" title="點擊即時預覽網頁原型">
+            <!-- 頂部瀏覽器視窗列 -->
+            <div class="work-thumbnail-browser-bar position-absolute top-0 start-0 w-100 px-2 py-1" style="background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(3px); z-index: 2;">
               <span class="work-thumbnail-dot"></span>
               <span class="work-thumbnail-dot"></span>
               <span class="work-thumbnail-dot"></span>
-              <span class="ms-1 small text-white-50" style="font-size: 0.65rem;">MVP Preview</span>
+              <span class="ms-1 text-white-50 font-monospace" style="font-size: 0.65rem;">Live Web Preview</span>
             </div>
-            <div class="text-center py-2">
-              <i class="${thumbnailIcon} work-thumbnail-icon"></i>
+
+            ${w.live_url ? `
+              <img src="https://image.thum.io/get/width/600/crop/800/${encodeURI(w.live_url)}" 
+                   alt="學生成果網頁即時截圖" 
+                   class="work-thumbnail-img" 
+                   loading="lazy" 
+                   onerror="this.onerror=null; this.src='https://s0.wp.com/mshots/v1/' + encodeURIComponent('${encodeURI(w.live_url)}') + '?w=600';">
+            ` : `
+              <div class="d-flex flex-column justify-content-center align-items-center h-100" style="background: ${thumbnailBg};">
+                <i class="${thumbnailIcon} work-thumbnail-icon"></i>
+              </div>
+            `}
+
+            <!-- 懸停半透明遮罩與預覽提示 -->
+            <div class="work-thumbnail-overlay">
+              <i class="fas fa-search-plus mb-1 fs-5"></i>
+              <span style="font-size: 0.72rem; font-weight: 700;">點擊即時預覽</span>
             </div>
-            <div class="d-flex justify-content-between align-items-center mt-auto">
-              <span class="badge bg-black bg-opacity-50 text-white font-monospace" style="font-size: 0.65rem;">${escapeHtml(w.category || 'MVP')}</span>
-              <span class="text-white-50" style="font-size: 0.7rem;"><i class="fas fa-search-plus me-1"></i>預覽</span>
+
+            <!-- 底部標籤列 -->
+            <div class="position-absolute bottom-0 start-0 w-100 px-2 py-1 d-flex justify-content-between align-items-center" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent); z-index: 2;">
+              <span class="badge bg-black bg-opacity-75 text-white font-monospace" style="font-size: 0.6rem;">${escapeHtml(w.category || '網頁部署')}</span>
+              <span class="text-white small" style="font-size: 0.65rem;"><i class="fas fa-play-circle me-1"></i>預覽</span>
             </div>
           </div>
 
