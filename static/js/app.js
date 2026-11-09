@@ -2663,9 +2663,11 @@ function renderStudentWorks() {
             ` : ''}
 
             ${w.teacher_comment ? `
-            <div class="p-2 rounded-2 small mb-2 border-start border-success border-3" style="background: #F0FDF4;">
-              <strong class="text-success"><i class="fas fa-chalkboard-teacher me-1"></i>授課教師評語：</strong>
-              <span class="text-secondary">${escapeHtml(w.teacher_comment)}</span>
+            <div class="p-3 rounded-3 small mb-3 border-start border-success border-4 shadow-sm" style="background: #F0FDF4; white-space: pre-line; word-break: break-word;">
+              <div class="fw-bold text-success mb-1" style="font-size: 0.92rem;">
+                <i class="fas fa-chalkboard-teacher me-1"></i>授課教師評語與指導回饋：
+              </div>
+              <div class="text-dark fw-medium" style="line-height: 1.6; font-size: 0.9rem;">${escapeHtml(w.teacher_comment)}</div>
             </div>
             ` : ''}
 
@@ -2988,7 +2990,7 @@ function renderTeacherGradeDashboard() {
           <input type="number" min="0" max="100" class="form-control form-control-sm text-center fw-bold text-primary" id="row-score-${escapeHtml(w.id)}" value="${currentScore}" placeholder="0-100" style="width: 85px;">
         </td>
         <td>
-          <input type="text" class="form-control form-control-sm" id="row-comment-${escapeHtml(w.id)}" value="${escapeHtml(currentComment)}" placeholder="輸入教師評語或改進建議...">
+          <textarea rows="2" class="form-control form-control-sm" id="row-comment-${escapeHtml(w.id)}" placeholder="輸入教師評語或改進建議..." style="min-width: 220px; resize: vertical;">${escapeHtml(currentComment)}</textarea>
         </td>
         <td class="text-center">
           <button type="button" class="btn btn-sm btn-success fw-bold px-2 py-1 shadow-sm" onclick="quickSaveGradeRow('${escapeHtml(w.id)}')">
@@ -3080,6 +3082,27 @@ function previewWork(workId) {
       extLink.innerHTML = `<i class="fas fa-external-link-alt me-1"></i>在新分頁開啟網站`;
     } else {
       extLink.style.display = 'none';
+    }
+  }
+
+  // 彈跳視窗同步呈現授課教師評語與成績 (防止任何切到看不見)
+  const previewCommentBox = document.getElementById('preview-teacher-comment-box');
+  const previewCommentText = document.getElementById('preview-teacher-comment-text');
+  const previewScoreBadge = document.getElementById('preview-teacher-score-badge');
+  if (previewCommentBox && previewCommentText) {
+    if (work.teacher_comment || (work.score !== null && work.score !== undefined && work.score !== '')) {
+      previewCommentBox.style.display = 'block';
+      previewCommentText.textContent = work.teacher_comment || '（評分已登錄）';
+      if (previewScoreBadge) {
+        if (work.score !== null && work.score !== undefined && work.score !== '') {
+          previewScoreBadge.style.display = 'inline-block';
+          previewScoreBadge.innerHTML = `<i class="fas fa-star text-danger me-1"></i>${work.score} 分`;
+        } else {
+          previewScoreBadge.style.display = 'none';
+        }
+      }
+    } else {
+      previewCommentBox.style.display = 'none';
     }
   }
 

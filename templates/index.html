@@ -941,7 +941,7 @@
               </div>
 
               <!-- 作品卡片容器 -->
-              <div id="works-cards-container" class="d-flex flex-column gap-3" style="max-height: 680px; overflow-y: auto;">
+              <div id="works-cards-container" class="d-flex flex-column gap-3">
                 <!-- 由 JS 動態注入 -->
               </div>
             </div>
@@ -1425,6 +1425,15 @@
               <i class="fas fa-external-link-alt me-1"></i>另開全螢幕
             </a>
             <button type="button" class="btn-close btn-close-white" onclick="closeModal('workPreviewModal')"></button>
+          </div>
+        </div>
+        <div id="preview-teacher-comment-box" class="p-3 bg-success-subtle border-bottom border-success" style="display: none;">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div>
+              <span class="badge bg-success text-white me-2"><i class="fas fa-chalkboard-teacher me-1"></i>授課教師評語</span>
+              <span class="fw-bold text-dark" id="preview-teacher-comment-text"></span>
+            </div>
+            <span class="badge bg-warning text-dark fw-bold fs-6" id="preview-teacher-score-badge"></span>
           </div>
         </div>
         <div class="modal-body p-0" style="height: 620px;">
