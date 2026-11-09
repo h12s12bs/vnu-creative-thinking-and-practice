@@ -92,8 +92,8 @@ function openModal(modalId, isForced = false) {
 
 function closeModal(modalId) {
   if (modalId === 'userProfileModal' && isForceProfileModal) {
-    if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
-      alert('⚠️ 依課堂要求，請完整填寫學號、姓名與所屬組別後點擊「確認登記並進入平台」！');
+    if (!currentUser.studentId || !currentUser.studentName) {
+      alert('⚠️ 依課堂要求，請完整填寫學號與真實姓名後點擊「確認登記並進入平台」！');
       return;
     }
   }
@@ -212,6 +212,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   try { renderAgentTemplates(); } catch(e) { console.warn('renderAgentTemplates error', e); }
   try { await initStudentWorks(); } catch(e) { console.warn('initStudentWorks error', e); }
   try { renderStudentWorks(); } catch(e) { console.warn('renderStudentWorks error', e); }
+  if (typeof syncFirestoreWorksNow === 'function') {
+    try { syncFirestoreWorksNow(false); } catch(e) {}
+  }
+  // 300ms 快速兜底：確保 Firebase SDK 非同步握手完成後立即拉取雲端最新資料
+  setTimeout(() => {
+    if (typeof syncFirestoreWorksNow === 'function' && typeof firestoreDb !== 'undefined' && firestoreDb) {
+      try { syncFirestoreWorksNow(false); } catch(e) {}
+    }
+  }, 300);
   try { initClassroomTools(); } catch(e) { console.warn('initClassroomTools error', e); }
   try { initQuizSystem(); } catch(e) { console.warn('initQuizSystem error', e); }
   try { renderBadges(); } catch(e) { console.warn('renderBadges error', e); }
@@ -256,7 +265,15 @@ function initFirebase() {
       firebaseAuth = firebase.auth();
       firestoreDb = firebase.firestore();
       isFirebaseAvailable = true;
-      console.log('✅ Firebase 初始化成功 (專案: vnu-creative-11501)');
+      console.log('✅ Firebase 初始化成功 (專案: vnu-business-software-11501)');
+
+      // 🚀 進入網頁立即自動載入最新雲端資料 (無須手動點擊按鈕，0.2秒秒開秒同步)
+      try {
+        syncFirestoreWorksNow(false);
+        listenToFirestoreWorks();
+      } catch (err) {
+        console.warn('Auto sync on init warning:', err);
+      }
 
       // 監聽 Redirect 登入結果 (避免彈跳視窗被攔截時仍可登入)
       if (firebaseAuth.getRedirectResult) {
@@ -402,7 +419,7 @@ async function loadUserProfileFromFirestore(user) {
       currentUser.isGoogleAuth = true;
 
       // 若學號、姓名或組別未完整填寫，直接強制彈窗登記
-      if (!currentUser.studentId || !currentUser.studentName || !currentUser.studentGroup) {
+      if (!currentUser.studentId || !currentUser.studentName) {
         initUserModal();
         openModal('userProfileModal', true);
       } else {
@@ -2402,7 +2419,7 @@ function updatePortfolioUserInfo() {
     }
   } else {
     userDisp.textContent = '未登入 Google 帳號 (請先登入以登記學號與上傳作業)';
-    if (teamDisp) teamDisp.textContent = '班級：企管四系1甲 (尚未選組)';
+    if (teamDisp) teamDisp.textContent = '班級：企管四系1甲 (個人獨立專案)';
   }
 }
 
@@ -2413,6 +2430,11 @@ function toggleTeacherPreviewForm() {
 
 async function initStudentWorks() {
   updatePortfolioUserInfo();
+
+  // 🚀 若 Firestore 已建立連線，立即自動讀取雲端最新作品並更新狀態
+  if (typeof syncFirestoreWorksNow === 'function' && typeof firestoreDb !== 'undefined' && firestoreDb) {
+    try { syncFirestoreWorksNow(false); } catch(e) {}
+  }
 
   // 1. 嘗試從伺服器端取得
   try {
