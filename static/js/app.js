@@ -2707,23 +2707,11 @@ function renderStudentWorks() {
                 ${w.file_name ? `<i class="fas fa-file-code me-1 text-primary"></i>${escapeHtml(w.file_name)}` : ''}
               </div>
               <div class="d-flex gap-2">
-                ${isHtmlWork ? `
-                  <button class="btn btn-sm btn-outline-primary" onclick="previewWork('${escapeHtml(w.id)}')">
-                    <i class="fas fa-play-circle me-1"></i>即時預覽原型
-                  </button>
-                ` : `
-                  <button class="btn btn-sm btn-outline-secondary" onclick="previewWork('${escapeHtml(w.id)}')">
-                    <i class="fas fa-eye me-1"></i>查看企劃摘要
-                  </button>
-                `}
                 ${w.live_url ? `
                   <a href="${escapeHtml(w.live_url)}" target="_blank" class="btn btn-sm btn-outline-success">
                     <i class="fas fa-external-link-alt me-1"></i>線上連結
                   </a>
                 ` : ''}
-                <button class="btn btn-sm btn-light border" onclick="downloadWorkFile('${escapeHtml(w.id)}')">
-                  <i class="fas fa-download me-1"></i>導出
-                </button>
               </div>
             </div>
           </div>
@@ -3101,14 +3089,19 @@ function previewWork(workId) {
   const textBox = document.getElementById('preview-text-box');
   const extLink = document.getElementById('preview-external-link');
 
-  if (modalTitle) modalTitle.textContent = `${work.title} - ${work.student_name} (${work.student_id})`;
-  if (modalBadge) modalBadge.textContent = work.category || '微型創業原型';
+  // 彈窗標題僅保留「專案主題」與「學號」
+  const studentIdText = work.student_id ? `(${work.student_id})` : '';
+  if (modalTitle) modalTitle.textContent = `${work.title || '專案成果'} ${studentIdText}`.trim();
+  if (modalBadge) modalBadge.style.display = 'none';
 
+  // 最右邊僅保留 icon，不顯示文字
   if (extLink) {
     if (work.live_url) {
       extLink.href = work.live_url;
-      extLink.style.display = 'inline-block';
-      extLink.innerHTML = `<i class="fas fa-external-link-alt me-1"></i>在新分頁開啟網站`;
+      extLink.style.display = 'inline-flex';
+      extLink.title = '在新分頁開啟網站';
+      extLink.setAttribute('aria-label', '在新分頁開啟網站');
+      extLink.innerHTML = `<i class="fas fa-external-link-alt"></i>`;
     } else {
       extLink.style.display = 'none';
     }
