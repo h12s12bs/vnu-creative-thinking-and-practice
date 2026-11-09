@@ -840,6 +840,11 @@ body {
       </div>
     </div>
   </nav>
+  <!-- LINE / 社群內建瀏覽器友善提示橫幅 -->
+  <div id="line-inapp-banner" class="alert alert-warning border-0 rounded-0 text-dark py-2 px-3 text-center fw-bold small shadow-sm mb-0" style="display: none; background: #fef08a;">
+    <i class="fab fa-line text-success fs-5 me-1 align-middle"></i>
+    提醒：您正在使用 LINE 內建視窗，請點擊右下角「⋮」選擇【在 Safari / 外部瀏覽器開啟】，方能使用 Google 登入上傳作業！
+  </div>
 
   <!-- 主內容容器 -->
   <div class="container my-3">
@@ -7712,6 +7717,11 @@ function updateAllPresentationLinks() {
 
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
+  // 檢測 LINE 內建瀏覽器並顯示友善換瀏覽器提示
+  if (typeof isLineOrInAppBrowser === 'function' && isLineOrInAppBrowser()) {
+    const lineBanner = document.getElementById('line-inapp-banner');
+    if (lineBanner) lineBanner.style.display = 'block';
+  }
   if (window.location.protocol === 'file:' || window.IS_STANDALONE_OFFLINE) {
     isOfflineMode = true;
   }
@@ -7841,8 +7851,19 @@ function initFirebase() {
 // 立即嘗試一次初始化 (若腳本於 head 之後已載入 SDK)
 try { initFirebase(); } catch(e) {}
 
+function isLineOrInAppBrowser() {
+  const ua = navigator.userAgent || navigator.vendor || window.opera || '';
+  return /Line/i.test(ua) || /FBAN/i.test(ua) || /FBAV/i.test(ua) || /Instagram/i.test(ua);
+}
+
 function loginWithGoogle() {
   console.log('🔘 Google 登入按鈕被點擊');
+
+  // 🚨 智慧檢測：LINE / FB / IG 內建瀏覽器會被 Google 官方封鎖 OAuth (白畫面/403)
+  if (isLineOrInAppBrowser()) {
+    alert('⚠️ 檢測到您正在使用 LINE 內建瀏覽器！\n\n因 Google 官方資安政策限制，禁止在 LINE / 社群應用程式內直接跳轉 Google 登入。\n\n👉 解決方法（只要 2 秒）：\n請點擊畫面右下角的三個點點「⋮」（或分享圖示），選擇【在 Safari 中開啟】或【在預設瀏覽器中開啟】，即可順暢登入！');
+    return;
+  }
   if (!isFirebaseAvailable || !firebaseAuth) {
     if (typeof firebase !== 'undefined' && firebase.initializeApp) {
       initFirebase();
