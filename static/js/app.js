@@ -2395,6 +2395,103 @@ function applyDemoToAgentWorkspace() {
 /* ==========================================================================
    學生作品上傳與展示中心 (PORTFOLIO & SUBMISSION SYSTEM)
    ========================================================================== */
+
+/* ==========================================================================
+   教師專屬：永久刪除作業 (TEACHER DELETE FUNCTION)
+   ========================================================================== */
+async function teacherDeleteWork(workId) {
+  if (!isTeacherUser) {
+    alert('⚠️ 只有授課教師（邱俊維 博士）擁有刪除作業權限！');
+    return;
+  }
+  const work = (studentWorksData || []).find(w => w.id === workId);
+  if (!work) return;
+
+  if (work.id === 'DEMO-01' || work.id === 'DEMO-02') {
+    alert('⚠️ 這是課程常駐示範專案，不可刪除！');
+    return;
+  }
+
+  const confirmMsg = `🗑️【授課教師刪除確認】\n\n確定要永久刪除以下作業嗎？\n\n• 學號：${work.student_id}\n• 學生：${work.student_name}\n• 作品：${work.title}\n• 類別：${work.report_type}\n\n⚠️ 此操作無法還原，確定刪除請點【確定】。`;
+  if (!confirm(confirmMsg)) return;
+
+  // 1. 自雲端 Firestore 永久刪除
+  if (firestoreDb) {
+    try {
+      await firestoreDb.collection('works').doc(workId).delete();
+      console.log('✅ 已從 Firestore 永久刪除作業:', workId);
+    } catch (err) {
+      console.error('Firestore 刪除失敗:', err);
+      alert('⚠️ 雲端刪除失敗：' + (err.message || err));
+      return;
+    }
+  }
+
+  // 2. 自本機記憶體與列表移除
+  studentWorksData = studentWorksData.filter(w => w.id !== workId);
+
+  // 3. 自 localStorage 移除
+  try {
+    const localWorks = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+    const filtered = localWorks.filter(w => w.id !== workId);
+    localStorage.setItem('vnu_submitted_works', JSON.stringify(filtered));
+  } catch (e) {}
+
+  // 4. 重新渲染畫面與教師後台
+  renderStudentWorks();
+  renderTeacherGradeDashboard();
+
+  alert(`✅ 已成功永久刪除【${work.student_name} (${work.student_id})】的作業《${work.title}》！`);
+}
+
+/* ==========================================================================
+   學生單一報告檢查與自動預填 (PREFILL & OVERWRITE CHECK)
+   ========================================================================== */
+function checkAndPrefillExistingWork() {
+  const weekSelect = document.getElementById('upload-week-select');
+  const reportType = weekSelect ? weekSelect.value : '期中報告';
+  const curStudentId = (currentUser && currentUser.studentId ? currentUser.studentId.trim() : '');
+  const curUid = currentFirebaseUser ? currentFirebaseUser.uid : '';
+  const curEmail = currentFirebaseUser && currentFirebaseUser.email ? currentFirebaseUser.email.trim().toLowerCase() : '';
+
+  if (!curStudentId && !curUid && !curEmail) return;
+
+  const existingWork = (studentWorksData || []).find(w => {
+    if (w.report_type !== reportType) return false;
+    if (w.id === 'DEMO-01' || w.id === 'DEMO-02' || w.student_id === 'TEACHER') return false;
+    const matchId = (curStudentId && w.student_id && w.student_id.trim().toLowerCase() === curStudentId.toLowerCase());
+    const matchUid = (curUid && w.uid && w.uid === curUid);
+    const matchEmail = (curEmail && w.email && w.email.trim().toLowerCase() === curEmail);
+    return matchId || matchUid || matchEmail;
+  });
+
+  const submitBtn = document.getElementById('btn-submit-work');
+  const editHint = document.getElementById('upload-overwrite-hint');
+  
+  if (existingWork) {
+    if (editHint) {
+      editHint.style.display = 'block';
+      editHint.innerHTML = `<i class="fas fa-info-circle me-1"></i>您先前已繳交過【${escapeHtml(reportType)}】，再次送出將自動【更新覆寫】原作品，展示廊維持單一最新版本。`;
+    }
+    if (submitBtn) {
+      submitBtn.innerHTML = `<i class="fas fa-sync-alt me-1"></i>確認更新覆寫【${escapeHtml(reportType)}】`;
+    }
+    const titleIn = document.getElementById('upload-title');
+    const conceptIn = document.getElementById('upload-concept');
+    const liveUrlIn = document.getElementById('upload-live-url');
+    const promptIn = document.getElementById('upload-prompt-summary');
+    if (titleIn && !titleIn.value) titleIn.value = existingWork.title || '';
+    if (conceptIn && !conceptIn.value) conceptIn.value = existingWork.concept || '';
+    if (liveUrlIn && !liveUrlIn.value) liveUrlIn.value = existingWork.live_url || '';
+    if (promptIn && !promptIn.value) promptIn.value = existingWork.prompt_summary || '';
+  } else {
+    if (editHint) editHint.style.display = 'none';
+    if (submitBtn) {
+      submitBtn.innerHTML = `<i class="fas fa-check-circle me-1"></i>確認送出繳交報告`;
+    }
+  }
+}
+
 function updatePortfolioUserInfo() {
   const userDisp = document.getElementById('portfolio-user-display');
   const teamDisp = document.getElementById('portfolio-team-display');
@@ -2428,6 +2525,9 @@ function updatePortfolioUserInfo() {
     }
   }
 
+  if (typeof checkAndPrefillExistingWork === 'function') {
+    try { checkAndPrefillExistingWork(); } catch(e) {}
+  }
   if (!userDisp) return;
 
   if (isTeacherUser) {
@@ -2652,10 +2752,15 @@ function renderStudentWorks() {
       ? `<span class="badge bg-primary me-1"><i class="fas fa-trophy me-1"></i>期末報告</span>` 
       : `<span class="badge bg-info text-dark me-1"><i class="fas fa-bookmark me-1"></i>期中報告</span>`;
 
-    // 教師專屬評分按鈕
+    // 教師專屬評分按鈕與刪除按鈕
     const teacherGradeBtn = isTeacherUser ? `
       <button class="btn btn-sm btn-warning text-dark fw-bold" onclick="openTeacherGradeModal('${escapeHtml(w.id)}')">
         <i class="fas fa-edit me-1"></i>教師評分
+      </button>
+    ` : '';
+    const teacherDeleteBtn = (isTeacherUser && w.id !== 'DEMO-01' && w.id !== 'DEMO-02') ? `
+      <button class="btn btn-sm btn-outline-danger fw-bold ms-1" onclick="teacherDeleteWork('${escapeHtml(w.id)}')" title="刪除此筆學生重複或錯誤作業">
+        <i class="fas fa-trash-alt me-1"></i>刪除
       </button>
     ` : '';
 
@@ -2700,6 +2805,7 @@ function renderStudentWorks() {
               <div class="d-flex align-items-center gap-2">
                 ${scoreBadge}
                 ${teacherGradeBtn}
+                ${teacherDeleteBtn}
               </div>
             </div>
 
@@ -2801,14 +2907,35 @@ async function handleProjectSubmit(e) {
     return;
   }
 
-  const workId = 'WORK-CREATIVE-' + Date.now();
+  const curStudentId = (currentUser.studentId || '').trim();
+  const curUid = currentFirebaseUser ? currentFirebaseUser.uid : '';
+  const curEmail = currentFirebaseUser && currentFirebaseUser.email ? currentFirebaseUser.email.trim().toLowerCase() : '';
+
+  // 🔍 檢查學生在當前類別 (期中報告/期末報告) 是否已有已上傳之作品 (避免重複新增，自動支援覆寫更新)
+  const existingWork = (studentWorksData || []).find(w => {
+    if (w.report_type !== reportType) return false;
+    if (w.id === 'DEMO-01' || w.id === 'DEMO-02' || w.student_id === 'TEACHER') return false;
+    const matchId = (curStudentId && w.student_id && w.student_id.trim().toLowerCase() === curStudentId.toLowerCase());
+    const matchUid = (curUid && w.uid && w.uid === curUid);
+    const matchEmail = (curEmail && w.email && w.email.trim().toLowerCase() === curEmail);
+    return matchId || matchUid || matchEmail;
+  });
+
+  const isOverwrite = Boolean(existingWork);
+  const workId = isOverwrite ? existingWork.id : ('WORK-CREATIVE-' + Date.now());
   const nowStr = new Date().toLocaleString('zh-TW', { hour12: false });
 
-  const newWork = {
+  // 若為覆寫，保留原教師評分與評語（若有）
+  const prevScore = isOverwrite ? (existingWork.score ?? null) : null;
+  const prevComment = isOverwrite ? (existingWork.teacher_comment || '') : '';
+  const prevGradedAt = isOverwrite ? (existingWork.graded_at || null) : null;
+  const prevGradedBy = isOverwrite ? (existingWork.graded_by || null) : null;
+
+  const targetWork = {
     id: workId,
-    uid: currentFirebaseUser ? currentFirebaseUser.uid : 'GUEST-' + Date.now(),
-    email: currentFirebaseUser ? currentFirebaseUser.email : '',
-    student_id: currentUser.studentId,
+    uid: curUid || (isOverwrite ? existingWork.uid : ('GUEST-' + Date.now())),
+    email: curEmail || (isOverwrite ? existingWork.email : ''),
+    student_id: curStudentId,
     student_name: currentUser.studentName,
     student_group: '個人獨立專案',
     team_name: '個人獨立專案',
@@ -2827,10 +2954,14 @@ async function handleProjectSubmit(e) {
     html_content: '',
     thumbnail: reportType === '期末報告' ? 'linear-gradient(135deg, #0ea5e9 0%, #10b981 100%)' : 'linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%)',
     thumbnail_icon: reportType === '期末報告' ? 'fas fa-globe' : 'fas fa-rocket',
-    submitted_at: nowStr,
-    score: null,
-    teacher_comment: ''
+    submitted_at: isOverwrite ? existingWork.submitted_at : nowStr,
+    updated_at: isOverwrite ? nowStr : null,
+    score: prevScore,
+    teacher_comment: prevComment,
+    graded_at: prevGradedAt,
+    graded_by: prevGradedBy
   };
+  const newWork = targetWork;
 
   const submitBtn = document.getElementById('btn-submit-work');
   if (submitBtn) {
@@ -2856,11 +2987,27 @@ async function handleProjectSubmit(e) {
     }
   }
 
-  // 2. 本地儲存與記憶體備份
-  studentWorksData.unshift(newWork);
+  // 2. 本地儲存與記憶體備份 (覆寫時在原位置替換，新增時排在最前)
+  if (isOverwrite) {
+    const sIdx = studentWorksData.findIndex(w => w.id === workId);
+    if (sIdx !== -1) {
+      studentWorksData[sIdx] = newWork;
+    } else {
+      studentWorksData.unshift(newWork);
+    }
+  } else {
+    studentWorksData.unshift(newWork);
+  }
+
   try {
-    const localWorks = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
-    localWorks.unshift(newWork);
+    let localWorks = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+    if (isOverwrite) {
+      const lIdx = localWorks.findIndex(w => w.id === workId);
+      if (lIdx !== -1) localWorks[lIdx] = newWork;
+      else localWorks.unshift(newWork);
+    } else {
+      localWorks.unshift(newWork);
+    }
     localStorage.setItem('vnu_submitted_works', JSON.stringify(localWorks));
   } catch(e) {}
 
@@ -2876,7 +3023,11 @@ async function handleProjectSubmit(e) {
   document.getElementById('project-upload-form').reset();
 
   if (firestoreSuccess) {
-    alert(`🎉 恭喜【企管四系1甲】${currentUser.studentName} 同學！\n《${title}》(${reportType}) 已成功上傳並同步至 Firebase 雲端資料庫！\n授課教師與全班同學重新整理展示廊即可即時檢視！`);
+    if (isOverwrite) {
+      alert(`🎉 恭喜【企管四系1甲】${currentUser.studentName} 同學！\n您的《${title}》(${reportType}) 已成功【更新並覆寫】原作品！\n展示廊與線上評分系統已自動同步為最新版本成果。`);
+    } else {
+      alert(`🎉 恭喜【企管四系1甲】${currentUser.studentName} 同學！\n《${title}》(${reportType}) 已成功上傳並同步至 Firebase 雲端資料庫！\n授課教師與全班同學重新整理展示廊即可即時檢視！`);
+    }
   } else {
     alert(`⚠️ 繳交提示：\n作品已儲存於您的「本機瀏覽器」，但【雲端同步未成功】！\n(原因：${firestoreErrMsg})\n\n💡 說明：其他裝置暫時無法讀取此筆作品，請將作品公開網址複製提供給邱老師。`);
   }
@@ -3020,6 +3171,11 @@ function renderTeacherGradeDashboard() {
             ${hasFile ? `
               <button type="button" class="btn btn-sm btn-outline-secondary py-0 px-2" style="font-size: 0.78rem;" onclick="downloadWorkFile('${escapeHtml(w.id)}')">
                 <i class="fas fa-download me-1"></i>下載檔案
+              </button>
+            ` : ''}
+            ${(w.id !== 'DEMO-01' && w.id !== 'DEMO-02') ? `
+              <button type="button" class="btn btn-sm btn-outline-danger py-0 px-2" style="font-size: 0.78rem;" onclick="teacherDeleteWork('${escapeHtml(w.id)}')" title="刪除重複或錯誤上傳">
+                <i class="fas fa-trash-alt me-1"></i>刪除
               </button>
             ` : ''}
           </div>
@@ -3456,5 +3612,7 @@ window.renderTeacherGradeDashboard = renderTeacherGradeDashboard;
 window.syncFirestoreWorksNow = syncFirestoreWorksNow;
 window.teacherManualAddWork = teacherManualAddWork;
 window.quickSaveGradeRow = quickSaveGradeRow;
+window.teacherDeleteWork = teacherDeleteWork;
+window.checkAndPrefillExistingWork = checkAndPrefillExistingWork;
 window.toggleTeacherPreviewForm = toggleTeacherPreviewForm;
 
