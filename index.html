@@ -687,6 +687,16 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   border-color: #CBD5E1;
 }
+/* 作品卡片與純淨縮圖樣式 (極致簡約 RWD) */
+.horizontal-work-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px !important;
+}
+.horizontal-work-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: #CBD5E1;
+}
 .work-thumbnail-box {
   width: 175px;
   height: 145px;
@@ -694,20 +704,16 @@ body {
   border-radius: 10px;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0;
-  color: #FFFFFF;
   background: #0f172a;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15), 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   flex-shrink: 0;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .work-thumbnail-box:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 .work-thumbnail-img {
   width: 100%;
@@ -740,29 +746,38 @@ body {
 .work-thumbnail-box:hover .work-thumbnail-overlay {
   opacity: 1;
 }
-.work-thumbnail-browser-bar {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  margin-bottom: 0;
-}
-.work-thumbnail-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-}
 .work-thumbnail-icon {
   font-size: 2.2rem;
   opacity: 0.9;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* 行動端 RWD 人體工學觸控優化 */
 @media (max-width: 768px) {
   .work-thumbnail-box {
-    width: 100%;
-    min-height: 160px;
-    height: 160px;
-    margin-bottom: 0.75rem;
+    width: 100% !important;
+    height: 185px !important;
+    min-height: 185px !important;
+    margin-bottom: 0.85rem !important;
+  }
+  .horizontal-work-card {
+    padding: 1rem !important;
+  }
+  #project-upload-form .form-control,
+  #project-upload-form .form-select,
+  #userProfileModal .form-control,
+  #userProfileModal .form-select {
+    font-size: 16px !important; /* 防止 iOS Safari 自動放大輸入框 */
+    min-height: 44px !important; /* 符合蘋果人體工學建議觸控高度 */
+    padding: 10px 12px !important;
+  }
+  #btn-submit-work {
+    min-height: 48px !important;
+    font-size: 16px !important;
+  }
+  .card-custom {
+    padding: 1rem !important;
+    border-radius: 12px !important;
   }
 }
 
@@ -1584,22 +1599,25 @@ body {
           <!-- 左側：作業繳交表單 (Submit Project) -->
           <!-- 左側：作業繳交表單 (Submit Project) -->
           <div class="col-lg-5">
-            <!-- 未登入時顯示登入提示 -->
+                        <!-- 未登入時顯示友善登入/快速填寫提示 -->
             <div class="card-custom p-4 text-center h-100 flex-column justify-content-center align-items-center" id="upload-login-prompt-box" style="display: flex;">
-              <div class="rounded-circle bg-warning bg-opacity-10 p-4 mb-3 text-warning">
-                <i class="fas fa-lock fs-1"></i>
+              <div class="rounded-circle bg-primary bg-opacity-10 p-3 mb-3 text-primary" style="width: 64px; height: 64px; display: inline-flex; align-items:center; justify-content:center;">
+                <i class="fas fa-cloud-upload-alt fs-2"></i>
               </div>
-              <h5 class="fw-bold text-dark mb-2">作業成果上傳與繳交</h5>
+              <h5 class="fw-bold text-dark mb-1">作業成果上傳與繳交</h5>
               <p class="text-muted small mb-3" style="max-width: 360px;">
-                依課堂評分規定，企管四系1甲同學請先點擊下方按鈕使用 Google 帳號登入並綁定學號、姓名與組別，即可開啟「期中報告」與「期末報告」作品上傳表單。
+                本課程為 100% 個人獨立專案（免分組），建議使用 Google 帳號登入；若在手機通訊軟體或電腦教室上課，亦可直接以學號姓名填寫繳交：
               </p>
-              <button type="button" class="btn btn-primary fw-bold px-4 py-2 shadow-sm mb-3" onclick="loginWithGoogle()">
-                <i class="fab fa-google me-2"></i>使用 Google 帳號登入
-              </button>
-              <div class="pt-2 border-top border-secondary border-opacity-10 w-100">
-                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleTeacherPreviewForm()">
-                  <i class="fas fa-eye me-1"></i>授課教師檢視／預覽表單樣式
+              <div class="d-flex flex-column gap-2 w-100" style="max-width: 320px;">
+                <button type="button" class="btn btn-primary fw-bold py-2 shadow-sm" onclick="loginWithGoogle()">
+                  <i class="fab fa-google me-2"></i>使用 Google 帳號登入（推薦）
                 </button>
+                <button type="button" class="btn btn-outline-success fw-bold py-2" onclick="toggleTeacherPreviewForm()">
+                  <i class="fas fa-edit me-2"></i>直接填寫上傳表單（免登入）
+                </button>
+              </div>
+              <div class="pt-2 mt-3 border-top border-secondary border-opacity-10 w-100">
+                <span class="small text-muted"><i class="fas fa-shield-alt text-success me-1"></i>支援手機與電腦全平台即時同步</span>
               </div>
             </div>
 
@@ -1617,7 +1635,7 @@ body {
               <form id="project-upload-form" onsubmit="handleProjectSubmit(event)">
                 <div class="mb-3">
                   <label class="form-label small fw-bold text-dark">繳交報告類別 *</label>
-                  <select class="form-select form-select-sm fw-bold text-primary" id="upload-week-select" required>
+                  <select class="form-select fw-bold text-primary" id="upload-week-select" required>
                     <option value="期中報告" data-title="期中微型創業企劃書與 MVP 原型成果" selected>📌 期中報告：微型創業企劃書與 MVP 原型成果</option>
                     <option value="期末報告" data-title="期末微型創業實踐與 AI Agent 成果發布">🏆 期末報告：微型創業實踐與 AI Agent 成果發布</option>
                   </select>
@@ -1625,12 +1643,12 @@ body {
 
                 <div class="mb-3">
                   <label class="form-label small fw-bold text-dark">作品名稱 / 專案標題 *</label>
-                  <input type="text" class="form-control form-control-sm" id="upload-title" placeholder="例：萬能校園二手書即時媒合平台" required>
+                  <input type="text" class="form-control" id="upload-title" placeholder="例：萬能校園二手書即時媒合平台" required>
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label small fw-bold text-dark">作品類型 *</label>
-                  <select class="form-select form-select-sm fw-bold text-primary" id="upload-category" required>
+                  <select class="form-select fw-bold text-primary" id="upload-category" required>
                     <option value="線上部署網頁 (GitHub Pages / 雲端發布)" selected>🌐 線上部署網頁 (GitHub Pages / 獨立專屬網址)</option>
                   </select>
                   <div class="form-text small text-primary fw-semibold"><i class="fas fa-check-circle me-1"></i>本課程核心目標為實戰訓練同學親手部署上線真實網站，限繳交公開網頁。</div>
@@ -1644,12 +1662,12 @@ body {
 
                 <div class="mb-3">
                   <label class="form-label small fw-bold text-dark">創意核心概念與痛點說明 (200字內) *</label>
-                  <textarea class="form-control form-control-sm" id="upload-concept" rows="3" placeholder="簡述你的創意發想：為誰解決什麼痛點？網站核心功能是什麼？" required></textarea>
+                  <textarea class="form-control" id="upload-concept" rows="3" placeholder="簡述你的創意發想：為誰解決什麼痛點？網站核心功能是什麼？" required></textarea>
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label small fw-bold text-dark">使用之 Agentic AI 與黃金 Prompt 提示詞記錄</label>
-                  <textarea class="form-control form-control-sm" id="upload-prompt-summary" rows="2" placeholder="例：使用痛點雷達 Agent ✕ 一頁式原型 Agent，輸入 CLEAR 提問框架..."></textarea>
+                  <textarea class="form-control" id="upload-prompt-summary" rows="2" placeholder="例：使用痛點雷達 Agent ✕ 一頁式原型 Agent，輸入 CLEAR 提問框架..."></textarea>
                 </div>
 
                 <div class="d-grid">
@@ -1771,21 +1789,21 @@ body {
               </div>
             </div>
             <div class="col-md-2 col-6">
-              <select class="form-select form-select-sm" id="teacher-filter-category" onchange="renderTeacherGradeDashboard()">
+              <select class="form-select" id="teacher-filter-category" onchange="renderTeacherGradeDashboard()">
                 <option value="all">所有類別 (期中/期末)</option>
                 <option value="期中報告">僅看 期中報告</option>
                 <option value="期末報告">僅看 期末報告</option>
               </select>
             </div>
             <div class="col-md-2 col-6">
-              <select class="form-select form-select-sm" id="teacher-filter-status" onchange="renderTeacherGradeDashboard()">
+              <select class="form-select" id="teacher-filter-status" onchange="renderTeacherGradeDashboard()">
                 <option value="all">所有評分狀態</option>
                 <option value="pending">待評分</option>
                 <option value="graded">已評分</option>
               </select>
             </div>
             <div class="col-md-2 col-6">
-              <select class="form-select form-select-sm" id="teacher-filter-group" onchange="renderTeacherGradeDashboard()">
+              <select class="form-select" id="teacher-filter-group" onchange="renderTeacherGradeDashboard()">
                 <option value="all">所有組別</option>
                 <option value="第 1 組">第 1 組</option>
                 <option value="第 2 組">第 2 組</option>
@@ -9072,7 +9090,7 @@ function renderActiveAgent() {
         return `
         <div class="col-md-4 col-12">
           <label class="form-label small fw-bold text-dark">${inp.label}</label>
-          <input type="text" class="form-control form-control-sm" id="input-field-${i}" placeholder="${inp.placeholder}" value="${defaultVal.replace(/"/g, '&quot;')}">
+          <input type="text" class="form-control" id="input-field-${i}" placeholder="${inp.placeholder}" value="${defaultVal.replace(/"/g, '&quot;')}">
         </div>
       `;
       }).join('')}
@@ -10080,19 +10098,11 @@ function renderStudentWorks() {
     html += `
       <div class="card-custom p-3 border position-relative horizontal-work-card mb-3" style="background: #FFFFFF;">
         <div class="d-flex flex-column flex-md-row gap-3 align-items-start">
-          <!-- 橫式左側：網頁即時預覽縮圖 (直接載入真實網站截圖) -->
-          <div class="work-thumbnail-box" onclick="previewWork('${escapeHtml(w.id)}')" title="點擊即時預覽網頁原型">
-            <!-- 頂部瀏覽器視窗列 -->
-            <div class="work-thumbnail-browser-bar position-absolute top-0 start-0 w-100 px-2 py-1" style="background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(3px); z-index: 2;">
-              <span class="work-thumbnail-dot"></span>
-              <span class="work-thumbnail-dot"></span>
-              <span class="work-thumbnail-dot"></span>
-              <span class="ms-1 text-white-50 font-monospace" style="font-size: 0.65rem;">Live Web Preview</span>
-            </div>
-
+                    <!-- 橫式左側：純淨網頁即時截圖縮圖 (點擊直接全螢幕預覽原型) -->
+          <div class="work-thumbnail-box" onclick="previewWork('${escapeHtml(w.id)}')" title="點擊即時全螢幕預覽網站原型">
             ${w.live_url ? `
               <img src="https://image.thum.io/get/width/600/crop/800/${encodeURI(w.live_url)}" 
-                   alt="學生成果網頁即時截圖" 
+                   alt="${escapeHtml(w.title || '成果網頁截圖')}" 
                    class="work-thumbnail-img" 
                    loading="lazy" 
                    onerror="this.onerror=null; this.src='https://s0.wp.com/mshots/v1/' + encodeURIComponent('${encodeURI(w.live_url)}') + '?w=600';">
@@ -10102,16 +10112,10 @@ function renderStudentWorks() {
               </div>
             `}
 
-            <!-- 懸停半透明遮罩與預覽提示 -->
+            <!-- 懸停/點擊提示遮罩 -->
             <div class="work-thumbnail-overlay">
-              <i class="fas fa-search-plus mb-1 fs-5"></i>
-              <span style="font-size: 0.72rem; font-weight: 700;">點擊即時預覽</span>
-            </div>
-
-            <!-- 底部標籤列 -->
-            <div class="position-absolute bottom-0 start-0 w-100 px-2 py-1 d-flex justify-content-between align-items-center" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent); z-index: 2;">
-              <span class="badge bg-black bg-opacity-75 text-white font-monospace" style="font-size: 0.6rem;">${escapeHtml(w.category || '網頁部署')}</span>
-              <span class="text-white small" style="font-size: 0.65rem;"><i class="fas fa-play-circle me-1"></i>預覽</span>
+              <i class="fas fa-search-plus mb-1 fs-4"></i>
+              <span style="font-size: 0.75rem; font-weight: 700;">點擊預覽原型</span>
             </div>
           </div>
 
@@ -10121,7 +10125,7 @@ function renderStudentWorks() {
               <div>
                 ${groupBadge}
                 ${reportBadge}
-                <span class="badge bg-light text-secondary border">${escapeHtml(w.category || '實務作品')}</span>
+                
                 <h6 class="fw-bold text-dark mt-2 mb-1 fs-5">${escapeHtml(w.title || '未命名專案')}</h6>
                 <div class="small text-muted">
                   <i class="fas fa-user-circle me-1"></i>${escapeHtml(w.student_id || '')} ${escapeHtml(w.student_name || '同學')}
@@ -10472,7 +10476,7 @@ function renderTeacherGradeDashboard() {
           <input type="number" min="0" max="100" class="form-control form-control-sm text-center fw-bold text-primary" id="row-score-${escapeHtml(w.id)}" value="${currentScore}" placeholder="0-100" style="width: 85px;">
         </td>
         <td>
-          <input type="text" class="form-control form-control-sm" id="row-comment-${escapeHtml(w.id)}" value="${escapeHtml(currentComment)}" placeholder="輸入教師評語或改進建議...">
+          <input type="text" class="form-control" id="row-comment-${escapeHtml(w.id)}" value="${escapeHtml(currentComment)}" placeholder="輸入教師評語或改進建議...">
         </td>
         <td class="text-center">
           <button type="button" class="btn btn-sm btn-success fw-bold px-2 py-1 shadow-sm" onclick="quickSaveGradeRow('${escapeHtml(w.id)}')">
