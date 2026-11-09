@@ -1602,22 +1602,23 @@ body {
                         <!-- 未登入時顯示友善登入/快速填寫提示 -->
             <div class="card-custom p-4 text-center h-100 flex-column justify-content-center align-items-center" id="upload-login-prompt-box" style="display: flex;">
               <div class="rounded-circle bg-primary bg-opacity-10 p-3 mb-3 text-primary" style="width: 64px; height: 64px; display: inline-flex; align-items:center; justify-content:center;">
-                <i class="fas fa-cloud-upload-alt fs-2"></i>
+                <i class="fas fa-user-lock fs-2"></i>
               </div>
-              <h5 class="fw-bold text-dark mb-1">作業成果上傳與繳交</h5>
-              <p class="text-muted small mb-3" style="max-width: 360px;">
-                本課程為 100% 個人獨立專案（免分組），建議使用 Google 帳號登入；若在手機通訊軟體或電腦教室上課，亦可直接以學號姓名填寫繳交：
+              <h5 class="fw-bold text-dark mb-2">作業成果上傳與繳交</h5>
+              <p class="text-muted small mb-3" style="max-width: 360px; line-height: 1.6;">
+                依課堂成績隱私防護規範，企管四系1甲同學<strong>必須使用 Google 帳號登入</strong>並綁定學號姓名，方可開啟作業繳交表單。<br>
+                <span class="text-success mt-2 d-inline-block fw-bold"><i class="fas fa-shield-alt me-1"></i>個人評分與教師評語僅限學生本人與授課教師可見</span>
               </p>
               <div class="d-flex flex-column gap-2 w-100" style="max-width: 320px;">
                 <button type="button" class="btn btn-primary fw-bold py-2 shadow-sm" onclick="loginWithGoogle()">
-                  <i class="fab fa-google me-2"></i>使用 Google 帳號登入（推薦）
+                  <i class="fab fa-google me-2"></i>使用 Google 帳號登入以開啟表單
                 </button>
-                <button type="button" class="btn btn-outline-success fw-bold py-2" onclick="toggleTeacherPreviewForm()">
-                  <i class="fas fa-edit me-2"></i>直接填寫上傳表單（免登入）
+                <button type="button" class="btn btn-sm btn-link text-muted mt-1 text-decoration-none" onclick="toggleTeacherPreviewForm()">
+                  <i class="fas fa-chalkboard-teacher me-1"></i>授課教師檢視 / 預覽表單樣式
                 </button>
               </div>
               <div class="pt-2 mt-3 border-top border-secondary border-opacity-10 w-100">
-                <span class="small text-muted"><i class="fas fa-shield-alt text-success me-1"></i>支援手機與電腦全平台即時同步</span>
+                <span class="small text-muted"><i class="fas fa-lock text-success me-1"></i>雲端身分驗證 ‧ 成績隱私加密</span>
               </div>
             </div>
 
@@ -9901,7 +9902,8 @@ function updatePortfolioUserInfo() {
   const teacherHint = document.getElementById('teacher-form-hint');
 
   const isLoggedIn = !!currentFirebaseUser;
-  const shouldShowForm = isLoggedIn || window.forceTeacherFormPreview;
+  // 必須登入 Google，或授課教師開啟預覽，才解鎖上傳表單 (嚴防訪客無身分冒名上傳)
+  const shouldShowForm = isLoggedIn || (window.forceTeacherFormPreview && isTeacherUser);
 
   if (uploadLoginPrompt && uploadFormBox) {
     if (shouldShowForm) {
@@ -10108,7 +10110,37 @@ function renderStudentWorks() {
   let html = '';
   works.forEach(w => {
     const isHtmlWork = (w.category && w.category.includes('HTML')) || (w.file_name && (w.file_name.endsWith('.html') || w.file_name.endsWith('.htm'))) || Boolean(w.html_content);
-    const scoreBadge = (w.score !== null && w.score !== undefined && w.score !== '') ? `<span class="badge bg-warning text-dark fw-bold"><i class="fas fa-star text-danger me-1"></i>評分：${w.score} 分</span>` : `<span class="badge bg-secondary">教師審核中</span>`;
+        const isTeacher = Boolean(isTeacherUser);
+    const isDemo = (w.id === 'DEMO-01' || w.id === 'DEMO-02' || w.student_id === 'TEACHER');
+
+    const currentId = (currentUser && currentUser.studentId) ? currentUser.studentId.trim() : '';
+    const currentEmail = (currentFirebaseUser && currentFirebaseUser.email) ? currentFirebaseUser.email.trim().toLowerCase() : '';
+    const currentUid = (currentFirebaseUser && currentFirebaseUser.uid) ? currentFirebaseUser.uid : '';
+
+    const isOwner = Boolean(
+      (currentUid && w.uid && w.uid === currentUid) ||
+      (currentEmail && w.email && w.email.trim().toLowerCase() === currentEmail) ||
+      (currentId && w.student_id && currentId.length >= 4 && w.student_id.trim() === currentId && currentFirebaseUser)
+    );
+
+    const canSeeGradeAndComment = isTeacher || isDemo || isOwner;
+
+    // 🔒 評分隱私保護：僅本人、授課教師或示範專案可見真實分數
+    let scoreBadge = '';
+    const hasScore = (w.score !== null && w.score !== undefined && w.score !== '');
+    if (canSeeGradeAndComment) {
+      if (hasScore) {
+        scoreBadge = `<span class="badge bg-warning text-dark fw-bold"><i class="fas fa-star text-danger me-1"></i>評分：${w.score} 分</span>`;
+      } else {
+        scoreBadge = `<span class="badge bg-secondary">教師審核中</span>`;
+      }
+    } else {
+      if (hasScore) {
+        scoreBadge = `<span class="badge bg-light text-muted border" title="為維護同學隱私，評分與評語僅作者本人與教師可見"><i class="fas fa-lock me-1"></i>已評分 (僅作者可見)</span>`;
+      } else {
+        scoreBadge = `<span class="badge bg-secondary">教師審核中</span>`;
+      }
+    }
     const groupName = w.team_name || w.student_group || '個人獨立專案';
     const groupBadge = `<span class="badge bg-dark text-light border me-1"><i class="fas fa-users me-1"></i>${escapeHtml(groupName)}</span>`;
     const thumbnailBg = w.thumbnail || 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)';
@@ -10181,7 +10213,7 @@ function renderStudentWorks() {
             </div>
             ` : ''}
 
-            ${w.teacher_comment ? `
+            ${(w.teacher_comment && canSeeGradeAndComment) ? `
             <div class="p-3 rounded-3 small mb-3 border-start border-success border-4 shadow-sm" style="background: #F0FDF4; white-space: pre-line; word-break: break-word;">
               <div class="fw-bold text-success mb-1" style="font-size: 0.92rem;">
                 <i class="fas fa-chalkboard-teacher me-1"></i>授課教師評語與指導回饋：
@@ -10243,12 +10275,10 @@ function filterWorksDisplay(filter) {
 async function handleProjectSubmit(e) {
   e.preventDefault();
 
-  if (!currentFirebaseUser) {
-    const proceedGuest = confirm(`💡 提示：您尚未登入 Google 帳號。\n\n建議先使用 Google 帳號登入，以享有雲端永久保存與身分驗證！\n\n若您在教室或手機上暫時無法登入 Google，點擊【確定】可繼續以登記的學號姓名上傳：`);
-    if (!proceedGuest) {
-      loginWithGoogle();
-      return;
-    }
+  if (!currentFirebaseUser && !isTeacherUser) {
+    alert('⚠️ 依課堂要求與成績隱私防護規範，必須使用 Google 帳號登入後方可繳交作業！\n\n請先點擊「使用 Google 帳號登入」完成驗證，系統將自動保護您的評分與教師評語僅限您本人查閱。');
+    loginWithGoogle();
+    return;
   }
 
   if (isTeacherUser) {
@@ -10604,12 +10634,24 @@ function previewWork(workId) {
     }
   }
 
-  // 彈跳視窗同步呈現授課教師評語與成績 (防止任何切到看不見)
+  // 彈跳視窗同步呈現授課教師評語與成績 (🔒 僅作者本人、授課教師或示範專案可見，其他同學保護隱私)
+  const isTeacherModal = Boolean(isTeacherUser);
+  const isDemoModal = (work.id === 'DEMO-01' || work.id === 'DEMO-02' || work.student_id === 'TEACHER');
+  const currentIdModal = (currentUser && currentUser.studentId) ? currentUser.studentId.trim() : '';
+  const currentEmailModal = (currentFirebaseUser && currentFirebaseUser.email) ? currentFirebaseUser.email.trim().toLowerCase() : '';
+  const currentUidModal = (currentFirebaseUser && currentFirebaseUser.uid) ? currentFirebaseUser.uid : '';
+  const isOwnerModal = Boolean(
+    (currentUidModal && work.uid && work.uid === currentUidModal) ||
+    (currentEmailModal && work.email && work.email.trim().toLowerCase() === currentEmailModal) ||
+    (currentIdModal && work.student_id && currentIdModal.length >= 4 && work.student_id.trim() === currentIdModal && currentFirebaseUser)
+  );
+  const canSeeGradeModal = isTeacherModal || isDemoModal || isOwnerModal;
+
   const previewCommentBox = document.getElementById('preview-teacher-comment-box');
   const previewCommentText = document.getElementById('preview-teacher-comment-text');
   const previewScoreBadge = document.getElementById('preview-teacher-score-badge');
   if (previewCommentBox && previewCommentText) {
-    if (work.teacher_comment || (work.score !== null && work.score !== undefined && work.score !== '')) {
+    if (canSeeGradeModal && (work.teacher_comment || (work.score !== null && work.score !== undefined && work.score !== ''))) {
       previewCommentBox.style.display = 'block';
       previewCommentText.textContent = work.teacher_comment || '（評分已登錄）';
       if (previewScoreBadge) {

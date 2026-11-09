@@ -832,20 +832,24 @@
           <div class="col-lg-5">
             <!-- 未登入時顯示登入提示 -->
             <div class="card-custom p-4 text-center h-100 flex-column justify-content-center align-items-center" id="upload-login-prompt-box" style="display: flex;">
-              <div class="rounded-circle bg-warning bg-opacity-10 p-4 mb-3 text-warning">
-                <i class="fas fa-lock fs-1"></i>
+              <div class="rounded-circle bg-primary bg-opacity-10 p-3 mb-3 text-primary" style="width: 64px; height: 64px; display: inline-flex; align-items:center; justify-content:center;">
+                <i class="fas fa-user-lock fs-2"></i>
               </div>
               <h5 class="fw-bold text-dark mb-2">作業成果上傳與繳交</h5>
-              <p class="text-muted small mb-3" style="max-width: 360px;">
-                依課堂評分規定，企管四系1甲同學請先點擊下方按鈕使用 Google 帳號登入並綁定學號、姓名與組別，即可開啟「期中報告」與「期末報告」作品上傳表單。
+              <p class="text-muted small mb-3" style="max-width: 360px; line-height: 1.6;">
+                依課堂成績隱私防護規範，企管四系1甲同學<strong>必須使用 Google 帳號登入</strong>並綁定學號姓名，方可開啟作業繳交表單。<br>
+                <span class="text-success mt-2 d-inline-block fw-bold"><i class="fas fa-shield-alt me-1"></i>個人評分與教師評語僅限學生本人與授課教師可見</span>
               </p>
-              <button type="button" class="btn btn-primary fw-bold px-4 py-2 shadow-sm mb-3" onclick="loginWithGoogle()">
-                <i class="fab fa-google me-2"></i>使用 Google 帳號登入
-              </button>
-              <div class="pt-2 border-top border-secondary border-opacity-10 w-100">
-                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleTeacherPreviewForm()">
-                  <i class="fas fa-eye me-1"></i>授課教師檢視／預覽表單樣式
+              <div class="d-flex flex-column gap-2 w-100" style="max-width: 320px;">
+                <button type="button" class="btn btn-primary fw-bold py-2 shadow-sm" onclick="loginWithGoogle()">
+                  <i class="fab fa-google me-2"></i>使用 Google 帳號登入以開啟表單
                 </button>
+                <button type="button" class="btn btn-sm btn-link text-muted mt-1 text-decoration-none" onclick="toggleTeacherPreviewForm()">
+                  <i class="fas fa-chalkboard-teacher me-1"></i>授課教師檢視 / 預覽表單樣式
+                </button>
+              </div>
+              <div class="pt-2 mt-3 border-top border-secondary border-opacity-10 w-100">
+                <span class="small text-muted"><i class="fas fa-lock text-success me-1"></i>雲端身分驗證 ‧ 成績隱私加密</span>
               </div>
             </div>
 
