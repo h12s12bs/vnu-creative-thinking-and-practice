@@ -237,13 +237,13 @@ document.addEventListener('DOMContentLoaded', async () => {
    0. Firebase 初始化與 Google 登入驗證
    ========================================================================== */
 const firebaseConfig = {
-  apiKey: "AIzaSyBvnm6fkAl8BLGkNvyfvyvUzQK4cTz4aK8",
-  authDomain: "vnu-business-software-11501.firebaseapp.com",
-  projectId: "vnu-business-software-11501",
-  storageBucket: "vnu-business-software-11501.firebasestorage.app",
-  messagingSenderId: "422671793777",
-  appId: "1:422671793777:web:dfa1d400c17a80daf025d0",
-  measurementId: "G-CZVC62B1PV"
+  apiKey: "AIzaSyCSQ1SfZ67UYZ_4F4JazSC5QptA1ZY1UdU",
+  authDomain: "vnu-creative-11501.firebaseapp.com",
+  projectId: "vnu-creative-11501",
+  storageBucket: "vnu-creative-11501.firebasestorage.app",
+  messagingSenderId: "192871776919",
+  appId: "1:192871776919:web:47aea414ec5af5774b5fd2",
+  measurementId: "G-X90WGR0GV2"
 };
 
 let firebaseApp = null;
@@ -265,7 +265,7 @@ function initFirebase() {
       firebaseAuth = firebase.auth();
       firestoreDb = firebase.firestore();
       isFirebaseAvailable = true;
-      console.log('✅ Firebase 初始化成功 (專案: vnu-business-software-11501)');
+      console.log('✅ Firebase 初始化成功 (專案: vnu-creative-11501)');
 
       // 🚀 進入網頁立即自動載入最新雲端資料 (無須手動點擊按鈕，0.2秒秒開秒同步)
       try {
