@@ -2555,7 +2555,7 @@ async function initStudentWorks() {
 
   // 🚀 若 Firestore 已建立連線，立即自動讀取雲端最新作品並更新狀態
   if (typeof syncFirestoreWorksNow === 'function' && typeof firestoreDb !== 'undefined' && firestoreDb) {
-    try { syncFirestoreWorksNow(false); } catch(e) {}
+    try { await syncFirestoreWorksNow(false); } catch(e) {}
   }
 
   // 1. 嘗試從伺服器端取得
@@ -2592,7 +2592,13 @@ async function initStudentWorks() {
     }
   }
 
-  // 3. 若本地無資料，檢查 window.OFFLINE_WORKS 或使用內建示範作品
+  // 3. 若已自 Firestore 成功載入最新雲端作品，絕不覆寫！
+  if (studentWorksData && studentWorksData.length > 2) {
+    renderStudentWorks();
+    return;
+  }
+
+  // 4. 若本地無資料，檢查 window.OFFLINE_WORKS 或使用內建示範作品
   if (window.OFFLINE_WORKS && Array.isArray(window.OFFLINE_WORKS)) {
     studentWorksData = window.OFFLINE_WORKS;
   } else {
