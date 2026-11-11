@@ -2776,11 +2776,11 @@ function renderStudentWorks() {
                     <!-- 橫式左側：純淨網頁即時截圖縮圖 (點擊直接全螢幕預覽原型) -->
           <div class="work-thumbnail-box" onclick="previewWork('${escapeHtml(w.id)}')" title="點擊即時全螢幕預覽網站原型">
             ${w.live_url ? `
-              <img src="https://image.thum.io/get/width/600/crop/800/${encodeURI(w.live_url)}" 
+              <img src="https://s0.wp.com/mshots/v1/${encodeURIComponent(w.live_url)}?w=600" 
                    alt="${escapeHtml(w.title || '成果網頁截圖')}" 
                    class="work-thumbnail-img" 
                    loading="lazy" 
-                   onerror="this.onerror=null; this.src='https://s0.wp.com/mshots/v1/' + encodeURIComponent('${encodeURI(w.live_url)}') + '?w=600';">
+                   onerror="this.onerror=null; this.src='https://api.microlink.io?url=' + encodeURIComponent('${encodeURI(w.live_url)}') + '&screenshot=true&meta=false&embed=screenshot.url';">
             ` : `
               <div class="d-flex flex-column justify-content-center align-items-center h-100" style="background: ${thumbnailBg};">
                 <i class="${thumbnailIcon} work-thumbnail-icon"></i>
