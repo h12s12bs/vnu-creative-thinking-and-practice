@@ -258,6 +258,27 @@ let isFirebaseAvailable = false;
 let currentFirebaseUser = null;
 let isTeacherUser = false;
 
+// 立即清除已在雲端刪除之舊作業殘留快取 (例如已刪除之重複交件)
+try {
+  const legacyDeletedIds = ['WORK-CREATIVE-1794213344704'];
+  let curDeletedList = JSON.parse(localStorage.getItem('vnu_deleted_work_ids') || '[]');
+  let changed = false;
+  legacyDeletedIds.forEach(did => {
+    if (!curDeletedList.includes(did)) {
+      curDeletedList.push(did);
+      changed = true;
+    }
+  });
+  if (changed) {
+    localStorage.setItem('vnu_deleted_work_ids', JSON.stringify(curDeletedList));
+  }
+  let localWorks = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+  let filteredWorks = localWorks.filter(w => !legacyDeletedIds.includes(w.id));
+  if (filteredWorks.length !== localWorks.length) {
+    localStorage.setItem('vnu_submitted_works', JSON.stringify(filteredWorks));
+  }
+} catch(e) {}
+
 function initFirebase() {
   if (isFirebaseAvailable && firebaseAuth) return;
   if (typeof firebase !== 'undefined' && firebase.initializeApp) {
@@ -492,11 +513,12 @@ function updateFirestoreSyncBadge(status, text) {
 }
 
 function loadDefaultSampleWorks() {
-  const sampleWorks = window.OFFLINE_WORKS || [];
-  const localSubmitted = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+  const deletedIds = new Set(JSON.parse(localStorage.getItem('vnu_deleted_work_ids') || '[]'));
+  const sampleWorks = (window.OFFLINE_WORKS || []).filter(w => !deletedIds.has(w.id));
+  const localSubmitted = (JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]')).filter(w => !deletedIds.has(w.id));
   const existingIds = new Set(localSubmitted.map(w => w.id));
   const nonDuplicateSamples = sampleWorks.filter(w => !existingIds.has(w.id));
-  studentWorksData = [...localSubmitted, ...nonDuplicateSamples];
+  studentWorksData = [...localSubmitted, ...nonDuplicateSamples].filter(w => !deletedIds.has(w.id));
 }
 
 function listenToFirestoreWorks() {
@@ -521,13 +543,16 @@ function listenToFirestoreWorks() {
         });
         if (firestoreWorks.length > 0) {
           firestoreWorks.sort((a, b) => (b.submitted_at || '').localeCompare(a.submitted_at || ''));
-          const existingIds = new Set(firestoreWorks.map(w => w.id));
-          const sampleWorks = window.OFFLINE_WORKS || [];
+          const deletedIds = new Set(JSON.parse(localStorage.getItem('vnu_deleted_work_ids') || '[]'));
+          const validFirestoreWorks = firestoreWorks.filter(w => !deletedIds.has(w.id));
+          const existingIds = new Set(validFirestoreWorks.map(w => w.id));
+          // ⚠️ 關鍵防護：示範專案僅保留常駐示範專案 DEMO-01 與 DEMO-02，學生作業完全以雲端 Firestore 為準，絕不從示範快取復活已刪除的舊作業！
+          const sampleWorks = (window.OFFLINE_WORKS || []).filter(w => (w.id === 'DEMO-01' || w.id === 'DEMO-02' || w.student_id === 'TEACHER') && !deletedIds.has(w.id));
           const nonDuplicateSamples = sampleWorks.filter(w => !existingIds.has(w.id));
-          const localSubmitted = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+          const localSubmitted = (JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]')).filter(w => !deletedIds.has(w.id));
           const uncommittedLocal = localSubmitted.filter(w => !existingIds.has(w.id));
 
-          studentWorksData = [...firestoreWorks, ...uncommittedLocal, ...nonDuplicateSamples];
+          studentWorksData = [...validFirestoreWorks, ...uncommittedLocal, ...nonDuplicateSamples].filter(w => !deletedIds.has(w.id));
           updateFirestoreSyncBadge('synced', `${firestoreWorks.length} 筆雲端`);
         } else {
           loadDefaultSampleWorks();
@@ -569,13 +594,16 @@ async function syncFirestoreWorksNow(isManual = false) {
     });
     if (firestoreWorks.length > 0) {
       firestoreWorks.sort((a, b) => (b.submitted_at || '').localeCompare(a.submitted_at || ''));
-      const existingIds = new Set(firestoreWorks.map(w => w.id));
-      const sampleWorks = window.OFFLINE_WORKS || [];
+      const deletedIds = new Set(JSON.parse(localStorage.getItem('vnu_deleted_work_ids') || '[]'));
+      const validFirestoreWorks = firestoreWorks.filter(w => !deletedIds.has(w.id));
+      const existingIds = new Set(validFirestoreWorks.map(w => w.id));
+      // ⚠️ 關鍵防護：示範專案僅保留常駐示範專案 DEMO-01 與 DEMO-02，學生作業完全以雲端 Firestore 為準，絕不從示範快取復活已刪除的舊作業！
+      const sampleWorks = (window.OFFLINE_WORKS || []).filter(w => (w.id === 'DEMO-01' || w.id === 'DEMO-02' || w.student_id === 'TEACHER') && !deletedIds.has(w.id));
       const nonDuplicateSamples = sampleWorks.filter(w => !existingIds.has(w.id));
-      const localSubmitted = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
+      const localSubmitted = (JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]')).filter(w => !deletedIds.has(w.id));
       const uncommittedLocal = localSubmitted.filter(w => !existingIds.has(w.id));
 
-      studentWorksData = [...firestoreWorks, ...uncommittedLocal, ...nonDuplicateSamples];
+      studentWorksData = [...validFirestoreWorks, ...uncommittedLocal, ...nonDuplicateSamples].filter(w => !deletedIds.has(w.id));
       updateFirestoreSyncBadge('synced', `${firestoreWorks.length} 筆雲端`);
     } else {
       loadDefaultSampleWorks();
@@ -2435,6 +2463,15 @@ async function teacherDeleteWork(workId) {
     const localWorks = JSON.parse(localStorage.getItem('vnu_submitted_works') || '[]');
     const filtered = localWorks.filter(w => w.id !== workId);
     localStorage.setItem('vnu_submitted_works', JSON.stringify(filtered));
+  } catch (e) {}
+
+  // 3-1. 記錄至永久刪除黑名單 (防止任何離線快取或舊版本復活此作業)
+  try {
+    const deletedIds = JSON.parse(localStorage.getItem('vnu_deleted_work_ids') || '[]');
+    if (!deletedIds.includes(workId)) {
+      deletedIds.push(workId);
+      localStorage.setItem('vnu_deleted_work_ids', JSON.stringify(deletedIds));
+    }
   } catch (e) {}
 
   // 4. 重新渲染畫面與教師後台
