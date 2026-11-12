@@ -9291,7 +9291,8 @@ async function syncFirestoreWorksNow(isManual = false) {
     renderStudentWorks();
     if (isTeacherUser) renderTeacherGradeDashboard();
     if (isManual) {
-      alert(`✅ 雲端作品同步完成！\n目前展示廊共載入 ${studentWorksData.length} 件作品 (雲端最新收件：${firestoreWorks.length} 筆)。`);
+      const studentCnt = studentWorksData.filter(w => !(w.id === 'DEMO-01' || w.id === 'DEMO-02' || w.student_id === 'TEACHER')).length;
+      alert(`✅ 雲端作品同步完成！\n目前展示廊共載入 ${studentCnt} 件學生作品 (雲端最新收件：${firestoreWorks.length} 筆)。`);
     }
   } catch (err) {
     console.warn('手動同步 Firestore 失敗:', err);
@@ -11409,10 +11410,16 @@ function renderStudentWorks() {
 
   if (countBadge) {
     let filterLabel = '全班成果';
-    if (currentWorksFilter === 'mine') filterLabel = '我的作業';
-    else if (currentWorksFilter === '期中報告') filterLabel = '期中報告';
-    else if (currentWorksFilter === '期末報告') filterLabel = '期末報告';
-    countBadge.textContent = `${filterLabel}：${works.length} 件`;
+    if (currentWorksFilter === 'mine') {
+      filterLabel = '我的作業';
+      countBadge.textContent = `${filterLabel}：${works.length} 件`;
+    } else {
+      if (currentWorksFilter === '期中報告') filterLabel = '期中報告';
+      else if (currentWorksFilter === '期末報告') filterLabel = '期末報告';
+      // ⚠️ 嚴格排除授課教師示範專案，全班與分類計數純粹計算學生繳交成果
+      const studentOnlyCount = works.filter(w => !(w.id === 'DEMO-01' || w.id === 'DEMO-02' || w.student_id === 'TEACHER' || (w.author && w.author.includes('邱俊維')))).length;
+      countBadge.textContent = `${filterLabel}：${studentOnlyCount} 件`;
+    }
   }
 
   if (works.length === 0) {
@@ -11758,7 +11765,8 @@ function renderTeacherGradeDashboard() {
   const tbody = document.getElementById('teacher-grades-tbody');
   if (!tbody) return;
 
-  const totalWorks = studentWorksData || [];
+  // ⚠️ 嚴格排除授課教師示範專案，教師後台數據統計與評分表僅納入真實學生作業
+  const totalWorks = (studentWorksData || []).filter(w => !(w.id === 'DEMO-01' || w.id === 'DEMO-02' || w.student_id === 'TEACHER' || (w.author && w.author.includes('邱俊維'))));
 
   // 1. 數據統計計算
   let midtermCount = 0;
@@ -12277,7 +12285,9 @@ function exportGradesToCSV() {
   const csvRows = [];
   csvRows.push(headers.join(','));
 
-  studentWorksData.forEach(w => {
+  // ⚠️ 嚴格排除授課教師示範專案，僅匯出真實學生之成績單
+  const studentOnlyWorks = (studentWorksData || []).filter(w => !(w.id === 'DEMO-01' || w.id === 'DEMO-02' || w.student_id === 'TEACHER' || (w.author && w.author.includes('邱俊維'))));
+  studentOnlyWorks.forEach(w => {
     const row = [
       `"${(w.student_id || '').replace(/"/g, '""')}"`,
       `"${(w.student_name || '').replace(/"/g, '""')}"`,
